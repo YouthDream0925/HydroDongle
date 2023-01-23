@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Alerts - Material Admin Pro</title>
+        <!-- Load Favicon-->
+        <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Load Material Icons from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+        <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+        <!-- Load main stylesheet-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="nav-fixed">
+        <!-- Top app bar navigation menu-->
+        <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid px-4">
+                <!-- Drawer toggle button-->
+                <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
+                <!-- Navbar brand-->
+                <a class="navbar-brand me-auto" href="index.html"><div class="text-uppercase font-monospace">Material Admin Pro</div></a>
+                <!-- Navbar items-->
+                <div class="d-flex align-items-center mx-3 me-lg-0">
+                    <!-- Navbar-->
+                    <ul class="navbar-nav d-none d-lg-flex">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://docs.startbootstrap.com/material-admin-pro" target="_blank">Documentation</a></li>
+                    </ul>
+                    <!-- Navbar buttons-->
+                    <div class="d-flex">
+                        <!-- Messages dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuMessages" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">mail_outline</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuMessages">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Messages</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there, I had a question about something, is there any way you can help me out?</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Juan Babin</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks for the assistance the other day, I wanted to follow up with you just to make sure everyting is settled.</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 10, 2021 &middot; Christine Hendersen</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome to our group! It's good to see new members and I know you will do great!</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Celia J. Knight</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Notifications and alerts dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuNotifications" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">notifications</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuNotifications">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Alerts</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <i class="material-icons leading-icon">assessment</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Your March performance report is ready to view.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Performance</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">check_circle</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes successfully updated.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">warning</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes have changed and require manual action.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- User profile dropdown-->
+                        <div class="dropdown">
+                            <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">person</i>
+                                        <div class="me-3">Profile</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">settings</i>
+                                        <div class="me-3">Settings</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">help</i>
+                                        <div class="me-3">Help</div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">logout</i>
+                                        <div class="me-3">Logout</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Layout wrapper-->
+        <div id="layoutDrawer">
+            <!-- Layout navigation-->
+            <div id="layoutDrawer_nav">
+                <!-- Drawer navigation-->
+                <nav class="drawer accordion drawer-light" id="drawerAccordion">
+                    <div class="drawer-menu">
+                        <div class="nav">
+                            <!-- Drawer section heading (Account)-->
+                            <div class="drawer-menu-heading d-sm-none">Account</div>
+                            <!-- Drawer link (Notifications)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">notifications</i></div>
+                                Notifications
+                            </a>
+                            <!-- Drawer link (Messages)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">mail</i></div>
+                                Messages
+                            </a>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider d-sm-none"></div>
+                            <!-- Drawer section heading (Interface)-->
+                            <div class="drawer-menu-heading">Interface</div>
+                            <!-- Drawer link (Overview)-->
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-link-icon"><i class="material-icons">language</i></div>
+                                Overview
+                            </a>
+                            <!-- Drawer link (Dashboards)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                                Dashboards
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Dashboards)-->
+                            <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="app-dashboard-default.html">Default</a>
+                                    <a class="nav-link" href="app-dashboard-minimal.html">Minimal</a>
+                                    <a class="nav-link" href="app-dashboard-analytics.html">Analytics</a>
+                                    <a class="nav-link" href="app-dashboard-accounting.html">Accounting</a>
+                                    <a class="nav-link" href="app-dashboard-orders.html">Orders</a>
+                                    <a class="nav-link" href="app-dashboard-projects.html">Projects</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Layouts)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                                Layouts
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Layouts)-->
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="layout-dark.html">Dark Theme</a>
+                                    <a class="nav-link" href="layout-light.html">Light Theme</a>
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Pages)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i class="material-icons">layers</i></div>
+                                Pages
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Pages)-->
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
+                                    <!-- Drawer link (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        Account
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Account)-->
+                                    <div class="collapse" id="pagesCollapseAccount" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-account-billing.html">Billing</a>
+                                            <a class="nav-link" href="app-account-notifications.html">Notifications</a>
+                                            <a class="nav-link" href="app-account-profile.html">Profile</a>
+                                            <a class="nav-link" href="app-account-security.html">Security</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Authentication)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Authentication)-->
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-auth-login-basic.html">Login 1</a>
+                                            <a class="nav-link" href="app-auth-login-styled-1.html">Login 2</a>
+                                            <a class="nav-link" href="app-auth-login-styled-2.html">Login 3</a>
+                                            <a class="nav-link" href="app-auth-register-basic.html">Register</a>
+                                            <a class="nav-link" href="app-auth-password-basic.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Blank Pages)-->
+                                    <a class="nav-link" href="app-blank-page.html">Blank Page</a>
+                                    <!-- Drawer link (Pages -> Error)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Error)-->
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-error-400.html">400 Error Page</a>
+                                            <a class="nav-link" href="app-error-401.html">401 Error Page</a>
+                                            <a class="nav-link" href="app-error-403.html">403 Error Page</a>
+                                            <a class="nav-link" href="app-error-404.html">404 Error Page</a>
+                                            <a class="nav-link" href="app-error-429.html">429 Error Page</a>
+                                            <a class="nav-link" href="app-error-500.html">500 Error Page</a>
+                                            <a class="nav-link" href="app-error-503.html">503 Error Page</a>
+                                            <a class="nav-link" href="app-error-504.html">504 Error Page</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-invoice.html">Invoice</a>
+                                    <!-- Drawer link (Pages -> Knowledgebase)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseKnowledgebase" aria-expanded="false" aria-controls="pagesCollapseKnowledgebase">
+                                        Knowledgebase
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Knowledgebase)-->
+                                    <div class="collapse" id="pagesCollapseKnowledgebase" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-knowledgebase-home.html">Home</a>
+                                            <a class="nav-link" href="app-knowledgebase-categories.html">Categories</a>
+                                            <a class="nav-link" href="app-knowledgebase-article.html">Article</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-pricing.html">Pricing</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (UI Toolkit)-->
+                            <div class="drawer-menu-heading">UI Toolkit</div>
+                            <!-- Drawer link (Components)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
+                                <div class="nav-link-icon"><i class="material-icons">widgets</i></div>
+                                Components
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Components)-->
+                            <div class="collapse" id="collapseComponents" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="components-alerts.html">Alerts</a>
+                                    <a class="nav-link" href="components-badges.html">Badges</a>
+                                    <a class="nav-link" href="components-buttons.html">Buttons</a>
+                                    <a class="nav-link" href="components-cards.html">Cards</a>
+                                    <a class="nav-link" href="components-chips.html">Chips</a>
+                                    <a class="nav-link" href="components-dropdowns.html">Dropdowns</a>
+                                    <a class="nav-link" href="components-icon-buttons.html">Icon Buttons</a>
+                                    <a class="nav-link" href="components-modals.html">Modals</a>
+                                    <a class="nav-link" href="components-navigation.html">Navigation</a>
+                                    <a class="nav-link" href="components-progress.html">Progress</a>
+                                    <a class="nav-link" href="components-spinners.html">Spinners</a>
+                                    <a class="nav-link" href="components-tooltips.html">Tooltips</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Content)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
+                                <div class="nav-link-icon"><i class="material-icons">amp_stories</i></div>
+                                Content
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Content)-->
+                            <div class="collapse" id="collapseContent" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="content-icons.html">Icons</a>
+                                    <a class="nav-link" href="content-tables.html">Tables</a>
+                                    <a class="nav-link" href="content-typography.html">Typography</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Forms)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseForms" aria-expanded="false" aria-controls="collapseForms">
+                                <div class="nav-link-icon"><i class="material-icons">description</i></div>
+                                Forms
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Forms)-->
+                            <div class="collapse" id="collapseForms" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="forms-inputs.html">Inputs</a>
+                                    <a class="nav-link" href="forms-checks-and-radios.html">Checks &amp; Radio</a>
+                                    <a class="nav-link" href="forms-input-groups.html">Input Groups</a>
+                                    <a class="nav-link" href="forms-range.html">Range</a>
+                                    <a class="nav-link" href="forms-select.html">Select</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i class="material-icons">build</i></div>
+                                Utilities
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Utilities)-->
+                            <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="utilities-background.html">Background</a>
+                                    <a class="nav-link" href="utilities-borders.html">Borders</a>
+                                    <a class="nav-link" href="utilities-ripples.html">Ripples</a>
+                                    <a class="nav-link" href="utilities-shadows.html">Shadows</a>
+                                    <a class="nav-link" href="utilities-text.html">Text</a>
+                                    <a class="nav-link" href="utilities-transforms.html">Transforms</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (Plugins)-->
+                            <div class="drawer-menu-heading">Plugins</div>
+                            <!-- Drawer link (Charts)-->
+                            <a class="nav-link" href="plugins-charts.html">
+                                <div class="nav-link-icon"><i class="material-icons">bar_chart</i></div>
+                                Charts
+                            </a>
+                            <!-- Drawer link (Code Blocks)-->
+                            <a class="nav-link" href="plugins-code-blocks.html">
+                                <div class="nav-link-icon"><i class="material-icons">code</i></div>
+                                Code Blocks
+                            </a>
+                            <!-- Drawer link (Data Tables)-->
+                            <a class="nav-link" href="plugins-data-tables.html">
+                                <div class="nav-link-icon"><i class="material-icons">filter_alt</i></div>
+                                Data Tables
+                            </a>
+                            <!-- Drawer link (Date Picker)-->
+                            <a class="nav-link" href="plugins-date-picker.html">
+                                <div class="nav-link-icon"><i class="material-icons">date_range</i></div>
+                                Date Picker
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Drawer footer        -->
+                    <div class="drawer-footer border-top">
+                        <div class="d-flex align-items-center">
+                            <i class="material-icons text-muted">account_circle</i>
+                            <div class="ms-3">
+                                <div class="caption">Logged in as:</div>
+                                <div class="small fw-500">Start Bootstrap</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Layout content-->
+            <div id="layoutDrawer_content">
+                <!-- Main page content-->
+                <main>
+                    <div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/alerts.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Alerts</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>Alerts provide contexutal feedback messages for typical user actions. Alternatively, toasts are smaller alerts that are lightweight push notifications to notify users of actions they have taken.</p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="alerts">Alerts</h2>
+                                <p class="mb-5">Since there is no specifications for Material Design alerts, the default style closely resembles the Bootstrap default alerts.</p>
+                                <h3 class="mb-4" id="alerts-default">Default Alerts</h3>
+                                <p class="mb-4">In Material Admin Pro, the color system has been changed to match the color system with this theme, and the font size and letter spacing has been adjusted to match Material Design standards.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="alertsDefaultDemoTab" data-bs-target="#alertsDefaultDemo" aria-controls="alertsDefaultDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="alertsDefaultHtmlTab" data-bs-target="#alertsDefaultHtml" aria-controls="alertsDefaultHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#alertsDefaultPug" role="tab" aria-controls="alertsDefaultPug" aria-selected="false" id="alertsDefaultPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="alertsDefaultDemo" aria-labelledby="alertsDefaultDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div>
+                                            <div class="alert alert-secondary" role="alert">A simple secondary alert—check it out!</div>
+                                            <div class="alert alert-success" role="alert">A simple success alert—check it out!</div>
+                                            <div class="alert alert-danger" role="alert">A simple danger alert—check it out!</div>
+                                            <div class="alert alert-warning" role="alert">A simple warning alert—check it out!</div>
+                                            <div class="alert alert-info" role="alert">A simple info alert—check it out!</div>
+                                            <div class="alert alert-light" role="alert">A simple light alert—check it out!</div>
+                                            <div class="alert alert-dark mb-0" role="alert">A simple dark alert—check it out!</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsDefaultHtml" aria-labelledby="alertsDefaultHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><div class="alert alert-primary" role="alert">A simple primary alert—check it out!</div>
+<div class="alert alert-secondary" role="alert">A simple secondary alert—check it out!</div>
+<div class="alert alert-success" role="alert">A simple success alert—check it out!</div>
+<div class="alert alert-danger" role="alert">A simple danger alert—check it out!</div>
+<div class="alert alert-warning" role="alert">A simple warning alert—check it out!</div>
+<div class="alert alert-info" role="alert">A simple info alert—check it out!</div>
+<div class="alert alert-light" role="alert">A simple light alert—check it out!</div>
+<div class="alert alert-dark" role="alert">A simple dark alert—check it out!</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsDefaultPug" aria-labelledby="alertsDefaultPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.alert.alert-primary(role='alert')
+    | A simple primary alert—check it out!
+.alert.alert-secondary(role='alert')
+    | A simple secondary alert—check it out!
+.alert.alert-success(role='alert')
+    | A simple success alert—check it out!
+.alert.alert-danger(role='alert')
+    | A simple danger alert—check it out!
+.alert.alert-warning(role='alert')
+    | A simple warning alert—check it out!
+.alert.alert-info(role='alert')
+    | A simple info alert—check it out!
+.alert.alert-light(role='alert')
+    | A simple light alert—check it out!
+.alert.alert-dark(role='alert')
+    | A simple dark alert—check it out!</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="alerts-link-color">Link Color</h3>
+                                <p class="mb-4">
+                                    The
+                                    <code class="code-inline">.alert-link</code>
+                                    class can be applied to links within alerts to get contextual link stylying.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="alertsLinkColorDemoTab" data-bs-target="#alertsLinkColorDemo" aria-controls="alertsLinkColorDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="alertsLinkColorHtmlTab" data-bs-target="#alertsLinkColorHtml" aria-controls="alertsLinkColorHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#alertsLinkColorPug" role="tab" aria-controls="alertsLinkColorPug" aria-selected="false" id="alertsLinkColorPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="alertsLinkColorDemo" aria-labelledby="alertsLinkColorDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="alert alert-primary" role="alert">
+                                                A simple primary alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-secondary" role="alert">
+                                                A simple secondary alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-success" role="alert">
+                                                A simple success alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-danger" role="alert">
+                                                A simple danger alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-warning" role="alert">
+                                                A simple warning alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-info" role="alert">
+                                                A simple info alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-light" role="alert">
+                                                A simple light alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                            <div class="alert alert-dark mb-0" role="alert">
+                                                A simple dark alert with
+                                                <a class="alert-link" href="#!">an example link</a>
+                                                . Give it a click if you like.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsLinkColorHtml" aria-labelledby="alertsLinkColorHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><div class="alert alert-primary" role="alert">A simple primary alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-secondary" role="alert">A simple secondary alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-success" role="alert">A simple success alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-danger" role="alert">A simple danger alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-warning" role="alert">A simple warning alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-info" role="alert">A simple info alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-light" role="alert">A simple light alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div>
+<div class="alert alert-dark" role="alert">A simple dark alert with <a class="alert-link" href="#">an example link</a>. Give it a click if you like.</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsLinkColorPug" aria-labelledby="alertsLinkColorPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.alert.alert-primary(role='alert')
+    | A simple primary alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-secondary(role='alert')
+    | A simple secondary alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-success(role='alert')
+    | A simple success alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-danger(role='alert')
+    | A simple danger alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-warning(role='alert')
+    | A simple warning alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-info(role='alert')
+    | A simple info alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-light(role='alert')
+    | A simple light alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.
+.alert.alert-dark(role='alert')
+    | A simple dark alert with 
+    a.alert-link(href='#') an example link
+    | . Give it a click if you like.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="alerts-dismissing">Dismissing</h3>
+                                <p>
+                                    Bootstrap supports dismissing alerts using JavaScript behavior. In the example below, the close button is used with the
+                                    <code class="code-inline">data-bs-dismiss="alert"</code>
+                                    attribute to enable this behavior.
+                                </p>
+                                <pp class="mb-4">
+                                    For more information on using the JavaScript behavior built into Bootstrap, visit
+                                    <a href="https://getbootstrap.com/docs/5.0/components/alerts/#javascript-behavior" target="_blank">Bootstrap's alert documentation</a>
+                                    page.
+                                </pp>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="alertsDismissingDemoTab" data-bs-target="#alertsDismissingDemo" aria-controls="alertsDismissingDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="alertsDismissingHtmlTab" data-bs-target="#alertsDismissingHtml" aria-controls="alertsDismissingHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#alertsDismissingPug" role="tab" aria-controls="alertsDismissingPug" aria-selected="false" id="alertsDismissingPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="alertsDismissingDemo" aria-labelledby="alertsDismissingDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="alert alert-primary alert-dismissible fade show mb-0" role="alert">
+                                                <strong>Holy guacamole!</strong>
+                                                You should check in on some of those fields below.
+                                                <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsDismissingHtml" aria-labelledby="alertsDismissingHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><div class="alert alert-primary alert-dismissible fade show" role="alert"><strong>Holy guacamole!</strong>You should check in on some of those fields below.
+    <button class="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsDismissingPug" aria-labelledby="alertsDismissingPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.alert.alert-primary.alert-dismissible.fade.show(role='alert')
+    strong Holy guacamole!
+    | You should check in on some of those fields below.
+    button.btn-close(type='button' data-bs-dismiss='alert' aria-label='Close')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="alerts-additional-content">Additional Content</h3>
+                                <p class="mb-4">
+                                    Alerts support additional content, like the
+                                    <code class="code-inline">.alert-heading</code>
+                                    class being applied to headings within alerts. You can also style alerts using utility classes available with this toolkit to achieve variations on the alert dialog.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="alertsAdditionalContentDemoTab" data-bs-target="#alertsAdditionalContentDemo" aria-controls="alertsAdditionalContentDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="alertsAdditionalContentHtmlTab" data-bs-target="#alertsAdditionalContentHtml" aria-controls="alertsAdditionalContentHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#alertsAdditionalContentPug" role="tab" aria-controls="alertsAdditionalContentPug" aria-selected="false" id="alertsAdditionalContentPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="alertsAdditionalContentDemo" aria-labelledby="alertsAdditionalContentDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="alert alert-success border-0 shadow-1 mb-0" role="alert">
+                                                <h4 class="alert-heading">Well done!</h4>
+                                                <p>You can use shadow and border utilities to style alerts in different ways. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                                <hr />
+                                                <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsAdditionalContentHtml" aria-labelledby="alertsAdditionalContentHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Well done!</h4>
+    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+    <hr>
+    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="alertsAdditionalContentPug" aria-labelledby="alertsAdditionalContentPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.alert.alert-success(role='alert')
+    h4.alert-heading Well done!
+    p
+        | Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.
+    hr
+    p.mb-0
+        | Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="toasts">Toasts</h2>
+                                <p>Since the functionality of Bootstrap's toast notifications are similar to Material Design's snackbar, the snackbar web component has been included for use within this toolkit.</p>
+                                <p class="mb-5">In addition, Bootstrap's default toast component has been restyled to match Material Design's snackbar specifications as closely as possible for users who want to use the more familiar Bootstrap toast markup and JavaScript behavior.</p>
+                                <hr class="my-5" />
+                                <h3 class="mb-4" id="toasts-material-snackbar">Material Snackbar</h3>
+                                <p>
+                                    The snackbar web component from the
+                                    <a href="https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar" target="_blank">Material Web Components Catalog</a>
+                                    has been utilized in this case to add Material's snackbar component specifications to this theme in an easy, reusable fashion.
+                                </p>
+                                <p class="mb-4">
+                                    The
+                                    <code class="code-inline">onclick</code>
+                                    event is being used in this case to activate the snackbar notification, so no additional JavaScript is needed. Two positions are included within the web component configuration and a default and stacked variant.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="toastsMaterialSnackbarDemoTab" data-bs-target="#toastsMaterialSnackbarDemo" aria-controls="toastsMaterialSnackbarDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="toastsMaterialSnackbarHtmlTab" data-bs-target="#toastsMaterialSnackbarHtml" aria-controls="toastsMaterialSnackbarHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#toastsMaterialSnackbarPug" role="tab" aria-controls="toastsMaterialSnackbarPug" aria-selected="false" id="toastsMaterialSnackbarPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="toastsMaterialSnackbarDemo" aria-labelledby="toastsMaterialSnackbarDemoTab">
+                                        <div class="d-flex flex-column align-items-center border border-top-0 p-3 p-sm-5 bg-light">
+                                            <button class="btn btn-text-primary mb-2" role="button" onclick='document.querySelector("#snackbarDemo").show()'>
+                                                Launch Snackbar
+                                                <i class="material-icons trailing-icon">north_east</i>
+                                            </button>
+                                            <button class="btn btn-text-primary mb-2" role="button" onclick='document.querySelector("#snackbarDemoLeading").show()'>
+                                                Launch Leading Snackbar
+                                                <i class="material-icons trailing-icon">north_east</i>
+                                            </button>
+                                            <button class="btn btn-text-primary" role="button" onclick='document.querySelector("#snackbarDemoStacked").show()'>
+                                                Launch Stacked Snackbars
+                                                <i class="material-icons trailing-icon">north_east</i>
+                                            </button>
+                                            <mwc-snackbar id="snackbarDemo" labeltext="Can't send photo. Retry in 5 seconds.">
+                                                <mwc-button slot="action">RETRY</mwc-button>
+                                                <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+                                            </mwc-snackbar>
+                                            <mwc-snackbar id="snackbarDemoLeading" labeltext="Can't send photo. Retry in 5 seconds." leading>
+                                                <mwc-button slot="action">RETRY</mwc-button>
+                                                <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+                                            </mwc-snackbar>
+                                            <mwc-snackbar id="snackbarDemoStacked" labeltext="Can't send photo. Retry in 5 seconds." stacked>
+                                                <mwc-button slot="action">RETRY</mwc-button>
+                                                <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+                                            </mwc-snackbar>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsMaterialSnackbarHtml" aria-labelledby="toastsMaterialSnackbarHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><!-- Snackbar Button Trigger-->
+<button class="btn btn-text-primary mb-2" role="button" onclick="document.querySelector("#snackbarDemo").show()">
+    Launch Snackbar
+    <i class="material-icons trailing-icon">north_east</i>
+</button>
+<!-- Leading Snackbar Trigger-->
+<button class="btn btn-text-primary mb-2" role="button" onclick="document.querySelector("#snackbarDemoLeading").show()">
+    Launch Leading Snackbar
+    <i class="material-icons trailing-icon">north_east</i>
+</button>
+<!-- Stacked Snackbar Trigger-->
+<button class="btn btn-text-primary" role="button" onclick="document.querySelector("#snackbarDemoStacked").show()">
+    Launch Stacked Snackbars
+    <i class="material-icons trailing-icon">north_east</i>
+</button>
+
+<!-- Snackbar-->
+<mwc-snackbar id="snackbarDemo" labeltext="Can't send photo. Retry in 5 seconds.">
+    <mwc-button slot="action">RETRY</mwc-button>
+    <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+</mwc-snackbar>
+<!-- Leading Snackbar-->
+<mwc-snackbar id="snackbarDemoLeading" labeltext="Can't send photo. Retry in 5 seconds." leading="leading">
+    <mwc-button slot="action">RETRY</mwc-button>
+    <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+</mwc-snackbar>
+<!-- Stacked Snackbar-->
+<mwc-snackbar id="snackbarDemoStacked" labeltext="Can't send photo. Retry in 5 seconds." stacked="stacked">
+    <mwc-button slot="action">RETRY</mwc-button>
+    <mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+</mwc-snackbar></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsMaterialSnackbarPug" aria-labelledby="toastsMaterialSnackbarPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">//- Snackbar Button Trigger
+button.btn.btn-text-primary.mb-2(role='button', onclick='document.querySelector("#snackbarDemo").show()')
+    | Launch Snackbar
+    i.material-icons.trailing-icon north_east
+//- Leading Snackbar Trigger
+button.btn.btn-text-primary.mb-2(role='button', onclick='document.querySelector("#snackbarDemoLeading").show()')
+    | Launch Leading Snackbar
+    i.material-icons.trailing-icon north_east
+//- Stacked Snackbar Trigger
+button.btn.btn-text-primary(role='button', onclick='document.querySelector("#snackbarDemoStacked").show()')
+    | Launch Stacked Snackbars
+    i.material-icons.trailing-icon north_east
+
+//- Snackbar
+mwc-snackbar#snackbarDemo(labeltext="Can't send photo. Retry in 5 seconds.")
+    mwc-button(slot='action') RETRY
+    mwc-icon-button(icon='close' slot='dismiss')
+//- Leading Snackbar
+mwc-snackbar#snackbarDemoLeading(labeltext="Can't send photo. Retry in 5 seconds.", leading)
+    mwc-button(slot='action') RETRY
+    mwc-icon-button(icon='close' slot='dismiss')
+//- Stacked Snackbar
+mwc-snackbar#snackbarDemoStacked(labeltext="Can't send photo. Retry in 5 seconds.", stacked)
+    mwc-button(slot='action') RETRY
+    mwc-icon-button(icon='close' slot='dismiss')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="mb-4" id="toasts-bootstrap">Bootstrap Toasts</h3>
+                                <p>The styling for the default Bootstrap toasts has been modified to match Material's specifications for their snackbar component. Bootstrap's toast also supports a toast header, and different background and text color combinations.</p>
+                                <p class="mb-4">
+                                    Additional options for toasts are available on
+                                    <a href="https://getbootstrap.com/docs/5.0/components/toasts/" target="_blank">Bootstrap's toasts documentation</a>
+                                    page.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="toastsBootstrapDemoTab" data-bs-target="#toastsBootstrapDemo" aria-controls="toastsBootstrapDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="toastsBootstrapHtmlTab" data-bs-target="#toastsBootstrapHtml" aria-controls="toastsBootstrapHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#toastsBootstrapPug" role="tab" aria-controls="toastsBootstrapPug" aria-selected="false" id="toastsBootstrapPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="toastsBootstrapDemo" aria-labelledby="toastsBootstrapDemoTab">
+                                        <div class="d-flex flex-column align-items-center border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="toast align-items-center fade show mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="d-flex">
+                                                    <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                    <button class="btn-close me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                            </div>
+                                            <div class="toast align-items-center text-white bg-primary fade show mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="d-flex">
+                                                    <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                    <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                            </div>
+                                            <div class="toast align-items-center text-white bg-dark fade show mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="d-flex">
+                                                    <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                    <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                            </div>
+                                            <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                                                <div class="toast-header">
+                                                    <strong class="me-auto">Bootstrap Toast</strong>
+                                                    <small>11 mins ago</small>
+                                                    <button class="btn-close" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                </div>
+                                                <div class="toast-body">Hello, world! This is a toast message.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsBootstrapHtml" aria-labelledby="toastsBootstrapHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain">...</script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsBootstrapPug" aria-labelledby="toastsBootstrapPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.toast.align-items-center.fade.show.mb-4(role='alert' aria-live='assertive' aria-atomic='true')
+    .d-flex
+        .toast-body
+            | Hello, world! This is a toast message.
+        button.btn-close.me-2.m-auto(type='button' data-bs-dismiss='toast' aria-label='Close')
+.toast.align-items-center.text-white.bg-primary.fade.show.mb-4(role='alert' aria-live='assertive' aria-atomic='true')
+    .d-flex
+        .toast-body
+            | Hello, world! This is a toast message.
+        button.btn-close.btn-close-white.me-2.m-auto(type='button' data-bs-dismiss='toast' aria-label='Close')
+.toast.align-items-center.text-white.bg-dark.fade.show.mb-4(role='alert' aria-live='assertive' aria-atomic='true')
+    .d-flex
+        .toast-body
+            | Hello, world! This is a toast message.
+        button.btn-close.btn-close-white.me-2.m-auto(type='button' data-bs-dismiss='toast' aria-label='Close')
+.toast.fade.show(role='alert' aria-live='assertive' aria-atomic='true')
+    .toast-header
+        strong.me-auto Bootstrap Toast
+        small 11 mins ago
+        button.btn-close(type='button' data-bs-dismiss='toast' aria-label='Close')
+    .toast-body
+        | Hello, world! This is a toast message.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="toasts-bootstrap-usage">Bootstrap Toasts Usage</h3>
+                                <p>
+                                    Bootstrap uses their
+                                    <a href="https://getbootstrap.com/docs/5.0/utilities/position/" target="_blank">positioning utilities</a>
+                                    to set the placement of the toast component. There are nine different positions available for Bootstrap toasts.
+                                </p>
+                                <p class="mb-4">
+                                    Note that in order to use Bootstrap toasts, you must enable them via JavaScript. For performance reasons, this component is
+                                    <strong>opt-in</strong>
+                                    only. See the JavaScript tab for an example of implementing functioning toasts.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="toastsBootstrapUsageDemoTab" data-bs-target="#toastsBootstrapUsageDemo" aria-controls="toastsBootstrapUsageDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="toastsBootstrapUsageHtmlTab" data-bs-target="#toastsBootstrapUsageHtml" aria-controls="toastsBootstrapUsageHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#toastsBootstrapUsagePug" role="tab" aria-controls="toastsBootstrapUsagePug" aria-selected="false" id="toastsBootstrapUsagePugTab"></mwc-tab>
+                                    <mwc-tab label="js" data-bs-toggle="tab" data-bs-target="#toastsBootstrapUsageJs" role="tab" aria-controls="toastsBootstrapUsageJs" aria-selected="false" id="toastsBootstrapUsageJsTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="toastsBootstrapUsageDemo" aria-labelledby="toastsBootstrapUsageDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="d-flex justify-content-between mb-3 mb-sm-5">
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["topLeftDemo"].show()'>Top Left</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["topCenterDemo"].show()'>Top Center</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["topRightDemo"].show()'>Top Right</button>
+                                            </div>
+                                            <div class="d-flex justify-content-between mb-3 mb-sm-5">
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["centerLeftDemo"].show()'>Center Left</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["centerCenterDemo"].show()'>Center</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["centerRightDemo"].show()'>Center Right</button>
+                                            </div>
+                                            <div class="d-flex justify-content-between">
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["bottomLeftDemo"].show()'>Bottom Left</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["bottomCenterDemo"].show()'>Bottom Center</button>
+                                                <button class="btn btn-text-primary" role="button" onclick='window.toasts["bottomRightDemo"].show()'>Bottom Right</button>
+                                            </div>
+                                            <script>
+                                                window.addEventListener('DOMContentLoaded', (event) => {
+                                                    const toasts = {};
+                                                    const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+                                                    toastElList.forEach((toastEl) => {
+                                                        if (toastEl.dataset.toastName) {
+                                                            toasts[toastEl.dataset.toastName] = new bootstrap.Toast(toastEl);
+                                                        } else {
+                                                            new bootstrap.Toast(toastEl);
+                                                        }
+                                                    });
+                                                    window.toasts = toasts;
+                                                });
+                                            </script>
+                                            <div class="z-index-toast position-fixed top-0 start-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topLeftDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed top-0 start-50 translate-middle-x p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topCenterDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed top-0 end-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topRightDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed top-50 start-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerLeftDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed top-50 start-50 translate-middle-x p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerCenterDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed top-50 end-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerRightDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed bottom-0 start-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomLeftDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed bottom-0 start-50 translate-middle-x p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomCenterDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="z-index-toast position-fixed bottom-0 end-0 p-3">
+                                                <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomRightDemo">
+                                                    <div class="d-flex">
+                                                        <div class="toast-body">Hello, world! This is a toast message.</div>
+                                                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsBootstrapUsageHtml" aria-labelledby="toastsBootstrapUsageHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><div class="z-index-toast position-fixed top-0 start-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topLeftDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed top-0 start-50 translate-middle-x p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topCenterDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed top-0 end-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="topRightDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed top-50 start-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerLeftDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed top-50 start-50 translate-middle-x p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerCenterDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed top-50 end-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="centerRightDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed bottom-0 start-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomLeftDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed bottom-0 start-50 translate-middle-x p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomCenterDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+<div class="z-index-toast position-fixed bottom-0 end-0 p-3">
+    <div class="toast align-items-center text-white bg-primary fade hide" role="alert" aria-live="assertive" aria-atomic="true" data-toast-name="bottomRightDemo">
+        <div class="d-flex">
+            <div class="toast-body">Hello, world! This is a toast message.</div>
+            <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsBootstrapUsagePug" aria-labelledby="toastsBootstrapUsagePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">.z-index-toast.position-fixed.top-0.start-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='topLeftDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.top-0.start-50.translate-middle-x.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='topCenterDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.top-0.end-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='topRightDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.top-50.start-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='centerLeftDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.top-50.start-50.translate-middle-x.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='centerCenterDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.top-50.end-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='centerRightDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.bottom-0.start-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='bottomLeftDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.bottom-0.start-50.translate-middle-x.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='bottomCenterDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')
+.z-index-toast.position-fixed.bottom-0.end-0.p-3
+    .toast.align-items-center.text-white.bg-primary.fade.hide(
+        role='alert', aria-live='assertive', aria-atomic='true', data-toast-name='bottomRightDemo'
+    )
+        .d-flex
+            .toast-body
+                | Hello, world! This is a toast message.
+            button.btn-close.btn-close-white.me-2.m-auto(type='button', data-bs-dismiss='toast', aria-label='Close')</script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="toastsBootstrapUsageJs" aria-labelledby="toastsBootstrapUsageJsTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-js m-0"><code><script type="text/plain">window.addEventListener('DOMContentLoaded', event => {
+    const toasts = {};
+    const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+    toastElList.forEach((toastEl) => {
+        if (toastEl.dataset.toastName) {
+            toasts[toastEl.dataset.toastName] = new bootstrap.Toast(toastEl);
+        } else {
+            new bootstrap.Toast(toastEl)
+        }
+    });
+    window.toasts = toasts;
+});</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/bootstrap.svg" />
+                                                <div class="card-title text-truncate mb-2">Bootstrap Alerts Documentation</div>
+                                                <p class="card-text">Bootstrap's alerts component documentation</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://getbootstrap.com/docs/5.0/components/alerts/" target="_blank" title="Bootstrap Alerts Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/material-design.svg" alt="Material Web Components Icon" />
+                                                <div class="card-title text-truncate mb-2">Material Snackbar Web Component Documentation</div>
+                                                <p class="card-text">Docs for Material's snackbar web component</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://github.com/material-components/material-components-web-components/tree/master/packages/snackbar" target="_blank" title="Material Snackbar Web Component">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/bootstrap.svg" alt="Bootstrap Brand Icon" />
+                                                <div class="card-title text-truncate mb-2">Bootstrap Toasts Documentation</div>
+                                                <p class="card-text">Bootstrap's toasts documentation page</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://getbootstrap.com/docs/5.0/components/toasts/" target="_blank" title="Bootstrap Toasts Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#alerts">Alerts</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#alerts-default">Default</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#alerts-link-color">Link Color</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#alerts-dismissing">Dismissing</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#alerts-additional-content">Additional Content</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#toasts">Toasts</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#toasts-material-snackbar">Material Snackbar</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#toasts-bootstrap">Bootstrap Toasts</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#toasts-bootstrap-usage">Bootstrap Toasts Usage</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Footer-->
+                <!-- Min-height is set inline to match the height of the drawer footer-->
+                <footer class="py-4 mt-auto border-top" style="min-height: 74px">
+                    <div class="container-xl px-5">
+                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between small">
+                            <div class="me-sm-2">Copyright &copy; Your Website 2021</div>
+                            <div class="d-flex ms-sm-2">
+                                <a class="text-decoration-none" href="#!">Privacy Policy</a>
+                                <div class="mx-1">&middot;</div>
+                                <a class="text-decoration-none" href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Load Bootstrap JS bundle-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- Load global scripts-->
+        <script type="module" src="js/material.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Load Prism plugin scripts-->
+        <script src="/js/prism.js"></script>
+    </body>
+</html>

@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Borders - Material Admin Pro</title>
+        <!-- Load Favicon-->
+        <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Load Material Icons from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+        <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+        <!-- Load main stylesheet-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="nav-fixed">
+        <!-- Top app bar navigation menu-->
+        <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid px-4">
+                <!-- Drawer toggle button-->
+                <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
+                <!-- Navbar brand-->
+                <a class="navbar-brand me-auto" href="index.html"><div class="text-uppercase font-monospace">Material Admin Pro</div></a>
+                <!-- Navbar items-->
+                <div class="d-flex align-items-center mx-3 me-lg-0">
+                    <!-- Navbar-->
+                    <ul class="navbar-nav d-none d-lg-flex">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://docs.startbootstrap.com/material-admin-pro" target="_blank">Documentation</a></li>
+                    </ul>
+                    <!-- Navbar buttons-->
+                    <div class="d-flex">
+                        <!-- Messages dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuMessages" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">mail_outline</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuMessages">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Messages</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there, I had a question about something, is there any way you can help me out?</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Juan Babin</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks for the assistance the other day, I wanted to follow up with you just to make sure everyting is settled.</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 10, 2021 &middot; Christine Hendersen</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome to our group! It's good to see new members and I know you will do great!</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Celia J. Knight</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Notifications and alerts dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuNotifications" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">notifications</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuNotifications">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Alerts</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <i class="material-icons leading-icon">assessment</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Your March performance report is ready to view.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Performance</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">check_circle</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes successfully updated.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">warning</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes have changed and require manual action.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- User profile dropdown-->
+                        <div class="dropdown">
+                            <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">person</i>
+                                        <div class="me-3">Profile</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">settings</i>
+                                        <div class="me-3">Settings</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">help</i>
+                                        <div class="me-3">Help</div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">logout</i>
+                                        <div class="me-3">Logout</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Layout wrapper-->
+        <div id="layoutDrawer">
+            <!-- Layout navigation-->
+            <div id="layoutDrawer_nav">
+                <!-- Drawer navigation-->
+                <nav class="drawer accordion drawer-light" id="drawerAccordion">
+                    <div class="drawer-menu">
+                        <div class="nav">
+                            <!-- Drawer section heading (Account)-->
+                            <div class="drawer-menu-heading d-sm-none">Account</div>
+                            <!-- Drawer link (Notifications)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">notifications</i></div>
+                                Notifications
+                            </a>
+                            <!-- Drawer link (Messages)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">mail</i></div>
+                                Messages
+                            </a>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider d-sm-none"></div>
+                            <!-- Drawer section heading (Interface)-->
+                            <div class="drawer-menu-heading">Interface</div>
+                            <!-- Drawer link (Overview)-->
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-link-icon"><i class="material-icons">language</i></div>
+                                Overview
+                            </a>
+                            <!-- Drawer link (Dashboards)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                                Dashboards
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Dashboards)-->
+                            <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="app-dashboard-default.html">Default</a>
+                                    <a class="nav-link" href="app-dashboard-minimal.html">Minimal</a>
+                                    <a class="nav-link" href="app-dashboard-analytics.html">Analytics</a>
+                                    <a class="nav-link" href="app-dashboard-accounting.html">Accounting</a>
+                                    <a class="nav-link" href="app-dashboard-orders.html">Orders</a>
+                                    <a class="nav-link" href="app-dashboard-projects.html">Projects</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Layouts)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                                Layouts
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Layouts)-->
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="layout-dark.html">Dark Theme</a>
+                                    <a class="nav-link" href="layout-light.html">Light Theme</a>
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Pages)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i class="material-icons">layers</i></div>
+                                Pages
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Pages)-->
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
+                                    <!-- Drawer link (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        Account
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Account)-->
+                                    <div class="collapse" id="pagesCollapseAccount" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-account-billing.html">Billing</a>
+                                            <a class="nav-link" href="app-account-notifications.html">Notifications</a>
+                                            <a class="nav-link" href="app-account-profile.html">Profile</a>
+                                            <a class="nav-link" href="app-account-security.html">Security</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Authentication)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Authentication)-->
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-auth-login-basic.html">Login 1</a>
+                                            <a class="nav-link" href="app-auth-login-styled-1.html">Login 2</a>
+                                            <a class="nav-link" href="app-auth-login-styled-2.html">Login 3</a>
+                                            <a class="nav-link" href="app-auth-register-basic.html">Register</a>
+                                            <a class="nav-link" href="app-auth-password-basic.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Blank Pages)-->
+                                    <a class="nav-link" href="app-blank-page.html">Blank Page</a>
+                                    <!-- Drawer link (Pages -> Error)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Error)-->
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-error-400.html">400 Error Page</a>
+                                            <a class="nav-link" href="app-error-401.html">401 Error Page</a>
+                                            <a class="nav-link" href="app-error-403.html">403 Error Page</a>
+                                            <a class="nav-link" href="app-error-404.html">404 Error Page</a>
+                                            <a class="nav-link" href="app-error-429.html">429 Error Page</a>
+                                            <a class="nav-link" href="app-error-500.html">500 Error Page</a>
+                                            <a class="nav-link" href="app-error-503.html">503 Error Page</a>
+                                            <a class="nav-link" href="app-error-504.html">504 Error Page</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-invoice.html">Invoice</a>
+                                    <!-- Drawer link (Pages -> Knowledgebase)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseKnowledgebase" aria-expanded="false" aria-controls="pagesCollapseKnowledgebase">
+                                        Knowledgebase
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Knowledgebase)-->
+                                    <div class="collapse" id="pagesCollapseKnowledgebase" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-knowledgebase-home.html">Home</a>
+                                            <a class="nav-link" href="app-knowledgebase-categories.html">Categories</a>
+                                            <a class="nav-link" href="app-knowledgebase-article.html">Article</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-pricing.html">Pricing</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (UI Toolkit)-->
+                            <div class="drawer-menu-heading">UI Toolkit</div>
+                            <!-- Drawer link (Components)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
+                                <div class="nav-link-icon"><i class="material-icons">widgets</i></div>
+                                Components
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Components)-->
+                            <div class="collapse" id="collapseComponents" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="components-alerts.html">Alerts</a>
+                                    <a class="nav-link" href="components-badges.html">Badges</a>
+                                    <a class="nav-link" href="components-buttons.html">Buttons</a>
+                                    <a class="nav-link" href="components-cards.html">Cards</a>
+                                    <a class="nav-link" href="components-chips.html">Chips</a>
+                                    <a class="nav-link" href="components-dropdowns.html">Dropdowns</a>
+                                    <a class="nav-link" href="components-icon-buttons.html">Icon Buttons</a>
+                                    <a class="nav-link" href="components-modals.html">Modals</a>
+                                    <a class="nav-link" href="components-navigation.html">Navigation</a>
+                                    <a class="nav-link" href="components-progress.html">Progress</a>
+                                    <a class="nav-link" href="components-spinners.html">Spinners</a>
+                                    <a class="nav-link" href="components-tooltips.html">Tooltips</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Content)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
+                                <div class="nav-link-icon"><i class="material-icons">amp_stories</i></div>
+                                Content
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Content)-->
+                            <div class="collapse" id="collapseContent" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="content-icons.html">Icons</a>
+                                    <a class="nav-link" href="content-tables.html">Tables</a>
+                                    <a class="nav-link" href="content-typography.html">Typography</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Forms)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseForms" aria-expanded="false" aria-controls="collapseForms">
+                                <div class="nav-link-icon"><i class="material-icons">description</i></div>
+                                Forms
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Forms)-->
+                            <div class="collapse" id="collapseForms" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="forms-inputs.html">Inputs</a>
+                                    <a class="nav-link" href="forms-checks-and-radios.html">Checks &amp; Radio</a>
+                                    <a class="nav-link" href="forms-input-groups.html">Input Groups</a>
+                                    <a class="nav-link" href="forms-range.html">Range</a>
+                                    <a class="nav-link" href="forms-select.html">Select</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i class="material-icons">build</i></div>
+                                Utilities
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Utilities)-->
+                            <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="utilities-background.html">Background</a>
+                                    <a class="nav-link" href="utilities-borders.html">Borders</a>
+                                    <a class="nav-link" href="utilities-ripples.html">Ripples</a>
+                                    <a class="nav-link" href="utilities-shadows.html">Shadows</a>
+                                    <a class="nav-link" href="utilities-text.html">Text</a>
+                                    <a class="nav-link" href="utilities-transforms.html">Transforms</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (Plugins)-->
+                            <div class="drawer-menu-heading">Plugins</div>
+                            <!-- Drawer link (Charts)-->
+                            <a class="nav-link" href="plugins-charts.html">
+                                <div class="nav-link-icon"><i class="material-icons">bar_chart</i></div>
+                                Charts
+                            </a>
+                            <!-- Drawer link (Code Blocks)-->
+                            <a class="nav-link" href="plugins-code-blocks.html">
+                                <div class="nav-link-icon"><i class="material-icons">code</i></div>
+                                Code Blocks
+                            </a>
+                            <!-- Drawer link (Data Tables)-->
+                            <a class="nav-link" href="plugins-data-tables.html">
+                                <div class="nav-link-icon"><i class="material-icons">filter_alt</i></div>
+                                Data Tables
+                            </a>
+                            <!-- Drawer link (Date Picker)-->
+                            <a class="nav-link" href="plugins-date-picker.html">
+                                <div class="nav-link-icon"><i class="material-icons">date_range</i></div>
+                                Date Picker
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Drawer footer        -->
+                    <div class="drawer-footer border-top">
+                        <div class="d-flex align-items-center">
+                            <i class="material-icons text-muted">account_circle</i>
+                            <div class="ms-3">
+                                <div class="caption">Logged in as:</div>
+                                <div class="small fw-500">Start Bootstrap</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Layout content-->
+            <div id="layoutDrawer_content">
+                <!-- Main page content-->
+                <main>
+                    <div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/borders.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Borders</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>Border utilities are used to add or remove an element’s borders. These utilities can be used one at a time or combined together.</p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="borders">Borders</h2>
+                                <p class="mb-4">
+                                    Border utilities can either be additive, where borders are
+                                    <em>added</em>
+                                    to an element, or subtractive, where borders are
+                                    <em>removed</em>
+                                    from an element.
+                                </p>
+                                <h3 class="mb-4" id="borders-additive">Additive</h3>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bordersAdditiveDemoTab" data-bs-target="#bordersAdditiveDemo" aria-controls="bordersAdditiveDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bordersAdditiveHtmlTab" data-bs-target="#bordersAdditiveHtml" aria-controls="bordersAdditiveHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bordersAdditivePug" role="tab" aria-controls="bordersAdditivePug" aria-selected="false" id="bordersAdditivePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bordersAdditiveDemo" aria-labelledby="bordersAdditiveDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border</div>
+                                                            <code>.border</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border-top bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Top</div>
+                                                            <code>.border-top</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border-end bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border End</div>
+                                                            <code>.border-end</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-0">
+                                                    <div class="border-bottom bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Bottom</div>
+                                                            <code>.border-bottom</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border-start bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Start</div>
+                                                            <code>.border-start</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bordersAdditiveHtml" aria-labelledby="bordersAdditiveHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="border">...</span>
+<span class="border-top">...</span>
+<span class="border-end">...</span>
+<span class="border-bottom">...</span>
+<span class="border-start">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bordersAdditivePug" aria-labelledby="bordersAdditivePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.border ...
+span.border-top ...
+span.border-end ...
+span.border-bottom ...
+span.border-start ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="borders-subtractive">Subtractive</h3>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bordersSubtractiveDemoTab" data-bs-target="#bordersSubtractiveDemo" aria-controls="bordersSubtractiveDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bordersSubtractiveHtmlTab" data-bs-target="#bordersSubtractiveHtml" aria-controls="bordersSubtractiveHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bordersSubtractivePug" role="tab" aria-controls="bordersSubtractivePug" aria-selected="false" id="bordersSubtractivePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bordersSubtractiveDemo" aria-labelledby="bordersSubtractiveDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border-0 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 0</div>
+                                                            <code>.border-0</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-top-0 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Top 0</div>
+                                                            <code>.border-top-0</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-end-0 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border End 0</div>
+                                                            <code>.border-end-0</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-0">
+                                                    <div class="border border-bottom-0 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Bottom 0</div>
+                                                            <code>.border-bottom-0</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border border-start-0 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Start 0</div>
+                                                            <code>.border-start-0</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bordersSubtractiveHtml" aria-labelledby="bordersSubtractiveHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="border-0">...</span>
+<span class="border-top-0">...</span>
+<span class="border-end-0">...</span>
+<span class="border-bottom-0">...</span>
+<span class="border-start-0">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bordersSubtractivePug" aria-labelledby="bordersSubtractivePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.border-0 ...
+span.border-top-0 ...
+span.border-end-0 ...
+span.border-bottom-0 ...
+span.border-start-0 ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="border-color">Border Color</h2>
+                                <p class="mb-4">
+                                    Theme colors can be used to change the color of an elements border. These utilities are named using the format
+                                    <code class="code-inline">.border-{color}</code>
+                                    where
+                                    <em>color</em>
+                                    is any theme color defined in the color map.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderColorDemoTab" data-bs-target="#borderColorDemo" aria-controls="borderColorDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderColorHtmlTab" data-bs-target="#borderColorHtml" aria-controls="borderColorHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderColorPug" role="tab" aria-controls="borderColorPug" aria-selected="false" id="borderColorPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderColorDemo" aria-labelledby="borderColorDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-primary bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Primary</div>
+                                                            <code>.border-primary</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-secondary bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Secondary</div>
+                                                            <code>.border-secondary</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-success bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Success</div>
+                                                            <code>.border-success</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-0">
+                                                    <div class="border border-danger bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Danger</div>
+                                                            <code>.border-danger</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-sm-0">
+                                                    <div class="border border-warning bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Warning</div>
+                                                            <code>.border-warning</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border border-info bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Info</div>
+                                                            <code>.border-info</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="border border-top-0 p-3 p-lg-5 bg-dark">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-sm-0">
+                                                    <div class="border border-light">
+                                                        <div class="p-4 text-center text-white">
+                                                            <div class="small">Border Light</div>
+                                                            <code class="text-white">.border-light</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border border-white">
+                                                        <div class="p-4 text-center text-white">
+                                                            <div class="small">Border White</div>
+                                                            <code class="text-white">.border-white</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderColorHtml" aria-labelledby="borderColorHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="border-primary">...</span>
+<span class="border-secondary">...</span>
+<span class="border-success">...</span>
+<span class="border-danger">...</span>
+<span class="border-warning">...</span>
+<span class="border-info">...</span>
+<span class="border-light">...</span>
+<span class="border-white ">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderColorPug" aria-labelledby="borderColorPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.border-primary ...
+span.border-secondary ...
+span.border-success ...
+span.border-danger ...
+span.border-warning ...
+span.border-info ...
+span.border-light ...
+span.border-white  ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="border-width">Border Width</h2>
+                                <p class="mb-4">
+                                    Border width utilities change the thickness of the border. These utilities are named using the format
+                                    <code class="code-inline">.border-{number}</code>
+                                    where
+                                    <em>number</em>
+                                    is any thickness integer between 1 and 5.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderWidthDemoTab" data-bs-target="#borderWidthDemo" aria-controls="borderWidthDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderWidthHtmlTab" data-bs-target="#borderWidthHtml" aria-controls="borderWidthHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderWidthPug" role="tab" aria-controls="borderWidthPug" aria-selected="false" id="borderWidthPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderWidthDemo" aria-labelledby="borderWidthDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-1 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 1</div>
+                                                            <code>.border-1</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-2 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 2</div>
+                                                            <code>.border-2</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-5">
+                                                    <div class="border border-3 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 3</div>
+                                                            <code>.border-3</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col mb-3 mb-lg-0">
+                                                    <div class="border border-4 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 4</div>
+                                                            <code>.border-4</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border border-5 bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border 5</div>
+                                                            <code>.border-5</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderWidthHtml" aria-labelledby="borderWidthHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="border border-1">...</span>
+<span class="border border-2">...</span>
+<span class="border border-3">...</span>
+<span class="border border-4">...</span>
+<span class="border border-5">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderWidthPug" aria-labelledby="borderWidthPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.border.border-1 ...
+span.border.border-2 ...
+span.border.border-3 ...
+span.border.border-4 ...
+span.border.border-5 ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="border-radius">Border Radius</h2>
+                                <p class="mb-4">Border radius utilities are used to modify the roundness of an element.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderRadiusDemoTab" data-bs-target="#borderRadiusDemo" aria-controls="borderRadiusDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderRadiusHtmlTab" data-bs-target="#borderRadiusHtml" aria-controls="borderRadiusHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderRadiusPug" role="tab" aria-controls="borderRadiusPug" aria-selected="false" id="borderRadiusPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderRadiusDemo" aria-labelledby="borderRadiusDemoTab">
+                                        <div class="d-flex flex-wrap border border-top-0 p-3 p-lg-5">
+                                            <div class="rounded d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-top d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-end d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-bottom d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded start d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-circle d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-pill d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 200px"><div class="small">100x200</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderRadiusHtml" aria-labelledby="borderRadiusHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="rounded">...</span>
+<span class="rounded-top">...</span>
+<span class="rounded-end">...</span>
+<span class="rounded-bottom">...</span>
+<span class="rounded-start">...</span>
+<span class="rounded-circle">...</span>
+<span class="rounded-pill">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderRadiusPug" aria-labelledby="borderRadiusPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.rounded ...
+span.rounded-top ...
+span.rounded-end ...
+span.rounded-bottom ...
+span.rounded-start ...
+span.rounded-circle ...
+span.rounded-pill ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="border-radius-sizes">Sizes</h3>
+                                <p class="mb-4">
+                                    The border radius utilities above can be used in conjunction with additional border radius size utilities. These classes are named using the format
+                                    <code class="code-inline">.rounded-{number}</code>
+                                    where
+                                    <em>number</em>
+                                    is any integer between 0 and 3.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderRadiusSizesDemoTab" data-bs-target="#borderRadiusSizesDemo" aria-controls="borderRadiusSizesDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderRadiusSizesHtmlTab" data-bs-target="#borderRadiusSizesHtml" aria-controls="borderRadiusSizesHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderRadiusSizesPug" role="tab" aria-controls="borderRadiusSizesPug" aria-selected="false" id="borderRadiusSizesPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderRadiusSizesDemo" aria-labelledby="borderRadiusSizesDemoTab">
+                                        <div class="d-flex flex-wrap border border-top-0 p-3 p-lg-5">
+                                            <div class="rounded-0 d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-1 d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-2 d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                            <div class="rounded-3 d-flex align-items-center justify-content-center bg-primary text-white m-2" style="height: 100px; width: 100px"><div class="small">100x100</div></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderRadiusSizesHtml" aria-labelledby="borderRadiusSizesHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="rounded-0">...</span>
+<span class="rounded-1">...</span>
+<span class="rounded-2">...</span>
+<span class="rounded-3">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderRadiusSizesPug" aria-labelledby="borderRadiusSizesPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.rounded-0 ...
+span.rounded-1 ...
+span.rounded-2 ...
+span.rounded-3 ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="border-style">Border Style</h2>
+                                <p class="mb-4">
+                                    Additional border style utilities have been created for Material Admin Pro to add more design flexibility to utilities. The examples below are shown using the
+                                    <code class="code-inline">.border-3</code>
+                                    width to make the effect more visible.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderStyleDemoTab" data-bs-target="#borderStyleDemo" aria-controls="borderStyleDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderStyleHtmlTab" data-bs-target="#borderStyleHtml" aria-controls="borderStyleHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderStylePug" role="tab" aria-controls="borderStylePug" aria-selected="false" id="borderStylePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderStyleDemo" aria-labelledby="borderStyleDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row row-cols-1 row-cols-sm-2 row-cols-xxl-3 gx-3 gx-lg-5">
+                                                <div class="col mb-3 mb-md-0">
+                                                    <div class="border border-3 border-dotted bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Dotted</div>
+                                                            <code>.border-dotted</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="border border-3 border-dashed bg-light">
+                                                        <div class="p-4 text-center">
+                                                            <div class="small">Border Dashed</div>
+                                                            <code>.border-dashed</code>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderStyleHtml" aria-labelledby="borderStyleHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><span class="border-dotted">...</span>
+<span class="border-dashed">...</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderStylePug" aria-labelledby="borderStylePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">span.border-dotted ...
+span.border-dashed ...</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="border-examples">Usage Examples</h2>
+                                <p class="mb-4">Border utilities can be used together to acheive various effects, and can be used with existing components to modify the look and styling of the element.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="borderExamplesDemoTab" data-bs-target="#borderExamplesDemo" aria-controls="borderExamplesDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="borderExamplesHtmlTab" data-bs-target="#borderExamplesHtml" aria-controls="borderExamplesHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#borderExamplesPug" role="tab" aria-controls="borderExamplesPug" aria-selected="false" id="borderExamplesPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="borderExamplesDemo" aria-labelledby="borderExamplesDemoTab">
+                                        <div class="d-flex flex-wrap justify-content-center border border-top-0 p-3 p-lg-5">
+                                            <div class="m-4 text-center">
+                                                <div class="caption mb-1">Pill Button</div>
+                                                <button class="btn btn-primary rounded-pill" type="button">Pill Button</button>
+                                            </div>
+                                            <div class="m-4 text-center">
+                                                <div class="caption mb-1">Circle Image</div>
+                                                <img class="rounded-circle" src="https://source.unsplash.com/iEOATKFQyTo/100x100" alt="..." />
+                                            </div>
+                                            <div class="m-4 text-center">
+                                                <div class="caption mb-1">Custom Alert</div>
+                                                <div class="alert alert-primary border-5" role="alert">A simple primary alert—check it out!</div>
+                                            </div>
+                                            <div class="m-4 text-center">
+                                                <div class="caption mb-1">Custom Card</div>
+                                                <div class="card border-primary">
+                                                    <div class="card-header bg-primary text-white"><div class="subheading-2">Card Header</div></div>
+                                                    <div class="card-body">This is a custom card using border utilities.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderExamplesHtml" aria-labelledby="borderExamplesHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><!-- Pill button example-->
+<button class="btn btn-primary rounded-pill" type="button">Pill Button</button>
+
+<!-- Circle image example-->
+<img class="rounded-circle" src="https://source.unsplash.com/iEOATKFQyTo/100x100" alt="...">
+
+<!-- Custom alert example-->
+<div class="alert alert-primary border-5" role="alert">A simple primary alert—check it out!</div>
+
+<!-- Custom card example-->
+<div class="card border-primary">
+    <div class="card-header bg-primary text-white">
+        <div class="subheading-2">Card Header</div>
+    </div>
+    <div class="card-body">This is a custom card using border utilities.</div>
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="borderExamplesPug" aria-labelledby="borderExamplesPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">//- Pill button example
+button.btn.btn-primary.rounded-pill(type='button') Pill Button
+
+//- Circle image example
+img.rounded-circle(src='https://source.unsplash.com/iEOATKFQyTo/100x100', alt='...')
+
+//- Custom alert example
+.alert.alert-primary.border-5(role='alert')
+    | A simple primary alert—check it out!
+
+//- Custom card example
+.card.border-primary
+    .card-header.bg-primary.text-white
+        .subheading-2 Card Header
+    .card-body This is a custom card using border utilities.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/bootstrap.svg" />
+                                                <div class="card-title text-truncate mb-2">Bootstrap Borders Documentation</div>
+                                                <p class="card-text">Bootstrap's border utilities documentation</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://getbootstrap.com/docs/5.0/utilities/borders/" target="_blank" title="Bootstrap Borders Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#borders">Borders</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#borders-additive">Additive</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#borders-subtractive">Subtractive</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" href="#border-color">Border Color</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#border-width">Border Width</a></li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#border-radius">Border Radius</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#border-radius-sizes">Sizes</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item"><a class="nav-link" href="#border-style">Border Style</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#border-examples">Examples</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Footer-->
+                <!-- Min-height is set inline to match the height of the drawer footer-->
+                <footer class="py-4 mt-auto border-top" style="min-height: 74px">
+                    <div class="container-xl px-5">
+                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between small">
+                            <div class="me-sm-2">Copyright &copy; Your Website 2021</div>
+                            <div class="d-flex ms-sm-2">
+                                <a class="text-decoration-none" href="#!">Privacy Policy</a>
+                                <div class="mx-1">&middot;</div>
+                                <a class="text-decoration-none" href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Load Bootstrap JS bundle-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- Load global scripts-->
+        <script type="module" src="js/material.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Load Prism plugin scripts-->
+        <script src="/js/prism.js"></script>
+    </body>
+</html>

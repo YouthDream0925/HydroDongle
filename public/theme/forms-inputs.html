@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Form Inputs - Material Admin Pro</title>
+        <!-- Load Favicon-->
+        <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Load Material Icons from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+        <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+        <!-- Load main stylesheet-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="nav-fixed">
+        <!-- Top app bar navigation menu-->
+        <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid px-4">
+                <!-- Drawer toggle button-->
+                <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
+                <!-- Navbar brand-->
+                <a class="navbar-brand me-auto" href="index.html"><div class="text-uppercase font-monospace">Material Admin Pro</div></a>
+                <!-- Navbar items-->
+                <div class="d-flex align-items-center mx-3 me-lg-0">
+                    <!-- Navbar-->
+                    <ul class="navbar-nav d-none d-lg-flex">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://docs.startbootstrap.com/material-admin-pro" target="_blank">Documentation</a></li>
+                    </ul>
+                    <!-- Navbar buttons-->
+                    <div class="d-flex">
+                        <!-- Messages dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuMessages" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">mail_outline</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuMessages">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Messages</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there, I had a question about something, is there any way you can help me out?</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Juan Babin</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks for the assistance the other day, I wanted to follow up with you just to make sure everyting is settled.</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 10, 2021 &middot; Christine Hendersen</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome to our group! It's good to see new members and I know you will do great!</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Celia J. Knight</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Notifications and alerts dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuNotifications" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">notifications</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuNotifications">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Alerts</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <i class="material-icons leading-icon">assessment</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Your March performance report is ready to view.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Performance</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">check_circle</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes successfully updated.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">warning</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes have changed and require manual action.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- User profile dropdown-->
+                        <div class="dropdown">
+                            <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">person</i>
+                                        <div class="me-3">Profile</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">settings</i>
+                                        <div class="me-3">Settings</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">help</i>
+                                        <div class="me-3">Help</div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">logout</i>
+                                        <div class="me-3">Logout</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Layout wrapper-->
+        <div id="layoutDrawer">
+            <!-- Layout navigation-->
+            <div id="layoutDrawer_nav">
+                <!-- Drawer navigation-->
+                <nav class="drawer accordion drawer-light" id="drawerAccordion">
+                    <div class="drawer-menu">
+                        <div class="nav">
+                            <!-- Drawer section heading (Account)-->
+                            <div class="drawer-menu-heading d-sm-none">Account</div>
+                            <!-- Drawer link (Notifications)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">notifications</i></div>
+                                Notifications
+                            </a>
+                            <!-- Drawer link (Messages)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">mail</i></div>
+                                Messages
+                            </a>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider d-sm-none"></div>
+                            <!-- Drawer section heading (Interface)-->
+                            <div class="drawer-menu-heading">Interface</div>
+                            <!-- Drawer link (Overview)-->
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-link-icon"><i class="material-icons">language</i></div>
+                                Overview
+                            </a>
+                            <!-- Drawer link (Dashboards)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                                Dashboards
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Dashboards)-->
+                            <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="app-dashboard-default.html">Default</a>
+                                    <a class="nav-link" href="app-dashboard-minimal.html">Minimal</a>
+                                    <a class="nav-link" href="app-dashboard-analytics.html">Analytics</a>
+                                    <a class="nav-link" href="app-dashboard-accounting.html">Accounting</a>
+                                    <a class="nav-link" href="app-dashboard-orders.html">Orders</a>
+                                    <a class="nav-link" href="app-dashboard-projects.html">Projects</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Layouts)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                                Layouts
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Layouts)-->
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="layout-dark.html">Dark Theme</a>
+                                    <a class="nav-link" href="layout-light.html">Light Theme</a>
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Pages)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i class="material-icons">layers</i></div>
+                                Pages
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Pages)-->
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
+                                    <!-- Drawer link (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        Account
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Account)-->
+                                    <div class="collapse" id="pagesCollapseAccount" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-account-billing.html">Billing</a>
+                                            <a class="nav-link" href="app-account-notifications.html">Notifications</a>
+                                            <a class="nav-link" href="app-account-profile.html">Profile</a>
+                                            <a class="nav-link" href="app-account-security.html">Security</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Authentication)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Authentication)-->
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-auth-login-basic.html">Login 1</a>
+                                            <a class="nav-link" href="app-auth-login-styled-1.html">Login 2</a>
+                                            <a class="nav-link" href="app-auth-login-styled-2.html">Login 3</a>
+                                            <a class="nav-link" href="app-auth-register-basic.html">Register</a>
+                                            <a class="nav-link" href="app-auth-password-basic.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Blank Pages)-->
+                                    <a class="nav-link" href="app-blank-page.html">Blank Page</a>
+                                    <!-- Drawer link (Pages -> Error)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Error)-->
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-error-400.html">400 Error Page</a>
+                                            <a class="nav-link" href="app-error-401.html">401 Error Page</a>
+                                            <a class="nav-link" href="app-error-403.html">403 Error Page</a>
+                                            <a class="nav-link" href="app-error-404.html">404 Error Page</a>
+                                            <a class="nav-link" href="app-error-429.html">429 Error Page</a>
+                                            <a class="nav-link" href="app-error-500.html">500 Error Page</a>
+                                            <a class="nav-link" href="app-error-503.html">503 Error Page</a>
+                                            <a class="nav-link" href="app-error-504.html">504 Error Page</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-invoice.html">Invoice</a>
+                                    <!-- Drawer link (Pages -> Knowledgebase)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseKnowledgebase" aria-expanded="false" aria-controls="pagesCollapseKnowledgebase">
+                                        Knowledgebase
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Knowledgebase)-->
+                                    <div class="collapse" id="pagesCollapseKnowledgebase" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-knowledgebase-home.html">Home</a>
+                                            <a class="nav-link" href="app-knowledgebase-categories.html">Categories</a>
+                                            <a class="nav-link" href="app-knowledgebase-article.html">Article</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-pricing.html">Pricing</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (UI Toolkit)-->
+                            <div class="drawer-menu-heading">UI Toolkit</div>
+                            <!-- Drawer link (Components)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
+                                <div class="nav-link-icon"><i class="material-icons">widgets</i></div>
+                                Components
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Components)-->
+                            <div class="collapse" id="collapseComponents" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="components-alerts.html">Alerts</a>
+                                    <a class="nav-link" href="components-badges.html">Badges</a>
+                                    <a class="nav-link" href="components-buttons.html">Buttons</a>
+                                    <a class="nav-link" href="components-cards.html">Cards</a>
+                                    <a class="nav-link" href="components-chips.html">Chips</a>
+                                    <a class="nav-link" href="components-dropdowns.html">Dropdowns</a>
+                                    <a class="nav-link" href="components-icon-buttons.html">Icon Buttons</a>
+                                    <a class="nav-link" href="components-modals.html">Modals</a>
+                                    <a class="nav-link" href="components-navigation.html">Navigation</a>
+                                    <a class="nav-link" href="components-progress.html">Progress</a>
+                                    <a class="nav-link" href="components-spinners.html">Spinners</a>
+                                    <a class="nav-link" href="components-tooltips.html">Tooltips</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Content)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
+                                <div class="nav-link-icon"><i class="material-icons">amp_stories</i></div>
+                                Content
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Content)-->
+                            <div class="collapse" id="collapseContent" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="content-icons.html">Icons</a>
+                                    <a class="nav-link" href="content-tables.html">Tables</a>
+                                    <a class="nav-link" href="content-typography.html">Typography</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Forms)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseForms" aria-expanded="false" aria-controls="collapseForms">
+                                <div class="nav-link-icon"><i class="material-icons">description</i></div>
+                                Forms
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Forms)-->
+                            <div class="collapse" id="collapseForms" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="forms-inputs.html">Inputs</a>
+                                    <a class="nav-link" href="forms-checks-and-radios.html">Checks &amp; Radio</a>
+                                    <a class="nav-link" href="forms-input-groups.html">Input Groups</a>
+                                    <a class="nav-link" href="forms-range.html">Range</a>
+                                    <a class="nav-link" href="forms-select.html">Select</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i class="material-icons">build</i></div>
+                                Utilities
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Utilities)-->
+                            <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="utilities-background.html">Background</a>
+                                    <a class="nav-link" href="utilities-borders.html">Borders</a>
+                                    <a class="nav-link" href="utilities-ripples.html">Ripples</a>
+                                    <a class="nav-link" href="utilities-shadows.html">Shadows</a>
+                                    <a class="nav-link" href="utilities-text.html">Text</a>
+                                    <a class="nav-link" href="utilities-transforms.html">Transforms</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (Plugins)-->
+                            <div class="drawer-menu-heading">Plugins</div>
+                            <!-- Drawer link (Charts)-->
+                            <a class="nav-link" href="plugins-charts.html">
+                                <div class="nav-link-icon"><i class="material-icons">bar_chart</i></div>
+                                Charts
+                            </a>
+                            <!-- Drawer link (Code Blocks)-->
+                            <a class="nav-link" href="plugins-code-blocks.html">
+                                <div class="nav-link-icon"><i class="material-icons">code</i></div>
+                                Code Blocks
+                            </a>
+                            <!-- Drawer link (Data Tables)-->
+                            <a class="nav-link" href="plugins-data-tables.html">
+                                <div class="nav-link-icon"><i class="material-icons">filter_alt</i></div>
+                                Data Tables
+                            </a>
+                            <!-- Drawer link (Date Picker)-->
+                            <a class="nav-link" href="plugins-date-picker.html">
+                                <div class="nav-link-icon"><i class="material-icons">date_range</i></div>
+                                Date Picker
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Drawer footer        -->
+                    <div class="drawer-footer border-top">
+                        <div class="d-flex align-items-center">
+                            <i class="material-icons text-muted">account_circle</i>
+                            <div class="ms-3">
+                                <div class="caption">Logged in as:</div>
+                                <div class="small fw-500">Start Bootstrap</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Layout content-->
+            <div id="layoutDrawer_content">
+                <!-- Main page content-->
+                <main>
+                    <div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/inputs.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Form Inputs</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>Form inputs allow users to enter and edit text.</p>
+                                <p>
+                                    In Material Admin Pro, our approach to form inputs is twofold. First, we have brought in the textfield and textarea web components from the Material Web Components Catalog, giving developers access to true Material Design text inputs. These
+                                    <em>web components</em>
+                                    are reusable, custom elements that have their functionality encapsulated away from the rest of the code, making them concise and easy to use within your web app.
+                                </p>
+                                <p>Second, we have restyled the default Bootstrap form controls to match Material Design standards as closely as possible without interfering with the compatability between Bootstrap's form controls and buttons.</p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="material-textfield">Material Textfield</h2>
+                                <p class="mb-4">
+                                    The textfield web component from the
+                                    <a href="https://github.com/material-components/material-components-web-components/tree/master/packages/textfield" target="blank">Material Web Components Catalog</a>
+                                    has been utilized in this specific case to add true Material Design form inputs to this theme.
+                                </p>
+                                <h3 class="mb-4" id="material-textfield-standard">Standard</h3>
+                                <p class="mb-4">There are two style variations available for this component, filled and outlined. Take note of how simple the markup is when using a web component.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldStandardDemoTab" data-bs-target="#materialTextfieldStandardDemo" aria-controls="materialTextfieldStandardDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldStandardHtmlTab" data-bs-target="#materialTextfieldStandardHtml" aria-controls="materialTextfieldStandardHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldStandardPug" role="tab" aria-controls="materialTextfieldStandardPug" aria-selected="false" id="materialTextfieldStandardPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldStandardDemo" aria-labelledby="materialTextfieldStandardDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textfield label="Filled"></mwc-textfield></div>
+                                            <div class="m-3"><mwc-textfield label="Outlined" outlined></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldStandardHtml" aria-labelledby="materialTextfieldStandardHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield label="Filled"></mwc-textfield>
+<mwc-textfield label="Outlined" outlined></mwc-textfield></script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldStandardPug" aria-labelledby="materialTextfieldStandardPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield(label='Filled')
+mwc-textfield(label='Outlined', outlined)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-disabled">Disabled</h3>
+                                <p class="mb-4">
+                                    Adding the
+                                    <code class="code-inline">disabled</code>
+                                    state attribute will apply disabled styling to the textfield and prevent it from being selectable.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldDisabledDemoTab" data-bs-target="#materialTextfieldDisabledDemo" aria-controls="materialTextfieldDisabledDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldDisabledHtmlTab" data-bs-target="#materialTextfieldDisabledHtml" aria-controls="materialTextfieldDisabledHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldDisabledPug" role="tab" aria-controls="materialTextfieldDisabledPug" aria-selected="false" id="materialTextfieldDisabledPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldDisabledDemo" aria-labelledby="materialTextfieldDisabledDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textfield label="Filled" disabled></mwc-textfield></div>
+                                            <div class="m-3"><mwc-textfield label="Outlined" outlined disabled></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldDisabledHtml" aria-labelledby="materialTextfieldDisabledHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield label="Filled" disabled></mwc-textfield>
+<mwc-textfield label="Outlined" outlined disabled></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldDisabledPug" aria-labelledby="materialTextfieldDisabledPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield(label='Filled', disabled)
+mwc-textfield(label='Outlined', outlined, disabled)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-leading-icon">Leading Icon</h3>
+                                <p class="mb-4">
+                                    Leading icons can be included within a textfield by using a single data attribute. Add the
+                                    <code class="code-inline">icon='{name}'</code>
+                                    attribute to the element with
+                                    <em>name</em>
+                                    being any icon name from the Material Icons library.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldLeadingIconDemoTab" data-bs-target="#materialTextfieldLeadingIconDemo" aria-controls="materialTextfieldLeadingIconDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldLeadingIconHtmlTab" data-bs-target="#materialTextfieldLeadingIconHtml" aria-controls="materialTextfieldLeadingIconHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldLeadingIconPug" role="tab" aria-controls="materialTextfieldLeadingIconPug" aria-selected="false" id="materialTextfieldLeadingIconPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldLeadingIconDemo" aria-labelledby="materialTextfieldLeadingIconDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textfield label="My Textfield" icon="event"></mwc-textfield></div>
+                                            <div class="m-3"><mwc-textfield label="My Textfield" outlined icon="event"></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldLeadingIconHtml" aria-labelledby="materialTextfieldLeadingIconHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><mwc-textfield label="My Textfield" icon="event"></mwc-textfield>
+<mwc-textfield label="My Textfield" outlined icon="event"></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldLeadingIconPug" aria-labelledby="materialTextfieldLeadingIconPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>mwc-textfield(label='My Textfield', icon='event')
+mwc-textfield(label='My Textfield', outlined, icon='event')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-trailing-icon">Trailing Icon</h3>
+                                <p class="mb-4">
+                                    Trailing icons are also supported inside of the textfield by using a single data attribute. Add the
+                                    <code class="code-inline">icontrailing='{name}'</code>
+                                    attribute to the element with
+                                    <em>name</em>
+                                    being any icon name from the Material Icons library.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldTrailingIconDemoTab" data-bs-target="#materialTextfieldTrailingIconDemo" aria-controls="materialTextfieldTrailingIconDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldTrailingIconHtmlTab" data-bs-target="#materialTextfieldTrailingIconHtml" aria-controls="materialTextfieldTrailingIconHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldTrailingIconPug" role="tab" aria-controls="materialTextfieldTrailingIconPug" aria-selected="false" id="materialTextfieldTrailingIconPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldTrailingIconDemo" aria-labelledby="materialTextfieldTrailingIconDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textfield label="My Textfield" icontrailing="delete"></mwc-textfield></div>
+                                            <div class="m-3"><mwc-textfield label="My Textfield" outlined icontrailing="delete"></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldTrailingIconHtml" aria-labelledby="materialTextfieldTrailingIconHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield label="My Textfield" icontrailing="delete"></mwc-textfield>
+<mwc-textfield label="My Textfield" outlined icontrailing="delete"></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldTrailingIconPug" aria-labelledby="materialTextfieldTrailingIconPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield(label='My Textfield', icontrailing='delete')
+mwc-textfield(label='My Textfield', outlined, icontrailing='delete')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-helper-text">Helper Text</h3>
+                                <p class="mb-4">
+                                    Helper text can be added to a form input using the
+                                    <code class="code-inline">helper='{text}'</code>
+                                    attribute, where
+                                    <em>text</em>
+                                    is the help text you want to display below the form input. The
+                                    <code class="code-inline">helperpersistent</code>
+                                    attribute will show the helper text at all times. Without it, the helper text will only appear when the input is selected.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldHelperTextDemoTab" data-bs-target="#materialTextfieldHelperTextDemo" aria-controls="materialTextfieldHelperTextDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldHelperTextHtmlTab" data-bs-target="#materialTextfieldHelperTextHtml" aria-controls="materialTextfieldHelperTextHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldHelperTextPug" role="tab" aria-controls="materialTextfieldHelperTextPug" aria-selected="false" id="materialTextfieldHelperTextPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldHelperTextDemo" aria-labelledby="materialTextfieldHelperTextDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div>
+                                                <div class="m-3"><mwc-textfield label="My Textfield" helper="Helper Text" helperpersistent></mwc-textfield></div>
+                                                <div class="m-3"><mwc-textfield label="My Textfield" outlined helper="Helper Text" helperpersistent></mwc-textfield></div>
+                                            </div>
+                                            <div>
+                                                <div class="m-3"><mwc-textfield label="Select Me!" helper="Hello there!"></mwc-textfield></div>
+                                                <div class="m-3"><mwc-textfield label="Select Me!" outlined helper="Hello there!"></mwc-textfield></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldHelperTextHtml" aria-labelledby="materialTextfieldHelperTextHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield label="My Textfield" helper="Helper Text" helperpersistent></mwc-textfield>
+<mwc-textfield label="My Textfield" outlined helper="Helper Text" helperpersistent></mwc-textfield>
+<mwc-textfield label="Select Me!" helper="Hello there!"></mwc-textfield>
+<mwc-textfield label="Select Me!" outlined helper="Hello there!"></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldHelperTextPug" aria-labelledby="materialTextfieldHelperTextPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield(label='My Textfield', helper='Helper Text', helperpersistent)
+mwc-textfield(label='My Textfield', outlined, helper='Helper Text', helperpersistent)
+mwc-textfield(label='Select Me!', helper='Hello there!')
+mwc-textfield(label='Select Me!', outlined, helper='Hello there!')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-character-counter">Character Counter</h3>
+                                <p class="mb-4">
+                                    Activate the character counter using the
+                                    <code class="code-inline">charcounter</code>
+                                    attribute, along with the
+                                    <code class="code-inline">maxlength='{number}'</code>
+                                    attribute, where
+                                    <em>number</em>
+                                    is the maximum number of characters allowed in the form input.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldCharCounterDemoTab" data-bs-target="#materialTextfieldCharCounterDemo" aria-controls="materialTextfieldCharCounterDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldCharCounterHtmlTab" data-bs-target="#materialTextfieldCharCounterHtml" aria-controls="materialTextfieldCharCounterHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldCharCounterPug" role="tab" aria-controls="materialTextfieldCharCounterPug" aria-selected="false" id="materialTextfieldCharCounterPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldCharCounterDemo" aria-labelledby="materialTextfieldCharCounterDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textfield label="My Textfield" maxlength="20" charcounter></mwc-textfield></div>
+                                            <div class="m-3"><mwc-textfield label="My Textfield" outlined maxlength="20" charcounter></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldCharCounterHtml" aria-labelledby="materialTextfieldCharCounterHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield label="My Textfield" maxlength="20" charcounter></mwc-textfield>
+<mwc-textfield label="My Textfield" outlined maxlength="20" charcounter></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldCharCounterPug" aria-labelledby="materialTextfieldCharCounterPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield(label='My Textfield', maxlength='20', charcounter)
+mwc-textfield(label='My Textfield', outlined, maxlength='20', charcounter)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-full-width">Full Width</h3>
+                                <p class="mb-4">
+                                    Use the
+                                    <code class="code-inline">.w-100</code>
+                                    utility class to set the width of the textfield component to equal the full width of it's parent.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldFullWidthDemoTab" data-bs-target="#materialTextfieldFullWidthDemo" aria-controls="materialTextfieldFullWidthDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldFullWidthHtmlTab" data-bs-target="#materialTextfieldFullWidthHtml" aria-controls="materialTextfieldFullWidthHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldFullWidthPug" role="tab" aria-controls="materialTextfieldFullWidthPug" aria-selected="false" id="materialTextfieldFullWidthPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldFullWidthDemo" aria-labelledby="materialTextfieldFullWidthDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-4"><mwc-textfield class="w-100" label="My Textfield"></mwc-textfield></div>
+                                            <div class="mb-0"><mwc-textfield class="w-100" label="My Textfield" outlined></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldFullWidthHtml" aria-labelledby="materialTextfieldFullWidthHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield class="w-100" label="My Textfield"></mwc-textfield>
+<mwc-textfield class="w-100" label="My Textfield" outlined></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldFullWidthPug" aria-labelledby="materialTextfieldFullWidthPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield.w-100(label='My Textfield')
+mwc-textfield.w-100(label='My Textfield', outlined)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textfield-comprehensive">Comprehensive Example</h3>
+                                <p class="mb-4">All of the above features can be used together on a single textfield component. Below is an exhaustive example of all of the options being used.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextfieldComprehensiveDemoTab" data-bs-target="#materialTextfieldComprehensiveDemo" aria-controls="materialTextfieldComprehensiveDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextfieldComprehensiveHtmlTab" data-bs-target="#materialTextfieldComprehensiveHtml" aria-controls="materialTextfieldComprehensiveHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextfieldComprehensivePug" role="tab" aria-controls="materialTextfieldComprehensivePug" aria-selected="false" id="materialTextfieldComprehensivePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextfieldComprehensiveDemo" aria-labelledby="materialTextfieldComprehensiveDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-4"><mwc-textfield class="w-100" label="My Textfield" icon="favorite" icontrailing="visibility" helper="Helper Text" helperpersistent maxlength="20" charcounter></mwc-textfield></div>
+                                            <div class="mb-0"><mwc-textfield class="w-100" label="My Textfield" outlined icon="favorite" icontrailing="visibility" helper="Helper Text" helperpersistent maxlength="20" charcounter></mwc-textfield></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldComprehensiveHtml" aria-labelledby="materialTextfieldComprehensiveHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textfield class="w-100" label="My Textfield" icon="favorite" icontrailing="visibility" helper="Helper Text" helperpersistent maxlength="20" charcounter></mwc-textfield>
+<mwc-textfield class="w-100" label="My Textfield" outlined icon="favorite" icontrailing="visibility" helper="Helper Text" helperpersistent maxlength="20" charcounter></mwc-textfield></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextfieldComprehensivePug" aria-labelledby="materialTextfieldComprehensivePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textfield.w-100(label='My Textfield', icon='favorite', icontrailing='visibility', helper='Helper Text', helperpersistent, maxlength='20', charcounter)
+mwc-textfield.w-100(label='My Textfield', outlined, icon='favorite', icontrailing='visibility', helper='Helper Text', helperpersistent, maxlength='20', charcounter)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="material-textarea">Material Textarea</h2>
+                                <p class="mb-4">
+                                    The textarea web component from the
+                                    <a href="https://github.com/material-components/material-components-web-components/tree/master/packages/textarea" target="blank">Material Web Components Catalog</a>
+                                    has been utilized in this specific case to add true Material Design text areas to this theme.
+                                </p>
+                                <h3 class="mb-4" id="material-textarea-standard">Standard</h3>
+                                <p class="mb-4">There are two style variations available for this component, filled and outlined. Take note of how simple the markup is when using a web component.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaStandardDemoTab" data-bs-target="#materialTextareaStandardDemo" aria-controls="materialTextareaStandardDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaStandardHtmlTab" data-bs-target="#materialTextareaStandardHtml" aria-controls="materialTextareaStandardHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaStandardPug" role="tab" aria-controls="materialTextareaStandardPug" aria-selected="false" id="materialTextareaStandardPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaStandardDemo" aria-labelledby="materialTextareaStandardDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textarea label="Filled"></mwc-textarea></div>
+                                            <div class="m-3"><mwc-textarea label="Outlined" outlined></mwc-textarea></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaStandardHtml" aria-labelledby="materialTextareaStandardHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea label="Filled"></mwc-textarea>
+<mwc-textarea label="Outlined" outlined></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaStandardPug" aria-labelledby="materialTextareaStandardPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea(label='Filled')
+mwc-textarea(label='Outlined', outlined)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textarea-disabled">Disabled</h3>
+                                <p class="mb-4">
+                                    Adding the
+                                    <code class="code-inline">disabled</code>
+                                    state attribute will apply disabled styling to the textarea and prevent it from being selectable.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaDisabledDemoTab" data-bs-target="#materialTextareaDisabledDemo" aria-controls="materialTextareaDisabledDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaDisabledHtmlTab" data-bs-target="#materialTextareaDisabledHtml" aria-controls="materialTextareaDisabledHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaDisabledPug" role="tab" aria-controls="materialTextareaDisabledPug" aria-selected="false" id="materialTextareaDisabledPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaDisabledDemo" aria-labelledby="materialTextareaDisabledDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textarea label="Filled" disabled></mwc-textarea></div>
+                                            <div class="m-3"><mwc-textarea label="Outlined" outlined disabled></mwc-textarea></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaDisabledHtml" aria-labelledby="materialTextareaDisabledHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea label="Filled" disabled></mwc-textarea>
+<mwc-textarea label="Outlined" outlined disabled></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaDisabledPug" aria-labelledby="materialTextareaDisabledPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea(label='Filled', disabled)
+mwc-textarea(label='Outlined', outlined, disabled)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textarea-helper-text">Helper Text</h3>
+                                <p class="mb-4">
+                                    Helper text can be added to a textarea using the
+                                    <code class="code-inline">helper='{text}'</code>
+                                    attribute, where
+                                    <em>text</em>
+                                    is the help text you want to display below the textarea. The
+                                    <code class="code-inline">helperpersistent</code>
+                                    attribute will show the helper text at all times. Without it, the helper text will only appear when the textarea is selected.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaHelperTextDemoTab" data-bs-target="#materialTextareaHelperTextDemo" aria-controls="materialTextareaHelperTextDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaHelperTextHtmlTab" data-bs-target="#materialTextareaHelperTextHtml" aria-controls="materialTextareaHelperTextHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaHelperTextPug" role="tab" aria-controls="materialTextareaHelperTextPug" aria-selected="false" id="materialTextareaHelperTextPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaHelperTextDemo" aria-labelledby="materialTextareaHelperTextDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div>
+                                                <div class="m-3"><mwc-textarea label="My Textarea" helper="Helper Text" helperpersistent></mwc-textarea></div>
+                                                <div class="m-3"><mwc-textarea label="My Textarea" outlined helper="Helper Text" helperpersistent></mwc-textarea></div>
+                                            </div>
+                                            <div>
+                                                <div class="m-3"><mwc-textarea label="Select Me!" helper="Hello there!"></mwc-textarea></div>
+                                                <div class="m-3"><mwc-textarea label="Select Me!" outlined helper="Hello there!"></mwc-textarea></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaHelperTextHtml" aria-labelledby="materialTextareaHelperTextHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea label="My Textarea" helper="Helper Text" helperpersistent></mwc-textarea>
+<mwc-textarea label="My Textarea" outlined helper="Helper Text" helperpersistent></mwc-textarea>
+<mwc-textarea label="Select Me!" helper="Hello there!"></mwc-textarea>
+<mwc-textarea label="Select Me!" outlined helper="Hello there!"></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaHelperTextPug" aria-labelledby="materialTextareaHelperTextPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea(label='My Textarea', helper='Helper Text', helperpersistent)
+mwc-textarea(label='My Textarea', outlined, helper='Helper Text', helperpersistent)
+mwc-textarea(label='Select Me!', helper='Hello there!')
+mwc-textarea(label='Select Me!', outlined, helper='Hello there!')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textarea-character-counter">Character Counter</h3>
+                                <p class="mb-4">
+                                    Activate the character counter using the
+                                    <code class="code-inline">charcounter</code>
+                                    attribute, along with the
+                                    <code class="code-inline">maxlength='{number}'</code>
+                                    attribute, where
+                                    <em>number</em>
+                                    is the maximum number of characters allowed in the textarea.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaCharCounterDemoTab" data-bs-target="#materialTextareaCharCounterDemo" aria-controls="materialTextareaCharCounterDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaCharCounterHtmlTab" data-bs-target="#materialTextareaCharCounterHtml" aria-controls="materialTextareaCharCounterHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaCharCounterPug" role="tab" aria-controls="materialTextareaCharCounterPug" aria-selected="false" id="materialTextareaCharCounterPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaCharCounterDemo" aria-labelledby="materialTextareaCharCounterDemoTab">
+                                        <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row border border-top-0 p-3 p-sm-5">
+                                            <div class="m-3"><mwc-textarea label="My Textarea" maxlength="200" charcounter></mwc-textarea></div>
+                                            <div class="m-3"><mwc-textarea label="My Textarea" outlined maxlength="200" charcounter></mwc-textarea></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaCharCounterHtml" aria-labelledby="materialTextareaCharCounterHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea label="My Textarea" maxlength="200" charcounter></mwc-textarea>
+<mwc-textarea label="My Textarea" outlined maxlength="200" charcounter></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaCharCounterPug" aria-labelledby="materialTextareaCharCounterPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea(label='My Textarea', maxlength='200', charcounter)
+mwc-textarea(label='My Textarea', outlined, maxlength='200', charcounter)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textarea-full-width">Full Width</h3>
+                                <p class="mb-4">
+                                    Use the
+                                    <code class="code-inline">.w-100</code>
+                                    utility class to set the width of the textarea component to equal the full width of it's parent.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaFullWidthDemoTab" data-bs-target="#materialTextareaFullWidthDemo" aria-controls="materialTextareaFullWidthDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaFullWidthHtmlTab" data-bs-target="#materialTextareaFullWidthHtml" aria-controls="materialTextareaFullWidthHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaFullWidthPug" role="tab" aria-controls="materialTextareaFullWidthPug" aria-selected="false" id="materialTextareaFullWidthPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaFullWidthDemo" aria-labelledby="materialTextareaFullWidthDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-4"><mwc-textarea class="w-100" label="My Textarea"></mwc-textarea></div>
+                                            <div class="mb-0"><mwc-textarea class="w-100" label="My Textarea" outlined></mwc-textarea></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaFullWidthHtml" aria-labelledby="materialTextareaFullWidthHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea class="w-100" label="My Textarea"></mwc-textarea>
+<mwc-textarea class="w-100" label="My Textarea" outlined></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaFullWidthPug" aria-labelledby="materialTextareaFullWidthPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea.w-100(label='My Textarea')
+mwc-textarea.w-100(label='My Textarea', outlined)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="material-textarea-comprehensive">Comprehensive Example</h3>
+                                <p class="mb-4">All of the above features can be used together on a single textarea component. Below is an exhaustive example of all of the options being used.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="materialTextareaComprehensiveDemoTab" data-bs-target="#materialTextareaComprehensiveDemo" aria-controls="materialTextareaComprehensiveDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="materialTextareaComprehensiveHtmlTab" data-bs-target="#materialTextareaComprehensiveHtml" aria-controls="materialTextareaComprehensiveHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#materialTextareaComprehensivePug" role="tab" aria-controls="materialTextareaComprehensivePug" aria-selected="false" id="materialTextareaComprehensivePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="materialTextareaComprehensiveDemo" aria-labelledby="materialTextareaComprehensiveDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-4"><mwc-textarea class="w-100" label="My Textarea" helper="Helper Text" helperpersistent maxlength="200" charcounter></mwc-textarea></div>
+                                            <div class="mb-0"><mwc-textarea class="w-100" label="My Textarea" outlined helper="Helper Text" helperpersistent maxlength="200" charcounter></mwc-textarea></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaComprehensiveHtml" aria-labelledby="materialTextareaComprehensiveHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><mwc-textarea class="w-100" label="My Textarea" helper="Helper Text" helperpersistent maxlength="200" charcounter></mwc-textarea>
+<mwc-textarea class="w-100" label="My Textarea" outlined helper="Helper Text" helperpersistent maxlength="200" charcounter></mwc-textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="materialTextareaComprehensivePug" aria-labelledby="materialTextareaComprehensivePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">mwc-textarea.w-100(label='My Textarea', helper='Helper Text', helperpersistent, maxlength='200', charcounter)
+mwc-textarea.w-100(label='My Textarea', outlined, helper='Helper Text', helperpersistent, maxlength='200', charcounter)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="bootstrap">Default Bootstrap Form Controls</h2>
+                                <p class="mb-4">For developers who wish to use Bootstrap's form input markup, the Bootstrap form control has been redesign in a Material Design inspired style while preserving the compatability these elements have with Bootstrap's button component.</p>
+                                <h3 class="mb-4" id="bootstrap-basic-example">Basic Example</h3>
+                                <p class="mb-4">The hover state, focus state, label sizing, and font sizing have been restyled to match the look and feel of Material Design.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFormBasicDemoTab" data-bs-target="#bootstrapFormBasicDemo" aria-controls="bootstrapFormBasicDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFormBasicHtmlTab" data-bs-target="#bootstrapFormBasicHtml" aria-controls="bootstrapFormBasicHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFormBasicPug" role="tab" aria-controls="bootstrapFormBasicPug" aria-selected="false" id="bootstrapFormBasicPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFormBasicDemo" aria-labelledby="bootstrapFormBasicDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="exampleFormControlInput">Email address</label>
+                                                <input class="form-control" id="exampleFormControlInput" type="email" placeholder="name@example.com" />
+                                            </div>
+                                            <div class="mb-0">
+                                                <label class="form-label" for="exampleFormControlTextarea">Example textarea</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormBasicHtml" aria-labelledby="bootstrapFormBasicHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><label class="form-label" for="exampleFormControlInput">Email address</label>
+<input class="form-control" id="exampleFormControlInput" type="email" placeholder="name@example.com">
+
+<label class="form-label" for="exampleFormControlTextarea">Example textarea</label>
+<textarea class="form-control" id="exampleFormControlTextarea" rows="3"></textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormBasicPug" aria-labelledby="bootstrapFormBasicPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">label.form-label(for='exampleFormControlInput') Email address
+input#exampleFormControlInput.form-control(type='email', placeholder='name@example.com')
+
+label.form-label(for='exampleFormControlTextarea') Example textarea
+textarea#exampleFormControlTextarea.form-control(rows='3')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="bootstrap-sizing">Sizing</h3>
+                                <p class="mb-4">
+                                    The standard
+                                    <code class="code-inline">.form-control-lg</code>
+                                    and
+                                    <code class="code-inline">.form-control-sm</code>
+                                    classes can be used to change the height and other styling applied to a Bootstrap form control. Text inputs are used as an example, however these classes will work with the textarea and select elements as well.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFormSizingDemoTab" data-bs-target="#bootstrapFormSizingDemo" aria-controls="bootstrapFormSizingDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFormSizingHtmlTab" data-bs-target="#bootstrapFormSizingHtml" aria-controls="bootstrapFormSizingHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFormSizingPug" role="tab" aria-controls="bootstrapFormSizingPug" aria-selected="false" id="bootstrapFormSizingPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFormSizingDemo" aria-labelledby="bootstrapFormSizingDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-3"><input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example" /></div>
+                                            <div class="mb-3"><input class="form-control" type="text" placeholder="Default input" aria-label="default input example" /></div>
+                                            <div class="mb-0"><input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example" /></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormSizingHtml" aria-labelledby="bootstrapFormSizingHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+<input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+<input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example"></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormSizingPug" aria-labelledby="bootstrapFormSizingPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">input.form-control.form-control-lg(type='text', placeholder='.form-control-lg', aria-label='.form-control-lg example')
+input.form-control(type='text', placeholder='Default input', aria-label='default input example')
+input.form-control.form-control-sm(type='text', placeholder='.form-control-sm', aria-label='.form-control-sm example')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="bootstrap-disabled">Disabled</h3>
+                                <p class="mb-4">
+                                    Add the
+                                    <code class="code-inline">disabled</code>
+                                    attribute to either the input or textarea element to see the disabled input styling applied.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFormDisabledDemoTab" data-bs-target="#bootstrapFormDisabledDemo" aria-controls="bootstrapFormDisabledDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFormDisabledHtmlTab" data-bs-target="#bootstrapFormDisabledHtml" aria-controls="bootstrapFormDisabledHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFormDisabledPug" role="tab" aria-controls="bootstrapFormDisabledPug" aria-selected="false" id="bootstrapFormDisabledPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFormDisabledDemo" aria-labelledby="bootstrapFormDisabledDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="exampleFormControlInputDisabled">Email address</label>
+                                                <input class="form-control" id="exampleFormControlInputDisabled" type="email" placeholder="name@example.com" disabled />
+                                            </div>
+                                            <div class="mb-0">
+                                                <label class="form-label" for="exampleFormControlTextareaDisabled">Example textarea</label>
+                                                <textarea class="form-control" id="exampleFormControlTextareaDisabled" rows="3" disabled></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormDisabledHtml" aria-labelledby="bootstrapFormDisabledHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type="text/plain"><label class="form-label" for="exampleFormControlInputDisabled">Email address</label>
+<input class="form-control" id="exampleFormControlInputDisabled" type="email" placeholder="name@example.com" disabled>
+
+<label class="form-label" for="exampleFormControlTextareaDisabled">Example textarea</label>
+<textarea class="form-control" id="exampleFormControlTextareaDisabled" rows="3" disabled></textarea></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormDisabledPug" aria-labelledby="bootstrapFormDisabledPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type="text/plain">label.form-label(for='exampleFormControlInputDisabled') Email address
+input#exampleFormControlInputDisabled.form-control(type='email', placeholder='name@example.com', disabled)
+
+label.form-label(for='exampleFormControlTextareaDisabled') Example textarea
+textarea#exampleFormControlTextareaDisabled.form-control(rows='3', disabled)</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="bootstrap-file-input">File Input</h3>
+                                <p class="mb-4">File inputs allow users to choose a file from device storage. They are available in three sizes and allow for multiple files or a single file.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFormFileInputDemoTab" data-bs-target="#bootstrapFormFileInputDemo" aria-controls="bootstrapFormFileInputDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFormFileInputHtmlTab" data-bs-target="#bootstrapFormFileInputHtml" aria-controls="bootstrapFormFileInputHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFormFileInputPug" role="tab" aria-controls="bootstrapFormFileInputPug" aria-selected="false" id="bootstrapFormFileInputPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFormFileInputDemo" aria-labelledby="bootstrapFormFileInputDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-3">
+                                                <label class="form-label" for="formFile">Default file input example</label>
+                                                <input class="form-control" id="formFile" type="file" />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="formFileMultiple">Multiple files input example</label>
+                                                <input class="form-control" id="formFileMultiple" type="file" multiple />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="formFileDisabled">Disabled file input example</label>
+                                                <input class="form-control" id="formFileDisabled" type="file" disabled />
+                                            </div>
+                                            <div class="mb-3">
+                                                <label class="form-label" for="formFileSm">Small file input example</label>
+                                                <input class="form-control form-control-sm" id="formFileSm" type="file" />
+                                            </div>
+                                            <div>
+                                                <label class="form-label" for="formFileLg">Large file input example</label>
+                                                <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormFileInputHtml" aria-labelledby="bootstrapFormFileInputHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><div class="mb-3">
+    <label class="form-label" for="formFile">Default file input example</label>
+    <input class="form-control" id="formFile" type="file">
+</div>
+<div class="mb-3">
+    <label class="form-label" for="formFileMultiple">Multiple files input example</label>
+    <input class="form-control" id="formFileMultiple" type="file" multiple>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="formFileDisabled">Disabled file input example</label>
+    <input class="form-control" id="formFileDisabled" type="file" disabled>
+</div>
+<div class="mb-3">
+    <label class="form-label" for="formFileSm">Small file input example</label>
+    <input class="form-control form-control-sm" id="formFileSm" type="file">
+</div>
+<div>
+    <label class="form-label" for="formFileLg">Large file input example</label>
+    <input class="form-control form-control-lg" id="formFileLg" type="file">
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormFileInputPug" aria-labelledby="bootstrapFormFileInputPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>.mb-3
+    label.form-label(for='formFile') Default file input example
+    input#formFile.form-control(type='file')
+.mb-3
+    label.form-label(for='formFileMultiple') Multiple files input example
+    input#formFileMultiple.form-control(type='file', multiple)
+.mb-3
+    label.form-label(for='formFileDisabled') Disabled file input example
+    input#formFileDisabled.form-control(type='file', disabled)
+.mb-3
+    label.form-label(for='formFileSm') Small file input example
+    input#formFileSm.form-control.form-control-sm(type='file')
+div
+    label.form-label(for='formFileLg') Large file input example
+    input#formFileLg.form-control.form-control-lg(type='file')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="bootstrap-color-input">Color Input</h3>
+                                <p class="mb-4">The color picker input option gives users an interface to specity a color.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFormColorPickerDemoTab" data-bs-target="#bootstrapFormColorPickerDemo" aria-controls="bootstrapFormColorPickerDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFormColorPickerHtmlTab" data-bs-target="#bootstrapFormColorPickerHtml" aria-controls="bootstrapFormColorPickerHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFormColorPickerPug" role="tab" aria-controls="bootstrapFormColorPickerPug" aria-selected="false" id="bootstrapFormColorPickerPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFormColorPickerDemo" aria-labelledby="bootstrapFormColorPickerDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <label class="form-label" for="exampleColorInput">Color picker</label>
+                                            <input class="form-control form-control-color" id="exampleColorInput" type="color" value="#6200ea" title="Choose your color" />
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormColorPickerHtml" aria-labelledby="bootstrapFormColorPickerHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><label for="exampleColorInput" class="form-label">Color picker</label>
+<input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color"></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFormColorPickerPug" aria-labelledby="bootstrapFormColorPickerPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>label.form-label(for='exampleColorInput') Color picker
+input#exampleColorInput.form-control.form-control-color(type='color', value='#6200ea', title='Choose your color')</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3 class="mb-4" id="bootstrap-floating-labels">Floating Labels</h3>
+                                <p>
+                                    In Bootstrap 5, Bootstrap has added a floating label option for their input fields. The input and textarea are demonstrated below, but selects are also supported, which you can see on our
+                                    <a href="forms-select.html">form selects</a>
+                                    page.
+                                </p>
+                                <p>Bootstrap's floating label elements are similar to the outline style of Material's textfield and textarea components.</p>
+                                <p class="mb-4">
+                                    These elements require a value in the
+                                    <code class="code-inline">placeholder</code>
+                                    attribute, even though it will not show.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="bootstrapFloatingLabelsDemoTab" data-bs-target="#bootstrapFloatingLabelsDemo" aria-controls="bootstrapFloatingLabelsDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="bootstrapFloatingLabelsHtmlTab" data-bs-target="#bootstrapFloatingLabelsHtml" aria-controls="bootstrapFloatingLabelsHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#bootstrapFloatingLabelsPug" role="tab" aria-controls="bootstrapFloatingLabelsPug" aria-selected="false" id="bootstrapFloatingLabelsPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="bootstrapFloatingLabelsDemo" aria-labelledby="bootstrapFloatingLabelsDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5">
+                                            <div class="mb-4">
+                                                <div class="form-floating">
+                                                    <input class="form-control" id="floatingInputExample" type="email" placeholder="name@example.com" />
+                                                    <label for="floatingInputExample">Floating label input</label>
+                                                </div>
+                                            </div>
+                                            <div class="mb-0">
+                                                <div class="form-floating">
+                                                    <textarea class="form-control" id="floatingTextareaExample" placeholder="Leave a comment here" style="height: 100px"></textarea>
+                                                    <label for="floatingTextareaExample">Floating label textarea</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFloatingLabelsHtml" aria-labelledby="bootstrapFloatingLabelsHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><div class="form-floating">
+    <input class="form-control" id="floatingInputExample" type="email" placeholder="name@example.com" />
+    <label for="floatingInputExample">Floating label input</label>
+</div>
+
+<div class="form-floating">
+    <textarea class="form-control" id="floatingTextareaExample" placeholder="Leave a comment here" style="height: 100px"></textarea>
+    <label for="floatingTextareaExample">Floating label textarea</label>
+</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="bootstrapFloatingLabelsPug" aria-labelledby="bootstrapFloatingLabelsPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>.form-floating
+    input#floatingInputExample.form-control(type='email' placeholder='name@example.com')
+    label(for='floatingInputExample') Floating label input
+
+.form-floating
+    textarea#floatingTextareaExample.form-control(placeholder='Leave a comment here' style='height: 100px')
+    label(for='floatingTextareaExample') Floating label textarea</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/material-design.svg" alt="Material Web Components Icon" />
+                                                <div class="card-title text-truncate mb-2">Material Textfield Web Component Documentation</div>
+                                                <p class="card-text">Docs for Material's textfield web component</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://github.com/material-components/material-components-web-components/tree/master/packages/textfield" target="_blank" title="Material Textfield Web Component">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/material-design.svg" alt="Material Web Components Icon" />
+                                                <div class="card-title text-truncate mb-2">Material Textarea Web Component Documentation</div>
+                                                <p class="card-text">Docs for Material's textarea web component</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://github.com/material-components/material-components-web-components/tree/master/packages/textarea" target="_blank" title="Material Textarea Web Component">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/bootstrap.svg" alt="Bootstrap Brand Icon" />
+                                                <div class="card-title text-truncate mb-2">Bootstrap Form Controls Documentation</div>
+                                                <p class="card-text">Bootstrap's form controls documentation</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://getbootstrap.com/docs/5.0/forms/form-control/" target="_blank" title="Bootstrap Form Controls Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#material-textfield">Material Textfield</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-standard">Standard</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-disabled">Disabled</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-leading-icon">Leading Icon</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-trailing-icon">Trailing Icon</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-helper-text">Helper Text</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-character-counter">Character Counter</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-full-width">Full Width</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textfield-comprehensive">Comprehensive</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#material-textarea">Material Textarea</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-standard">Standard</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-disabled">Disabled</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-helper-text">Helper Text</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-character-counter">Character Counter</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-full-width">Full Width</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#material-textarea-comprehensive">Comprehensive</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#bootstrap">Bootstrap Form Controls</a>
+                                            <ul class="nav flex-column mt-0 ms-3">
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-basic-example">Basic Example</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-sizing">Sizing</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-disabled">Disabled</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-file-input">File Input</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-color-input">Color Input</a></li>
+                                                <li class="nav-item"><a class="nav-link border-0" href="#bootstrap-floating-labels">Floating Labels</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Footer-->
+                <!-- Min-height is set inline to match the height of the drawer footer-->
+                <footer class="py-4 mt-auto border-top" style="min-height: 74px">
+                    <div class="container-xl px-5">
+                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between small">
+                            <div class="me-sm-2">Copyright &copy; Your Website 2021</div>
+                            <div class="d-flex ms-sm-2">
+                                <a class="text-decoration-none" href="#!">Privacy Policy</a>
+                                <div class="mx-1">&middot;</div>
+                                <a class="text-decoration-none" href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Load Bootstrap JS bundle-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- Load global scripts-->
+        <script type="module" src="js/material.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Load Prism plugin scripts-->
+        <script src="/js/prism.js"></script>
+    </body>
+</html>

@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Text - Material Admin Pro</title>
+        <!-- Load Favicon-->
+        <link href="assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <!-- Load Material Icons from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet" />
+        <!-- Roboto and Roboto Mono fonts from Google Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500" rel="stylesheet" />
+        <!-- Load main stylesheet-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="nav-fixed">
+        <!-- Top app bar navigation menu-->
+        <nav class="top-app-bar navbar navbar-expand navbar-dark bg-dark">
+            <div class="container-fluid px-4">
+                <!-- Drawer toggle button-->
+                <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
+                <!-- Navbar brand-->
+                <a class="navbar-brand me-auto" href="index.html"><div class="text-uppercase font-monospace">Material Admin Pro</div></a>
+                <!-- Navbar items-->
+                <div class="d-flex align-items-center mx-3 me-lg-0">
+                    <!-- Navbar-->
+                    <ul class="navbar-nav d-none d-lg-flex">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Overview</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://docs.startbootstrap.com/material-admin-pro" target="_blank">Documentation</a></li>
+                    </ul>
+                    <!-- Navbar buttons-->
+                    <div class="d-flex">
+                        <!-- Messages dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuMessages" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">mail_outline</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuMessages">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Messages</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Hi there, I had a question about something, is there any way you can help me out?</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Juan Babin</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Thanks for the assistance the other day, I wanted to follow up with you just to make sure everyting is settled.</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 10, 2021 &middot; Christine Hendersen</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <div class="dropdown-item-content">
+                                            <div class="dropdown-item-content-text"><div class="text-truncate d-inline-block" style="max-width: 18rem">Welcome to our group! It's good to see new members and I know you will do great!</div></div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Celia J. Knight</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Notifications and alerts dropdown-->
+                        <div class="dropdown dropdown-notifications d-none d-sm-block">
+                            <button class="btn btn-lg btn-icon dropdown-toggle me-3" id="dropdownMenuNotifications" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">notifications</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end me-3 mt-3 py-0 overflow-hidden" aria-labelledby="dropdownMenuNotifications">
+                                <li><h6 class="dropdown-header bg-primary text-white fw-500 py-3">Alerts</h6></li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item unread" href="#!">
+                                        <i class="material-icons leading-icon">assessment</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Your March performance report is ready to view.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Performance</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">check_circle</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes successfully updated.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 12, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">warning</i>
+                                        <div class="dropdown-item-content me-2">
+                                            <div class="dropdown-item-content-text">Tracking codes have changed and require manual action.</div>
+                                            <div class="dropdown-item-content-subtext">Mar 8, 2021 &middot; Coverage</div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider my-0" /></li>
+                                <li>
+                                    <a class="dropdown-item py-3" href="#!">
+                                        <div class="d-flex align-items-center w-100 justify-content-end text-primary">
+                                            <div class="fst-button small">View all</div>
+                                            <i class="material-icons icon-sm ms-1">chevron_right</i>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- User profile dropdown-->
+                        <div class="dropdown">
+                            <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                            <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">person</i>
+                                        <div class="me-3">Profile</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">settings</i>
+                                        <div class="me-3">Settings</div>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">help</i>
+                                        <div class="me-3">Help</div>
+                                    </a>
+                                </li>
+                                <li><hr class="dropdown-divider" /></li>
+                                <li>
+                                    <a class="dropdown-item" href="#!">
+                                        <i class="material-icons leading-icon">logout</i>
+                                        <div class="me-3">Logout</div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- Layout wrapper-->
+        <div id="layoutDrawer">
+            <!-- Layout navigation-->
+            <div id="layoutDrawer_nav">
+                <!-- Drawer navigation-->
+                <nav class="drawer accordion drawer-light" id="drawerAccordion">
+                    <div class="drawer-menu">
+                        <div class="nav">
+                            <!-- Drawer section heading (Account)-->
+                            <div class="drawer-menu-heading d-sm-none">Account</div>
+                            <!-- Drawer link (Notifications)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">notifications</i></div>
+                                Notifications
+                            </a>
+                            <!-- Drawer link (Messages)-->
+                            <a class="nav-link d-sm-none" href="#!">
+                                <div class="nav-link-icon"><i class="material-icons">mail</i></div>
+                                Messages
+                            </a>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider d-sm-none"></div>
+                            <!-- Drawer section heading (Interface)-->
+                            <div class="drawer-menu-heading">Interface</div>
+                            <!-- Drawer link (Overview)-->
+                            <a class="nav-link" href="index.html">
+                                <div class="nav-link-icon"><i class="material-icons">language</i></div>
+                                Overview
+                            </a>
+                            <!-- Drawer link (Dashboards)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                                <div class="nav-link-icon"><i class="material-icons">dashboard</i></div>
+                                Dashboards
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Dashboards)-->
+                            <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="app-dashboard-default.html">Default</a>
+                                    <a class="nav-link" href="app-dashboard-minimal.html">Minimal</a>
+                                    <a class="nav-link" href="app-dashboard-analytics.html">Analytics</a>
+                                    <a class="nav-link" href="app-dashboard-accounting.html">Accounting</a>
+                                    <a class="nav-link" href="app-dashboard-orders.html">Orders</a>
+                                    <a class="nav-link" href="app-dashboard-projects.html">Projects</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Layouts)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="nav-link-icon"><i class="material-icons">view_compact</i></div>
+                                Layouts
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Layouts)-->
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="layout-dark.html">Dark Theme</a>
+                                    <a class="nav-link" href="layout-light.html">Light Theme</a>
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Pages)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="nav-link-icon"><i class="material-icons">layers</i></div>
+                                Pages
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Pages)-->
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
+                                    <!-- Drawer link (Pages -> Account)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAccount" aria-expanded="false" aria-controls="pagesCollapseAccount">
+                                        Account
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Account)-->
+                                    <div class="collapse" id="pagesCollapseAccount" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-account-billing.html">Billing</a>
+                                            <a class="nav-link" href="app-account-notifications.html">Notifications</a>
+                                            <a class="nav-link" href="app-account-profile.html">Profile</a>
+                                            <a class="nav-link" href="app-account-security.html">Security</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Authentication)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Authentication)-->
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-auth-login-basic.html">Login 1</a>
+                                            <a class="nav-link" href="app-auth-login-styled-1.html">Login 2</a>
+                                            <a class="nav-link" href="app-auth-login-styled-2.html">Login 3</a>
+                                            <a class="nav-link" href="app-auth-register-basic.html">Register</a>
+                                            <a class="nav-link" href="app-auth-password-basic.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Blank Pages)-->
+                                    <a class="nav-link" href="app-blank-page.html">Blank Page</a>
+                                    <!-- Drawer link (Pages -> Error)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Error)-->
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-error-400.html">400 Error Page</a>
+                                            <a class="nav-link" href="app-error-401.html">401 Error Page</a>
+                                            <a class="nav-link" href="app-error-403.html">403 Error Page</a>
+                                            <a class="nav-link" href="app-error-404.html">404 Error Page</a>
+                                            <a class="nav-link" href="app-error-429.html">429 Error Page</a>
+                                            <a class="nav-link" href="app-error-500.html">500 Error Page</a>
+                                            <a class="nav-link" href="app-error-503.html">503 Error Page</a>
+                                            <a class="nav-link" href="app-error-504.html">504 Error Page</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-invoice.html">Invoice</a>
+                                    <!-- Drawer link (Pages -> Knowledgebase)-->
+                                    <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#pagesCollapseKnowledgebase" aria-expanded="false" aria-controls="pagesCollapseKnowledgebase">
+                                        Knowledgebase
+                                        <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                                    </a>
+                                    <!-- Nested drawer nav (Pages -> Knowledgebase)-->
+                                    <div class="collapse" id="pagesCollapseKnowledgebase" aria-labelledby="headingOne" data-bs-parent="#drawerAccordionPages">
+                                        <nav class="drawer-menu-nested nav">
+                                            <a class="nav-link" href="app-knowledgebase-home.html">Home</a>
+                                            <a class="nav-link" href="app-knowledgebase-categories.html">Categories</a>
+                                            <a class="nav-link" href="app-knowledgebase-article.html">Article</a>
+                                        </nav>
+                                    </div>
+                                    <!-- Drawer link (Pages -> Pricing)-->
+                                    <a class="nav-link" href="app-pricing.html">Pricing</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (UI Toolkit)-->
+                            <div class="drawer-menu-heading">UI Toolkit</div>
+                            <!-- Drawer link (Components)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseComponents" aria-expanded="false" aria-controls="collapseComponents">
+                                <div class="nav-link-icon"><i class="material-icons">widgets</i></div>
+                                Components
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Components)-->
+                            <div class="collapse" id="collapseComponents" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="components-alerts.html">Alerts</a>
+                                    <a class="nav-link" href="components-badges.html">Badges</a>
+                                    <a class="nav-link" href="components-buttons.html">Buttons</a>
+                                    <a class="nav-link" href="components-cards.html">Cards</a>
+                                    <a class="nav-link" href="components-chips.html">Chips</a>
+                                    <a class="nav-link" href="components-dropdowns.html">Dropdowns</a>
+                                    <a class="nav-link" href="components-icon-buttons.html">Icon Buttons</a>
+                                    <a class="nav-link" href="components-modals.html">Modals</a>
+                                    <a class="nav-link" href="components-navigation.html">Navigation</a>
+                                    <a class="nav-link" href="components-progress.html">Progress</a>
+                                    <a class="nav-link" href="components-spinners.html">Spinners</a>
+                                    <a class="nav-link" href="components-tooltips.html">Tooltips</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Content)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseContent" aria-expanded="false" aria-controls="collapseContent">
+                                <div class="nav-link-icon"><i class="material-icons">amp_stories</i></div>
+                                Content
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Content)-->
+                            <div class="collapse" id="collapseContent" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="content-icons.html">Icons</a>
+                                    <a class="nav-link" href="content-tables.html">Tables</a>
+                                    <a class="nav-link" href="content-typography.html">Typography</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Forms)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseForms" aria-expanded="false" aria-controls="collapseForms">
+                                <div class="nav-link-icon"><i class="material-icons">description</i></div>
+                                Forms
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Forms)-->
+                            <div class="collapse" id="collapseForms" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="forms-inputs.html">Inputs</a>
+                                    <a class="nav-link" href="forms-checks-and-radios.html">Checks &amp; Radio</a>
+                                    <a class="nav-link" href="forms-input-groups.html">Input Groups</a>
+                                    <a class="nav-link" href="forms-range.html">Range</a>
+                                    <a class="nav-link" href="forms-select.html">Select</a>
+                                </nav>
+                            </div>
+                            <!-- Drawer link (Utilities)-->
+                            <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseUtilities" aria-expanded="false" aria-controls="collapseUtilities">
+                                <div class="nav-link-icon"><i class="material-icons">build</i></div>
+                                Utilities
+                                <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
+                            </a>
+                            <!-- Nested drawer nav (Utilities)-->
+                            <div class="collapse" id="collapseUtilities" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                                <nav class="drawer-menu-nested nav">
+                                    <a class="nav-link" href="utilities-background.html">Background</a>
+                                    <a class="nav-link" href="utilities-borders.html">Borders</a>
+                                    <a class="nav-link" href="utilities-ripples.html">Ripples</a>
+                                    <a class="nav-link" href="utilities-shadows.html">Shadows</a>
+                                    <a class="nav-link" href="utilities-text.html">Text</a>
+                                    <a class="nav-link" href="utilities-transforms.html">Transforms</a>
+                                </nav>
+                            </div>
+                            <!-- Divider-->
+                            <div class="drawer-menu-divider"></div>
+                            <!-- Drawer section heading (Plugins)-->
+                            <div class="drawer-menu-heading">Plugins</div>
+                            <!-- Drawer link (Charts)-->
+                            <a class="nav-link" href="plugins-charts.html">
+                                <div class="nav-link-icon"><i class="material-icons">bar_chart</i></div>
+                                Charts
+                            </a>
+                            <!-- Drawer link (Code Blocks)-->
+                            <a class="nav-link" href="plugins-code-blocks.html">
+                                <div class="nav-link-icon"><i class="material-icons">code</i></div>
+                                Code Blocks
+                            </a>
+                            <!-- Drawer link (Data Tables)-->
+                            <a class="nav-link" href="plugins-data-tables.html">
+                                <div class="nav-link-icon"><i class="material-icons">filter_alt</i></div>
+                                Data Tables
+                            </a>
+                            <!-- Drawer link (Date Picker)-->
+                            <a class="nav-link" href="plugins-date-picker.html">
+                                <div class="nav-link-icon"><i class="material-icons">date_range</i></div>
+                                Date Picker
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Drawer footer        -->
+                    <div class="drawer-footer border-top">
+                        <div class="d-flex align-items-center">
+                            <i class="material-icons text-muted">account_circle</i>
+                            <div class="ms-3">
+                                <div class="caption">Logged in as:</div>
+                                <div class="small fw-500">Start Bootstrap</div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!-- Layout content-->
+            <div id="layoutDrawer_content">
+                <!-- Main page content-->
+                <main>
+                    <div class="container-xl px-5">
+                        <div class="d-flex mt-10 mb-4 align-items-center">
+                            <img class="me-4" src="assets/img/icons/text.svg" alt="..." style="height: 48px" />
+                            <h1 class="page-header mb-0">Text</h1>
+                        </div>
+                        <div class="row gx-5">
+                            <div class="col-lg-9">
+                                <p>Text utilities allow you to control the styling of text within an app.</p>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="color">Color</h2>
+                                <p class="mb-4">
+                                    In addition to the text color utilities included with the Bootstrap framework, we have included the
+                                    <code class="code-inline">.text-black</code>
+                                    utility to provide a true black text color when needed.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilityColorDemoTab" data-bs-target="#textUtilityColorDemo" aria-controls="textUtilityColorDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilityColorHtmlTab" data-bs-target="#textUtilityColorHtml" aria-controls="textUtilityColorHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilityColorPug" role="tab" aria-controls="textUtilityColorPug" aria-selected="false" id="textUtilityColorPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilityColorDemo" aria-labelledby="textUtilityColorDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="row gx-3 gx-lg-5">
+                                                <div class="col">
+                                                    <div class="p-3 text-center border rounded">
+                                                        <div class="mb-1 text-primary">.text-primary</div>
+                                                        <div class="mb-1 text-secondary">.text-secondary</div>
+                                                        <div class="mb-1 text-success">.text-success</div>
+                                                        <div class="mb-1 text-danger">.text-danger</div>
+                                                        <div class="mb-1 text-info">.text-info</div>
+                                                        <div class="mb-1 text-dark">.text-dark</div>
+                                                        <div class="mb-1 text-body">.text-body</div>
+                                                        <div class="mb-1 text-muted">.text-muted</div>
+                                                        <div class="mb-1 text-black">.text-black</div>
+                                                        <div class="text-black-50">.text-black-50</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col">
+                                                    <div class="p-3 text-center bg-dark rounded">
+                                                        <div class="mb-1 text-warning">.text-warning</div>
+                                                        <div class="mb-1 text-light">.text-light</div>
+                                                        <div class="mb-1 text-white">.text-white</div>
+                                                        <div class="text-white-50">.text-white-50</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilityColorHtml" aria-labelledby="textUtilityColorHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><div class="text-primary">.text-primary</div>
+<div class="text-secondary">.text-secondary</div>
+<div class="text-success">.text-success</div>
+<div class="text-danger">.text-danger</div>
+<div class="text-info">.text-info</div>
+<div class="text-dark">.text-dark</div>
+<div class="text-body">.text-body</div>
+<div class="text-muted">.text-muted</div>
+<div class="text-black">.text-black</div>
+<div class="text-black-50">.text-black-50</div>
+<div class="text-warning">.text-warning</div>
+<div class="text-light">.text-light</div>
+<div class="text-white">.text-white</div>
+<div class="text-white-50">.text-white-50</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilityColorPug" aria-labelledby="textUtilityColorPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>.text-primary .text-primary
+.text-secondary .text-secondary
+.text-success .text-success
+.text-danger .text-danger
+.text-info .text-info
+.text-dark .text-dark
+.text-body .text-body
+.text-muted .text-muted
+.text-black .text-black
+.text-black-50 .text-black-50
+.text-warning .text-warning
+.text-light .text-light
+.text-white .text-white
+.text-white-50 .text-white-50</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="link-color">Link Color</h2>
+                                <p class="mb-4">Link color utilities are also available to specifically set the color of links.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesLinkColorDemoTab" data-bs-target="#textUtilitiesLinkColorDemo" aria-controls="textUtilitiesLinkColorDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesLinkColorHtmlTab" data-bs-target="#textUtilitiesLinkColorHtml" aria-controls="textUtilitiesLinkColorHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesLinkColorPug" role="tab" aria-controls="textUtilitiesLinkColorPug" aria-selected="false" id="textUtilitiesLinkColorPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesLinkColorDemo" aria-labelledby="textUtilitiesLinkColorDemoTab">
+                                        <div class="border border-top-0 p-3 p-lg-5">
+                                            <div class="mb-1"><a class="link-primary" href="#">Primary link</a></div>
+                                            <div class="mb-1"><a class="link-secondary" href="#">Secondary link</a></div>
+                                            <div class="mb-1"><a class="link-success" href="#">Success link</a></div>
+                                            <div class="mb-1"><a class="link-danger" href="#">Danger link</a></div>
+                                            <div class="mb-1"><a class="link-warning" href="#">Warning link</a></div>
+                                            <div class="mb-1"><a class="link-info" href="#">Info link</a></div>
+                                            <div class="mb-1"><a class="link-light" href="#">Light link</a></div>
+                                            <div class="mb-0"><a class="link-dark" href="#">Dark link</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLinkColorHtml" aria-labelledby="textUtilitiesLinkColorHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><a href="#" class="link-primary">Primary link</a>
+<a href="#" class="link-secondary">Secondary link</a>
+<a href="#" class="link-success">Success link</a>
+<a href="#" class="link-danger">Danger link</a>
+<a href="#" class="link-warning">Warning link</a>
+<a href="#" class="link-info">Info link</a>
+<a href="#" class="link-light">Light link</a>
+<a href="#" class="link-dark">Dark link</a></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLinkColorPug" aria-labelledby="textUtilitiesLinkColorPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>a.link-primary(href='#') Primary link
+a.link-secondary(href='#') Secondary link
+a.link-success(href='#') Success link
+a.link-danger(href='#') Danger link
+a.link-warning(href='#') Warning link
+a.link-info(href='#') Info link
+a.link-light(href='#') Light link
+a.link-dark(href='#') Dark link</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="alignment">Alignmnet</h2>
+                                <p class="mb-4">You can easily set text alignment using the following utilities. Left and right alignmnet was discontinued in Bootstrap 5 in favor of the RTL-friendly start and finish classes. Responsive text alignment is also supported for each breakpoint.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesAlignmentDemoTab" data-bs-target="#textUtilitiesAlignmentDemo" aria-controls="textUtilitiesAlignmentDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesAlignmentHtmlTab" data-bs-target="#textUtilitiesAlignmentHtml" aria-controls="textUtilitiesAlignmentHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesAlignmentPug" role="tab" aria-controls="textUtilitiesAlignmentPug" aria-selected="false" id="textUtilitiesAlignmentPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesAlignmentDemo" aria-labelledby="textUtilitiesAlignmentDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <p class="text-start">Start aligned text on all viewport sizes.</p>
+                                            <p class="text-center">Center aligned text on all viewport sizes.</p>
+                                            <p class="text-end">End aligned text on all viewport sizes.</p>
+                                            <p class="text-sm-start">Start aligned text on viewports sized SM or wider.</p>
+                                            <p class="text-md-start">Start aligned text on viewports sized MD or wider.</p>
+                                            <p class="text-lg-start">Start aligned text on viewports sized LG or wider.</p>
+                                            <p class="text-xl-start">Start aligned text on viewports sized XL or wider.</p>
+                                            <p class="text-xxl-start mb-0">Start aligned text on viewports sized XXL or wider.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesAlignmentHtml" aria-labelledby="textUtilitiesAlignmentHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="text-start">Start aligned text on all viewport sizes.</p>
+<p class="text-center">Center aligned text on all viewport sizes.</p>
+<p class="text-end">End aligned text on all viewport sizes.</p>
+<p class="text-sm-start">Start aligned text on viewports sized SM or wider.</p>
+<p class="text-md-start">Start aligned text on viewports sized MD or wider.</p>
+<p class="text-lg-start">Start aligned text on viewports sized LG or wider.</p>
+<p class="text-xl-start">Start aligned text on viewports sized XL or wider.</p>
+<p class="text-xxl-start">Start aligned text on viewports sized XXL or wider.</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesAlignmentPug" aria-labelledby="textUtilitiesAlignmentPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.text-start Start aligned text on all viewport sizes.
+p.text-center Center aligned text on all viewport sizes.
+p.text-end End aligned text on all viewport sizes.
+p.text-sm-start Start aligned text on viewports sized SM or wider.
+p.text-md-start Start aligned text on viewports sized MD or wider.
+p.text-lg-start Start aligned text on viewports sized LG or wider.
+p.text-xl-start Start aligned text on viewports sized XL or wider.
+p.text-xxl-start Start aligned text on viewports sized XXL or wider.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="mb-4" id="wrapping">Wrapping</h2>
+                                <p class="mb-4">
+                                    You can force or prevent text wrapping using the
+                                    <code class="code-inline">.text-wrap</code>
+                                    and
+                                    <code class="code-inline">.text-nowrap</code>
+                                    utility classes.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesWrappingDemoTab" data-bs-target="#textUtilitiesWrappingDemo" aria-controls="textUtilitiesWrappingDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesWrappingHtmlTab" data-bs-target="#textUtilitiesWrappingHtml" aria-controls="textUtilitiesWrappingHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesWrappingPug" role="tab" aria-controls="textUtilitiesWrappingPug" aria-selected="false" id="textUtilitiesWrappingPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesWrappingDemo" aria-labelledby="textUtilitiesWrappingDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="text-wrap p-3 border rounded mb-5 bg-white" style="width: 8rem">This text will wrap.</div>
+                                            <div class="text-nowrap p-3 border rounded bg-white" style="width: 8rem">This text will overflow the parent.</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesWrappingHtml" aria-labelledby="textUtilitiesWrappingHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><div class="text-wrap">This text will wrap.</div>
+<div class="text-nowrap">This text will overflow the parent.</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesWrappingPug" aria-labelledby="textUtilitiesWrappingPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>.text-wrap This text will wrap.
+.text-nowrap This text will overflow the parent.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="mb-4" id="word-break">Word Break</h2>
+                                <p class="mb-4">
+                                    The
+                                    <code class="code-inline">.text-break</code>
+                                    utility is available to use with content that will break past the width of the layout. Notice the very long word below breaks to new lines instead of overflowing the container.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesWordBreakDemoTab" data-bs-target="#textUtilitiesWordBreakDemo" aria-controls="textUtilitiesWordBreakDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesWordBreakHtmlTab" data-bs-target="#textUtilitiesWordBreakHtml" aria-controls="textUtilitiesWordBreakHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesWordBreakPug" role="tab" aria-controls="textUtilitiesWordBreakPug" aria-selected="false" id="textUtilitiesWordBreakPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesWordBreakDemo" aria-labelledby="textUtilitiesWordBreakDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="p-3 border rounded bg-white" style="width: 10rem"><p class="text-break mb-0">Hippopotomonstrosesquippedaliophobia</p></div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesWordBreakHtml" aria-labelledby="textUtilitiesWordBreakHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="text-break">Hippopotomonstrosesquippedaliophobia</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesWordBreakPug" aria-labelledby="textUtilitiesWordBreakPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.text-break Hippopotomonstrosesquippedaliophobia</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h2 class="mb-4" id="text-transforms">Transforms</h2>
+                                <p class="mb-4">Adjust the capitalization of text using text transfrom utilities.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesTransformsDemoTab" data-bs-target="#textUtilitiesTransformsDemo" aria-controls="textUtilitiesTransformsDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesTransformsHtmlTab" data-bs-target="#textUtilitiesTransformsHtml" aria-controls="textUtilitiesTransformsHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesTransformsPug" role="tab" aria-controls="textUtilitiesTransformsPug" aria-selected="false" id="textUtilitiesTransformsPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesTransformsDemo" aria-labelledby="textUtilitiesTransformsDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <p class="text-lowercase">THIS text will all be Lowercase.</p>
+                                            <p class="text-uppercase">THIS text will all be Uppercase.</p>
+                                            <p class="text-capitalize mb-0">THIS text will all be Capitalized.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesTransformsHtml" aria-labelledby="textUtilitiesTransformsHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="text-lowercase">THIS text will all be Lowercase.</p>
+<p class="text-uppercase">THIS text will all be Uppercase.</p>
+<p class="text-capitalize">THIS text will all be Capitalized.</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesTransformsPug" aria-labelledby="textUtilitiesTransformsPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.text-lowercase THIS text will all be Lowercase.
+p.text-uppercase THIS text will all be Uppercase.
+p.text-capitalize THIS text will all be Capitalized.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="font-size">Font Size</h2>
+                                <p>
+                                    Use font size utilities to change the size of text independently of the text element that is being used. These classes are named using the format
+                                    <code class="code-inline">.fs-{number}</code>
+                                    where
+                                    <em>number</em>
+                                    is a number 1 to 6.
+                                </p>
+                                <p class="mb-4">
+                                    These font size utilities follow use the same font size as the headings, referenced on the
+                                    <a hre="content-typography.html">Typography</a>
+                                    page.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesFontSizeDemoTab" data-bs-target="#textUtilitiesFontSizeDemo" aria-controls="textUtilitiesFontSizeDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesFontSizeHtmlTab" data-bs-target="#textUtilitiesFontSizeHtml" aria-controls="textUtilitiesFontSizeHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesFontSizePug" role="tab" aria-controls="textUtilitiesFontSizePug" aria-selected="false" id="textUtilitiesFontSizePugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesFontSizeDemo" aria-labelledby="textUtilitiesFontSizeDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <div class="fs-1 mb-2">Font Size 1</div>
+                                            <div class="fs-2 mb-2">Font Size 2</div>
+                                            <div class="fs-3 mb-2">Font Size 3</div>
+                                            <div class="fs-4 mb-2">Font Size 4</div>
+                                            <div class="fs-5 mb-2">Font Size 5</div>
+                                            <div class="fs-6 mb-2">Font Size 6</div>
+                                            <div class="small mb-2">Small</div>
+                                            <div class="text-xs">Extra Small</div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesFontSizeHtml" aria-labelledby="textUtilitiesFontSizeHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><div class="fs-1">Font Size 1</div>
+<div class="fs-2">Font Size 2</div>
+<div class="fs-3">Font Size 3</div>
+<div class="fs-4">Font Size 4</div>
+<div class="fs-5">Font Size 5</div>
+<div class="fs-6">Font Size 6</div>
+<div class="small">Small</div>
+<div class="text-xs">Extra Small</div></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesFontSizePug" aria-labelledby="textUtilitiesFontSizePugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>.fs-1 Font Size 1
+.fs-2 Font Size 2
+.fs-3 Font Size 3
+.fs-4 Font Size 4
+.fs-5 Font Size 5
+.fs-6 Font Size 6
+.small Small
+.text-xs Extra Small</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="font-weight">Font Weight &amp; Style</h2>
+                                <p>Font weight and style utilities can be used to adjust the thickness and apperance text.</p>
+                                <p>
+                                    In Material Admin Pro, we have added an extended set of font weight utilities past what Bootstrap offers by default. These utilities are named using the format
+                                    <code class="code-inline">.fw-{weight}</code>
+                                    where
+                                    <em>weight</em>
+                                    is any font weight between 100 and 900.
+                                </p>
+                                <p class="mb-4">In the below examples, only font weights 300 to 500 are shown since these are the only weights supported with this theme by default. Visit our theming documentation for more information on using different fonts and font weights.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesFontWeightDemoTab" data-bs-target="#textUtilitiesFontWeightDemo" aria-controls="textUtilitiesFontWeightDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesFontWeightHtmlTab" data-bs-target="#textUtilitiesFontWeightHtml" aria-controls="textUtilitiesFontWeightHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesFontWeightPug" role="tab" aria-controls="textUtilitiesFontWeightPug" aria-selected="false" id="textUtilitiesFontWeightPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesFontWeightDemo" aria-labelledby="textUtilitiesFontWeightDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <p class="fw-bold">Bold text.</p>
+                                            <p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
+                                            <p class="fw-normal">Normal weight text.</p>
+                                            <p class="fw-light">Light weight text.</p>
+                                            <p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
+                                            <p class="fw-300">Font weight 300.</p>
+                                            <p class="fw-400">Font weight 400.</p>
+                                            <p class="fw-500">Font weight 500.</p>
+                                            <p class="fst-italic">Italic text.</p>
+                                            <p class="fst-normal">Text with normal font style</p>
+                                            <p class="font-monospace mb-0">This is in monospace.</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesFontWeightHtml" aria-labelledby="textUtilitiesFontWeightHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="fw-bold">Bold text.</p>
+<p class="fw-bolder">Bolder weight text (relative to the parent element).</p>
+<p class="fw-normal">Normal weight text.</p>
+<p class="fw-light">Light weight text.</p>
+<p class="fw-lighter">Lighter weight text (relative to the parent element).</p>
+<p class="fw-300">Font weight 300.</p>
+<p class="fw-400">Font weight 400.</p>
+<p class="fw-500">Font weight 500.</p>
+<p class="fst-italic">Italic text.</p>
+<p class="fst-normal">Text with normal font style</p>
+<p class="font-monospace">This is in monospace.</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesFontWeightPug" aria-labelledby="textUtilitiesFontWeightPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.fw-bold Bold text.
+p.fw-bolder Bolder weight text (relative to the parent element).
+p.fw-normal Normal weight text.
+p.fw-light Light weight text.
+p.fw-lighter Lighter weight text (relative to the parent element).
+p.fw-300 Font weight 300.
+p.fw-400 Font weight 400.
+p.fw-500 Font weight 500.
+p.fst-italic Italic text.
+p.fst-normal Text with normal font style
+p.font-monospace This is in monospace.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="line-height">Line Height</h2>
+                                <p class="mb-4">Line height utilities come in four variations which are used to manipulate the line height of text elements.</p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesLineHeightDemoTab" data-bs-target="#textUtilitiesLineHeightDemo" aria-controls="textUtilitiesLineHeightDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesLineHeightHtmlTab" data-bs-target="#textUtilitiesLineHeightHtml" aria-controls="textUtilitiesLineHeightHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesLineHeightPug" role="tab" aria-controls="textUtilitiesLineHeightPug" aria-selected="false" id="textUtilitiesLineHeightPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesLineHeightDemo" aria-labelledby="textUtilitiesLineHeightDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <p class="lh-1">This is a paragraph with a line height of 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+                                            <p class="lh-sm">This is a paragraph with small line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+                                            <p class="lh-base">This is a paragraph using the base line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+                                            <p class="lh-lg mb-0">This is a paragraph with large line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLineHeightHtml" aria-labelledby="textUtilitiesLineHeightHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="lh-1">This is a paragraph with a line height of 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+<p class="lh-sm">This is a paragraph with small line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+<p class="lh-base">This is a paragraph using the base line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p>
+<p class="lh-lg">This is a paragraph with large line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLineHeightPug" aria-labelledby="textUtilitiesLineHeightPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.lh-1 This is a paragraph with a line height of 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?
+p.lh-sm This is a paragraph with small line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?
+p.lh-base This is a paragraph using the base line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?
+p.lh-lg This is a paragraph with large line height. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus molestiae ut culpa cupiditate ea dolorum impedit beatae explicabo libero perspiciatis distinctio deleniti deserunt ex provident eos nesciunt, atque iste pariatur?</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="letter-spacing">Letter Spacing</h2>
+                                <p class="mb-4">
+                                    The
+                                    <code class="code-inline">.text-expanded</code>
+                                    letter spacing utility is available to match Material Design's specification for their "body 1" style. It is best used on paragraphs that you want to have increase legibility with a slight increase in letter spacing.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesLetterSpacingDemoTab" data-bs-target="#textUtilitiesLetterSpacingDemo" aria-controls="textUtilitiesLetterSpacingDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesLetterSpacingHtmlTab" data-bs-target="#textUtilitiesLetterSpacingHtml" aria-controls="textUtilitiesLetterSpacingHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesLetterSpacingPug" role="tab" aria-controls="textUtilitiesLetterSpacingPug" aria-selected="false" id="textUtilitiesLetterSpacingPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesLetterSpacingDemo" aria-labelledby="textUtilitiesLetterSpacingDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light"><p class="text-expanded mb-0">This is an example of a paragraph with expanded type.</p></div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLetterSpacingHtml" aria-labelledby="textUtilitiesLetterSpacingHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><p class="text-expanded">This is an example of a paragraph with expanded type.</p></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesLetterSpacingPug" aria-labelledby="textUtilitiesLetterSpacingPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>p.text-expanded This is an example of a paragraph with expanded type.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h2 class="mb-4" id="text-truncation">Text Truncation</h2>
+                                <p class="mb-4">
+                                    The
+                                    <code class="code-inline">.text-truncate</code>
+                                    helper allows for text within block or inline elements to truncate if the text surpasses the width of the element.
+                                </p>
+                                <mwc-tab-bar class="nav nav-tabs" role="tablist">
+                                    <mwc-tab label="demo" data-bs-toggle="tab" role="tab" aria-selected="true" id="textUtilitiesTruncationDemoTab" data-bs-target="#textUtilitiesTruncationDemo" aria-controls="textUtilitiesTruncationDemo"></mwc-tab>
+                                    <mwc-tab label="html" data-bs-toggle="tab" role="tab" aria-selected="false" id="textUtilitiesTruncationHtmlTab" data-bs-target="#textUtilitiesTruncationHtml" aria-controls="textUtilitiesTruncationHtml"></mwc-tab>
+                                    <mwc-tab label="pug" data-bs-toggle="tab" data-bs-target="#textUtilitiesTruncationPug" role="tab" aria-controls="textUtilitiesTruncationPug" aria-selected="false" id="textUtilitiesTruncationPugTab"></mwc-tab>
+                                </mwc-tab-bar>
+                                <div class="tab-content mb-5">
+                                    <div class="tab-pane show active" role="tabpanel" id="textUtilitiesTruncationDemo" aria-labelledby="textUtilitiesTruncationDemoTab">
+                                        <div class="border border-top-0 p-3 p-sm-5 bg-light">
+                                            <!-- Block level-->
+                                            <div class="row"><div class="col-2 text-truncate">Praeterea iter est quasdam res quas ex communi.</div></div>
+                                            <!-- Inline level-->
+                                            <span class="d-inline-block text-truncate" style="max-width: 150px">Praeterea iter est quasdam res quas ex communi.</span>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesTruncationHtml" aria-labelledby="textUtilitiesTruncationHtmlTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-html m-0"><code><script type='text/plain'><!-- Block level-->
+<div class="row">
+    <div class="col-2 text-truncate">Praeterea iter est quasdam res quas ex communi.</div>
+</div>
+
+<!-- Inline level-->
+<span class="d-inline-block text-truncate" style="max-width: 150px;">Praeterea iter est quasdam res quas ex communi.</span></script></code></pre>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="textUtilitiesTruncationPug" aria-labelledby="textUtilitiesTruncationPugTab">
+                                        <div class="d-flex justify-content-start border border-top-0 bg-light p-3 p-sm-4">
+                                            <pre class="language-pug m-0"><code><script type='text/plain'>//- Block level
+.row
+    .col-2.text-truncate
+        | Praeterea iter est quasdam res quas ex communi.
+
+//- Inline level
+span.d-inline-block.text-truncate(style='max-width: 150px;')
+    | Praeterea iter est quasdam res quas ex communi.</script>
+</code></pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="my-5" />
+                                <h3 class="overline">Related Links</h3>
+                                <div class="row">
+                                    <div class="col-md-4 col-lg-6 col-xxl-4 mb-4 mb-md-0 mb-lg-4 mb-xxl-0">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/icons/typography.svg" alt="Typography Content Icon" />
+                                                <div class="card-title text-truncate mb-2">Typography</div>
+                                                <p class="card-text">Material Admin Pro's type system</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="content-typography.html" title="Typography Content">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-6 col-xxl-4">
+                                        <div class="card card-quick-link card-raised ripple-gray">
+                                            <div class="card-body">
+                                                <img class="card-quick-link-img" src="assets/img/brands/bootstrap.svg" alt="Bootstrap Brand Icon" />
+                                                <div class="card-title text-truncate mb-2">Bootstrap Text Utilities Documentation</div>
+                                                <p class="card-text">Bootstrap's text utilities documentation</p>
+                                            </div>
+                                            <div class="card-actions">
+                                                <a class="card-link text-muted text-decoration-none stretched-link" href="https://getbootstrap.com/docs/5.0/utilities/text/" target="_blank" title="Bootstrap Text Utilities Documentation">Related Link</a>
+                                                <i class="material-icons text-muted rotate-45">arrow_upward</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-5"></div>
+                            </div>
+                            <div class="col-lg-3 mb-5 mb-lg-0">
+                                <div class="sticky-top nav-stick">
+                                    <div class="nav-heading">Contents</div>
+                                    <ul class="nav flex-column" id="navStick">
+                                        <li class="nav-item"><a class="nav-link" href="#color">Color</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#alignment">Alignment</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#wrapping">Wrapping</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#word-break">Word Break</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text-transforms">Text Transforms</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#font-size">Font Size</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#font-weight">Font Weight &amp; Style</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#line-height">Line Height</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#letter-spacing">Letter Spacing</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#text-truncation">Text Truncation</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <!-- Footer-->
+                <!-- Min-height is set inline to match the height of the drawer footer-->
+                <footer class="py-4 mt-auto border-top" style="min-height: 74px">
+                    <div class="container-xl px-5">
+                        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-sm-between small">
+                            <div class="me-sm-2">Copyright &copy; Your Website 2021</div>
+                            <div class="d-flex ms-sm-2">
+                                <a class="text-decoration-none" href="#!">Privacy Policy</a>
+                                <div class="mx-1">&middot;</div>
+                                <a class="text-decoration-none" href="#!">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!-- Load Bootstrap JS bundle-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <!-- Load global scripts-->
+        <script type="module" src="js/material.js"></script>
+        <script src="js/scripts.js"></script>
+        <!-- Load Prism plugin scripts-->
+        <script src="/js/prism.js"></script>
+    </body>
+</html>
