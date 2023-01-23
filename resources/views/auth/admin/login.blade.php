@@ -33,9 +33,9 @@
                                     <div class="card-body p-5">
                                         <!-- Auth header with logo image-->
                                         <div class="text-center">
-                                            <img class="mb-3" src="{{ asset('theme/assets/img/icons/background.svg') }}" alt="..." style="height: 48px" />
+                                            <img class="mb-3" src="{{ asset('theme/assets/img/icons/hydra.png') }}" alt="..." style="height: 128px" />
                                             <h1 class="display-5 mb-0">Login</h1>
-                                            <div class="subheading-1 mb-5">to continue to Admin panel</div>
+                                            <div class="subheading-1 mb-5">HYDRA TOOL</div>
                                         </div>
                                         <!-- Login submission form-->
                                         <form method="POST" action="{{ route('admin.login') }}">
