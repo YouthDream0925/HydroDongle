@@ -64,9 +64,19 @@
                                                     </span>
                                                 @enderror
                                             </div>
-                                            <div class="d-flex align-items-center">
-                                                <mwc-formfield name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} label="Remember password"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="g-recaptcha" data-sitekey="{{ env('GOOGLE_RECAPTCHA_KEY') }}"></div>
+                                                        @if ($errors->has('g-recaptcha-response'))
+                                                            <span class="text-danger">{{ $errors->first('g-recaptcha-response') }}</span>
+                                                        @endif
+                                                    </div>  
+                                                </div>
                                             </div>
+                                            <!-- <div class="d-flex align-items-center">
+                                                <mwc-formfield name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} label="Remember password"><mwc-checkbox></mwc-checkbox></mwc-formfield>
+                                            </div> -->
                                             <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0 f-right">
                                                 <!-- @if (Route::has('password.request'))
                                                     <a class="small fw-500 text-decoration-none" href="{{ route('password.request') }}">
@@ -110,5 +120,6 @@
         <!-- Load global scripts-->
         <script type="module" src="{{ asset('theme/js/material.js') }}"></script>
         <script src="{{ asset('theme/js/scripts.js') }}"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
     </body>
 </html>

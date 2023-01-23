@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
+use App\Rules\ReCaptcha;
 
 class LoginController extends Controller
 {
@@ -51,7 +52,8 @@ class LoginController extends Controller
     {
         $this->validate($request, [
             'name'   => 'required|string',
-            'password' => 'required|min:6'
+            'password' => 'required|min:6',
+            'g-recaptcha-response' => ['required', new ReCaptcha]
         ]);
 
         if (\Auth::guard('admin')->attempt($request->only('name','password'), $request->get('remember'))){
