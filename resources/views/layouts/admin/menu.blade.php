@@ -13,7 +13,7 @@
                 <!-- Nested drawer nav (Dashboards)-->
                 <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
-                        <a class="nav-link" href="app-dashboard-default.html">{{ __('global.subCategory.setting') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.setting') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Layouts)-->
@@ -25,17 +25,17 @@
                 <!-- Nested drawer nav (Layouts)-->
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.brand') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.phone') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.module') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.moduleFunction') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.feature') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.reseller') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.driver') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.contact') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.help') }}</a>
-                        <a class="nav-link" href="layout-dark.html">{{ __('global.subCategory.news') }}</a>
-                        <a class="nav-link" href="layout-light.html">{{ __('global.subCategory.servers') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.brand') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.phone') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.module') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.moduleFunction') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.feature') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.reseller') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.driver') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.contact') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.help') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.news') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.servers') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Pages)-->
@@ -47,8 +47,8 @@
                 <!-- Nested drawer nav (Pages)-->
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.updateHistory') }}</a>
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.successStory') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.updateHistory') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.successStory') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Pages)-->
@@ -60,7 +60,7 @@
                 <!-- Nested drawer nav (Pages)-->
                 <div class="collapse" id="collapseModels" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.samsungModels') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.samsungModels') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Pages)-->
@@ -72,10 +72,10 @@
                 <!-- Nested drawer nav (Pages)-->
                 <div class="collapse" id="collapseOther" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.mainSlide') }}</a>
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.description') }}</a>
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.guide') }}</a>
-                        <a class="nav-link" href="app-blank-page.html">{{ __('global.subCategory.problems') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.mainSlide') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.description') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.guide') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.problems') }}</a>
                     </nav>
                 </div>
             </div>

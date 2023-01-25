@@ -28,9 +28,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.0.0-beta.10/chart.min.js" crossorigin="anonymous"></script>
         <!--  Load Chart.js customized defaults-->
         <script src="{{ asset('theme/js/charts/chart-defaults.js') }}"></script>
-        <!--  Load chart demos for this page-->
-        <script src="{{ asset('theme/js/charts/demos/chart-pie-demo.js') }}"></script>
-        <script src="{{ asset('theme/js/charts/demos/dashboard-chart-bar-grouped-demo.js') }}"></script>
         <!-- Load Simple DataTables Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="{{ asset('theme/js/datatables/datatables-simple-demo.js') }}"></script>

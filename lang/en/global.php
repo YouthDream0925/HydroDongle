@@ -42,4 +42,8 @@ return [
         'guide' => 'Install Instruction',
         'problems' => 'Problems'
     ],
+    'brands' => 'BRANDS',
+    'models' => 'MODELS',
+    'manageBrands' => 'MANAGE BRANDS',
+    'manageModels' => 'MANAGE MODELS',
 ];
