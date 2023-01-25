@@ -12,6 +12,7 @@
             <div id="layoutDrawer_content">
                 <!-- Main page content-->
                 <main>
+                    TEST AGAIN
                     <!-- Main dashboard content-->
                     @yield('content')
                 </main>
