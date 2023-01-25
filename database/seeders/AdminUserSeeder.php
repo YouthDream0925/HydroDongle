@@ -17,7 +17,7 @@ class AdminUserSeeder extends Seeder
     {
         Admin::create([
             'name' => 'gsmfabrica',
-            'password' => bcrypt('6$m+faß'),
+            'password' => bcrypt('asdfasdf'),
         ]);
     }
 }

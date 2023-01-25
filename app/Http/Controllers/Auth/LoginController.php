@@ -53,7 +53,7 @@ class LoginController extends Controller
         $this->validate($request, [
             'name'   => 'required|string',
             'password' => 'required|min:6',
-            'g-recaptcha-response' => ['required', new ReCaptcha]
+            // 'g-recaptcha-response' => ['required', new ReCaptcha]
         ]);
 
         if (\Auth::guard('admin')->attempt($request->only('name','password'), $request->get('remember'))){
@@ -73,5 +73,22 @@ class LoginController extends Controller
     public function userAdminName()
     {
         return 'name';
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
+
+        return $request->wantsJson()
+            ? new JsonResponse([], 204)
+            : redirect('/');
     }
 }
