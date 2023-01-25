@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -29,7 +30,9 @@ Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login')
 Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
 Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/admin/dashboard',function(){
-    return view('admin');
-})->middleware('auth:admin');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::middleware(['auth:admin'])->group(function() {
+    Route::get('/admin/dashboard', function() {
+        return view('admin.dashboard');
+    });
+});
