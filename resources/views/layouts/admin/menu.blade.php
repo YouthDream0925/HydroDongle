@@ -53,7 +53,7 @@
                 </div>
                 <!-- Drawer link (Pages)-->
                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseModels" aria-expanded="false" aria-controls="collapseModels">
-                    <div class="nav-link-icon"><span class="material-icons">model_training</span></div>
+                    <div class="nav-link-icon"><span class="material-icons">business_center</span></div>
                     {{ __('global.category.customModels') }}
                     <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                 </a>
@@ -65,7 +65,7 @@
                 </div>
                 <!-- Drawer link (Pages)-->
                 <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
-                    <div class="nav-link-icon"><span class="material-icons">spa</span></div>
+                    <div class="nav-link-icon"><span class="material-icons">info</span></div>
                     {{ __('global.category.other') }}
                     <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                 </a>
@@ -85,7 +85,7 @@
             <div class="d-flex align-items-center">
                 <i class="material-icons text-muted">account_circle</i>
                 <div class="ms-3">
-                    <div class="caption">Logged in as:</div>
+                    <div class="caption">{{ __('global.loginAs') }}</div>
                     <div class="small fw-500">{{ Auth::user()->name }}</div>
                 </div>
             </div>

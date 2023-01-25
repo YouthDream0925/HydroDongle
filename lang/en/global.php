@@ -13,6 +13,7 @@ return [
 
     'title' => 'HYDRA TOOL',
     'logout' => 'Logout',
+    'loginAs' => 'Logged in as:',
     'category' => [
         'general' => 'General',
         'editer' => 'Add/Edit/Delete',
