@@ -77,6 +77,7 @@ return [
     */
     'settingTitle' => 'Settings',
     'saveChanges' => 'SAVE CHANGES',
+    'uploadLogo' => 'UPLOAD NEW LOGO',
 
     /*
     |--------------------------------------------------------------------------

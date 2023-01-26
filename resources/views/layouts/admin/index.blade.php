@@ -32,6 +32,7 @@
         <!-- Load Simple DataTables Scripts-->
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="{{ asset('theme/js/datatables/datatables-simple-demo.js') }}"></script>
+        <script src="{{ asset('theme/js/lang.js') }}"></script>
         <script src="{{ asset('theme/vendor/bs5-toast/bs5-toast.js') }}"></script>
         @include('layouts.admin.flash')
 

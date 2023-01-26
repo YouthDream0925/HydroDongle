@@ -37,5 +37,22 @@ Route::middleware(['auth:admin'])->group(function() {
     })->name('admin.dashboard');
 
     Route::get('/admin/general/setting', [SettingController::class, 'index'])->name('website.setting');
-    Route::post('/admin/general/setting', [SettingController::class, 'edit'])->name('website.setting.edit');
+    Route::post('/admin/general/setting', [SettingController::class, 'store'])->name('website.setting.store');
+});
+
+Route::get('storage/{filename}', function ($filename)
+{
+    $path = storage_path('app/logo/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
 });
