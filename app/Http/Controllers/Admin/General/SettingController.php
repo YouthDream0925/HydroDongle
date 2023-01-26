@@ -14,6 +14,8 @@ class SettingController extends Controller
     }
 
     public function edit(Request $request) {
+        // echo json_encode($request->logo);
+        // die();
         $data = [];
         $settings = Setting::all();
         foreach($settings as $setting)

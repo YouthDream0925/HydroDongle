@@ -19,6 +19,7 @@
                 @include('layouts.admin.footer')
             </div>
         </div>
+        <script src="{{asset('theme/vendor/peity/jquery.peity.min.js')}}"></script>
         <!-- Load Bootstrap JS bundle-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <!-- Load global scripts-->
