@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\General\SettingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,10 +16,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\HomeController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -35,4 +35,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::get('/admin/dashboard', function() {
         return view('admin.dashboard');
     })->name('admin.dashboard');
+
+    Route::get('/admin/general/setting', [SettingController::class, 'index'])->name('website.setting');
+    Route::post('/admin/general/setting', [SettingController::class, 'edit'])->name('website.setting.edit');
 });

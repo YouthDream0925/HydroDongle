@@ -5,7 +5,11 @@
 
 @section('content')
 <div class="container-xl p-5">
-    <!-- Colored status cards-->
+    <div class="row justify-content-between align-items-center mb-5">
+        <div class="col flex-shrink-0 mb-5 mb-md-0">
+            <h1 class="display-4 mb-0">{{ __('global.dashboard') }}</h1>
+        </div>
+    </div>
     <div class="row gx-5">
         <div class="col-xxl-3 col-md-6 mb-5"></div>
         <div class="col-xxl-3 col-md-6 mb-5">

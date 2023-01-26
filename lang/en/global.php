@@ -68,4 +68,13 @@ return [
     'models' => 'MODELS',
     'manageBrands' => 'MANAGE BRANDS',
     'manageModels' => 'MANAGE MODELS',
+    'dashboard' => 'Dashboard',
+
+    /*
+    |--------------------------------------------------------------------------
+    | General Setting page
+    |--------------------------------------------------------------------------
+    */
+    'settingTitle' => 'Settings',
+    'saveChanges' => 'SAVE CHANGES',
 ];

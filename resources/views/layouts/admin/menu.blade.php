@@ -5,15 +5,15 @@
             <div class="nav">
                 <div class="drawer-menu-heading pt-15"></div>
                 <!-- Drawer link (Dashboards)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                <a class="nav-link {{ (request()->is('admin/general*')) ? 'active' : 'collapsed' }}" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                     <div class="nav-link-icon"><span class="material-icons">home</span></div>
                     {{ __('global.category.general') }}
                     <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                 </a>
                 <!-- Nested drawer nav (Dashboards)-->
-                <div class="collapse" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                <div class="collapse {{ (request()->is('admin/general*')) ? 'show' : '' }}" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.setting') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/general/setting')) ? 'active' : '' }}" href="{{ route('website.setting') }}">{{ __('global.subCategory.setting') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Layouts)-->
