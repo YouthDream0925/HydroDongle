@@ -77,4 +77,11 @@ return [
     */
     'settingTitle' => 'Settings',
     'saveChanges' => 'SAVE CHANGES',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Flash messages
+    |--------------------------------------------------------------------------
+    */
+    'seetingsSaveSucceed' => 'Settings saved successfully.'
 ];

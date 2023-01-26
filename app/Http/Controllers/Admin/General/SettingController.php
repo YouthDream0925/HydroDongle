@@ -26,6 +26,6 @@ class SettingController extends Controller
                     'value' => $value
                 ]);
             }
-        return redirect()->back()->with('success', 'Hello, This is succeed.');
+        return redirect()->back()->with('success', trans('global.seetingsSaveSucceed'));
     }
 }
