@@ -7,13 +7,29 @@ return [
     | Global Language Lines
     |--------------------------------------------------------------------------
     |
-    | The following language lines are used full this project.
+    | The following language lines are used in full project.
     |
     */
 
     'title' => 'HYDRA TOOL',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Login page
+    |--------------------------------------------------------------------------
+    */
+    'login' => 'Login',
+    'loginTitle' => 'Login to Hydra Tool Panel',
     'logout' => 'Logout',
     'loginAs' => 'Logged in as:',
+    'username' => 'Username',
+    'password' => 'Password',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Category
+    |--------------------------------------------------------------------------
+    */
     'category' => [
         'general' => 'General',
         'editer' => 'Add/Edit/Delete',
@@ -42,6 +58,12 @@ return [
         'guide' => 'Install Instruction',
         'problems' => 'Problems'
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Dashboard page
+    |--------------------------------------------------------------------------
+    */
     'brands' => 'BRANDS',
     'models' => 'MODELS',
     'manageBrands' => 'MANAGE BRANDS',

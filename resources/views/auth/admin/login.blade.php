@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Login - Material Admin Pro</title>
+        <title>{{ __('global.loginTitle') }}</title>
         <!-- Load Favicon-->
         <link href="{{ asset('theme/assets/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
         <!-- Load Material Icons from Google Fonts-->
@@ -34,8 +34,8 @@
                                         <!-- Auth header with logo image-->
                                         <div class="text-center">
                                             <img class="mb-3" src="{{ asset('theme/assets/img/icons/hydra.png') }}" alt="..." style="height: 128px" />
-                                            <h1 class="display-5 mb-0">Login</h1>
-                                            <div class="subheading-1 mb-5">HYDRA TOOL</div>
+                                            <h1 class="display-5 mb-0">{{ __('global.login') }}</h1>
+                                            <div class="subheading-1 mb-5">{{ __('global.title') }}</div>
                                         </div>
                                         <!-- Login submission form-->
                                         <form method="POST" action="{{ route('admin.login') }}">
@@ -49,7 +49,7 @@
                                                 @enderror
                                             </div> -->
                                             <div class="mb-4">
-                                                <mwc-textfield id="name" type="name" class="w-100 @error('name') is-invalid @enderror" label="Username" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus outlined></mwc-textfield>
+                                                <mwc-textfield id="name" type="name" class="w-100 @error('name') is-invalid @enderror" label="{{ __('global.username') }}" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus outlined></mwc-textfield>
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -57,7 +57,7 @@
                                                 @enderror
                                             </div>
                                             <div class="mb-4">
-                                                <mwc-textfield id="password" type="password" class="w-100 @error('password') is-invalid @enderror" name="password" label="Password" outlined icontrailing="visibility_off" type="password" required autocomplete="current-password"></mwc-textfield>
+                                                <mwc-textfield id="password" type="password" class="w-100 @error('password') is-invalid @enderror" name="password" label="{{ __('global.password') }}" outlined icontrailing="visibility_off" type="password" required autocomplete="current-password"></mwc-textfield>
                                                 @error('password')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                                                 @endif -->
 
                                                 <button type="submit" class="btn btn-primary txt-right">
-                                                    {{ __('Login') }}
+                                                    {{ __('global.login') }}
                                                 </button>
                                             </div>
                                         </form>
