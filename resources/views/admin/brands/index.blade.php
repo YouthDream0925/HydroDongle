@@ -7,25 +7,29 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0">{{ __('global.brandTitle') }}</h1>
-            <button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">
+            <h1 class="display-4 mb-0 display-5">{{ __('global.brandTitle') }}</h1>
+            <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('brands.create') }}">
                 <span class="material-icons">add</span>{{ __('global.add') }}
-            </button>
+            </a>
         </div>
     </div>
     <div class="row gx-5">
         <div class="col-lg-12">
-            <div class="card card-raised mb-5">
-                <div class="card-body p-5">
+            <!-- <div class="card card-raised mb-5"> -->
+                <!-- <div class="card-body p-5">                 -->
                     @if(count($brands) != 0)
                     <div class="row">
-                        @foreach($brands as $key => $value)
+                        @foreach($brands as $key => $brand)
                         <div class="col-lg-3 p-1">
-                            <div class="card card-raised">
-                                <img class="card-img" src="https://source.unsplash.com/K9QHL52rE2k/700x394" alt="...">
-                                <div class="card-img-overlay">
-                                    <h2 class="card-title text-white">{{ $value->brand_name }}</h2>
-                                    <p class="card-text text-white">{{ $value->brand_link }}</p>
+                            <div class="card card-quick-link card-raised ripple-gray">
+                                <div class="card-body">
+                                    <img class="card-quick-link-img" src="{{ url('storage/'.$brand->firstMedia('brand_image')->getDiskPath()) }}" />
+                                    <div class="card-title text-truncate mb-2">{{ $brand->brand_name }}</div>
+                                    <p class="card-text">{{ $brand->brand_link }}</p>
+                                </div>
+                                <div class="card-actions">
+                                    <a class="card-link text-muted text-decoration-none stretched-link" href="{{ route('brands.edit',$brand->brand_id) }}" title="Bootstrap Card Documentation">{{ __('global.edit') }}</a>
+                                    <i class="material-icons text-muted rotate-45">arrow_upward</i>
                                 </div>
                             </div>
                         </div>

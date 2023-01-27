@@ -25,7 +25,7 @@
                 <!-- Nested drawer nav (Layouts)-->
                 <div class="collapse {{ (request()->is('admin/editer*')) ? 'show' : '' }}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
-                        <a class="nav-link {{ (request()->is('admin/editer/brands')) ? 'active' : '' }}" href="{{ route('brands.index') }}">{{ __('global.subCategory.brand') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/brands*')) ? 'active' : '' }}" href="{{ route('brands.index') }}">{{ __('global.subCategory.brand') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.phone') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.module') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.moduleFunction') }}</a>

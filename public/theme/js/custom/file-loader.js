@@ -1,7 +1,7 @@
-var Setting = function () {
+var FileLoader = function () {
     //Cannot be called from outside this function
-    var  FileLoad = function() {
-        $('#logo').on("change", function () {
+    var  FileLoad = function(selector, container) {
+        $('#' + selector).on("change", function () {
             // the files is a new property from the new File API, if if it is not supported assign an empty array as the value of files
             var files = !! this.files ? this.files : [];
     
@@ -14,8 +14,8 @@ var Setting = function () {
                 var reader = new FileReader();
                 reader.readAsDataURL(files[0]);
                 reader.onloadend = function (event) {
-                    $('#site_logo').prop('src', event.target.result);
-                    $('#site_logo').prop('title', file_name);
+                    $('#' + container).prop('src', event.target.result);
+                    $('#' + container).prop('title', file_name);
                 }
             } else {
                 new bs5.Toast({
@@ -30,8 +30,8 @@ var Setting = function () {
     //Return only what must be publicly accessible, in this
     //case only the show() method
     return {
-        init: function() {
-            FileLoad();
+        init: function(selector, container) {
+            FileLoad(selector, container);
         }
     }
  }();

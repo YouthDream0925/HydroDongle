@@ -7,7 +7,7 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0">
-            <h1 class="display-4 mb-0">{{ __('global.settingTitle') }}</h1>
+            <h1 class="display-5 mb-0">{{ __('global.settingTitle') }}</h1>
         </div>
     </div>
     <div class="row gx-5">
@@ -46,10 +46,10 @@
 @endsection
 
 @push('script')
-<script src="{{ asset('theme/js/custom/setting.js') }}"></script>
+<script src="{{ asset('theme/js/custom/file-loader.js') }}"></script>
 <script>
     jQuery(document).ready(function($) {
-        Setting.init();
+        FileLoader.init('logo', 'site_logo');
     });
 </script>
 @endpush

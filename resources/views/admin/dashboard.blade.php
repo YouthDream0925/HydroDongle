@@ -7,7 +7,7 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-5">
         <div class="col flex-shrink-0 mb-5 mb-md-0">
-            <h1 class="display-4 mb-0">{{ __('global.dashboard') }}</h1>
+            <h1 class="display-5 mb-0">{{ __('global.dashboard') }}</h1>
         </div>
     </div>
     <div class="row gx-5">
