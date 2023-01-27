@@ -18,6 +18,7 @@ return [
     'edit' => 'Edit',
     'update' => 'Update',
     'delete' => 'Delete',
+    'none' => 'There is no data.',
 
     /*
     |--------------------------------------------------------------------------
