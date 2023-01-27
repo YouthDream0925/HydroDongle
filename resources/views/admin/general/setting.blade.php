@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="container-xl p-5">
-    <div class="row justify-content-between align-items-center mb-5">
+    <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0">
             <h1 class="display-4 mb-0">{{ __('global.settingTitle') }}</h1>
         </div>
@@ -31,12 +31,12 @@
                             <div class="caption fst-italic text-muted mb-4"></div>
                             <!-- Profile picture upload button-->
                             <input type="file" name="logo" id="logo" hidden/>
-                            <label class="btn btn-primary" for="logo">
+                            <label class="btn btn-outline-primary mdc-ripple-upgraded" for="logo">
                                 {{ __('global.uploadLogo') }}
                                 <i class="material-icons trailing-icon">upload</i>
                             </label>
                         </div>
-                        <div class="text-end"><button class="btn btn-success" type="submit">{{ __('global.saveChanges') }}</button></div>
+                        <div class="text-end"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.saveChanges') }}</button></div>
                     {!! Form::close() !!}
                 </div>
             </div>

@@ -13,7 +13,7 @@
     <div class="row gx-5">
         <div class="col-xxl-3 col-md-6 mb-5"></div>
         <div class="col-xxl-3 col-md-6 mb-5">
-            <a href="{{ route('admin.dashboard') }}" class="txt-deco-none">
+            <a href="{{ route('brands.index') }}" class="txt-deco-none">
                 <div class="card card-raised bg-primary text-white">
                     <div class="card-body px-4">
                         <div class="d-flex justify-content-between align-items-center mb-2">

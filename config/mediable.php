@@ -25,8 +25,8 @@ return [
      */
     'allowed_disks' => [
         'local',
-        'avatar',
         'logo',
+        'brands'
     ],
 
     /*

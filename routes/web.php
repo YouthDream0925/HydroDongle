@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\General\SettingController;
+use App\Http\Controllers\Admin\Editer\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +39,18 @@ Route::middleware(['auth:admin'])->group(function() {
 
     Route::get('/admin/general/setting', [SettingController::class, 'index'])->name('website.setting');
     Route::post('/admin/general/setting', [SettingController::class, 'store'])->name('website.setting.store');
+
+    Route::resource('/admin/editer/brands', BrandController::class);
+
+    // Route::controller(BrandController::class)->group(function(){
+    //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
+    //     Route::post('brands', 'store')->name('brands.store');
+    //     Route::get('brands/create', 'create')->name('brands.create');
+    //     Route::get('brands/{brand}', 'show')->name('brands.show');
+    //     Route::put('brands/{brand}', 'update')->name('brands.update');
+    //     Route::delete('brands/{brand}', 'destroy')->name('brands.destroy');
+    //     Route::get('brands/{brand}/edit', 'edit')->name('brands.edit');
+    // });
 });
 
 Route::get('storage/{filename}', function ($filename)

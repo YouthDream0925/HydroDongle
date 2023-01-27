@@ -38,7 +38,8 @@ class SettingController extends Controller
 
         try {
             if($request->file('logo') != null) {
-                $old_logo->delete();
+                if($old_logo != null)
+                    $old_logo->delete();
                 
                 File::deleteDirectory(storage_path('app/logo'));
                 $original_file_name = $request->file('logo')->getClientOriginalName();

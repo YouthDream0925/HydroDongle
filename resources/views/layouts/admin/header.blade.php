@@ -24,6 +24,36 @@
                         </li>
                     </ul>
                 </div>
+                <!-- <div class="dropdown">
+                    <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
+                        <li>
+                            <a class="dropdown-item" href="#!">
+                                <i class="material-icons leading-icon">person</i>
+                                <div class="me-3">Profile</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#!">
+                                <i class="material-icons leading-icon">settings</i>
+                                <div class="me-3">Settings</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#!">
+                                <i class="material-icons leading-icon">help</i>
+                                <div class="me-3">Help</div>
+                            </a>
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a class="dropdown-item" href="#!">
+                                <i class="material-icons leading-icon">logout</i>
+                                <div class="me-3">Logout</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div> -->
             </div>
         </div>
     </div>

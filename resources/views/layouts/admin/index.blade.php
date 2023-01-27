@@ -19,7 +19,6 @@
                 @include('layouts.admin.footer')
             </div>
         </div>
-        <script src="{{asset('theme/vendor/peity/jquery.peity.min.js')}}"></script>
         <!-- Load Bootstrap JS bundle-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <!-- Load global scripts-->
@@ -33,9 +32,10 @@
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="{{ asset('theme/js/datatables/datatables-simple-demo.js') }}"></script>
         <script src="{{ asset('theme/js/lang.js') }}"></script>
+        <!-- Load the latest jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
         <script src="{{ asset('theme/vendor/bs5-toast/bs5-toast.js') }}"></script>
         @include('layouts.admin.flash')
-
         @stack('script')
     </body>
 </html>

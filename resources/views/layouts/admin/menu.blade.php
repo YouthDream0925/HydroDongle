@@ -17,15 +17,15 @@
                     </nav>
                 </div>
                 <!-- Drawer link (Layouts)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                <a class="nav-link {{ (request()->is('admin/editer*')) ? 'active' : 'collapsed' }}" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="nav-link-icon"><span class="material-icons">edit_document</span></div>
                     {{ __('global.category.editer') }}
                     <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                 </a>
                 <!-- Nested drawer nav (Layouts)-->
-                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
+                <div class="collapse {{ (request()->is('admin/editer*')) ? 'show' : '' }}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.brand') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/brands')) ? 'active' : '' }}" href="{{ route('brands.index') }}">{{ __('global.subCategory.brand') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.phone') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.module') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.moduleFunction') }}</a>

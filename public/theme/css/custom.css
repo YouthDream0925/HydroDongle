@@ -19,3 +19,8 @@
 .txt-deco-none {
   text-decoration: none !important;
 }
+
+.breadcrumb-custom {
+  display: flex !important;
+  justify-content: space-between !important;
+}

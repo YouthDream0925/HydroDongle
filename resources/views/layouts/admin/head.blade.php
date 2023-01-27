@@ -18,7 +18,4 @@
     <link href="{{ asset('theme/css/styles.css') }}" rel="stylesheet" />
     <link href="{{ asset('theme/css/custom.css') }}" rel="stylesheet" />
     @stack('css')
-
-    <!--[ Jquery Core Js ]-->
-    <script src="{{asset('theme/js/plugins.js')}}"></script>
 </head>

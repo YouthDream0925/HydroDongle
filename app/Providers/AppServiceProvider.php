@@ -27,5 +27,8 @@ class AppServiceProvider extends ServiceProvider
         if(env('APP_ENV') !== 'local') {
             URL::forceScheme('https');
         }
+
+        $per_page= 20;
+        config(['pagination.per_page' => $per_page]);
     }
 }
