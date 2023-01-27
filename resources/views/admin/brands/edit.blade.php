@@ -37,8 +37,11 @@
                             </div>
                             <div class="col-xl-4">
                                 <div class="text-center">
-                                    <!-- Profile picture image-->
-                                    <img id="brand_container" class="img-fluid mb-1" src="{{ url('storage/'.$brand->firstMedia('brand_image')->getDiskPath()) }}" alt="..."/>
+                                    @if($brand->hasMedia('brand_image'))
+                                    <img id="brand_container" class="img-fluid mb-1" src="{{ url($brand->firstMedia('brand_image')->getUrl()) }}" alt="..."/>
+                                    @else
+                                    <img id="brand_container" class="img-fluid mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                    @endif
                                     <div class="caption fst-italic text-muted mb-4"></div>
                                     <input type="file" name="brand_image" id="brand_image" hidden/>
                                     <label class="btn btn-outline-primary mdc-ripple-upgraded" for="brand_image">

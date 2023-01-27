@@ -41,9 +41,9 @@ class SettingController extends Controller
                 if($old_logo != null)
                     $old_logo->delete();
                 
-                File::deleteDirectory(storage_path('app/logo'));
+                File::deleteDirectory(storage_path('app/public/logo'));
                 $original_file_name = $request->file('logo')->getClientOriginalName();
-                $uploaded_file = $request->file('logo')->storeAs('logo', $original_file_name);
+                $uploaded_file = $request->file('logo')->storeAs('public/logo', $original_file_name);
 
                 Setting::create([
                     'property' => 'logo',

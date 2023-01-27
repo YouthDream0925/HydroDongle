@@ -55,7 +55,7 @@ Route::middleware(['auth:admin'])->group(function() {
 
 Route::get('storage/{filename}', function ($filename)
 {
-    $path = storage_path('app/logo/' . $filename);
+    $path = storage_path('app/public/logo/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);
@@ -72,7 +72,24 @@ Route::get('storage/{filename}', function ($filename)
 
 Route::get('storage/brands/{filename}', function ($filename)
 {
-    $path = storage_path('app/brands/' . $filename);
+    $path = storage_path('app/public/brands/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/sample/brand', function ()
+{
+    $path = storage_path('app/public/' . 'hydra.png');
 
     if (!File::exists($path)) {
         abort(404);

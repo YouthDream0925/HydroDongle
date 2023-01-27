@@ -39,7 +39,7 @@
                             <div class="col-xl-4">
                                 <div class="text-center">
                                     <!-- Profile picture image-->
-                                    <img id="brand_container" class="img-fluid mb-1" src="{{ url('storage/'.'hydra.png') }}" alt="..."/>
+                                    <img id="brand_container" class="img-fluid mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
                                     <div class="caption fst-italic text-muted mb-4"></div>
                                     <input type="file" name="brand_image" id="brand_image" hidden/>
                                     <label class="btn btn-outline-primary mdc-ripple-upgraded" for="brand_image">

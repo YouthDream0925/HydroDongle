@@ -54,16 +54,16 @@ return [
 
         'logo' => [
             'driver' => 'local',
-            'root' => storage_path('app/logo'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('app/public/logo'),
+            'url' => env('APP_URL').'/storage/brands',
             'visibility' => 'public',
             'throw' => false,
         ],
 
         'brands' => [
             'driver' => 'local',
-            'root' => storage_path('app/brands'),
-            'url' => env('APP_URL').'/storage',
+            'root' => storage_path('app/public/brands'),
+            'url' => '/storage/brands',
             'visibility' => 'public',
             'throw' => false,
         ],

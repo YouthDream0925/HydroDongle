@@ -32,7 +32,7 @@ class BrandController extends Controller
         try {
             if($request->file('brand_image') != null) {
                 $media = MediaUploader::fromSource($request->file('brand_image'))
-                    ->toDirectory('brands')
+                    ->toDisk('brands')
                     ->upload();
                     
                 $brand->attachMedia($media, 'brand_image');
@@ -68,7 +68,7 @@ class BrandController extends Controller
             }
 
             $media = MediaUploader::fromSource($request->file('brand_image'))
-            ->toDirectory('brands')
+            ->toDisk('brands')
             ->upload();
             
             $brand->attachMedia($media, 'brand_image');
