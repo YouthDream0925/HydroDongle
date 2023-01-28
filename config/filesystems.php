@@ -63,7 +63,15 @@ return [
         'brands' => [
             'driver' => 'local',
             'root' => storage_path('app/public/brands'),
-            'url' => '/storage/brands',
+            'url' => env('APP_URL').'/storage/brands',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
+        'slides' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/slides'),
+            'url' => env('APP_URL').'/storage/slides',
             'visibility' => 'public',
             'throw' => false,
         ],

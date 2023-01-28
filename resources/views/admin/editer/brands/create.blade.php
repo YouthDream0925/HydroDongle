@@ -8,7 +8,6 @@
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
             <h1 class="display-4 mb-0 display-5">{{ __('global.brandTitle') }} - {{ __('global.create') }}</h1>
-            <!-- <h1 class="text-white py-3 mb-0 display-6">Knowledgebase - Categories</h1> -->
             <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('brands.index') }}">
                 <span class="material-icons">reply</span>{{ __('global.back') }}
             </a>
@@ -16,14 +15,12 @@
     </div>
     <div class="row gx-5">
         <div class="col-xl-12">
-            <!-- Account details card-->
             <div class="card card-raised mb-5">
                 <div class="card-body p-5">
                     <div class="card-title mb-4">{{ __('global.brandDetails') }}</div>
                     {!! Form::open(array('route' => 'brands.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
                         <div class="row mb-4 item-center">
                             <div class="col-xl-8">
-                                <!-- Form Group (username)-->
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Brand Name" outlined id="brand_name" name="brand_name" value=""></mwc-textfield>
                                     @error('brand_name')
@@ -53,14 +50,10 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Save changes button-->
                         <div class="text-center"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.create') }}</button></div>
                     {!! Form::close() !!}
                 </div>
             </div>
-        </div>
-        <div class="col-xl-4">
-            
         </div>
     </div>
 </div>

@@ -46,7 +46,7 @@ class BrandRequest extends FormRequest
                 'brand_link' => ['required', 'string', 'max:255'],
                 'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:2048']
             ];
-        }        
+        }
     }
 
     public function messages()

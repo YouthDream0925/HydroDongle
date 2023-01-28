@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
+use App\Http\Controllers\Admin\Other\SlideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::resource('/admin/editer/brands', BrandController::class);
     Route::resource('/admin/editer/phones', PhoneController::class);
 
+    Route::resource('/admin/other/slides', SlideController::class);
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');
