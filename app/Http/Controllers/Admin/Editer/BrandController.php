@@ -16,12 +16,12 @@ class BrandController extends Controller
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
         $brands = Brand::Popular($request->per_page);
 
-        return view('admin.brands.index', compact('brands'));
+        return view('admin.editer.brands.index', compact('brands'));
     }
 
     public function create()
     {
-        return view('admin.brands.create');
+        return view('admin.editer.brands.create');
     }
 
     public function store(BrandRequest $request)
@@ -53,7 +53,7 @@ class BrandController extends Controller
     public function edit($id)
     {
         $brand = Brand::find($id);
-        return view('admin.brands.edit', compact('brand'));
+        return view('admin.editer.brands.edit', compact('brand'));
     }
 
     public function update(BrandRequest $request, $id)
