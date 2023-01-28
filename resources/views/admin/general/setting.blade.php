@@ -24,7 +24,9 @@
                             <!-- Profile picture image-->                            
                             @foreach($settings as $key => $setting)
                                 @if($setting->property == "logo")
-                                <img id="site_logo" class="img-fluid rounded-circle mb-1" src="{{ url('storage/'.$setting->value) }}" alt="..." style="width: 160px; height: 160px" />
+                                <div class="custom-brand-container">
+                                    <img id="site_logo" class="img-fluid img-responsive mb-1" src="{{ url('storage/'.$setting->value) }}" alt="..."/>
+                                </div>
                                 @endif
                             @endforeach
                             <!-- Profile picture help block-->
