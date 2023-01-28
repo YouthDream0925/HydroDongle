@@ -32,8 +32,11 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="">
+                                <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Brand Link" outlined id="brand_link" name="brand_link" value=""></mwc-textfield>
+                                </div>
+                                <div class="d-flex align-items-center">
+                                    <mwc-formfield label="Show / Hide"><mwc-checkbox name="brand_activate" value="true" checked></mwc-checkbox></mwc-formfield>
                                 </div>
                             </div>
                             <div class="col-xl-4">

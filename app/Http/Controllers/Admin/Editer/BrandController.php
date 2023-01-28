@@ -27,6 +27,10 @@ class BrandController extends Controller
     public function store(BrandRequest $request)
     {
         $input = $request->all();
+        if($request->brand_activate == "true")
+            $input['brand_activate'] = '1';
+        else
+            $input['brand_activate'] = '0';
         $brand = Brand::create($input);
 
         try {
@@ -61,6 +65,10 @@ class BrandController extends Controller
         $brand = Brand::find($id);
         $brand->brand_name = $request->input('brand_name');
         $brand->brand_link = $request->input('brand_link');
+        if($request->brand_activate == "true")
+            $brand->brand_activate = '1';
+        else
+            $brand->brand_activate = '0';
         if($request->file('brand_image') != null) {
             if($brand->hasMedia('brand_image')) {
                 $media = $brand->getMedia('brand_image')->first();
