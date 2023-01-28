@@ -1,32 +1,36 @@
-
+/***** Text style *****/
 .txt-right {
     text-align: right;
-}
-
-.f-right {
-    float: right;
-}
-
-.pt-15 {
-    padding-top: 1.5rem !important;
-}
-
-.g-recaptcha {
-    transform:scale(1.1);
-    transform-origin:0 0;
 }
 
 .txt-deco-none {
     text-decoration: none !important;
 }
 
-.breadcrumb-custom {
-    display: flex !important;
-    justify-content: space-between !important;
+/***** Item style *****/
+.f-right {
+    float: right;
 }
 
 .item-center {
     align-items: center !important;
+}
+
+/***** padding *****/
+.pt-15 {
+    padding-top: 1.5rem !important;
+}
+
+/***** margin *****/
+.g-recaptcha {
+    transform:scale(1.1);
+    transform-origin:0 0;
+}
+
+/***** container style *****/
+.breadcrumb-custom {
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
 .custom-brand-container {

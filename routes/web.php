@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\Editer\BrandController;
+use App\Http\Controllers\Admin\Editer\PhoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::post('/admin/general/setting', [SettingController::class, 'store'])->name('website.setting.store');
 
     Route::resource('/admin/editer/brands', BrandController::class);
+    Route::resource('/admin/editer/phones', PhoneController::class);
 
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
