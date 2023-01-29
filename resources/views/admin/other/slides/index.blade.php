@@ -17,7 +17,7 @@
         <div class="col-lg-12">
             @if(count($slides) != 0)
                 @foreach($slides as $slide)
-                <div class="clicker card card-quick-link card-raised ripple-gray mdc-ripple-upgraded mb-2 shadow-10">
+                <div class="card card-quick-link card-raised ripple-gray mdc-ripple-upgraded mb-2 shadow-10">
                     <div class="row g-0">
                         <div class="col-lg-7 col-md-6">
                             <div class="row g-0">
@@ -67,11 +67,4 @@
 @endsection
 
 @push('script')
-<script>
-    jQuery(document).ready(function{
-        $('.clicker').on('click', function() {
-            alert('asdf');
-        });
-    });
-</script>
 @endpush

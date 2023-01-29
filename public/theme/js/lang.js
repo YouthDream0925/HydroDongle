@@ -18,4 +18,5 @@ var lang = {
     confirmButtonText: 'Yes, delete it!',
 
     unexpectedErrorOccured: 'Unexpected error occured.',
+    checkInputContent: 'Please input all info.'
 };

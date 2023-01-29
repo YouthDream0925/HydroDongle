@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
+use App\Http\Controllers\Admin\Other\IntroController;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +48,9 @@ Route::middleware(['auth:admin'])->group(function() {
 
     Route::resource('/admin/other/slides', SlideController::class);
     Route::post('/admin/other/slides/ads/delete', [SlideController::class, 'ads_delete']);
+
+    Route::get('/admin/other/intro', [IntroController::class, 'index'])->name('intro.index');
+    Route::post('/admin/other/intro/save', [IntroController::class, 'save'])->name('intro.save');
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');

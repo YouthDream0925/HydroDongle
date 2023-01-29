@@ -76,7 +76,7 @@
                                                 </div>
                                             </div>
                                         @endfor
-                                    @endif                                    
+                                    @endif
                                 </div>
                             </div>
                         </div>
