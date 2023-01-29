@@ -16,4 +16,6 @@ var lang = {
     deleteConfirmButtonColor: '#2e7d32',
     cancelButtonColor: '#f5f5f5',
     confirmButtonText: 'Yes, delete it!',
+
+    unexpectedErrorOccured: 'Unexpected error occured.',
 };

@@ -46,6 +46,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::resource('/admin/editer/phones', PhoneController::class);
 
     Route::resource('/admin/other/slides', SlideController::class);
+    Route::post('/admin/other/slides/ads/delete', [SlideController::class, 'ads_delete']);
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');

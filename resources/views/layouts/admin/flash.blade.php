@@ -6,6 +6,7 @@
             className: 'border-0 bg-success text-white',
             btnCloseWhite: true,
         }).show();
+        // @php Session::forget('success'); @endphp
     @endif
 
     @if ($message = Session::get('error'))
@@ -15,6 +16,7 @@
             className: 'border-0 bg-danger text-white',
             btnCloseWhite: true,
         }).show();
+        // @php Session::forget('error'); @endphp
     @endif
 
     @if ($message = Session::get('warning'))
@@ -24,6 +26,7 @@
             className: 'border-0 bg-warning text-white',
             btnCloseWhite: true,
         }).show();
+        // @php Session::forget('warning'); @endphp
     @endif
 
     @if ($message = Session::get('info'))

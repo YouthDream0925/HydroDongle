@@ -53,7 +53,7 @@
                                                             {{ __('global.ads') }}
                                                             <i class="material-icons trailing-icon">upload</i>
                                                         </label>
-                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{$key}}">delete</i>                                                
+                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{$key}}" data-mediaKey="{{ $media->getKey() }}" data-slideKey="{{ $slide->id }}">delete</i>
                                                     </div>
                                                 </div>
                                             </div>
@@ -129,33 +129,57 @@
 
     $('.btn-ads').click(function(event) {
         const id = $(this).attr('data-index');
-        if($('#ads_image' + id).val() != '') {
-            swal({
-                title: 'Are you sure you want to delete this ADS?',
-                text: lang.deleteConfirmText,
-                icon: lang.deleteConfirmIcon,
-                type: lang.deleteConfirmType,
-                buttons: lang.deleteConfirmButton,
-                confirmButtonColor: lang.deleteConfirmButtonColor,
-                cancelButtonColor: lang.cancelButtonColor,
-                confirmButtonText: lang.confirmButtonText
-            }).then((willDelete) => {
-                if (willDelete) {
-                    $('#ads_image' + id).val('');
-                    $('#ads_container' + id).attr('src', "{{ url('storage/sample/brand') }}")
+        const media_key = $(this).attr('data-mediaKey');
+        const slide_key = $(this).attr('data-slideKey');
+
+        if(media_key !== undefined && slide_key !== undefined) {
+            $.ajax({
+                type: 'post',
+                url: '/admin/other/slides/ads/delete',
+                data: {
+                    '_token': $('input[name="_token"]').val(),
+                    'media_key': media_key,
+                    'slide_key': slide_key,
+                },
+                success: function(result) {
+                    location.reload();
+                }, error: function(res) {
                     new bs5.Toast({
-                        body: 'ADS deleted successfully.',
-                        className: 'border-0 bg-success text-white',
+                        body: lang.unexpectedErrorOccured,
+                        className: 'border-0 bg-danger text-white',
                         btnCloseWhite: true,
                     }).show();
                 }
             });
         } else {
-            new bs5.Toast({
-                body: 'No file selected.',
-                className: 'border-0 bg-danger text-white',
-                btnCloseWhite: true,
-            }).show();
+            if($('#ads_image' + id).val() != '') {
+                swal({
+                    title: 'Are you sure you want to delete this ADS?',
+                    text: lang.deleteConfirmText,
+                    icon: lang.deleteConfirmIcon,
+                    type: lang.deleteConfirmType,
+                    buttons: lang.deleteConfirmButton,
+                    confirmButtonColor: lang.deleteConfirmButtonColor,
+                    cancelButtonColor: lang.cancelButtonColor,
+                    confirmButtonText: lang.confirmButtonText
+                }).then((willDelete) => {
+                    if (willDelete) {
+                        $('#ads_image' + id).val('');
+                        $('#ads_container' + id).attr('src', "{{ url('storage/sample/brand') }}")
+                        new bs5.Toast({
+                            body: 'ADS deleted successfully.',
+                            className: 'border-0 bg-success text-white',
+                            btnCloseWhite: true,
+                        }).show();
+                    }
+                });
+            } else {
+                new bs5.Toast({
+                    body: 'No file selected.',
+                    className: 'border-0 bg-danger text-white',
+                    btnCloseWhite: true,
+                }).show();
+            }
         }
     });
 </script>

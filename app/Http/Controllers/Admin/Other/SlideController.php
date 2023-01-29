@@ -107,4 +107,27 @@ class SlideController extends Controller
         return redirect()->route('slides.index')
                         ->with('success','Slide deleted successfully');
     }
+
+    public function ads_delete(Request $request)
+    {
+        $flag = false; $result = [];
+        $slide = Slide::find($request->slide_key);
+        if($slide->hasMedia('ads_images') && count($slide->getMedia('ads_images')) > 1) {
+            foreach($slide->getMedia('ads_images') as $media) {
+                if($media->getKey() == $request->media_key) {
+                    $media->delete();
+                    $flag = true;
+                }
+            }
+            if($flag == true) {
+                session(['success' => 'ADS deleted successfully.']);
+            }
+            else {
+                session(['error' => 'Can not find this ADS.']);
+            }
+        } else {
+            session(['error' => 'Can not delete this ADS.']);
+        }
+        return;
+    }
 }
