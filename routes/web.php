@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
 use App\Http\Controllers\Admin\Other\IntroController;
+use App\Http\Controllers\Admin\Other\GuideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,9 @@ Route::middleware(['auth:admin'])->group(function() {
 
     Route::get('/admin/other/intro', [IntroController::class, 'index'])->name('intro.index');
     Route::post('/admin/other/intro/save', [IntroController::class, 'save'])->name('intro.save');
+
+    Route::get('/admin/other/guide', [GuideController::class, 'index'])->name('guide.index');
+    Route::post('/admin/other/guide/save', [GuideController::class, 'save'])->name('guide.save');
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');

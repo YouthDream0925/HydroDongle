@@ -74,7 +74,7 @@
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
                         <a class="nav-link {{ (request()->is('admin/other/slide*')) ? 'active' : '' }}" href="{{ route('slides.index') }}">{{ __('global.subCategory.mainSlide') }}</a>
                         <a class="nav-link {{ (request()->is('admin/other/intro*')) ? 'active' : '' }}" href="{{ route('intro.index') }}">{{ __('global.subCategory.description') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.guide') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/other/guide*')) ? 'active' : '' }}" href="{{ route('guide.index') }}">{{ __('global.subCategory.guide') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.problems') }}</a>
                     </nav>
                 </div>

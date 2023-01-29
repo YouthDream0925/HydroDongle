@@ -7,8 +7,8 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0 display-5">{{ __('global.introTitle') }}</h1>
-            <a id="save_into" class="btn btn-outline-success mdc-ripple-upgraded" href="javascript::void(0)">
+            <h1 class="display-4 mb-0 display-5">{{ __('global.guideTitle') }}</h1>
+            <a id="save_guide" class="btn btn-outline-success mdc-ripple-upgraded" href="javascript::void(0)">
                 <span class="material-icons">save</span>{{ __('global.save') }}
             </a>
         </div>
@@ -16,18 +16,18 @@
     <div class="row gx-5">
         <div class="col-lg-12">
             <div class="card card-raised mb-2">
-                <div class="card-body p-4">                    
-                    @if($intro != null)
-                    <mwc-textfield class="w-100" label="Title" outlined id="title" name="title" value="@if($intro != null){{ $intro->title }}@endif"></mwc-textfield>
+                <div class="card-body p-4">
+                    @if($guide != null)
+                    <mwc-textfield class="w-100" label="Title" outlined id="title" name="title" value="@if($guide != null){{ $guide->title }}@endif"></mwc-textfield>
                     @else
                     <mwc-textfield class="w-100" label="Title" outlined id="title" name="title" value=""></mwc-textfield>
                     @endif
                 </div>
-            </div>
-            @if($intro != null)
-            <textarea id="introduction">{{ $intro->content }}</textarea>
+            </div>            
+            @if($guide != null)
+            <textarea id="install_guide">{{ $guide->content }}</textarea>
             @else
-            <textarea id="introduction"></textarea>
+            <textarea id="install_guide"></textarea>
             @endif
         </div>
     </div>
@@ -39,7 +39,7 @@
 <script src="https://cdn.tiny.cloud/1/j3m0mx68czg9zlr3zwa7d4ohz60pzdsp89lxthokmy28g54o/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 <script type="text/javascript">
     tinymce.init({
-        selector: '#introduction',
+        selector: '#install_guide',
         plugins: [
             'anchor', 'autolink', 'charmap', 'codesample', 'emoticons', 'image', 'link', 'lists', 'media', 'searchreplace', 'table', 'visualblocks', 'wordcount', 'checklist', 'mediaembed', 'casechange', 'export', 'formatpainter', 'pageembed', 'linkchecker', 'a11ychecker', 'tinymcespellchecker', 'permanentpen', 'powerpaste', 'advtable', 'advcode', 'editimage', 'tinycomments', 'tableofcontents', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'inlinecss'
         ],
@@ -53,9 +53,9 @@
         height: 480     
     });
 
-    $('#save_into').click(function(event) {
+    $('#save_guide').click(function(event) {
         tinymce.triggerSave();
-        const content = tinymce.get('introduction').getContent();
+        const content = tinymce.get('install_guide').getContent();
         const title = $('#title').val();
 
         if(content == "" || title == "") {
@@ -69,7 +69,7 @@
 
         $.ajax({
             type: 'post',
-            url: '/admin/other/intro/save',
+            url: '/admin/other/guide/save',
             data: {
                 '_token': $('input[name="_token"]').val(),
                 'title': title,
