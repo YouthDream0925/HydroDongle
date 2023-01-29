@@ -83,7 +83,7 @@ return [
     | General Setting page
     |--------------------------------------------------------------------------
     */
-    'settingTitle' => 'Settings',
+    'settingTitle' => 'SETTINGS',
     'saveChanges' => 'SAVE CHANGES',
     'uploadLogo' => 'UPLOAD NEW LOGO',
 
@@ -92,7 +92,7 @@ return [
     | Editer Brand page
     |--------------------------------------------------------------------------
     */
-    'brandTitle' => 'Brands',
+    'brandTitle' => 'BRANDS',
     'brand' => 'Brand',
     'brandDetails' => 'Brand Details',
 
@@ -110,7 +110,7 @@ return [
     | Other Slide page
     |--------------------------------------------------------------------------
     */
-    'slideTitle' => 'Main Slides',
+    'slideTitle' => 'MAIN SLIDES',
     'ads' => 'ADS',
 
     /*
@@ -140,6 +140,13 @@ return [
     |--------------------------------------------------------------------------
     */
     'updateTitle' => 'UPDATE HISTORIES',
+
+    /*
+    |--------------------------------------------------------------------------
+    | History Credit page
+    |--------------------------------------------------------------------------
+    */
+    'creditTitle' => 'CREDIT TRANSFER HISTORIES',
 
     /*
     |--------------------------------------------------------------------------

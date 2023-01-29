@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\Other\IntroController;
 use App\Http\Controllers\Admin\Other\GuideController;
 use App\Http\Controllers\Admin\Other\ProblemController;
 use App\Http\Controllers\Admin\History\UpdateController;
+use App\Http\Controllers\Admin\History\CreditController;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,15 +64,8 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::post('/admin/other/problems/delete', [ProblemController::class, 'delete']);
 
     Route::resource('/admin/history/updates', UpdateController::class);
-    // Route::controller(BrandController::class)->group(function(){
-    //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
-    //     Route::post('brands', 'store')->name('brands.store');
-    //     Route::get('brands/create', 'create')->name('brands.create');
-    //     Route::get('brands/{brand}', 'show')->name('brands.show');
-    //     Route::put('brands/{brand}', 'update')->name('brands.update');
-    //     Route::delete('brands/{brand}', 'destroy')->name('brands.destroy');
-    //     Route::get('brands/{brand}/edit', 'edit')->name('brands.edit');
-    // });
+
+    Route::resource('/admin/history/credits', CreditController::class);
 });
 
 Route::get('storage/{filename}', function ($filename)

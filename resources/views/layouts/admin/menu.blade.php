@@ -48,7 +48,7 @@
                 <div class="collapse {{ (request()->is('admin/history*')) ? 'show' : '' }}" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
                         <a class="nav-link {{ (request()->is('admin/history/updates*')) ? 'active' : '' }}" href="{{ route('updates.index') }}">{{ __('global.subCategory.updateHistory') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.creditHistory') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/history/credits*')) ? 'active' : '' }}" href="{{ route('credits.index') }}">{{ __('global.subCategory.creditHistory') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.paymentHistory') }}</a>
                     </nav>
                 </div>
