@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
 use App\Http\Controllers\Admin\Other\IntroController;
 use App\Http\Controllers\Admin\Other\GuideController;
+use App\Http\Controllers\Admin\Other\ProblemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +46,7 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::post('/admin/general/setting', [SettingController::class, 'store'])->name('website.setting.store');
 
     Route::resource('/admin/editer/brands', BrandController::class);
+
     Route::resource('/admin/editer/phones', PhoneController::class);
 
     Route::resource('/admin/other/slides', SlideController::class);
@@ -55,6 +57,9 @@ Route::middleware(['auth:admin'])->group(function() {
 
     Route::get('/admin/other/guide', [GuideController::class, 'index'])->name('guide.index');
     Route::post('/admin/other/guide/save', [GuideController::class, 'save'])->name('guide.save');
+
+    Route::resource('/admin/other/problems', ProblemController::class);
+    Route::post('/admin/other/problems/delete', [ProblemController::class, 'delete']);
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');
