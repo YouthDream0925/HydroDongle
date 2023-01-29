@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Other\SlideController;
 use App\Http\Controllers\Admin\Other\IntroController;
 use App\Http\Controllers\Admin\Other\GuideController;
 use App\Http\Controllers\Admin\Other\ProblemController;
+use App\Http\Controllers\Admin\History\UpdateController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,6 +61,8 @@ Route::middleware(['auth:admin'])->group(function() {
 
     Route::resource('/admin/other/problems', ProblemController::class);
     Route::post('/admin/other/problems/delete', [ProblemController::class, 'delete']);
+
+    Route::resource('/admin/history/updates', UpdateController::class);
     // Route::controller(BrandController::class)->group(function(){
     //     Route::get('/admin/editer/brands', 'index')->name('brands.index');
     //     Route::post('brands', 'store')->name('brands.store');

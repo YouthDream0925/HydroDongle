@@ -38,17 +38,18 @@
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.servers') }}</a>
                     </nav>
                 </div>
-                <!-- Drawer link (Histories/Stories)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                <!-- Drawer link (Histories)-->
+                <a class="nav-link {{ (request()->is('admin/history*')) ? 'active' : 'collapsed' }}" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="nav-link-icon"><span class="material-icons">watch_later</span></div>
                     {{ __('global.category.histories') }}
                     <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
                 </a>
-                <!-- Nested drawer nav (Histories/Stories)-->
-                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
+                <!-- Nested drawer nav (Histories)-->
+                <div class="collapse {{ (request()->is('admin/history*')) ? 'show' : '' }}" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.updateHistory') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.successStory') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/history/updates*')) ? 'active' : '' }}" href="{{ route('updates.index') }}">{{ __('global.subCategory.updateHistory') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.creditHistory') }}</a>
+                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.paymentHistory') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Other)-->

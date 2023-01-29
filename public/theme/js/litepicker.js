@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', event => {
     if (litepickerSingleDate) {
         new Litepicker({
             element: litepickerSingleDate,
-            format: 'MMM DD, YYYY'
+            format: 'YYYY-MM-DD'
         });
     }
 

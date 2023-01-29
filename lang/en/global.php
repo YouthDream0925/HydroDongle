@@ -40,7 +40,7 @@ return [
     'category' => [
         'general' => 'General',
         'editer' => 'Add/Edit/Delete',
-        'histories' => 'Histories/Stories',
+        'histories' => 'Histories',
         'customModels' => 'Custom Models',
         'other' => 'Other'
     ],
@@ -58,7 +58,8 @@ return [
         'news' => 'News',
         'servers' => 'Servers',
         'updateHistory' => 'Update History',
-        'successStory' => 'Success Story',
+        'creditHistory' => 'Credit Transfer History',
+        'paymentHistory' => 'Payment History',
         'samsungModels' => 'Samsung Models',
         'mainSlide' => 'Main Slide',
         'description' => 'What is HYDRA TOOL?',
@@ -118,7 +119,6 @@ return [
     |--------------------------------------------------------------------------
     */
     'introTitle' => 'WHAT IS HYDRA TOOL?',
-    'save' => 'Save',
 
     /*
     |--------------------------------------------------------------------------
@@ -126,7 +126,6 @@ return [
     |--------------------------------------------------------------------------
     */
     'guideTitle' => 'INSTALL INSTRUCTION',
-    'save' => 'Save',
 
     /*
     |--------------------------------------------------------------------------
@@ -134,7 +133,13 @@ return [
     |--------------------------------------------------------------------------
     */
     'problemTitle' => 'PROBLEMS',
-    'save' => 'Save',
+
+    /*
+    |--------------------------------------------------------------------------
+    | History Update page
+    |--------------------------------------------------------------------------
+    */
+    'updateTitle' => 'UPDATE HISTORIES',
 
     /*
     |--------------------------------------------------------------------------

@@ -23,11 +23,6 @@
                             <div class="col-xl-8">
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Brand Name" outlined id="brand_name" name="brand_name" value=""></mwc-textfield>
-                                    @error('brand_name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
                                 </div>
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Brand Link" outlined id="brand_link" name="brand_link" value=""></mwc-textfield>
