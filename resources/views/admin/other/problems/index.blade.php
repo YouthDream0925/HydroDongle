@@ -34,7 +34,11 @@
             </div>
             @endforeach
         @else
-            This is no data.
+        <div class="card card-raised mb-5">
+            <div class="card-body p-5">
+                <h2 class="card-title text-center">{{ __('global.none') }}</h2>
+            </div>
+        </div>
         @endif        
     </div>
 </div>
