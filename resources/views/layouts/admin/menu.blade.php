@@ -51,18 +51,6 @@
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.successStory') }}</a>
                     </nav>
                 </div>
-                <!-- Drawer link (Custom Modles)-->
-                <a class="nav-link collapsed" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseModels" aria-expanded="false" aria-controls="collapseModels">
-                    <div class="nav-link-icon"><span class="material-icons">business_center</span></div>
-                    {{ __('global.category.customModels') }}
-                    <div class="drawer-collapse-arrow"><i class="material-icons">expand_more</i></div>
-                </a>
-                <!-- Nested drawer nav (Custom Modles)-->
-                <div class="collapse" id="collapseModels" aria-labelledby="headingTwo" data-bs-parent="#drawerAccordion">
-                    <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.samsungModels') }}</a>
-                    </nav>
-                </div>
                 <!-- Drawer link (Other)-->
                 <a class="nav-link {{ (request()->is('admin/other*')) ? 'active' : 'collapsed' }}" href="javascript:void(0);" data-bs-toggle="collapse" data-bs-target="#collapseOther" aria-expanded="false" aria-controls="collapseOther">
                     <div class="nav-link-icon"><span class="material-icons">info</span></div>
