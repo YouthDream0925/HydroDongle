@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="d-flex align-items-center item-space">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" @if($slide->activate == '1') checked @endif></mwc-checkbox></mwc-formfield>
-                                    <input id="sort_number" name="sort" value="{{ $slide->sort }}" type="text" class="form-control" style="width: 100px;" data-inputmask="'alias': 'decimal', 'groupSeparator': ','" />
+                                    <input id="sort_number" name="sort" value="{{ $slide->sort }}" type="text" maxlength="4" class="form-control" style="width: 100px;" data-inputmask="'alias': 'decimal', 'groupSeparator': ','" />
                                 </div>
                             </div>
                             <div class="col-xl-6">
@@ -48,10 +48,13 @@
                                                     </div>
                                                     <div class="caption fst-italic text-muted mb-2"></div>
                                                     <input type="file" name="ads_images[]" id="ads_image{{$key}}" hidden/>
-                                                    <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{$key}}">
-                                                        {{ __('global.ads') }}
-                                                        <i class="material-icons trailing-icon">upload</i>
-                                                    </label>
+                                                    <div class="custom-btn-group">
+                                                        <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{$key}}">
+                                                            {{ __('global.ads') }}
+                                                            <i class="material-icons trailing-icon">upload</i>
+                                                        </label>
+                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{$key}}">delete</i>                                                
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -62,11 +65,14 @@
                                                         <img id="ads_container{{ count($slide->getMedia('ads_images')) + $i }}" class="img-fluid img-responsive mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
                                                     </div>
                                                     <div class="caption fst-italic text-muted mb-2"></div>
-                                                    <input type="file" name="ads_images[]" id="ads_image{{ count($slide->getMedia('ads_images')) + $i }}" hidden/>
-                                                    <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{ count($slide->getMedia('ads_images')) + $i }}">
-                                                        {{ __('global.ads') }}
-                                                        <i class="material-icons trailing-icon">upload</i>
-                                                    </label>
+                                                    <input type="file" name="ads_images[]" id="ads_image{{ count($slide->getMedia('ads_images')) + $i }}" hidden/>                                                    
+                                                    <div class="custom-btn-group">
+                                                        <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{ count($slide->getMedia('ads_images')) + $i }}">
+                                                            {{ __('global.ads') }}
+                                                            <i class="material-icons trailing-icon">upload</i>
+                                                        </label>
+                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{ count($slide->getMedia('ads_images')) + $i }}">delete</i>                                                
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endfor
@@ -119,6 +125,38 @@
                 form.submit();
             }
         });
+    });
+
+    $('.btn-ads').click(function(event) {
+        const id = $(this).attr('data-index');
+        if($('#ads_image' + id).val() != '') {
+            swal({
+                title: 'Are you sure you want to delete this ADS?',
+                text: lang.deleteConfirmText,
+                icon: lang.deleteConfirmIcon,
+                type: lang.deleteConfirmType,
+                buttons: lang.deleteConfirmButton,
+                confirmButtonColor: lang.deleteConfirmButtonColor,
+                cancelButtonColor: lang.cancelButtonColor,
+                confirmButtonText: lang.confirmButtonText
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $('#ads_image' + id).val('');
+                    $('#ads_container' + id).attr('src', "{{ url('storage/sample/brand') }}")
+                    new bs5.Toast({
+                        body: 'ADS deleted successfully.',
+                        className: 'border-0 bg-success text-white',
+                        btnCloseWhite: true,
+                    }).show();
+                }
+            });
+        } else {
+            new bs5.Toast({
+                body: 'No file selected.',
+                className: 'border-0 bg-danger text-white',
+                btnCloseWhite: true,
+            }).show();
+        }
     });
 </script>
 @endpush

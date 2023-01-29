@@ -26,6 +26,10 @@
 }
 
 /***** margin *****/
+.m-0 {
+    margin: 0 !important;
+}
+
 .g-recaptcha {
     transform:scale(1.1);
     transform-origin:0 0;
@@ -35,6 +39,17 @@
 .breadcrumb-custom {
     display: flex !important;
     justify-content: space-between !important;
+}
+
+.custom-icon {
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+.custom-btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .custom-brand-container {
