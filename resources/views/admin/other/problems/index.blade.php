@@ -34,9 +34,11 @@
             </div>
             @endforeach
         @else
-        <div class="card card-raised mb-5">
-            <div class="card-body p-5">
-                <h2 class="card-title text-center">{{ __('global.none') }}</h2>
+        <div class="col-lg-12">
+            <div class="card card-raised mb-5">
+                <div class="card-body p-5">
+                    <h2 class="card-title text-center">{{ __('global.none') }}</h2>
+                </div>
             </div>
         </div>
         @endif        
@@ -47,8 +49,8 @@
 
 @push('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="http://rawgit.com/pisi/Longclick/master/jquery.longclick-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="https://rawgit.com/pisi/Longclick/master/jquery.longclick-min.js"></script>
 <script>
     $(".long-clicker").longclick(500, function(){
         const id = $(this).attr('data-problemKey');
