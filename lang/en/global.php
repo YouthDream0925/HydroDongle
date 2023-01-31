@@ -50,6 +50,7 @@ return [
         'setting' => 'Website Settings',
         'adminUsers' => 'Admin Panel Users',
         'roles' => 'Roles',
+        'transfer' => 'Transfer',
         'brand' => 'Brand',
         'phone' => 'Phone',
         'module' => 'Module',

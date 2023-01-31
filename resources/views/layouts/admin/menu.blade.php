@@ -16,6 +16,7 @@
                         <a class="nav-link {{ (request()->is('admin/general/setting')) ? 'active' : '' }}" href="{{ route('website.setting') }}">{{ __('global.subCategory.setting') }}</a>
                         <a class="nav-link {{ (request()->is('admin/general/admins*')) ? 'active' : '' }}" href="{{ route('admins.index') }}">{{ __('global.subCategory.adminUsers') }}</a>
                         <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/general/transfer')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.transfer') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Add/Edit/Delete)-->

@@ -38,43 +38,45 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/admin',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
-Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login');
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
+    Route::post('',[LoginController::class,'adminLogin'])->name('admin.login');
+    
+    Route::get('register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
+    Route::post('register',[RegisterController::class,'createAdmin'])->name('admin.register');
+});
 
-Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
-Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
-
-Route::middleware(['auth:admin'])->group(function() {
-    Route::get('/admin/dashboard', function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
+    Route::get('dashboard', function() {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::get('/admin/general/setting', [SettingController::class, 'index'])->name('website.setting');
-    Route::post('/admin/general/setting', [SettingController::class, 'store'])->name('website.setting.store');
+    Route::get('general/setting', [SettingController::class, 'index'])->name('website.setting');
+    Route::post('general/setting', [SettingController::class, 'store'])->name('website.setting.store');
 
-    Route::resource('/admin/editer/brands', BrandController::class);
+    Route::resource('editer/brands', BrandController::class);
 
-    Route::resource('/admin/editer/phones', PhoneController::class);
+    Route::resource('editer/phones', PhoneController::class);
 
-    Route::resource('/admin/other/slides', SlideController::class);
-    Route::post('/admin/other/slides/ads/delete', [SlideController::class, 'ads_delete']);
+    Route::resource('other/slides', SlideController::class);
+    Route::post('other/slides/ads/delete', [SlideController::class, 'ads_delete']);
 
-    Route::get('/admin/other/intro', [IntroController::class, 'index'])->name('intro.index');
-    Route::post('/admin/other/intro/save', [IntroController::class, 'save'])->name('intro.save');
+    Route::get('other/intro', [IntroController::class, 'index'])->name('intro.index');
+    Route::post('other/intro/save', [IntroController::class, 'save'])->name('intro.save');
 
-    Route::get('/admin/other/guide', [GuideController::class, 'index'])->name('guide.index');
-    Route::post('/admin/other/guide/save', [GuideController::class, 'save'])->name('guide.save');
+    Route::get('other/guide', [GuideController::class, 'index'])->name('guide.index');
+    Route::post('other/guide/save', [GuideController::class, 'save'])->name('guide.save');
 
-    Route::resource('/admin/other/problems', ProblemController::class);
-    Route::post('/admin/other/problems/delete', [ProblemController::class, 'delete']);
+    Route::resource('other/problems', ProblemController::class);
+    Route::post('other/problems/delete', [ProblemController::class, 'delete']);
 
-    Route::resource('/admin/history/updates', UpdateController::class);
+    Route::resource('history/updates', UpdateController::class);
 
-    Route::resource('/admin/history/credits', CreditController::class);
+    Route::resource('history/credits', CreditController::class);
 
-    Route::resource('/admin/general/roles', RoleController::class);
-    Route::resource('/admin/general/admins', AdminController::class);
-    // Route::resource('/admin/general/users', UserController::class);
+    Route::resource('general/roles', RoleController::class);
+    Route::resource('general/admins', AdminController::class);
+    // Route::resource('general/users', UserController::class);
 });
 
 Route::middleware(['auth'])->group(function() {
