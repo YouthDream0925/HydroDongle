@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\History\UpdateController;
 use App\Http\Controllers\Admin\History\CreditController;
 use App\Http\Controllers\Manage\RoleController;
 use App\Http\Controllers\Manage\UserController;
+use App\Http\Controllers\Manage\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +70,8 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::resource('/admin/history/credits', CreditController::class);
 
     Route::resource('/admin/general/roles', RoleController::class);
-    Route::resource('/admin/general/users', UserController::class);
+    Route::resource('/admin/general/admins', AdminController::class);
+    // Route::resource('/admin/general/users', UserController::class);
 });
 
 Route::middleware(['auth'])->group(function() {
