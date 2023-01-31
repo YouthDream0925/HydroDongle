@@ -22,7 +22,7 @@ class AdminUserSeeder extends Seeder
             'first_name' => 'Milan',
             'last_name' => 'Ignjatovic',
             'email' => 'super.admin@gmail.com',
-            'credit' => '0',
+            'credit' => 0,
             'password' => bcrypt('123456789'),
         ]);
 

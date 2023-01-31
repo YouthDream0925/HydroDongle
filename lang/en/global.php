@@ -107,11 +107,15 @@ return [
     | General Admin Panel Users page
     |--------------------------------------------------------------------------
     */
-    'adminUserTitle' => 'USERS MANAGEMENT',
+    'adminUserTitle' => 'USER MANAGEMENT',
     'saveChanges' => 'SAVE CHANGES',
     'uploadLogo' => 'UPLOAD NEW LOGO',
     'roleName' => 'Role Name',
     'permission' => 'Permission',
+    'firstName' => 'First Name',
+    'lastName' => 'Last Name',
+    'emailAddress' => 'Email Address',
+    'role' => 'Role',
 
     /*
     |--------------------------------------------------------------------------

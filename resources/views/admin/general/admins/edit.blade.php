@@ -17,15 +17,21 @@
         <div class="col-lg-12">
             <div class="card card-raised mb-5">
                 <div class="card-body p-5">
-                    {!! Form::model($user, ['method' => 'PATCH','route' => ['admins.update', $user->id]]) !!}
+                    {!! Form::model($admin, ['method' => 'PATCH','route' => ['admins.update', $admin->id]]) !!}
                     <div class="row">
-                        <div class="mb-4">
-                            <mwc-textfield class="w-100" label="User Name" outlined id="user_name" name="name" value="{{ $user->name }}"></mwc-textfield>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="First Name" outlined id="first_name" name="first_name" type="text" value="{{ $admin->first_name }}"></mwc-textfield>
                         </div>
-                        <div class="mb-4">
-                            @if(!empty($user->getRoleNames()) && $user->hasExactRoles('SuperAdmin'))
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="Last Name" outlined id="last_name" name="last_name" type="text" value="{{ $admin->last_name }}"></mwc-textfield>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="Email Address" outlined id="email" name="email" type="email" value="{{ $admin->email }}"></mwc-textfield>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            @if(!empty($admin->getRoleNames()) && $admin->hasExactRoles('SuperAdmin'))
                             <mwc-select class="w-100" name="roles[]" outlined label="Roles">
-                                <mwc-list-item value="{{ $userRole }}" selected activated>{{ $userRole }}</mwc-list-item>
+                                <mwc-list-item value="{{ $adminRole }}" selected activated>{{ $adminRole }}</mwc-list-item>
                             </mwc-select>
                             @else
                             <mwc-select class="w-100" name="roles[]" outlined label="Roles">
@@ -35,7 +41,7 @@
                                             <div>{{ $role }} (Disabled)</div>
                                         </mwc-list-item>
                                     @else
-                                        @if($userRole == $role)
+                                        @if($adminRole == $role)
                                         <mwc-list-item value="{{ $role }}" selected activated>{{ $role }}</mwc-list-item>
                                         @else
                                         <mwc-list-item value="{{ $role }}">{{ $role }}</mwc-list-item>
@@ -52,7 +58,7 @@
                             <mwc-textfield class="w-100" label="Confirm Password" outlined id="confirm_password" name="confirm-password" value=""></mwc-textfield>
                         </div>                        
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-outline-success">Submit</button>
+                            <button type="submit" class="btn btn-outline-success">{{ __('global.update') }}</button>
                         </div>
                     </div>
                     {!! Form::close() !!}

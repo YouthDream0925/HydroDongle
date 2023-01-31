@@ -77,7 +77,7 @@
                 <i class="material-icons text-muted">account_circle</i>
                 <div class="ms-3">
                     <div class="caption">{{ __('global.loginAs') }}</div>
-                    <div class="small fw-500">{{ Auth::user()->name }}</div>
+                    <div class="small fw-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
         </div>

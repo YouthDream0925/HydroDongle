@@ -9,9 +9,16 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
-    
+
 class AdminController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:user-create', ['only' => ['create','store']]);
+         $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,9 +26,10 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Admin::orderBy('id','DESC')->paginate(5);
-        return view('admin.general.admins.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
+        $admins = Admin::orderBy('id','DESC')->paginate($per_page);
+        return view('admin.general.admins.index', compact('admins'))
+            ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
     
     /**
@@ -32,7 +40,7 @@ class AdminController extends Controller
     public function create()
     {
         $roles = Role::pluck('name','name')->all();
-        return view('admin.general.admins.create',compact('roles'));
+        return view('admin.general.admins.create', compact('roles'));
     }
     
     /**
@@ -43,21 +51,19 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        // echo json_encode($request->roles);
-        // die();
-
         $this->validate($request, [
-            'name' => 'required|unique:admins,name',
-            // 'email' => 'required|email|unique:admins,email',
-            'password' => 'required|same:confirm-password',
-            'roles' => 'required'
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:admins,email',
+            'roles' => 'required',
+            'password' => 'required|same:confirm-password|min:8',
         ]);
     
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
-        $user = Admin::create($input);
-        $user->assignRole($request->input('roles'));
+        $admin = Admin::create($input);
+        $admin->assignRole($request->input('roles'));
     
         return redirect()->route('admins.index')
                         ->with('success','User created successfully');
@@ -83,11 +89,11 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-        $user = Admin::find($id);
+        $admin = Admin::find($id);
         $roles = Role::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name')->first();
+        $adminRole = $admin->roles->pluck('name')->first();
         // $userRole = $user->roles->pluck('name','name')->all();
-        return view('admin.general.admins.edit',compact('user','roles','userRole'));
+        return view('admin.general.admins.edit',compact('admin','roles','adminRole'));
     }
     
     /**
@@ -100,10 +106,10 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|unique:admins,name,'.$id,
-            // 'email' => 'required|email|unique:admins,email,'.$id,
-            'password' => 'same:confirm-password',
-            'roles' => 'required|nullable'
+            'first_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
+            'email' => 'required|email|unique:admins,email,'.$id,
+            'roles' => 'required'
         ]);
     
         $input = $request->all();
@@ -113,11 +119,11 @@ class AdminController extends Controller
             $input = Arr::except($input,array('password'));    
         }
     
-        $user = Admin::find($id);
-        $user->update($input);
+        $admin = Admin::find($id);
+        $admin->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
     
-        $user->assignRole($request->input('roles'));
+        $admin->assignRole($request->input('roles'));
     
         return redirect()->route('admins.index')
                         ->with('success','User updated successfully');

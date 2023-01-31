@@ -19,10 +19,16 @@
                 <div class="card-body p-5">
                     {!! Form::open(array('route' => 'admins.store','method'=>'POST')) !!}
                     <div class="row">
-                        <div class="mb-4">
-                            <mwc-textfield class="w-100" label="User Name" outlined id="user_name" name="name" value="{{ old('name') }}"></mwc-textfield>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="First Name" outlined id="first_name" name="first_name" type="text" value=""></mwc-textfield>
                         </div>
-                        <div class="mb-4">
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="Last Name" outlined id="last_name" name="last_name" type="text" value=""></mwc-textfield>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="Email Address" outlined id="email" name="email" type="email" value=""></mwc-textfield>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
                             <mwc-select class="w-100" name="roles[]" outlined label="Roles">
                                 @foreach($roles as $role)
                                     @if($role == 'SuperAdmin')
