@@ -44,19 +44,18 @@ class LoginController extends Controller
 
     public function showAdminLoginForm()
     {
-        // return view('auth.login', ['route' => route('admin.login-view'), 'title'=>'Admin']);
         return view('auth.admin.login');
     }
 
     public function adminLogin(Request $request)
     {
         $this->validate($request, [
-            'name'   => 'required|string',
-            'password' => 'required|min:6',
+            'email'   => 'required|email',
+            'password' => 'required|min:8',
             // 'g-recaptcha-response' => ['required', new ReCaptcha]
         ]);
 
-        if (\Auth::guard('admin')->attempt($request->only('name','password'), $request->get('remember'))){
+        if (\Auth::guard('admin')->attempt($request->only('email','password'), $request->get('remember'))){
             return redirect()->intended('/admin/dashboard');
         }
 
@@ -72,7 +71,7 @@ class LoginController extends Controller
 
     public function userAdminName()
     {
-        return 'name';
+        return 'email';
     }
 
     public function logout(Request $request)

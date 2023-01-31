@@ -40,22 +40,22 @@
                                         <!-- Login submission form-->
                                         <form method="POST" action="{{ route('admin.login') }}">
                                             @csrf
-                                            <!-- <div class="mb-4">
-                                                <mwc-textfield id="email" type="email" class="w-100 @error('email') is-invalid @enderror" label="Username" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus outlined></mwc-textfield>
+                                            <div class="mb-4">
+                                                <mwc-textfield id="email" type="email" class="w-100 @error('email') is-invalid @enderror" label="Email Address" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus outlined></mwc-textfield>
                                                 @error('email')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div> -->
-                                            <div class="mb-4">
+                                            </div>
+                                            <!-- <div class="mb-4">
                                                 <mwc-textfield id="name" type="name" class="w-100 @error('name') is-invalid @enderror" label="{{ __('global.username') }}" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus outlined></mwc-textfield>
                                                 @error('name')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                 @enderror
-                                            </div>
+                                            </div> -->
                                             <div class="mb-4">
                                                 <mwc-textfield id="password" type="password" class="w-100 @error('password') is-invalid @enderror" name="password" label="{{ __('global.password') }}" outlined icontrailing="visibility_off" type="password" required autocomplete="current-password"></mwc-textfield>
                                                 @error('password')
