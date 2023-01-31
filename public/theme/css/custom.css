@@ -25,6 +25,10 @@
     padding-top: 1.5rem !important;
 }
 
+.pt-025 {
+    padding: 0.25rem !important;
+}
+
 /***** margin *****/
 .m-0 {
     margin: 0 !important;

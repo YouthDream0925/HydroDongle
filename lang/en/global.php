@@ -19,6 +19,8 @@ return [
     'update' => 'Update',
     'delete' => 'Delete',
     'none' => 'There is no data.',
+    'no' => 'No',
+    'action' => 'Action',
 
     /*
     |--------------------------------------------------------------------------
@@ -46,6 +48,8 @@ return [
     ],
     'subCategory' => [
         'setting' => 'Website Settings',
+        'adminUsers' => 'Admin Panel Users',
+        'roles' => 'Roles',
         'brand' => 'Brand',
         'phone' => 'Phone',
         'module' => 'Module',
@@ -86,6 +90,17 @@ return [
     'settingTitle' => 'SETTINGS',
     'saveChanges' => 'SAVE CHANGES',
     'uploadLogo' => 'UPLOAD NEW LOGO',
+
+    /*
+    |--------------------------------------------------------------------------
+    | General Roles page
+    |--------------------------------------------------------------------------
+    */
+    'roleTitle' => 'ROLE MANAGEMENT',
+    'saveChanges' => 'SAVE CHANGES',
+    'uploadLogo' => 'UPLOAD NEW LOGO',
+    'roleName' => 'Role Name',
+    'permission' => 'Permission',
 
     /*
     |--------------------------------------------------------------------------

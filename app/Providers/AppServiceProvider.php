@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        $per_page= 20;
+        $per_page= 5;
         config(['pagination.per_page' => $per_page]);
     }
 }

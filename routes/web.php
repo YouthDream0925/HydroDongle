@@ -13,6 +13,8 @@ use App\Http\Controllers\Admin\Other\GuideController;
 use App\Http\Controllers\Admin\Other\ProblemController;
 use App\Http\Controllers\Admin\History\UpdateController;
 use App\Http\Controllers\Admin\History\CreditController;
+use App\Http\Controllers\Manage\RoleController;
+use App\Http\Controllers\Manage\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,8 +28,8 @@ use App\Http\Controllers\Admin\History\CreditController;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    return redirect('admin');
+    return view('welcome');
+    // return redirect('admin');
 });
 
 Auth::routes();
@@ -38,7 +40,6 @@ Route::post('/admin',[LoginController::class,'adminLogin'])->name('admin.login')
 Route::get('/admin/register',[RegisterController::class,'showAdminRegisterForm'])->name('admin.register-view');
 Route::post('/admin/register',[RegisterController::class,'createAdmin'])->name('admin.register');
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth:admin'])->group(function() {
     Route::get('/admin/dashboard', function() {
         return view('admin.dashboard');
@@ -66,6 +67,13 @@ Route::middleware(['auth:admin'])->group(function() {
     Route::resource('/admin/history/updates', UpdateController::class);
 
     Route::resource('/admin/history/credits', CreditController::class);
+
+    Route::resource('/admin/general/roles', RoleController::class);
+    Route::resource('/admin/general/users', UserController::class);
+});
+
+Route::middleware(['auth'])->group(function() {
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 Route::get('storage/{filename}', function ($filename)
