@@ -1,9 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\Manage\RoleController;
+use App\Http\Controllers\Manage\UserController;
+use App\Http\Controllers\Manage\AdminController;
+
 use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
@@ -13,10 +18,8 @@ use App\Http\Controllers\Admin\Other\GuideController;
 use App\Http\Controllers\Admin\Other\ProblemController;
 use App\Http\Controllers\Admin\History\UpdateController;
 use App\Http\Controllers\Admin\History\CreditController;
-use App\Http\Controllers\Manage\RoleController;
-use App\Http\Controllers\Manage\UserController;
-use App\Http\Controllers\Manage\AdminController;
 
+use App\Http\Controllers\Front\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

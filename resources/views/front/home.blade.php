@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    Hello User!
+                    Hello, <strong>{{ Auth::user()->email }}</strong>! This is working page.
                 </div>
             </div>
         </div>
