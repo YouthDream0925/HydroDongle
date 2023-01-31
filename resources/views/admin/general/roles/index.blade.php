@@ -32,6 +32,7 @@
                             <tr>
                                 <th scope="row">{{ $key+1 }}</th>
                                 <td>{{ $role->name }}</td>
+                                @if($role->name != "SuperAdmin")
                                 <td class="txt-right">
                                     <div class="dropdown">
                                         <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
@@ -51,6 +52,9 @@
                                         </ul>
                                     </div>
                                 </td>
+                                @else
+                                <td></td>
+                                @endif
                             </tr>
                             @endforeach                            
                         </tbody>

@@ -23,15 +23,27 @@
                             <mwc-textfield class="w-100" label="User Name" outlined id="user_name" name="name" value="{{ $user->name }}"></mwc-textfield>
                         </div>
                         <div class="mb-4">
+                            @if(!empty($user->getRoleNames()) && $user->hasExactRoles('SuperAdmin'))
+                            <mwc-select class="w-100" name="roles[]" outlined label="Roles">
+                                <mwc-list-item value="{{ $userRole }}" selected activated>{{ $userRole }}</mwc-list-item>
+                            </mwc-select>
+                            @else
                             <mwc-select class="w-100" name="roles[]" outlined label="Roles">
                                 @foreach($roles as $role)
-                                    @if($userRole == $role)
-                                    <mwc-list-item value="{{ $role }}" selected activated>{{ $role }}</mwc-list-item>
+                                    @if($role == 'SuperAdmin')
+                                        <mwc-list-item value="{{ $role }}" disabled>
+                                            <div>{{ $role }} (Disabled)</div>
+                                        </mwc-list-item>
                                     @else
-                                    <mwc-list-item value="{{ $role }}">{{ $role }}</mwc-list-item>
+                                        @if($userRole == $role)
+                                        <mwc-list-item value="{{ $role }}" selected activated>{{ $role }}</mwc-list-item>
+                                        @else
+                                        <mwc-list-item value="{{ $role }}">{{ $role }}</mwc-list-item>
+                                        @endif
                                     @endif
                                 @endforeach
                             </mwc-select>
+                            @endif                            
                         </div>
                         <div class="mb-4">
                             <mwc-textfield class="w-100" label="Password" outlined id="password" name="password" value=""></mwc-textfield>

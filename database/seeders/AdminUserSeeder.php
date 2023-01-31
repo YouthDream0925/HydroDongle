@@ -20,7 +20,7 @@ class AdminUserSeeder extends Seeder
     {
         $user = Admin::create([
             'name' => 'gsmfabrica',
-            'password' => bcrypt('asdfasdf'),
+            'password' => bcrypt('6$m+faß'),
         ]);
 
         // $user = User::create([
@@ -30,7 +30,7 @@ class AdminUserSeeder extends Seeder
         // ]);
 
         // Create a manager role for users authenticating with the admin guard:
-        $role = Role::create(['guard_name' => 'admin', 'name' => 'Admin']);
+        $role = Role::create(['guard_name' => 'admin', 'name' => 'SuperAdmin']);
         $permissions = Permission::where('guard_name', 'admin')->pluck('name','id')->all();
         $role->syncPermissions($permissions);
         $user->assignRole([$role->id]);

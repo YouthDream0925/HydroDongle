@@ -20,8 +20,10 @@ class PermissionTableSeeder extends Seeder
             'role-create',
             'role-edit',
             'role-delete',
-            'reseller-create',
-            'distributor-create',
+            'user-list',
+            'user-create',
+            'user-edit',
+            'user-delete',
             'transfer-credit-to-user',
             'transfer-credit-to-reseller',
             'transfer-credit-to-distributor'

@@ -45,8 +45,9 @@
                                             <li>
                                                 @can('role-edit')
                                                     <a class="dropdown-item" href="{{ route('admins.edit',$user->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
-                                                @endcan 
+                                                @endcan
                                             </li>
+                                            @if(!empty($user->getRoleNames()) && !$user->hasExactRoles('SuperAdmin'))
                                             <li>
                                                 @can('role-delete')
                                                     {!! Form::open(['method' => 'DELETE','route' => ['admins.destroy', $user->id],'style'=>'display:inline']) !!}
@@ -54,6 +55,7 @@
                                                     {!! Form::close() !!}
                                                 @endcan                                      
                                             </li>
+                                            @endif
                                         </ul>
                                     </div>
                                 </td>

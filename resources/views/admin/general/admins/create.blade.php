@@ -25,7 +25,13 @@
                         <div class="mb-4">
                             <mwc-select class="w-100" name="roles[]" outlined label="Roles">
                                 @foreach($roles as $role)
-                                <mwc-list-item value="{{ $role }}">{{ $role }}</mwc-list-item>
+                                    @if($role == 'SuperAdmin')
+                                    <mwc-list-item value="{{ $role }}" disabled>
+                                        <div>{{ $role }} (Disabled)</div>
+                                    </mwc-list-item>
+                                    @else
+                                    <mwc-list-item value="{{ $role }}">{{ $role }}</mwc-list-item>
+                                    @endif
                                 @endforeach
                             </mwc-select>
                         </div>
