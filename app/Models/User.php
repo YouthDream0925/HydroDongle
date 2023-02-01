@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use Carbon\Carbon;
 
 class User extends Authenticatable
 {
@@ -19,8 +20,29 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'ic_serial',
+        'snplain',
+        'first_name',
+        'last_name',
+        'phone',
+        'messenger',
+        'resellerid',
+        'countryid',
+        'isactivated',
+        'datetimeregistered',
+        'datetimeactivated',
+        'datetimeexpired',
+        'isblocked',
+        'pcmac',
+        'ipadd',
+        'localip',
+        'pcuser',
+        'computername',
+        'access_right',
+        'credits',
         'email',
+        'email_verification',
+        'email_verified',
         'password',
     ];
 
@@ -42,4 +64,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getDateTimeExpiredAtAttribute()
+    {
+        if($this->datetimeexpired)
+            return Carbon::parse($this->datetimeexpired)->format('M d, Y');
+        else
+            return "NONE";
+    }
 }

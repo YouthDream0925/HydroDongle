@@ -45,6 +45,6 @@ class AppServiceProvider extends ServiceProvider
         ];
 
         config(['pagination.per_page' => $per_page, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
-        View::share(['status' => $status]);
+        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
     }
 }

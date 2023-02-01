@@ -13,6 +13,18 @@
                     <button class="btn btn-lg btn-icon dropdown-toggle" id="dropdownMenuProfile" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">person</i></button>
                     <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="dropdownMenuProfile">
                         <li>
+                            <a class="dropdown-item" href="#!">
+                                <i class="material-icons leading-icon">info</i>
+                                @if(!empty(Auth::user()->getRoleNames()) && Auth::user()->hasExactRoles('SuperAdmin'))
+                                <div class="me-3"><strong>{{ $infinite_amount }}</strong></div>
+                                @elseif(Auth::user()->can('transfer-credit-to-distributor') && Auth::user()->can('transfer-credit-to-reseller') && !Auth::user()->can('transfer-credit-to-user'))
+                                <div class="me-3"><strong>{{ $infinite_amount }}</strong></div>
+                                @else
+                                <div class="me-3">{{ Auth::user()->credit }}</div>
+                                @endif
+                            </a>
+                        </li>
+                        <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
                                 <i class="material-icons leading-icon">logout</i>

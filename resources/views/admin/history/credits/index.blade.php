@@ -50,7 +50,7 @@
                                 <td class="txt-right"><span class="badge bg-success">{{ $status[$history->status] }}</span></td>
                                 @else
                                 <td class="txt-right"><span class="badge bg-danger">{{ $status[$history->status] }}</span></td>
-                                @endif                                
+                                @endif
                             </tr>
                             @endforeach
                         </tbody>

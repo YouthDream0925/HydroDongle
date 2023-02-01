@@ -57,6 +57,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::post('setting', [SettingController::class, 'store'])->name('website.setting.store');
         Route::resource('roles', RoleController::class);
         Route::resource('admins', AdminController::class);
+        Route::resource('users', UserController::class);
+        Route::post('users/active', [UserController::class, 'active'])->name('users.active');
         // Route::get('transfer', [TransferController::class, 'index'])->name('transfer.index');
         // Route::post('transfer', [TransferController::class, 'send'])->name('transfer.send');
     });

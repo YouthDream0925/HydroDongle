@@ -19,8 +19,11 @@ return [
     'update' => 'Update',
     'delete' => 'Delete',
     'none' => 'There is no data.',
+    'yes' => 'Yes',
     'no' => 'No',
     'action' => 'Action',
+    'ok' => 'Ok',
+    'close' => 'Close',
 
     /*
     |--------------------------------------------------------------------------
@@ -49,6 +52,7 @@ return [
     'subCategory' => [
         'setting' => 'Website Settings',
         'adminUsers' => 'Admin Panel Users',
+        'users' => 'Users',
         'roles' => 'Roles',
         'transfer' => 'Transfer',
         'brand' => 'Brand',
@@ -108,7 +112,7 @@ return [
     | General Admin Panel Users page
     |--------------------------------------------------------------------------
     */
-    'adminUserTitle' => 'USER MANAGEMENT',
+    'adminUserTitle' => 'ADMIN MANAGEMENT',
     'saveChanges' => 'SAVE CHANGES',
     'uploadLogo' => 'UPLOAD NEW LOGO',
     'roleName' => 'Role Name',
@@ -117,6 +121,16 @@ return [
     'lastName' => 'Last Name',
     'emailAddress' => 'Email Address',
     'role' => 'Role',
+
+    /*
+    |--------------------------------------------------------------------------
+    | General Users page
+    |--------------------------------------------------------------------------
+    */
+    'userTitle' => 'USER MANAGEMENT',
+    'activate' => 'Activate',
+    'active' => 'Active',
+    'expired' => 'Expried',
 
     /*
     |--------------------------------------------------------------------------

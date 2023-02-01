@@ -9,6 +9,8 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
     
 class UserController extends Controller
 {
@@ -19,9 +21,10 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','DESC')->paginate(5);
-        return view('admin.general.users.index',compact('data'))
-            ->with('i', ($request->input('page', 1) - 1) * 5);
+        $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
+        $users = User::orderBy('id','DESC')->paginate($per_page);
+        return view('admin.general.users.index', compact('users'))
+            ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
     
     /**
@@ -97,13 +100,29 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'same:confirm-password',
-            'roles' => 'required'
+            'password' => 'same:confirm-password'
         ]);
     
         $input = $request->all();
+        if($request->isactivated == "true") {
+            $input['isactivated'] = '1';
+            if($request->period == "") {
+                return redirect()->back()
+                    ->with('error', 'Please select period.');
+            } else {
+                $input['datetimeactivated'] = Carbon::now();
+                $input['datetimeexpired'] = Carbon::now()->addMonth($request->period);
+            }
+        }            
+        else {
+            $input['isactivated'] = '0';
+            $input['datetimeactivated'] = null;
+            $input['datetimeexpired'] = null;
+        }
+
         if(!empty($input['password'])){ 
             $input['password'] = Hash::make($input['password']);
         }else{
@@ -112,12 +131,8 @@ class UserController extends Controller
     
         $user = User::find($id);
         $user->update($input);
-        DB::table('model_has_roles')->where('model_id',$id)->delete();
-    
-        $user->assignRole($request->input('roles'));
-    
         return redirect()->route('users.index')
-                        ->with('success','User updated successfully');
+                        ->with('success', 'User updated successfully.');
     }
     
     /**
@@ -130,6 +145,70 @@ class UserController extends Controller
     {
         User::find($id)->delete();
         return redirect()->route('users.index')
-                        ->with('success','User deleted successfully');
+                        ->with('success','User deleted successfully.');
+    }
+
+    public function active(Request $request)
+    {
+        $activater = Auth::user();
+        if(!empty($activater->getRoleNames()) && $activater->hasExactRoles('SuperAdmin')) {
+            $activater->credit = config('infinite_amount');
+        } else if($activater->can('transfer-credit-to-distributor') && $activater->can('transfer-credit-to-reseller') && !$activater->can('transfer-credit-to-user')) {
+            $activater->credit = config('infinite_amount');
+        }
+
+        $result = []; $check = false;
+        $user = User::find($request->id);
+        if($user->isactivated == '1') {
+            $result = [
+                'success' => false,
+                'msg' => 'User already activated.'
+            ];
+        } else {
+            if($request->period == 6) {
+                if($activater->credit >= 40) {
+                    $check = true;
+                } else {
+                    $result = [
+                        'success' => false,
+                        'msg' => 'Your balance is low to activate user.'
+                    ];
+                }
+            } elseif($request->period == 12) {
+                if($activater->credit >= 70) {
+                    $check = true;
+                } else {
+                    $result = [
+                        'success' => false,
+                        'msg' => 'Your balance is low to activate user.'
+                    ];
+                }
+            } else {
+                $result = [
+                    'success' => false,
+                    'msg' => 'Unexpected error occured.'
+                ];
+            }
+        }
+
+        if($check == true) {
+            $user->isactivated = '1';
+            $user->datetimeactivated = Carbon::now();
+            $user->datetimeexpired = Carbon::now()->addMonth($request->period);
+            if($request->period == 6 && $activater->credit != config('infinite_amount')) {
+                $activater->credit = $activater->credit - 40;
+            } elseif($request->period == 12 && $activater->credit != config('infinite_amount')) {
+                $activater->credit = $activater->credit - 70;
+            }
+            $activater->save();
+            $user->save();
+
+            $result = [
+                'success' => true,
+                'msg' => 'User activated successfully.',
+                'expired_time' => Carbon::parse($user->datetimeexpired)->format('M d, Y')
+            ];
+        }
+        return $result;
     }
 }
