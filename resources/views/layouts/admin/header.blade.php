@@ -20,7 +20,7 @@
                                 @elseif(Auth::user()->can('transfer-credit-to-distributor') && Auth::user()->can('transfer-credit-to-reseller') && !Auth::user()->can('transfer-credit-to-user'))
                                 <div class="me-3"><strong>{{ $infinite_amount }}</strong></div>
                                 @else
-                                <div class="me-3">{{ Auth::user()->credit }}</div>
+                                <div class="me-3">{{ Auth::user()->credits }}</div>
                                 @endif
                             </a>
                         </li>

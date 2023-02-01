@@ -84,6 +84,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
     Route::get('history/credits/index', [CreditController::class, 'index'])->name('credits.index');
     Route::get('history/credits/before', [CreditController::class, 'before'])->name('credits.before');
     Route::post('history/credits/transfer', [CreditController::class, 'transfer'])->name('credits.transfer');
+    Route::post('history/credits/transfer/user', [CreditController::class, 'to_user'])->name('credits.to_user');
     
     // Route::resource('general/users', UserController::class);
 });

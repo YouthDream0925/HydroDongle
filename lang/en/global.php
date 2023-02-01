@@ -206,6 +206,8 @@ return [
     |--------------------------------------------------------------------------
     */
     'creditTitle' => 'CREDIT TRANSFER HISTORIES',
+    'transferToAdmin' => 'Transfer to Admins',
+    'transferToUser' => 'Transfer to Users',
 
     /*
     |--------------------------------------------------------------------------

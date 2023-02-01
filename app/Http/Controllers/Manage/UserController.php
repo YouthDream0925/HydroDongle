@@ -152,9 +152,9 @@ class UserController extends Controller
     {
         $activater = Auth::user();
         if(!empty($activater->getRoleNames()) && $activater->hasExactRoles('SuperAdmin')) {
-            $activater->credit = config('infinite_amount');
+            $activater->credits = config('infinite_amount');
         } else if($activater->can('transfer-credit-to-distributor') && $activater->can('transfer-credit-to-reseller') && !$activater->can('transfer-credit-to-user')) {
-            $activater->credit = config('infinite_amount');
+            $activater->credits = config('infinite_amount');
         }
 
         $result = []; $check = false;
@@ -166,7 +166,7 @@ class UserController extends Controller
             ];
         } else {
             if($request->period == 6) {
-                if($activater->credit >= 40) {
+                if($activater->credits >= 40) {
                     $check = true;
                 } else {
                     $result = [
@@ -175,7 +175,7 @@ class UserController extends Controller
                     ];
                 }
             } elseif($request->period == 12) {
-                if($activater->credit >= 70) {
+                if($activater->credits >= 70) {
                     $check = true;
                 } else {
                     $result = [
@@ -195,10 +195,10 @@ class UserController extends Controller
             $user->isactivated = '1';
             $user->datetimeactivated = Carbon::now();
             $user->datetimeexpired = Carbon::now()->addMonth($request->period);
-            if($request->period == 6 && $activater->credit != config('infinite_amount')) {
-                $activater->credit = $activater->credit - 40;
-            } elseif($request->period == 12 && $activater->credit != config('infinite_amount')) {
-                $activater->credit = $activater->credit - 70;
+            if($request->period == 6 && $activater->credits != config('infinite_amount')) {
+                $activater->credits = $activater->credits - 40;
+            } elseif($request->period == 12 && $activater->credits != config('infinite_amount')) {
+                $activater->credits = $activater->credits - 70;
             }
             $activater->save();
             $user->save();
