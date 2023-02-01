@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
+use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 
 class AppServiceProvider extends ServiceProvider
@@ -15,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        if(env('APP_ENV') === 'production') {
+            $this->app['request']->server->set('HTTPS', true);
+        }
     }
 
     /**
@@ -23,10 +26,14 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot()
+    public function boot(UrlGenerator $url)
     {
-        if(env('APP_ENV') !== 'local') {
-            URL::forceScheme('https');
+        // if(env('APP_ENV') !== 'local') {
+        //     URL::forceScheme('https');
+        // }
+
+        if(env('APP_ENV') === 'production') {
+            $url->formatScheme('https');
         }
 
         $per_page= 5;
