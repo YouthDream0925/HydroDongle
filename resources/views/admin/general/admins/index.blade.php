@@ -17,8 +17,8 @@
     </div>
     <div class="row gx-5">
         <div class="col-lg-12">
-            <div class="card card-raised mb-5">
-                <div class="card-body p-2">
+            <div class="card card-raised mb-2">
+                <div class="card-body p-4">
                     <table class="table">
                         <thead>
                             <tr>

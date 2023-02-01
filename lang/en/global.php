@@ -120,6 +120,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | General Transfer pages
+    |--------------------------------------------------------------------------
+    */
+    'transferTitle' => 'Credits Left : <strong>:credit</strong>',
+    'transferCredit' => 'Transfer Credit',
+    'date' => 'Date',
+    'sender' => 'Sender',
+    'recipient' => 'Recipient',
+    'amount' => 'Amount',
+    'status' => 'Status',
+    'transfer' => 'Transfer',
+
+    /*
+    |--------------------------------------------------------------------------
     | Editer Brand page
     |--------------------------------------------------------------------------
     */

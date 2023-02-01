@@ -10,6 +10,7 @@ use App\Http\Controllers\Manage\UserController;
 use App\Http\Controllers\Manage\AdminController;
 
 use App\Http\Controllers\Admin\General\SettingController;
+use App\Http\Controllers\Admin\General\TransferController;
 use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
@@ -51,8 +52,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    Route::get('general/setting', [SettingController::class, 'index'])->name('website.setting');
-    Route::post('general/setting', [SettingController::class, 'store'])->name('website.setting.store');
+    Route::group(['prefix' => 'general'], function() {
+        Route::get('setting', [SettingController::class, 'index'])->name('website.setting');
+        Route::post('setting', [SettingController::class, 'store'])->name('website.setting.store');
+        Route::resource('roles', RoleController::class);
+        Route::resource('admins', AdminController::class);
+        // Route::get('transfer', [TransferController::class, 'index'])->name('transfer.index');
+        // Route::post('transfer', [TransferController::class, 'send'])->name('transfer.send');
+    });
 
     Route::resource('editer/brands', BrandController::class);
 
@@ -72,10 +79,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
     Route::resource('history/updates', UpdateController::class);
 
-    Route::resource('history/credits', CreditController::class);
-
-    Route::resource('general/roles', RoleController::class);
-    Route::resource('general/admins', AdminController::class);
+    Route::get('history/credits/index', [CreditController::class, 'index'])->name('credits.index');
+    Route::get('history/credits/before', [CreditController::class, 'before'])->name('credits.before');
+    Route::post('history/credits/transfer', [CreditController::class, 'transfer'])->name('credits.transfer');
+    
     // Route::resource('general/users', UserController::class);
 });
 
