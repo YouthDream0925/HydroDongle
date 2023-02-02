@@ -10,10 +10,13 @@ use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
+use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Model;
+use App\ModelFilters\UserFilter;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable;
 
     /**
      * The attributes that are mass assignable.
@@ -66,20 +69,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function scopePopular($query, $per_page)
+    public function modelFilter()
     {
-        $user = Auth::user();
-        $userId = $user->id;
+        return $this->provideFilter(UserFilter::class);
+    }
 
-        if(!empty($user->getRoleNames()) && $user->hasExactRoles('SuperAdmin'))
-        {
-            $query->orderBy('id','DESC');
-        } else {
-            $query->where('isactivated', '0')
-                ->orwhere('datetimeexpired', '<', Carbon::now())
-                    ->orderBy('id','DESC');
-        }
-        
+    public function scopePaginate($query, $per_page)
+    {
         if($per_page != null)
             return $query->paginate($per_page)->appends(['per_page' => $per_page]);
         else

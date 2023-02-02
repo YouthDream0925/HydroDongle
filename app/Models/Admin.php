@@ -8,10 +8,13 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
+use EloquentFilter\Filterable;
+use Illuminate\Database\Eloquent\Model;
+use App\ModelFilters\AdminFilter;
 
 class Admin extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable;
 
     protected $guard = "admin";
 
@@ -30,4 +33,17 @@ class Admin extends Authenticatable
 
     protected $casts = [
     ];
+
+    public function modelFilter()
+    {
+        return $this->provideFilter(AdminFilter::class);
+    }
+
+    // public function scopePaginate($query, $per_page)
+    // {
+    //     if($per_page != null)
+    //         return $query->paginate($per_page)->appends(['per_page' => $per_page]);
+    //     else
+    //        return $query->paginate(config('pagination.per_page'))->appends(['per_page' => config('pagination.per_page')]);
+    // }
 }

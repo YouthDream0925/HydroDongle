@@ -19,6 +19,12 @@
         <div class="col-lg-12">
             <div class="card card-raised mb-2">
                 <div class="card-body p-4">
+                    {!! Form::open(['method' => 'GET','route' => ['admins.index']]) !!}
+                    <mwc-textfield id="search_bar" name="name" value="{{ request()->get('name') }}" class="w-100" label="Search" outlined icontrailing="search" placeholder="What can we help you find?"></mwc-textfield>
+                    {!! Form::close() !!}
+                </div>
+                <hr>
+                <div class="card-body p-4">
                     <table class="table">
                         <thead>
                             <tr>
@@ -78,4 +84,14 @@
 @endsection
 
 @push('script')
+<script>
+    $('#search_bar').keypress(function (e) {
+        var key = e.which;
+        if(key == 13)  // the enter key code
+        {
+            var form =  $(this).closest("form");
+            form.submit();
+        }
+    });
+</script>
 @endpush

@@ -9,6 +9,7 @@ use Spatie\Permission\Models\Role;
 use DB;
 use Hash;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Input; 
 
 class AdminController extends Controller
 {
@@ -27,9 +28,14 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $admins = Admin::orderBy('id','DESC')->paginate($per_page);
+        $admins = Admin::filter($request->all())->paginateFilter($per_page);
         return view('admin.general.admins.index', compact('admins'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
+
+        // $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
+        // $admins = Admin::filter($request->all())->Paginate($per_page);
+        // return view('admin.general.admins.index', compact('admins'))
+        //     ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
     
     /**
