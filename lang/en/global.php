@@ -130,7 +130,9 @@ return [
     'userTitle' => 'USER MANAGEMENT',
     'activate' => 'Activate',
     'active' => 'Active',
-    'expired' => 'Expried',
+    'expirationDate' => 'Expiration Date',
+    'noneUserToActive' => 'There is no user to active.',
+    'expired' => 'Expired',
 
     /*
     |--------------------------------------------------------------------------

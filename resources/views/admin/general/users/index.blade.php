@@ -22,59 +22,69 @@
                                 <th scope="col">{{ __('global.lastName') }}</th>
                                 <th scope="col">{{ __('global.emailAddress') }}</th>
                                 <th scope="col">{{ __('global.activate') }}</th>
-                                <th scope="col">{{ __('global.expired') }}</th>
+                                <th scope="col">{{ __('global.expirationDate') }}</th>
                                 <th scope="col" class="txt-right">{{ __('global.action') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($users as $key => $user)
-                            <tr>
-                                <th scope="row">{{ ++$i }}</th>
-                                <td>{{ $user->first_name }}</td>
-                                <td>{{ $user->last_name }}</td>
-                                <td>{{ $user->email }}</td>
-                                <td>
-                                    @if($user->isactivated == '1')
-                                    <span id="activate_status{{$user->id}}" class="badge bg-success">{{ __('global.yes') }}</span>
-                                    @else
-                                    <span id="activate_status{{$user->id}}" class="badge bg-danger">{{ __('global.no') }}</span>
-                                    @endif
-                                </td>
-                                <td id="expired_time{{$user->id}}">{{ $user->getDateTimeExpiredAtAttribute() }}</td>
-                                <td class="txt-right">
-                                    <div class="dropdown">
-                                        <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                @can('user-edit')
-                                                    <a class="dropdown-item" href="{{ route('users.edit',$user->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
-                                                @endcan
-                                            </li>
-                                            @if($user->isactivated == '0')
-                                            <li>
-                                                @can('transfer-credit-to-user')
-                                                    <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
-                                                @elsecan('transfer-credit-to-reseller')
-                                                    <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
-                                                @elsecan('transfer-credit-to-reseller')
-                                                    <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
-                                                @endcan
-                                            </li>
+                            @if(count($users) != 0)
+                                @foreach ($users as $key => $user)
+                                <tr>
+                                    <th scope="row">{{ ++$i }}</th>
+                                    <td>{{ $user->first_name }}</td>
+                                    <td>{{ $user->last_name }}</td>
+                                    <td>{{ $user->email }}</td>
+                                    <td>
+                                        @if($user->isactivated == '1')
+                                            @if($user->isExpired())
+                                            <span id="activate_status{{$user->id}}" class="badge bg-warning">{{ __('global.expired') }}</span>
+                                            @else
+                                            <span id="activate_status{{$user->id}}" class="badge bg-success">{{ __('global.yes') }}</span>
                                             @endif
-                                            @if(!empty($user->getRoleNames()) && !$user->hasExactRoles('SuperAdmin'))
-                                            <li>
-                                                @can('user-delete')
-                                                    {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-                                                        {!! Form::button('<span class="material-icons">delete</span>'.__('global.delete'), ['type' =>'submit', 'class' => 'dropdown-item']) !!}
-                                                    {!! Form::close() !!}
-                                                @endcan                                      
-                                            </li>
-                                            @endif
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            @endforeach                            
+                                        @else
+                                        <span id="activate_status{{$user->id}}" class="badge bg-danger">{{ __('global.no') }}</span>
+                                        @endif
+                                    </td>
+                                    <td id="expired_time{{$user->id}}">{{ $user->getDateTimeExpiredAtAttribute() }}</td>
+                                    <td class="txt-right">
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    @can('user-edit')
+                                                        <a class="dropdown-item" href="{{ route('users.edit',$user->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
+                                                    @endcan
+                                                </li>
+                                                @if($user->isactivated == '0')
+                                                <li>
+                                                    @can('transfer-credit-to-user')
+                                                        <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
+                                                    @elsecan('transfer-credit-to-reseller')
+                                                        <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
+                                                    @elsecan('transfer-credit-to-reseller')
+                                                        <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
+                                                    @endcan
+                                                </li>
+                                                @endif
+                                                @if(!empty($user->getRoleNames()) && !$user->hasExactRoles('SuperAdmin'))
+                                                <li>
+                                                    @can('user-delete')
+                                                        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+                                                            {!! Form::button('<span class="material-icons">delete</span>'.__('global.delete'), ['type' =>'submit', 'class' => 'dropdown-item']) !!}
+                                                        {!! Form::close() !!}
+                                                    @endcan                                      
+                                                </li>
+                                                @endif
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                @endforeach`
+                            @else
+                                <tr>
+                                    <td colspan="7" class="text-center">{{ __('global.noneUserToActive') }}</td>
+                                </tr>
+                            @endif                
                         </tbody>
                     </table>
                 </div>

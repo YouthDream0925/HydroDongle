@@ -14,15 +14,11 @@
                 <div class="collapse {{ (request()->is('admin/general*')) ? 'show' : '' }}" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
                         <a class="nav-link {{ (request()->is('admin/general/setting')) ? 'active' : '' }}" href="{{ route('website.setting') }}">{{ __('global.subCategory.setting') }}</a>
+                        @can('user-list')
                         <a class="nav-link {{ (request()->is('admin/general/admins*')) ? 'active' : '' }}" href="{{ route('admins.index') }}">{{ __('global.subCategory.adminUsers') }}</a>
                         <a class="nav-link {{ (request()->is('admin/general/users*')) ? 'active' : '' }}" href="{{ route('users.index') }}">{{ __('global.subCategory.users') }}</a>
+                        @endcan
                         @can('role-list')
-                        <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
-                        @elsecan('role-create')
-                        <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
-                        @elsecan('role-edit')
-                        <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
-                        @elsecan('role-delete')
                         <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
                         @endcan
                     </nav>

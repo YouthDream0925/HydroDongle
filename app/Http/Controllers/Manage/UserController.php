@@ -14,6 +14,13 @@ use Carbon\Carbon;
     
 class UserController extends Controller
 {
+    function __construct()
+    {
+         $this->middleware('permission:user-list|user-create|user-edit|user-delete', ['only' => ['index','store']]);
+         $this->middleware('permission:user-create', ['only' => ['create','store']]);
+         $this->middleware('permission:user-edit', ['only' => ['edit','update']]);
+         $this->middleware('permission:user-delete', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +29,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $users = User::orderBy('id','DESC')->paginate($per_page);
+        $users = User::Popular($per_page);
         return view('admin.general.users.index', compact('users'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
