@@ -50,6 +50,7 @@
                                                     <a class="dropdown-item" href="{{ route('users.edit',$user->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
                                                 @endcan
                                             </li>
+                                            @if($user->isactivated == '0')
                                             <li>
                                                 @can('transfer-credit-to-user')
                                                     <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
@@ -59,6 +60,7 @@
                                                     <a class="btn-activate dropdown-item" href="#" data-userKey="{{ $user->id }}"><span class="material-icons">check_circle</span>{{ __('global.active') }}</a>
                                                 @endcan
                                             </li>
+                                            @endif
                                             @if(!empty($user->getRoleNames()) && !$user->hasExactRoles('SuperAdmin'))
                                             <li>
                                                 @can('user-delete')

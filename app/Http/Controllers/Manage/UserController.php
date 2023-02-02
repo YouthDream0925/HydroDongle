@@ -99,6 +99,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $user = User::find($id);
         $this->validate($request, [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -108,15 +109,17 @@ class UserController extends Controller
     
         $input = $request->all();
         if($request->isactivated == "true") {
-            $input['isactivated'] = '1';
-            if($request->period == "") {
-                return redirect()->back()
-                    ->with('error', 'Please select period.');
-            } else {
-                $input['datetimeactivated'] = Carbon::now();
-                $input['datetimeexpired'] = Carbon::now()->addMonth($request->period);
+            if($user->isactivated == '0') {                
+                if($request->period == "") {
+                    return redirect()->back()
+                        ->with('error', 'Please select period.');
+                } else {
+                    $input['datetimeactivated'] = Carbon::now();
+                    $input['datetimeexpired'] = Carbon::now()->addMonth($request->period);
+                }
             }
-        }            
+            $input['isactivated'] = '1';
+        }
         else {
             $input['isactivated'] = '0';
             $input['datetimeactivated'] = null;
@@ -128,8 +131,7 @@ class UserController extends Controller
         }else{
             $input = Arr::except($input,array('password'));    
         }
-    
-        $user = User::find($id);
+            
         $user->update($input);
         return redirect()->route('users.index')
                         ->with('success', 'User updated successfully.');
