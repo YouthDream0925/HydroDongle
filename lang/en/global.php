@@ -56,6 +56,7 @@ return [
         'roles' => 'Roles',
         'transfer' => 'Transfer',
         'brand' => 'Brand',
+        'model' => 'Model',
         'phone' => 'Phone',
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
@@ -156,6 +157,15 @@ return [
     'brandTitle' => 'BRANDS',
     'brand' => 'Brand',
     'brandDetails' => 'Brand Details',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Model page
+    |--------------------------------------------------------------------------
+    */
+    'modelTitle' => 'MODELS',
+    'model' => 'Model',
+    'modelDetails' => 'Model Details',
 
     /*
     |--------------------------------------------------------------------------
