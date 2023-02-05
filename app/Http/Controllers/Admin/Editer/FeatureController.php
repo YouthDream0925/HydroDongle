@@ -80,4 +80,17 @@ class FeatureController extends Controller
         $feature->update();
         return redirect()->back()->with('success','Feature updated successfully');
     }
+
+    public function destroy($id)
+    {
+        $feature = Feature::find($id);
+        if($feature->hasMedia('icon')) {
+            $media = $feature->getMedia('icon')->first();
+            $media->delete();
+        }
+        $feature->delete();
+
+        return redirect()->route('features.index')
+                        ->with('success','Feature deleted successfully');
+    }
 }
