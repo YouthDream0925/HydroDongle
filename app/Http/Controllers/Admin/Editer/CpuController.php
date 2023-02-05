@@ -41,7 +41,7 @@ class CpuController extends Controller
         } catch (MediaUploadException $e) {
             throw $this->transformMediaUploadException($e);
         }
-        return redirect()->route('cpus.edit', $cpu->id)->with('success', 'CPU created successfully');
+        return redirect()->route('cpus.edit', $cpu->id)->with('success', 'CPU created successfully.');
     }
 
     public function edit($id)
@@ -70,7 +70,7 @@ class CpuController extends Controller
         }
 
         $cpu->update();
-        return redirect()->back()->with('success','CPU updated successfully');
+        return redirect()->back()->with('success','CPU updated successfully.');
     }
 
     public function destroy($id)
@@ -86,7 +86,7 @@ class CpuController extends Controller
 
         $cpu->delete();
         return redirect()->route('cpus.index')
-                        ->with('success','CPU deleted successfully');
+                        ->with('success','CPU deleted successfully.');
     }
 
     public function save_soc(Request $request)
