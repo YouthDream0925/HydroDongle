@@ -28,6 +28,7 @@ return [
         'logo',
         'brands',
         'cpus',
+        'features',
         'slides'
     ],
 

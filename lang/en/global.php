@@ -58,6 +58,7 @@ return [
         'transfer' => 'Transfer',
         'brand' => 'Brand',
         'cpu' => 'CPU',
+        'function' => 'Function',
         'model' => 'Model',
         'phone' => 'Phone',
         'module' => 'Module',
@@ -172,6 +173,16 @@ return [
     'socs' => 'SOCs',
     'name' => 'Name',
     'explanation' => 'Explanation',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Feature page
+    |--------------------------------------------------------------------------
+    */
+    'featureTitle' => 'FEATURES',
+    'feature' => 'Feature',
+    'featureDetails' => 'Feature Details',
+    'icon' => 'Icon',
 
     /*
     |--------------------------------------------------------------------------

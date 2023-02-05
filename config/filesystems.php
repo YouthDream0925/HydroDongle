@@ -76,6 +76,14 @@ return [
             'throw' => false,
         ],
 
+        'features' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/features'),
+            'url' => env('APP_URL').'/storage/features',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'slides' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slides'),
