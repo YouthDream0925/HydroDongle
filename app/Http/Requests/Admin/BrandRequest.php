@@ -32,7 +32,7 @@ class BrandRequest extends FormRequest
                 return [
                     'brand_name' => ['required', 'string', 'max:255'],
                     'brand_link' => ['required', 'string', 'max:255'],
-                    'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:2048']
+                    'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
                 ];
             } else {
                 return [
@@ -44,7 +44,7 @@ class BrandRequest extends FormRequest
             return [
                 'brand_name' => ['required', 'string', 'max:255'],
                 'brand_link' => ['required', 'string', 'max:255'],
-                'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:2048']
+                'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
             ];
         }
     }

@@ -36,14 +36,6 @@
                         <a class="nav-link {{ (request()->is('admin/editer/cpus*')) ? 'active' : '' }}" href="{{ route('cpus.index') }}">{{ __('global.subCategory.cpu') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/features*')) ? 'active' : '' }}" href="{{ route('features.index') }}">{{ __('global.subCategory.feature') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/models*')) ? 'active' : '' }}" href="{{ route('models.index') }}">{{ __('global.subCategory.model') }}</a>
-                        <a class="nav-link {{ (request()->is('admin/editer/phones*')) ? 'active' : '' }}" href="{{ route('phones.index') }}">{{ __('global.subCategory.phone') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.feature') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.reseller') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.driver') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.contact') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.help') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.news') }}</a>
-                        <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.servers') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Histories)-->
