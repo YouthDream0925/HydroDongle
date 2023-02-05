@@ -33,6 +33,7 @@
                 <div class="collapse {{ (request()->is('admin/editer*')) ? 'show' : '' }}" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
                         <a class="nav-link {{ (request()->is('admin/editer/brands*')) ? 'active' : '' }}" href="{{ route('brands.index') }}">{{ __('global.subCategory.brand') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/cpus*')) ? 'active' : '' }}" href="{{ route('cpus.index') }}">{{ __('global.subCategory.cpu') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/models*')) ? 'active' : '' }}" href="{{ route('models.index') }}">{{ __('global.subCategory.model') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/phones*')) ? 'active' : '' }}" href="{{ route('phones.index') }}">{{ __('global.subCategory.phone') }}</a>
                         <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.feature') }}</a>

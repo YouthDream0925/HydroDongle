@@ -12,6 +12,7 @@ use App\Http\Controllers\Manage\AdminController;
 use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\General\TransferController;
 use App\Http\Controllers\Admin\Editer\BrandController;
+use App\Http\Controllers\Admin\Editer\CpuController;
 use App\Http\Controllers\Admin\Editer\ModelController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
@@ -64,6 +65,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
     Route::group(['prefix' => 'editer'], function() {
         Route::resource('brands', BrandController::class);
+        Route::resource('cpus', CpuController::class);
+        Route::post('socs/save', [CpuController::class, 'save_soc'])->name('socs.save');
+        Route::post('socs/delete', [CpuController::class, 'delete_soc'])->name('socs.delete');
         Route::resource('models', ModelController::class);
         Route::resource('phones', PhoneController::class);
     });

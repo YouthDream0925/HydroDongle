@@ -27,6 +27,7 @@ return [
         'local',
         'logo',
         'brands',
+        'cpus',
         'slides'
     ],
 

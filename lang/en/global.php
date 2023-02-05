@@ -24,6 +24,7 @@ return [
     'action' => 'Action',
     'ok' => 'Ok',
     'close' => 'Close',
+    'save' => 'Save',
 
     /*
     |--------------------------------------------------------------------------
@@ -56,6 +57,7 @@ return [
         'roles' => 'Roles',
         'transfer' => 'Transfer',
         'brand' => 'Brand',
+        'cpu' => 'CPU',
         'model' => 'Model',
         'phone' => 'Phone',
         'module' => 'Module',
@@ -157,6 +159,19 @@ return [
     'brandTitle' => 'BRANDS',
     'brand' => 'Brand',
     'brandDetails' => 'Brand Details',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer CPU page
+    |--------------------------------------------------------------------------
+    */
+    'cpuTitle' => 'CPUS',
+    'cpu' => 'CPU',
+    'cpuDetails' => 'CPU Details',
+    'image' => 'Image',
+    'socs' => 'SOCs',
+    'name' => 'Name',
+    'explanation' => 'Explanation',
 
     /*
     |--------------------------------------------------------------------------

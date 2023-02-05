@@ -68,6 +68,14 @@ return [
             'throw' => false,
         ],
 
+        'cpus' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/cpus'),
+            'url' => env('APP_URL').'/storage/cpus',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'slides' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slides'),
