@@ -2,6 +2,9 @@
 <html lang="en">
     @include('layouts.admin.head')
     <body class="nav-fixed bg-light">
+        <div id="page_loader" class="loading d-none">
+            <mwc-circular-progress indeterminate></mwc-circular-progress>
+        </div>
         <!-- Top app bar navigation menu-->
         @include('layouts.admin.header')
         <!-- Layout wrapper-->

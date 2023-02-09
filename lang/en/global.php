@@ -194,6 +194,8 @@ return [
     'model' => 'Model',
     'modelDetails' => 'Model Details',
     'noSelected' => 'No selected',
+    'memory' => 'Memory',
+    'selectedFeatures' => 'Selected features',
 
     /*
     |--------------------------------------------------------------------------

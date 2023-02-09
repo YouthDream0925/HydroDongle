@@ -21,11 +21,15 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="custom-brand-container-small">
+                                    @if($brand->hasMedia('brand_image'))
+                                    <img class="img-fluid img-responsive mb-1" src="{{ $brand->firstMedia('brand_image')->getUrl() }}" alt="..."/>
+                                    @else
                                     <img class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                    @endif
                                 </div>
                                 <div class="ms-3">
-                                    <div class="fs-6 mb-1 fw-500">{{ __('global.brand') }}</div>
-                                    <a class="small stretched-link text-reset text-decoration-none">{{ __('global.noSelected') }}</a>
+                                    <div class="fs-6 mb-1 fw-500">{{ $brand->brand_name }}</div>
+                                    <a class="small stretched-link text-reset text-decoration-none">{{ $brand->brand_link }}</a>
                                 </div>
                             </div>
                         </div>
@@ -36,11 +40,15 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <div class="custom-brand-container-small">
-                                    <img class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                    @if($cpu->hasMedia('cpu_image'))
+                                    <img class="img-fluid img-responsive mb-1" src="{{ $cpu->firstMedia('cpu_image')->getUrl() }}" alt="..."/>
+                                    @else
+                                    <img class="img-fluid img-responsive mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                    @endif
                                 </div>
                                 <div class="ms-3">
-                                    <div class="fs-6 mb-1 fw-500">{{ __('global.cpu') }}</div>
-                                    <a class="small stretched-link text-reset text-decoration-none">{{ __('global.noSelected') }}</a>
+                                    <div class="fs-6 mb-1 fw-500">{{ $cpu->name }}</div>
+                                    <a class="small stretched-link text-reset text-decoration-none">{{ $cpu->explanation }}</a>
                                 </div>
                             </div>
                         </div>
@@ -55,7 +63,11 @@
                                 </div>
                                 <div class="ms-3">
                                     <div class="fs-6 mb-1 fw-500">{{ __('global.feature') }}</div>
+                                    @if(count($feature_ids) == 0)
                                     <a id="features_selecter_check" class="small stretched-link text-reset text-decoration-none">{{ __('global.noSelected') }}</a>
+                                    @else
+                                    <a id="features_selecter_check" class="small stretched-link text-reset text-decoration-none">{{ __('global.selectedFeatures') }}: {{ count($feature_ids) }}</a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -65,23 +77,27 @@
             <div class="card card-raised mb-4">
                 <div class="card-body p-5">
                     <div class="card-title mb-4">{{ __('global.modelDetails') }}</div>
-                    {!! Form::open(array('route' => 'models.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
+                    {!! Form::model($model, ['method' => 'PATCH','route' => ['models.update', $model->id], 'enctype' => 'multipart/form-data']) !!}
                         <div class="row mb-4 item-center">
                             <div class="col-xl-8">
                                 <div class="mb-4">
-                                    <mwc-textfield class="w-100" label="Model Name" outlined id="model_name" name="name" value=""></mwc-textfield>
+                                    <mwc-textfield class="w-100" label="Model Name" outlined id="model_name" name="name" value="{{ $model->name }}"></mwc-textfield>
                                 </div>
                                 <div class="mb-4">
-                                    <mwc-textfield class="w-100" label="Model Link" outlined id="model_link" name="link" value=""></mwc-textfield>
+                                    <mwc-textfield class="w-100" label="Model Link" outlined id="model_link" name="link" value="{{ $model->link }}"></mwc-textfield>
                                 </div>
                                 <div class="mb-4">
-                                    <mwc-textarea class="w-100" label="Note" outlined name="note" maxlength="200" charcounter></mwc-textarea>
+                                    <mwc-textarea class="w-100" label="Note" outlined name="note" value="{{ $model->note }}" maxlength="200" charcounter></mwc-textarea>
                                 </div>
                                 <div class="d-flex align-items-center item-space-between">
-                                    <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
+                                    <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" @if($model->activate == true) checked @endif></mwc-checkbox></mwc-formfield>
                                     <mwc-select class="w-80" name="memory_id" outlined label="{{ __('global.memory') }}">
                                         @foreach($memories as $memory)
-                                        <mwc-list-item value="{{ $memory->id }}">{{ $memory->name }}</mwc-list-item>
+                                            @if($model->memory_id == $memory->id)
+                                            <mwc-list-item value="{{ $memory->id }}" selected activated>{{ $memory->name }}</mwc-list-item>
+                                            @else
+                                            <mwc-list-item value="{{ $memory->id }}">{{ $memory->name }}</mwc-list-item>
+                                            @endif
                                         @endforeach
                                     </mwc-select>
                                 </div>
@@ -89,7 +105,11 @@
                             <div class="col-xl-4">
                                 <div class="text-center">
                                     <div class="custom-brand-container">
-                                        <img id="model_container" class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                        @if($model->hasMedia('model_image'))
+                                        <img class="img-fluid img-responsive mb-1" src="{{ $model->firstMedia('model_image')->getUrl() }}" alt="..."/>
+                                        @else
+                                        <img class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                        @endif
                                     </div>
                                     <div class="caption fst-italic text-muted mb-4"></div>
                                     <input type="file" name="model_image" id="model_image" hidden/>
@@ -99,14 +119,21 @@
                                     </label>
                                 </div>
                             </div>
-                            <input type="hidden" name="brand_id" value=""/>
-                            <input type="hidden" name="cpu_id" value=""/>
-                            <input type="hidden" name="feature_id" value=""/>
+                            <input type="hidden" name="brand_id" value="{{ $brand->brand_id }}"/>
+                            <input type="hidden" name="cpu_id" value="{{ $cpu->id }}"/>
+                            <input type="hidden" name="feature_id" value="{{ $model->feature_id }}"/>
                         </div>
-                        <div class="text-center"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.create') }}</button></div>
+                        <div class="text-center">
+                            <button class="btn btn-outline-danger btn-delete mdc-ripple-upgraded" type="button">{{ __('global.delete') }}</button>
+                            <button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.update') }}</button>
+                        </div>
                     {!! Form::close() !!}
                 </div>
             </div>
+        </div>
+        <div class="col-xl-12">
+            {!! Form::open(['name' => 'model_delete', 'method' => 'DELETE','route' => ['models.destroy', $model->id],'style'=>'display:inline']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
@@ -133,13 +160,38 @@
 
 @push('script')
 <script src="{{ asset('theme/js/custom/file-loader.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script src="{{ asset('theme/js/custom/model.js') }}"></script>
 <script>
     jQuery(document).ready(function($) {
         FileLoader.init('model_image', 'model_container');
-        let brand = null;
-        let features = [];
-        Model.init(brand, features);
+        let brand = {
+            'id': '{{ $brand->brand_id }}',
+            'name': '{{ $brand->brand_name }}',
+            'link': '{{ $brand->brand_link }}',
+            'url': '',
+        };
+        let feature_ids = $.parseJSON('{{ $model->feature_id }}');
+        Model.init(brand, feature_ids);
+    });
+
+    $('.btn-delete').click(function(event){
+        var form =  $('form[name="model_delete"]');
+        event.preventDefault();
+        swal({
+            title: 'Are you sure you want to delete this Model?',
+            text: lang.deleteConfirmText,
+            icon: lang.deleteConfirmIcon,
+            type: lang.deleteConfirmType,
+            buttons: lang.deleteConfirmButton,
+            confirmButtonColor: lang.deleteConfirmButtonColor,
+            cancelButtonColor: lang.cancelButtonColor,
+            confirmButtonText: lang.confirmButtonText
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit();
+            }
+        });
     });
 </script>
 @endpush

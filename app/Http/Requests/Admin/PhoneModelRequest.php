@@ -27,8 +27,10 @@ class PhoneModelRequest extends FormRequest
         return [
             'brand_id' => ['required', 'numeric'],
             'cpu_id' => ['required', 'numeric'],
+            'memory_id' => ['required', 'numeric'],
             'name' => ['required', 'string'],
             'link' => ['required', 'string'],
+            'note' => ['required', 'string', 'max:255'],
             'model_image' => ['mimes:jpeg,png,jpg,gif,svg', 'max:2048']
         ];
     }

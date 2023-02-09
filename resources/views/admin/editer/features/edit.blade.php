@@ -47,10 +47,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="text-center"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.create') }}</button></div>
+                        <div class="text-center">
+                            <button class="btn btn-outline-danger btn-delete mdc-ripple-upgraded" type="button">{{ __('global.delete') }}</button>
+                            <button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.update') }}</button>
+                        </div>
                     {!! Form::close() !!}
                 </div>
             </div>
+        </div>
+        <div class="col-xl-12">
+            {!! Form::open(['name' => 'feature_delete', 'method' => 'DELETE','route' => ['features.destroy', $feature->id],'style'=>'display:inline']) !!}
+            {!! Form::close() !!}
         </div>
     </div>
 </div>
@@ -58,9 +65,29 @@
 
 @push('script')
 <script src="{{ asset('theme/js/custom/file-loader.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 <script>
     jQuery(document).ready(function($) {
         FileLoader.init('icon', 'icon_container');
+    });
+
+    $('.btn-delete').click(function(event){
+        var form =  $('form[name="feature_delete"]');
+        event.preventDefault();
+        swal({
+            title: 'Are you sure you want to delete this Feature?',
+            text: lang.deleteConfirmText,
+            icon: lang.deleteConfirmIcon,
+            type: lang.deleteConfirmType,
+            buttons: lang.deleteConfirmButton,
+            confirmButtonColor: lang.deleteConfirmButtonColor,
+            cancelButtonColor: lang.cancelButtonColor,
+            confirmButtonText: lang.confirmButtonText
+        }).then((willDelete) => {
+            if (willDelete) {
+                form.submit();
+            }
+        });
     });
 </script>
 @endpush

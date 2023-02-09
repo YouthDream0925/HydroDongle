@@ -22,6 +22,7 @@ class PhoneModel extends Model
         'brand_id',
         'cpu_id',
         'feature_id',
+        'memory_id',
         'name',
         'note',
         'link',

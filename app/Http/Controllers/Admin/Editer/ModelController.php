@@ -8,6 +8,7 @@ use App\Models\Admin\Editer\PhoneModel;
 use App\Models\Admin\Editer\Brand;
 use App\Models\Admin\Editer\Cpu;
 use App\Models\Admin\Editer\Feature;
+use App\Models\Admin\Editer\Memory;
 use App\Http\Requests\Admin\PhoneModelRequest;
 use Plank\Mediable\Facades\ImageManipulator;
 use Plank\Mediable\HandlesMediaUploadExceptions;
@@ -15,15 +16,17 @@ use Plank\Mediable\Facades\MediaUploader;
 
 class ModelController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.editer.models.index');
+        $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
+        $models = PhoneModel::Popular($request->per_page);
+        return view('admin.editer.models.index', compact('models'));
     }
 
     public function create(Request $request)
     {
-        $brands = Brand::get();
-        return view('admin.editer.models.create', compact('brands'));
+        $memories = Memory::get();
+        return view('admin.editer.models.create', compact('memories'));
     }
 
     public function store(PhoneModelRequest $request)
@@ -57,6 +60,68 @@ class ModelController extends Controller
         }
 
         return redirect()->route('models.index')->with('success', 'Model created successfully');
+    }
+
+    public function edit($id)
+    {
+        $model = PhoneModel::find($id);
+        $brand = Brand::find($model->brand_id);
+        $cpu = Cpu::find($model->cpu_id);
+        $memories = Memory::get();
+        $feature_ids = json_decode($model->feature_id, TRUE);
+        return view('admin.editer.models.edit', compact('model', 'memories', 'brand', 'cpu', 'feature_ids'));
+    }
+
+    public function update(PhoneModelRequest $request, $id)
+    {
+        $model = PhoneModel::find($id);
+        $model->name = $request->input('name');
+        $model->link = $request->input('link');
+        $model->note = $request->input('note');
+        $model->brand_id = $request->input('brand_id');
+        $model->cpu_id = $request->input('cpu_id');
+        $new_feature_ids = '[';
+        foreach(explode(',', $request->feature_id) as $key => $item) {
+            if(count(explode(',', $request->feature_id)) != $key + 1)
+                $new_feature_ids = $new_feature_ids.$item.',';
+            else
+                $new_feature_ids = $new_feature_ids.$item;
+        }
+        $new_feature_ids = $new_feature_ids.']';
+        $model->feature_id = $new_feature_ids;
+
+        if($request->activate == "true")
+            $model->activate = '1';
+        else
+            $model->activate = '0';
+        if($request->file('model_image') != null) {
+            if($brand->hasMedia('model_image')) {
+                $media = $brand->getMedia('model_image')->first();
+                $media->delete();
+            }
+
+            $media = MediaUploader::fromSource($request->file('model_image'))
+                ->toDisk('models')
+                    ->upload();
+            
+            $model->attachMedia($media, 'model_image');
+        }
+
+        $model->update();
+        return redirect()->back()->with('success','Model updated successfully');
+    }
+
+    public function destroy($id)
+    {
+        $model = PhoneModel::find($id);
+        if($model->hasMedia('model_image')) {
+            $media = $model->getMedia('model_image')->first();
+            $media->delete();
+        }
+        $model->delete();
+
+        return redirect()->route('models.index')
+                        ->with('success','Model deleted successfully');
     }
 
     public function data(Request $request)

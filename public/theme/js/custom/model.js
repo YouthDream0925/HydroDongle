@@ -64,6 +64,11 @@ var Model = function() {
                             '</div>' +
                         '</div>';
             $('#brand_selecter').html(temp);
+
+            let new_text = $('#model_name').val().toLowerCase().replace(/\s/g, '-');
+            let new_brand_name = selected_brand.name.toLowerCase().replace(/\s/g, '-');
+            $('#model_link').val('brands/' + new_brand_name + '/' + new_text);
+
             $("input[name=brand_id]").val(selected_brand.id);
         });
     }
@@ -116,6 +121,29 @@ var Model = function() {
         });
     }
 
+    var ModelName = function() {
+        $('#model_name').on('input',function(e) {
+            if(selected_brand == null) {
+                new bs5.Toast({
+                    body: 'Please select brand.',
+                    className: 'border-0 bg-danger text-white',
+                    btnCloseWhite: true,
+                }).show();
+                $(this).val('');
+                return;
+            }
+            const input_text = $(this).val();
+            if(input_text == '')
+                $('#model_link').val('');
+            else {
+                // let new_text = input_text.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '-');
+                let new_text = input_text.toLowerCase().replace(/\s/g, '-');
+                let new_brand_name = selected_brand.name.toLowerCase().replace(/\s/g, '-');
+                $('#model_link').val('brands/' + new_brand_name + '/' + new_text);
+            }            
+        });
+    }
+
     var GetData = function(type, key) {
         $.ajax({
             type: 'POST',
@@ -126,11 +154,17 @@ var Model = function() {
                 'name': key
             },
             beforeSend() {
-
+                if($('#page_loader').hasClass('d-none'))
+                    $('#page_loader').removeClass('d-none');
             },
             success: function(res) {
                 if(res['data'].length == 0) {
                     $('#modal_body').html('');
+                    new bs5.Toast({
+                        body: 'There is no data.',
+                        className: 'border-0 bg-danger text-white',
+                        btnCloseWhite: true,
+                    }).show();
                 } else {
                     $('#modal_body').html('');
                     if(res['type'] == 'brand') {
@@ -192,19 +226,25 @@ var Model = function() {
                         });
                     }                                 
                 }
+
+                $('#page_loader').addClass('d-none');
             },
             error: function() {
                 new bs5.Toast({
-                    body: 'no',
+                    body: 'Unexpected error occurred.',
                     className: 'border-0 bg-danger text-white',
                     btnCloseWhite: true,
                 }).show();
+
+                $('#page_loader').addClass('d-none');
             }
         })
     }
 
     return {
-        init: function() {
+        init: function(brand, features) {
+            selected_brand = brand;
+            selected_features = features;
             Brand();
             CPU();
             Features();
@@ -212,6 +252,7 @@ var Model = function() {
             BrandSelecter();
             CpuSelecter();
             FeaturesSelecter();
+            ModelName();
         }
     }
 }();
