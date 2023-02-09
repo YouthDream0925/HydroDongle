@@ -98,8 +98,10 @@
         const input_text = $(this).val();
         if(input_text == '')
             $('#brand_link').val('');
-        else
-            $('#brand_link').val('brands/' + input_text);
+        else {
+            let new_text = input_text.toLowerCase().replace(/\s/g, '-');
+            $('#brand_link').val('brands/' + new_text);
+        }
     });
 </script>
 @endpush

@@ -29,6 +29,7 @@ return [
         'brands',
         'cpus',
         'features',
+        'models',
         'slides'
     ],
 

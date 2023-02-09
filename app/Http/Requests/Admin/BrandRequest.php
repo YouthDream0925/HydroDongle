@@ -30,19 +30,19 @@ class BrandRequest extends FormRequest
         if($brand != null && $brand->hasMedia('brand_image')) {
             if($request->file('brand_image') != null) {
                 return [
-                    'brand_name' => ['required', 'string', 'max:255'],
+                    'brand_name' => ['required', 'string', 'max:32'],
                     'brand_link' => ['required', 'string', 'max:255'],
                     'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
                 ];
             } else {
                 return [
-                    'brand_name' => ['required', 'string', 'max:255'],
+                    'brand_name' => ['required', 'string', 'max:32'],
                     'brand_link' => ['required', 'string', 'max:255']
                 ];
             }
         } else {
             return [
-                'brand_name' => ['required', 'string', 'max:255'],
+                'brand_name' => ['required', 'string', 'max:32'],
                 'brand_link' => ['required', 'string', 'max:255'],
                 'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
             ];

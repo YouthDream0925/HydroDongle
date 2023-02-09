@@ -5,10 +5,12 @@ namespace App\Models\Admin\Editer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Plank\Mediable\Mediable;
+use EloquentFilter\Filterable;
+use App\ModelFilters\CpuFilter;
 
 class Cpu extends Model
 {
-    use HasFactory, Mediable;
+    use HasFactory, Mediable, Filterable;
 
     protected $table = 'cpus';
 
@@ -20,6 +22,11 @@ class Cpu extends Model
         'name',
         'explanation'
     ];
+
+    public function modelFilter()
+    {
+        return $this->provideFilter(CpuFilter::class);
+    }
 
     public function scopePopular($query, $per_page)
     {

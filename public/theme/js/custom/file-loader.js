@@ -9,13 +9,15 @@ var FileLoader = function () {
             if (!files.length || !window.FileReader) return;
     
             var file_name = files[0].name;
-    
+
             if (/^image/.test(files[0].type)) {
                 var reader = new FileReader();
                 reader.readAsDataURL(files[0]);
                 reader.onloadend = function (event) {
                     $('#' + container).prop('src', event.target.result);
                     $('#' + container).prop('title', file_name);
+                    if($('#' + container).hasClass('img-filter-gray'))
+                        $('#' + container).removeClass('img-filter-gray');
                 }
             } else {
                 new bs5.Toast({

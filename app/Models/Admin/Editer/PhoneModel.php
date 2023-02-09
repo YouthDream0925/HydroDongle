@@ -5,36 +5,31 @@ namespace App\Models\Admin\Editer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Plank\Mediable\Mediable;
-use App\Scopes\OrderScope;
 use EloquentFilter\Filterable;
-use App\ModelFilters\FeatureFilter;
+use App\ModelFilters\BrandFilter;
 
-class Feature extends Model
+class PhoneModel extends Model
 {
     use HasFactory, Mediable, Filterable;
 
-    protected $table = 'features';
+    protected $table = 'models';
 
     protected $primaryKey = 'id';
 
     public $incrementing = true;
 
     protected $fillable = [
+        'brand_id',
+        'cpu_id',
+        'feature_id',
         'name',
-        'sorting',
-        'activate'
+        'note',
+        'link',
     ];
 
     public function modelFilter()
     {
-        return $this->provideFilter(FeatureFilter::class);
-    }
-
-    protected static function boot()
-    {
-        parent::boot();
-  
-        static::addGlobalScope(new OrderScope);
+        return $this->provideFilter(BrandFilter::class);
     }
 
     public function scopePopular($query, $per_page)

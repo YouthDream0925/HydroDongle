@@ -72,6 +72,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::post('socs/delete', [CpuController::class, 'delete_soc'])->name('socs.delete');
         Route::resource('models', ModelController::class);
         Route::resource('phones', PhoneController::class);
+        Route::post('/models/data', [ModelController::class, 'data']);
     });
 
     Route::group(['prefix' => 'other'], function() {

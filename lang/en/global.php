@@ -168,6 +168,7 @@ return [
     */
     'cpuTitle' => 'CPUS',
     'cpu' => 'CPU',
+    'cpu' => 'CPU',
     'cpuDetails' => 'CPU Details',
     'image' => 'Image',
     'socs' => 'SOCs',
@@ -192,6 +193,7 @@ return [
     'modelTitle' => 'MODELS',
     'model' => 'Model',
     'modelDetails' => 'Model Details',
+    'noSelected' => 'No selected',
 
     /*
     |--------------------------------------------------------------------------

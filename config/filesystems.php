@@ -84,6 +84,14 @@ return [
             'throw' => false,
         ],
 
+        'models' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/models'),
+            'url' => env('APP_URL').'/storage/models',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'slides' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slides'),
