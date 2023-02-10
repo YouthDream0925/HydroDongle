@@ -43,7 +43,7 @@
                             <div class="col-xl-4">
                                 <div class="text-center">
                                     <div class="custom-brand-container">
-                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{$country->code}}.svg" width="160" height="160"/>
+                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->code)}}.svg" width="160" height="160"/>
                                     </div>
                                 </div>
                             </div>

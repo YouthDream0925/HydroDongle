@@ -79,7 +79,7 @@
                                 </div>
                                 <div class="d-flex align-items-center item-space-between">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
-                                    <mwc-select class="w-80" name="memory_id" outlined label="{{ __('global.memory') }}">
+                                    <mwc-select class="w-50" name="memory_id" outlined label="{{ __('global.memory') }}">
                                         @foreach($memories as $memory)
                                         <mwc-list-item value="{{ $memory->id }}">{{ $memory->name }}</mwc-list-item>
                                         @endforeach

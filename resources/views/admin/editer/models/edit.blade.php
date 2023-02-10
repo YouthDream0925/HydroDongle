@@ -91,7 +91,7 @@
                                 </div>
                                 <div class="d-flex align-items-center item-space-between">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" @if($model->activate == true) checked @endif></mwc-checkbox></mwc-formfield>
-                                    <mwc-select class="w-80" name="memory_id" outlined label="{{ __('global.memory') }}">
+                                    <mwc-select class="w-50" name="memory_id" outlined label="{{ __('global.memory') }}">
                                         @foreach($memories as $memory)
                                             @if($model->memory_id == $memory->id)
                                             <mwc-list-item value="{{ $memory->id }}" selected activated>{{ $memory->name }}</mwc-list-item>
