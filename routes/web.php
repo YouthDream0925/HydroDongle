@@ -15,6 +15,8 @@ use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\CpuController;
 use App\Http\Controllers\Admin\Editer\FeatureController;
 use App\Http\Controllers\Admin\Editer\ModelController;
+use App\Http\Controllers\Admin\Editer\ResellerController;
+use App\Http\Controllers\Admin\Editer\CountryController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
 use App\Http\Controllers\Admin\Other\IntroController;
@@ -73,6 +75,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('models', ModelController::class);
         Route::resource('phones', PhoneController::class);
         Route::post('/models/data', [ModelController::class, 'data']);
+        Route::resource('countries', CountryController::class);
+        Route::resource('resellers', ResellerController::class);
     });
 
     Route::group(['prefix' => 'other'], function() {
@@ -203,7 +207,7 @@ Route::get('storage/slides/{filename}', function ($filename)
 
 Route::get('storage/sample/brand', function ()
 {
-    $path = storage_path('app/public/' . 'hydra.png');
+    $path = storage_path('app/public/' . 'hydra.gif');
 
     if (!File::exists($path)) {
         abort(404);

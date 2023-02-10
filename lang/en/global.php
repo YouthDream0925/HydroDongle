@@ -60,6 +60,7 @@ return [
         'cpu' => 'CPU',
         'function' => 'Function',
         'model' => 'Model',
+        'reseller' => 'Reseller',
         'phone' => 'Phone',
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
@@ -195,7 +196,40 @@ return [
     'modelDetails' => 'Model Details',
     'noSelected' => 'No selected',
     'memory' => 'Memory',
-    'selectedFeatures' => 'Selected features',
+    'selectedFeatures' =>'Selected features',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Country page
+    |--------------------------------------------------------------------------
+    */
+    'resellerTitle' => 'RESELLERS',
+    'reseller' => 'Reseller',
+    'resellerDetails' => 'Reseller Details',
+    'country' => 'Country',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Reseller page
+    |--------------------------------------------------------------------------
+    */
+    'countryTitle' => 'COUNTRIES',
+    'country' => 'Country',
+    'countryDetails' => 'Country Details',
+    'countryName' => 'Country Name',
+    'code' => 'Code',
+    'code3' => 'Code 3',
+    'numCode' => 'Number Code',
+    'phoneCode' => 'Phone Code',
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Reseller page
+    |--------------------------------------------------------------------------
+    */
+    'resellerTitle' => 'RESELLERS',
+    'reseller' => 'Reseller',
+    'resellerDetails' => 'Reseller Details',    
 
     /*
     |--------------------------------------------------------------------------

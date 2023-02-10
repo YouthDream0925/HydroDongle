@@ -92,6 +92,14 @@ return [
             'throw' => false,
         ],
 
+        'countries' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/countries'),
+            'url' => env('APP_URL').'/storage/countries',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'slides' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slides'),

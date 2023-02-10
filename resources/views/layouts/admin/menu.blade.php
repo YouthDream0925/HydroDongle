@@ -36,6 +36,8 @@
                         <a class="nav-link {{ (request()->is('admin/editer/cpus*')) ? 'active' : '' }}" href="{{ route('cpus.index') }}">{{ __('global.subCategory.cpu') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/features*')) ? 'active' : '' }}" href="{{ route('features.index') }}">{{ __('global.subCategory.feature') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/models*')) ? 'active' : '' }}" href="{{ route('models.index') }}">{{ __('global.subCategory.model') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/countries*')) ? 'active' : '' }}" href="{{ route('countries.index') }}">{{ __('global.country') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/resellers*')) ? 'active' : '' }}" href="{{ route('resellers.index') }}">{{ __('global.subCategory.reseller') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Histories)-->
