@@ -35,7 +35,7 @@
                                         <div class="text-center">
                                             <img class="mb-3" src="{{ asset('theme/assets/img/icons/hydra.png') }}" alt="..." style="height: 128px" />
                                             <h1 class="display-5 mb-0">{{ __('global.login') }}</h1>
-                                            <div class="subheading-1 mb-5">{{ __('global.title') }}</div>
+                                            <div class="subheading-1 mb-5">{{ __('global.appTitle') }}</div>
                                         </div>
                                         <!-- Login submission form-->
                                         <form method="POST" action="{{ route('admin.login') }}">

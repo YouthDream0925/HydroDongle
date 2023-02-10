@@ -39,6 +39,7 @@
                         <a class="nav-link {{ (request()->is('admin/editer/countries*')) ? 'active' : '' }}" href="{{ route('countries.index') }}">{{ __('global.country') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/resellers*')) ? 'active' : '' }}" href="{{ route('resellers.index') }}">{{ __('global.subCategory.reseller') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/helps*')) ? 'active' : '' }}" href="{{ route('helps.index') }}">{{ __('global.subCategory.help') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/faqs*')) ? 'active' : '' }}" href="{{ route('faqs.index') }}">{{ __('global.subCategory.faq') }}</a>
                     </nav>
                 </div>
                 <!-- Drawer link (Histories)-->

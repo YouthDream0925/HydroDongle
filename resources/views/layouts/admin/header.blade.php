@@ -3,7 +3,7 @@
         <!-- Drawer toggle button-->
         <button class="btn btn-lg btn-icon order-1 order-lg-0" id="drawerToggle" href="javascript:void(0);"><i class="material-icons">menu</i></button>
         <!-- Navbar brand-->
-        <a class="navbar-brand me-auto" href="{{ route('admin.dashboard') }}"><div class="text-uppercase font-monospace">{{ __('global.title') }}</div></a>
+        <a class="navbar-brand me-auto" href="{{ route('admin.dashboard') }}"><div class="text-uppercase font-monospace">{{ __('global.appTitle') }}</div></a>
         <!-- Navbar items-->
         <div class="d-flex align-items-center mx-3 me-lg-0">
             <!-- Navbar buttons-->

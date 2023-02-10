@@ -11,7 +11,8 @@ return [
     |
     */
 
-    'title' => 'HYDRA TOOL',
+    'appTitle' => 'HYDRA TOOL',
+    'title' => 'Title',
     'add' => 'New',
     'create' => 'Create',
     'back' => 'Back',
@@ -62,6 +63,7 @@ return [
         'model' => 'Model',
         'reseller' => 'Reseller',
         'help' => 'Help',
+        'faq' => 'FAQ',
         'phone' => 'Phone',
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
@@ -69,7 +71,6 @@ return [
         'reseller' => 'Reseller',
         'driver' => 'Driver',
         'contact' => 'Contact',
-        'help' => 'Help',
         'news' => 'News',
         'servers' => 'Servers',
         'updateHistory' => 'Update History',
@@ -234,6 +235,15 @@ return [
     'helpTitle' => 'HELPS',
     'help' => 'Help',
     'helpDetails' => 'Help Details',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer FAQ page
+    |--------------------------------------------------------------------------
+    */
+    'faqTitle' => 'FAQS',
+    'faq' => 'FAQ',
+    'faqDetails' => 'FAQ Details',
 
     /*
     |--------------------------------------------------------------------------
