@@ -26,16 +26,15 @@ class ResellerRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:64'],
-            'website' => ['string', 'max:1023'],
-            'email' => ['string', 'max:1023'],
-            'tel' => ['string', 'max:1023'],
+            'website' => ['max:1023'],
+            'email' => ['max:1023'],
+            'tel' => ['max:1023'],
             'country_id' => ['required', 'numeric'],
-            'facebook' => ['string', 'max:255'],
-            'whatsapp' => ['string', 'max:1023'],
-            'skype' => ['string', 'max:255'],
-            'telegram' => ['string', 'max:255'],
-            'sonork' => ['string', 'max:13'],
-            'activate' => ['required']
+            'facebook' => ['max:255'],
+            'whatsapp' => ['max:1023'],
+            'skype' => ['max:255'],
+            'telegram' => ['max:255'],
+            'sonork' => ['max:13']
         ];
     }
 }

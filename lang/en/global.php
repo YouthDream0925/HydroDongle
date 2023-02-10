@@ -222,6 +222,8 @@ return [
     'code3' => 'Code 3',
     'numCode' => 'Number Code',
     'phoneCode' => 'Phone Code',
+    'email' => 'Email',
+    'tel' => 'Telephone',
     
     /*
     |--------------------------------------------------------------------------

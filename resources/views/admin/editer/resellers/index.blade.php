@@ -15,11 +15,61 @@
     </div>
     <div class="row gx-5">
         <div class="col-lg-12">
+            @if(count($resellers) != 0)
+            <div class="card card-raised mb-2">
+                <div class="card-body p-5">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ __('global.no') }}</th>
+                                <th scope="col">{{ __('global.name') }}</th>
+                                <th scope="col">{{ __('global.email') }}</th>
+                                <th scope="col">{{ __('global.tel') }}</th>
+                                <th scope="col">{{ __('global.countryName') }}</th>
+                                <th scope="col" class="txt-right">{{ __('global.action') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($resellers as $key => $reseller)
+                            <tr>
+                                <th scope="row">{{ ++$i }}</th>
+                                <td>{{ $reseller->name }}</td>
+                                <td>{{ $reseller->email }}</td>
+                                <td>{{ $reseller->tel }}</td>
+                                @if($reseller->country != null)
+                                <td>{{ $reseller->country->name }}</td>
+                                @else
+                                <td>NONE</td>
+                                @endif
+                                <td class="txt-right">
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('resellers.edit',$reseller->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
+                                            </li>
+                                            <li>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['resellers.destroy', $reseller->id],'style'=>'display:inline']) !!}
+                                                    {!! Form::button('<span class="material-icons">delete</span>'.__('global.delete'), ['type' =>'submit', 'class' => 'dropdown-item']) !!}
+                                                {!! Form::close() !!}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach                            
+                        </tbody>
+                    </table>                             
+                </div>
+            </div>
+            @include('layouts.admin.pagination.index', ['paginator' => $resellers])
+            @else
             <div class="card card-raised mb-5">
                 <div class="card-body p-5">
                     <h2 class="card-title text-center">{{ __('global.none') }}</h2>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>
