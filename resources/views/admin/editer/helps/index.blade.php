@@ -15,11 +15,55 @@
     </div>
     <div class="row gx-5">
         <div class="col-lg-12">
+            @if(count($helps) != 0)
+            <div class="card card-raised mb-2">
+                <div class="card-body p-5">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">{{ __('global.no') }}</th>
+                                <th scope="col">{{ __('global.title') }}</th>
+                                <th scope="col">{{ __('global.brand') }}</th>
+                                <th scope="col">{{ __('global.cpu') }}</th>
+                                <th scope="col" class="txt-right">{{ __('global.action') }}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($helps as $key => $help)
+                            <tr>
+                                <th scope="row">{{ ++$i }}</th>
+                                <td>{{ $help->title }}</td>
+                                <td>{{ $help->brand->brand_name }}</td>
+                                <td>{{ $help->cpu->name }}</td>
+                                <td class="txt-right">
+                                    <div class="dropdown">
+                                        <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="{{ route('helps.edit',$help->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
+                                            </li>
+                                            <li>
+                                                {!! Form::open(['method' => 'DELETE','route' => ['helps.destroy', $help->id],'style'=>'display:inline']) !!}
+                                                    {!! Form::button('<span class="material-icons">delete</span>'.__('global.delete'), ['type' =>'submit', 'class' => 'dropdown-item']) !!}
+                                                {!! Form::close() !!}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            @endforeach                            
+                        </tbody>
+                    </table>                             
+                </div>
+            </div>
+            @include('layouts.admin.pagination.index', ['paginator' => $helps])
+            @else
             <div class="card card-raised mb-5">
                 <div class="card-body p-5">
                     <h2 class="card-title text-center">{{ __('global.none') }}</h2>
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </div>

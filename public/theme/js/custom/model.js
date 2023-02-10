@@ -65,9 +65,11 @@ var Model = function() {
                         '</div>';
             $('#brand_selecter').html(temp);
 
-            let new_text = $('#model_name').val().toLowerCase().replace(/\s/g, '-');
-            let new_brand_name = selected_brand.name.toLowerCase().replace(/\s/g, '-');
-            $('#model_link').val('brands/' + new_brand_name + '/' + new_text);
+            if($('#model_name').val() != null) {
+                let new_text = $('#model_name').val().toLowerCase().replace(/\s/g, '-');
+                let new_brand_name = selected_brand.name.toLowerCase().replace(/\s/g, '-');
+                $('#model_link').val('brands/' + new_brand_name + '/' + new_text);
+            }
 
             $("input[name=brand_id]").val(selected_brand.id);
         });
