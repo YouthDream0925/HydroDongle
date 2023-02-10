@@ -207,6 +207,7 @@ return [
     'reseller' => 'Reseller',
     'resellerDetails' => 'Reseller Details',
     'country' => 'Country',
+    'flag' => 'Flag',
 
     /*
     |--------------------------------------------------------------------------

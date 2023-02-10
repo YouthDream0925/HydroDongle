@@ -25,36 +25,12 @@ class CountryRequest extends FormRequest
      */
     public function rules(Request $request)
     {
-        $id = $this->route('country');
-        $country = Country::find($id);
-        if($country != null && $country->hasMedia('country_image')) {
-            if($request->file('country_image') != null) {
-                return [
-                    'name' => ['required', 'string', 'max:80'],
-                    'code' => ['required', 'string', 'max:2'],
-                    'code3' => ['max:3'],
-                    'num_code' => 'max:9',
-                    'phone_code' => 'max:9',
-                    'country_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
-                ];
-            } else {
-                return [
-                    'name' => ['required', 'string', 'max:80'],
-                    'code' => ['required', 'string', 'max:2'],
-                    'code3' => ['max:3'],
-                    'num_code' => 'max:9',
-                    'phone_code' => 'max:9'
-                ];
-            }
-        } else {
-            return [
-                'name' => ['required', 'string', 'max:80'],
-                'code' => ['required', 'string', 'max:2'],
-                'code3' => ['max:3'],
-                'num_code' => 'max:9',
-                'phone_code' => 'max:9',
-                'country_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
-            ];
-        }
+        return [
+            'name' => ['required', 'string', 'max:80'],
+            'code' => ['required', 'string', 'min:2'],
+            'code3' => ['max:3'],
+            'num_code' => 'max:9',
+            'phone_code' => 'max:9',
+        ];
     }
 }

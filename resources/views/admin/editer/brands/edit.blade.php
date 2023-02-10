@@ -52,7 +52,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-outline-danger btn-delete mdc-ripple-upgraded" type="button" data-brandID="{{ $brand->brand_id }}">{{ __('global.delete') }}</button>
+                            <button class="btn btn-outline-danger btn-delete mdc-ripple-upgraded" type="button">{{ __('global.delete') }}</button>
                             <button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.update') }}</button>
                         </div>
                     {!! Form::close() !!}

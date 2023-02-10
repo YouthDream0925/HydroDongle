@@ -14,5 +14,9 @@
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1",
         "vite": "^2.9.11"
+    },
+    "dependencies": {
+        "flag-icon-css": "^4.1.7",
+        "flag-icons": "^6.6.6"
     }
 }

@@ -27,21 +27,11 @@ class CountryController extends Controller
 
     public function store(CountryRequest $request)
     {
+        if($request->country_validation == "false") {
+            return redirect()->back()->with('error', "Can't not find this country.");
+        }
         $input = $request->all();
         $country = Country::create($input);
-
-        try {
-            if($request->file('country_image') != null) {
-                $media = MediaUploader::fromSource($request->file('country_image'))
-                    ->toDisk('countries')
-                        ->upload();
-
-                $country->attachMedia($media, 'country_image');
-            }
-        } catch (MediaUploadException $e) {
-            throw $this->transformMediaUploadException($e);
-        }
-
         return redirect()->route('countries.index')->with('success', 'Country created successfully.');
     }
 
@@ -53,25 +43,15 @@ class CountryController extends Controller
 
     public function update(CountryRequest $request, $id)
     {
+        if($request->country_validation == "false") {
+            return redirect()->back()->with('error', "Can't not find this country.");
+        }
         $country = Country::find($id);
         $country->name = $request->input('name');
         $country->code = $request->input('code');
         $country->code3 = $request->input('code3');
         $country->num_code = $request->input('num_code');
         $country->phone_code = $request->input('phone_code');
-        if($request->file('country_image') != null) {
-            if($country->hasMedia('country_image')) {
-                $media = $country->getMedia('country_image')->first();
-                $media->delete();
-            }
-
-            $media = MediaUploader::fromSource($request->file('country_image'))
-                ->toDisk('countries')
-                    ->upload();
-            
-            $country->attachMedia($media, 'country_image');
-        }
-
         $country->update();
         return redirect()->back()->with('success', 'Country updated successfully.');
     }
@@ -79,12 +59,7 @@ class CountryController extends Controller
     public function destroy($id)
     {
         $country = Country::find($id);
-        if($country->hasMedia('country_image')) {
-            $media = $country->getMedia('country_image')->first();
-            $media->delete();
-        }
         $country->delete();
-
         return redirect()->route('countries.index')->with('success','Country deleted successfully');
     }
 }

@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^3.4",
         "laravelcollective/html": "^6.3",
+        "outhebox/blade-flags": "^1.1",
         "plank/laravel-mediable": "^5.8",
         "spatie/laravel-permission": "^5.8",
         "tucker-eric/eloquentfilter": "^3.1"

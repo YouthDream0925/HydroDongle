@@ -57,9 +57,10 @@
                             </tr>
                             @endforeach                            
                         </tbody>
-                    </table>                    
+                    </table>                             
                 </div>
             </div>
+            @include('layouts.admin.pagination.index', ['paginator' => $countries])
             @else
             <div class="card card-raised mb-5">
                 <div class="card-body p-5">
