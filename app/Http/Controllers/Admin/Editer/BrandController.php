@@ -93,6 +93,10 @@ class BrandController extends Controller
             $media = $brand->getMedia('brand_image')->first();
             $media->delete();
         }
+
+        foreach($brand->models as $model) {
+            $model->delete();
+        }
         $brand->delete();
 
         return redirect()->route('brands.index')

@@ -40,4 +40,9 @@ class Cpu extends Model
     {
         return $this->hasMany(Soc::class, 'cpu', 'id');
     }
+
+    public function models()
+    {
+        return $this->hasMany(PhoneModel::class, 'cpu_id', 'id');
+    }
 }

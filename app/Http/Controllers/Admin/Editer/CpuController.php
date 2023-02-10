@@ -84,6 +84,9 @@ class CpuController extends Controller
             $media->delete();
         }
 
+        foreach($cpu->models as $model) {
+            $model->delete();
+        }
         $cpu->delete();
         return redirect()->route('cpus.index')
                         ->with('success','CPU deleted successfully.');

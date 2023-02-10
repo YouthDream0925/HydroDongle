@@ -37,4 +37,9 @@ class Brand extends Model
         else
            return $query->paginate(config('pagination.per_page'))->appends(['per_page' => config('pagination.per_page')]);
     }
+
+    public function models()
+    {
+        return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id');
+    }
 }
