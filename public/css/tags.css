@@ -1,0 +1,37 @@
+.bootstrap-tagsinput {
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.375rem;
+    border-radius: 0.25rem;
+}
+.bootstrap-tagsinput input {
+    background: white;
+    flex-grow: 1;
+    border: 0;
+}
+.bootstrap-tagsinput input:focus {
+    outline: none;
+    box-shadow: none;
+    border: 0;
+}
+.bootstrap-tagsinput .tag {
+    background-color: rgba(17,60,252, 0.1);
+    color: #85b2f7;
+    white-space: nowrap;
+    margin: 2px;
+    padding: 3px 8px;
+    border-radius: 3px;
+}
+.bootstrap-tagsinput .tag:hover {
+    background-color: #287eff;
+    color: white;
+}
+.bootstrap-tagsinput .tag [data-role=remove] {
+    cursor: pointer;
+    margin-left: 8px;
+}
+.bootstrap-tagsinput .tag [data-role=remove]::after {
+    content: "x";
+    padding: 0px 2px;
+}

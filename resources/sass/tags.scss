@@ -1,0 +1,43 @@
+.bootstrap-tagsinput{
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-wrap: wrap;
+    padding: .375rem;
+    border-radius: .25rem;
+
+    input{
+        background: white;
+        flex-grow: 1;
+        border: 0;
+
+        &:focus{
+            outline: none;
+            box-shadow: none;
+            border: 0;
+        }
+    }
+    
+    .tag {
+        background-color: rgba(17,60,252, 0.1);
+        color: #85b2f7;
+        white-space: nowrap;
+        margin: 2px;
+        padding: 3px 8px;
+        border-radius: 3px;
+
+        &:hover{
+            background-color: #287eff;
+            color: white;
+        }
+
+        [data-role="remove"]{
+            cursor: pointer;
+            margin-left: 8px;
+            
+            &::after{
+                content: 'x';
+                padding: 0px 2px;
+            }
+        }
+    }
+}

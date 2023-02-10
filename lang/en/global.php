@@ -61,6 +61,7 @@ return [
         'function' => 'Function',
         'model' => 'Model',
         'reseller' => 'Reseller',
+        'help' => 'Help',
         'phone' => 'Phone',
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
@@ -200,7 +201,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Editer Country page
+    | Editer Reseller page
     |--------------------------------------------------------------------------
     */
     'resellerTitle' => 'RESELLERS',
@@ -211,7 +212,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Editer Reseller page
+    | Editer Country page
     |--------------------------------------------------------------------------
     */
     'countryTitle' => 'COUNTRIES',
@@ -224,15 +225,15 @@ return [
     'phoneCode' => 'Phone Code',
     'email' => 'Email',
     'tel' => 'Telephone',
-    
+
     /*
     |--------------------------------------------------------------------------
-    | Editer Reseller page
+    | Editer Help page
     |--------------------------------------------------------------------------
     */
-    'resellerTitle' => 'RESELLERS',
-    'reseller' => 'Reseller',
-    'resellerDetails' => 'Reseller Details',    
+    'helpTitle' => 'HELPS',
+    'help' => 'Help',
+    'helpDetails' => 'Help Details',
 
     /*
     |--------------------------------------------------------------------------
