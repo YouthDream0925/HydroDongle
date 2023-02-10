@@ -64,6 +64,7 @@ return [
         'reseller' => 'Reseller',
         'help' => 'Help',
         'faq' => 'FAQ',
+        'test' => 'Test Points',
         'phone' => 'Phone',
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
@@ -235,6 +236,15 @@ return [
     'helpTitle' => 'HELPS',
     'help' => 'Help',
     'helpDetails' => 'Help Details',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Help page
+    |--------------------------------------------------------------------------
+    */
+    'testTitle' => 'TEST POINTS',
+    'test' => 'Test Point',
+    'testDetails' => 'Test Point Details',
 
     /*
     |--------------------------------------------------------------------------

@@ -91,6 +91,14 @@ return [
             'visibility' => 'public',
             'throw' => false,
         ],
+
+        'points' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/points'),
+            'url' => env('APP_URL').'/storage/points',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
         
         'slides' => [
             'driver' => 'local',

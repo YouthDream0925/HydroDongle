@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\Editer\ModelController;
 use App\Http\Controllers\Admin\Editer\ResellerController;
 use App\Http\Controllers\Admin\Editer\HelpController;
 use App\Http\Controllers\Admin\Editer\FaqController;
+use App\Http\Controllers\Admin\Editer\TestController;
 use App\Http\Controllers\Admin\Editer\CountryController;
 use App\Http\Controllers\Admin\Editer\PhoneController;
 use App\Http\Controllers\Admin\Other\SlideController;
@@ -81,6 +82,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('resellers', ResellerController::class);
         Route::resource('helps', HelpController::class);
         Route::resource('faqs', FaqController::class);
+        Route::resource('tests', TestController::class);
     });
 
     Route::group(['prefix' => 'other'], function() {
@@ -178,6 +180,23 @@ Route::get('storage/features/{filename}', function ($filename)
 Route::get('storage/models/{filename}', function ($filename)
 {
     $path = storage_path('app/public/models/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/points/{filename}', function ($filename)
+{
+    $path = storage_path('app/points/models/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);

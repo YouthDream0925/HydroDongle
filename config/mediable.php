@@ -30,6 +30,7 @@ return [
         'cpus',
         'features',
         'models',
+        'points',
         'slides'
     ],
 
