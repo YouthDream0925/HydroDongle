@@ -64,6 +64,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
     Route::group(['prefix' => 'general'], function() {
         Route::get('setting', [SettingController::class, 'index'])->name('website.setting');
         Route::post('setting', [SettingController::class, 'store'])->name('website.setting.store');
+        Route::get('credit/setting', [SettingController::class, 'credit'])->name('website.credit.setting');
+        Route::post('credit/setting', [SettingController::class, 'credit_store'])->name('website.setting.credit.store');
         Route::resource('roles', RoleController::class);
         Route::resource('admins', AdminController::class);
         Route::resource('users', UserController::class);

@@ -53,6 +53,7 @@ return [
     ],
     'subCategory' => [
         'setting' => 'Website Settings',
+        'creditSetting' => 'Credit Settings',
         'adminUsers' => 'Admin Panel Users',
         'onlineUsers' => 'Online Users',
         'dongleUsers' => 'Dongle Users',

@@ -25,7 +25,7 @@ class CreditRequest extends FormRequest
     {
         return [
             'recipient' => 'required|string|max:255',
-            'amount' => 'required|numeric|max:100'
+            'amount' => 'required|numeric|max:'.config('max_credit_amount')
         ];
     }
 }

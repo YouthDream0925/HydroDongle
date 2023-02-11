@@ -38,7 +38,7 @@
                                 <i class="material-icons trailing-icon">upload</i>
                             </label>
                         </div>
-                        <div class="text-end"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.saveChanges') }}</button></div>
+                        <div class="text-end"><button class="btn btn-outline-success mdc-ripple-upgraded" type="submit">{{ __('global.save') }}</button></div>
                     {!! Form::close() !!}
                 </div>
             </div>

@@ -78,7 +78,7 @@ class DongleUserController extends Controller
                 'msg' => 'Dongle User already activated.'
             ];
         } else {
-            if($activater->credits >= 50) {
+            if($activater->credits >= config('dongle_user_activate_price')) {
                 $check = true;
             } else {
                 $result = [
@@ -92,7 +92,7 @@ class DongleUserController extends Controller
             $dongle_user->ProPack = 1;
             $dongle_user->datetimeactivated = Carbon::now();
             if($activater->credits != config('infinite_amount'))
-                $activater->credits = $activater->credits - 50;
+                $activater->credits = $activater->credits - config('dongle_user_activate_price');
             else
                 $activater->credits = 0;
             $activater->save();

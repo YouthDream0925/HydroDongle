@@ -13,7 +13,10 @@
                 <!-- Nested drawer nav (General)-->
                 <div class="collapse {{ (request()->is('admin/general*')) ? 'show' : '' }}" id="collapseDashboards" aria-labelledby="headingOne" data-bs-parent="#drawerAccordion">
                     <nav class="drawer-menu-nested nav">
+                        @if(!empty(Auth::user()->getRoleNames()) && Auth::user()->hasExactRoles('SuperAdmin'))
                         <a class="nav-link {{ (request()->is('admin/general/setting')) ? 'active' : '' }}" href="{{ route('website.setting') }}">{{ __('global.subCategory.setting') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/general/credit/setting')) ? 'active' : '' }}" href="{{ route('website.credit.setting') }}">{{ __('global.subCategory.creditSetting') }}</a>
+                        @endif
                         @can('user-list')
                         <a class="nav-link {{ (request()->is('admin/general/admins*')) ? 'active' : '' }}" href="{{ route('admins.index') }}">{{ __('global.subCategory.adminUsers') }}</a>
                         <a class="nav-link {{ (request()->is('admin/general/users*')) ? 'active' : '' }}" href="{{ route('users.index') }}">{{ __('global.subCategory.onlineUsers') }}</a>

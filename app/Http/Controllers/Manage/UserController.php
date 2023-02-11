@@ -175,7 +175,7 @@ class UserController extends Controller
             ];
         } else {
             if($request->period == 6) {
-                if($activater->credits >= 40) {
+                if($activater->credits >= config('six_month_activate_price')) {
                     $check = true;
                 } else {
                     $result = [
@@ -184,7 +184,7 @@ class UserController extends Controller
                     ];
                 }
             } elseif($request->period == 12) {
-                if($activater->credits >= 70) {
+                if($activater->credits >= config('twelve_month_activate_price')) {
                     $check = true;
                 } else {
                     $result = [
@@ -205,9 +205,9 @@ class UserController extends Controller
             $user->datetimeactivated = Carbon::now();
             $user->datetimeexpired = Carbon::now()->addMonth($request->period);
             if($request->period == 6 && $activater->credits != config('infinite_amount')) {
-                $activater->credits = $activater->credits - 40;
+                $activater->credits = $activater->credits - config('six_month_activate_price');
             } elseif($request->period == 12 && $activater->credits != config('infinite_amount')) {
-                $activater->credits = $activater->credits - 70;
+                $activater->credits = $activater->credits - config('twelve_month_activate_price');
             } else {
                 $activater->credits = 0;
             }
