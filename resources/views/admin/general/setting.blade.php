@@ -17,7 +17,7 @@
                     {!! Form::open(array('route' => 'website.setting.store','method'=>'POST', 'enctype' => 'multipart/form-data')) !!}
                         @foreach($settings as $key => $setting)
                             @if($setting->property != "logo")
-                            <div class="mb-4"><mwc-textfield class="w-100" label="{{ $setting->property }}" outlined name="{{ $setting->property }}" value="{{ $setting->value }}"></mwc-textfield></div>
+                            <div class="mb-4"><mwc-textfield class="w-100" label="{{ strtoupper($setting->property) }}" outlined name="{{ $setting->property }}" value="{{ $setting->value }}"></mwc-textfield></div>
                             @endif
                         @endforeach
                         <div class="text-center mb-4">
