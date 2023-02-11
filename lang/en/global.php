@@ -315,7 +315,8 @@ return [
     */
     'creditTitle' => 'CREDIT TRANSFER HISTORIES',
     'transferToAdmin' => 'Transfer to Admins',
-    'transferToUser' => 'Transfer to Users',
+    'transferToOnlineUser' => 'Transfer to Online Users',
+    'transferToDongleUser' => 'Transfer to Dongle Users',
 
     /*
     |--------------------------------------------------------------------------

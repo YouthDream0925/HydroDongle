@@ -105,6 +105,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::get('credits/before', [CreditController::class, 'before'])->name('credits.before');
         Route::post('credits/transfer', [CreditController::class, 'transfer'])->name('credits.transfer');
         Route::post('credits/transfer/user', [CreditController::class, 'to_user'])->name('credits.to_user');
+        Route::post('credits/transfer/dongle', [CreditController::class, 'to_dongle_user'])->name('credits.to_dongle_user');
     });    
 });
 

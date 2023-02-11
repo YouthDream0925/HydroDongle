@@ -61,13 +61,41 @@
                                         <div>{{ $user->email }} (Disabled)</div>
                                     </mwc-list-item>
                                     @else
-                                    <mwc-list-item value="{{ $user->id }}">{{ $user->email }} (User)</mwc-list-item>
+                                    <mwc-list-item value="{{ $user->id }}">{{ $user->email }} (Online User)</mwc-list-item>
                                     @endif
                                 @endforeach
                             </mwc-select>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToUser') }}</button>
+                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToOnlineUser') }}</button>
+                        </div>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+            </div>
+            <div class="card card-raised mb-5">
+                <div class="card-body p-5">
+                    {!! Form::open(array('route' => 'credits.to_dongle_user','method'=>'POST')) !!}
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-textfield class="w-100" label="Transfer Amount" outlined id="amount" name="amount" type="number" maxlength="3" value=""></mwc-textfield>
+                        </div>
+                        <div class="col-lg-6 col-md-12 mb-4">
+                            <mwc-select class="w-100" id="recipient" name="recipient" outlined label="Recipient">
+                                <mwc-list-item value=""></mwc-list-item>
+                                @foreach($dongle_users as $key => $dongle_user)
+                                    @if($dongle_user->email == $sender->email)
+                                    <mwc-list-item value="{{ $dongle_user->id }}" disabled>
+                                        <div>{{ $dongle_user->email }} (Disabled)</div>
+                                    </mwc-list-item>
+                                    @else
+                                    <mwc-list-item value="{{ $dongle_user->id }}">{{ $dongle_user->email }} (Dongle User)</mwc-list-item>
+                                    @endif
+                                @endforeach
+                            </mwc-select>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToDongleUser') }}</button>
                         </div>
                     </div>
                     {!! Form::close() !!}
