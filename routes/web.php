@@ -11,6 +11,7 @@ use App\Http\Controllers\Manage\AdminController;
 
 use App\Http\Controllers\Admin\General\SettingController;
 use App\Http\Controllers\Admin\General\TransferController;
+use App\Http\Controllers\Admin\General\DongleUserController;
 use App\Http\Controllers\Admin\Editer\BrandController;
 use App\Http\Controllers\Admin\Editer\CpuController;
 use App\Http\Controllers\Admin\Editer\FeatureController;
@@ -67,6 +68,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('admins', AdminController::class);
         Route::resource('users', UserController::class);
         Route::post('users/active', [UserController::class, 'active'])->name('users.active');
+        Route::resource('dongles', DongleUserController::class);
+        Route::post('dongles/active', [DongleUserController::class, 'active'])->name('dongles.active');
     });
 
     Route::group(['prefix' => 'editer'], function() {

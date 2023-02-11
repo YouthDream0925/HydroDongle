@@ -32,7 +32,13 @@
                             <tr>
                                 <th scope="row">{{ ++$i }}</th>
                                 <td>{{ $test->name }}</td>
-                                <td>{{ $test->activate }}</td>
+                                <td>
+                                    @if($test->activate == '1')
+                                        <span class="badge bg-success">{{ __('global.yes') }}</span>
+                                    @else
+                                        <span class="badge bg-danger">{{ __('global.no') }}</span>
+                                    @endif
+                                </td>
                                 <td class="txt-right">
                                     <div class="dropdown">
                                         <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>

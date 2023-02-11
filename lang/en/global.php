@@ -54,7 +54,8 @@ return [
     'subCategory' => [
         'setting' => 'Website Settings',
         'adminUsers' => 'Admin Panel Users',
-        'users' => 'Users',
+        'onlineUsers' => 'Online Users',
+        'dongleUsers' => 'Dongle Users',
         'roles' => 'Roles',
         'transfer' => 'Transfer',
         'brand' => 'Brand',
@@ -135,12 +136,19 @@ return [
     | General Users page
     |--------------------------------------------------------------------------
     */
-    'userTitle' => 'USER MANAGEMENT',
+    'onlineUserTitle' => 'ONLINE USER MANAGEMENT',
     'activate' => 'Activate',
     'active' => 'Active',
     'expirationDate' => 'Expiration Date',
     'noneUserToActive' => 'There is no user to active.',
     'expired' => 'Expired',
+
+    /*
+    |--------------------------------------------------------------------------
+    | General Dongle Users page
+    |--------------------------------------------------------------------------
+    */
+    'dongleUserTitle' => 'DONGLE USER MANAGEMENT',
 
     /*
     |--------------------------------------------------------------------------

@@ -208,6 +208,8 @@ class UserController extends Controller
                 $activater->credits = $activater->credits - 40;
             } elseif($request->period == 12 && $activater->credits != config('infinite_amount')) {
                 $activater->credits = $activater->credits - 70;
+            } else {
+                $activater->credits = 0;
             }
             $activater->save();
             $user->save();

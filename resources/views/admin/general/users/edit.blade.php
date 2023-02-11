@@ -7,7 +7,7 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0 display-5">{{ __('global.userTitle') }} - {{ __('global.edit') }}</h1>
+            <h1 class="display-4 mb-0 display-5">{{ __('global.onlineUserTitle') }} - {{ __('global.edit') }}</h1>
             <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('users.index') }}">
                 <span class="material-icons">reply</span>{{ __('global.back') }}
             </a>

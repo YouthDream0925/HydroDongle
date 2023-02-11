@@ -16,7 +16,8 @@
                         <a class="nav-link {{ (request()->is('admin/general/setting')) ? 'active' : '' }}" href="{{ route('website.setting') }}">{{ __('global.subCategory.setting') }}</a>
                         @can('user-list')
                         <a class="nav-link {{ (request()->is('admin/general/admins*')) ? 'active' : '' }}" href="{{ route('admins.index') }}">{{ __('global.subCategory.adminUsers') }}</a>
-                        <a class="nav-link {{ (request()->is('admin/general/users*')) ? 'active' : '' }}" href="{{ route('users.index') }}">{{ __('global.subCategory.users') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/general/users*')) ? 'active' : '' }}" href="{{ route('users.index') }}">{{ __('global.subCategory.onlineUsers') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/general/dongles*')) ? 'active' : '' }}" href="{{ route('dongles.index') }}">{{ __('global.subCategory.dongleUsers') }}</a>
                         @endcan
                         @can('role-list')
                         <a class="nav-link {{ (request()->is('admin/general/roles*')) ? 'active' : '' }}" href="{{ route('roles.index') }}">{{ __('global.subCategory.roles') }}</a>
