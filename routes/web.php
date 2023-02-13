@@ -42,8 +42,8 @@ use App\Http\Controllers\Front\HomeController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-    // return redirect('admin');
+    // return view('welcome');
+    return redirect('home');
 });
 
 Auth::routes();
@@ -111,8 +111,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
     });    
 });
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function() {
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 Route::get('storage/{filename}', function ($filename)
