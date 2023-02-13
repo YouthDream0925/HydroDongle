@@ -32,7 +32,7 @@
                         <div class="top_bar--info order-0 d-none d-lg-block align-self-center">
                             <ul>
                                 <li><span class="la la-envelope"></span>
-                                    <p>support@email.com</p>
+                                    <p>{{ $super_admin->email }}</p>
                                 </li>
                                 <li><span class="la la-headphones"></span>
                                     <p>800 567.890.576</p>
@@ -42,14 +42,14 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="top_bar--social">
+                        <!-- <div class="top_bar--social">
                             <ul>
                                 <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
                                 <li><a href="#"><span class="fab fa-twitter"></span></a></li>
                                 <li><a href="#"><span class="fab fa-vimeo-v"></span></a></li>
                                 <li><a href="#"><span class="fab fa-linkedin-in"></span></a></li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -459,11 +459,14 @@
                     <!-- end: .navbar-nav -->
                 </div>
                 <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
-                    <div class="nav_right_module cart_module">
+                    <div class="cart__icon">
+                        <a class="btn btn-outline-primary btn-sm" href="{{ route('login') }}">Login</a>
+                    </div>
+                    <!-- <div class="nav_right_module cart_module">
                         <div class="cart__icon">
                             <span class="la la-shopping-cart"></span>
                             <span class="cart_count">2</span>
-                        </div>
+                        </div>                        
                         <div class="cart__items shadow-lg-2">
                             <div class="items">
                                 <div class="item_thumb">
@@ -476,7 +479,6 @@
                                 <a href="#" class="item_remove">
                                     <span class="la la-close"></span></a>
                             </div>
-                            <!-- end .items-->
                             <div class="items">
                                 <div class="item_thumb">
                                     <img src="{{ asset('theme_front/img/ci2.jpg') }}" alt="hukka miyan">
@@ -488,7 +490,6 @@
                                 <a href="#" class="item_remove">
                                     <span class="la la-close"></span></a>
                             </div>
-                            <!-- end .items-->
                             <div class="cart_info text-md-right">
                                 <p>Subtotal:
                                     <span class="color-primary">$325.00</span></p>
@@ -496,9 +497,8 @@
                                 <a class="btn btn-primary btn-sm" href="checkout.html">Checkout</a>
                             </div>
                         </div>
-                    </div>
-                    <!-- end .cart_module -->
-                    <div class="nav_right_module search_module">
+                    </div> -->
+                    <!-- <div class="nav_right_module search_module">
                         <span class="la la-search search_trigger"></span>
                         <div class="search_area">
                             <form action="/">
@@ -510,7 +510,7 @@
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- end ./search_module -->
                 </div>
             </nav>

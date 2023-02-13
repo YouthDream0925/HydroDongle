@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Front;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
+use App\Models\Role;
 
 class HomeController extends Controller
 {
@@ -20,10 +22,11 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return \Illuminate\Contracts\Suppo rt\Renderable
      */
     public function index()
     {
-        return view('front.home');
+        $super_admin = Admin::role('SuperAdmin')->first();
+        return view('front.home', compact('super_admin'));
     }
 }

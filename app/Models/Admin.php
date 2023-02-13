@@ -11,6 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use App\ModelFilters\AdminFilter;
+use App\Models\Role;
 
 class Admin extends Authenticatable
 {
@@ -37,6 +38,12 @@ class Admin extends Authenticatable
     public function modelFilter()
     {
         return $this->provideFilter(AdminFilter::class);
+    }
+
+    public function roles()
+    {
+        // return $this->belongsToMany(Role::class, 'model_has_roles', 'model_id');
+        return $this->belongsToMany(Role::class, 'model_has_roles', 'model_id');
     }
 
     // public function scopePaginate($query, $per_page)
