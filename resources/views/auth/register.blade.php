@@ -490,7 +490,7 @@
                                                 <button class="btn btn-secondary" type="submit">Sign Up</button>
                                             </div>
                                         </form>
-                                        <p class="text-center m-bottom-65">Do you already have an account? <a href="{{ route('login') }}">Login</a></p>
+                                        <p class="text-center">Do you already have an account? <a href="{{ route('login') }}">Login</a></p>
                                     </div>
                                 </div>
                             </div>
