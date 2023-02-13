@@ -460,7 +460,18 @@
                 </div>
                 <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
                     <div class="cart__icon">
+                        @if(Auth::check())
+                        <a class="btn btn-outline-primary btn-sm" href="{{ route('logout') }}"
+                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        @else
                         <a class="btn btn-outline-primary btn-sm" href="{{ route('login') }}">Login</a>
+                        @endif
                     </div>
                     <!-- <div class="nav_right_module cart_module">
                         <div class="cart__icon">

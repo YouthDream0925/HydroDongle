@@ -26,7 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $super_admin = Admin::role('SuperAdmin')->first();
-        return view('front.home', compact('super_admin'));
+        return view('front.home');
     }
 }

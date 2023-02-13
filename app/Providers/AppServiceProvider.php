@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 use App\Models\Admin\General\CreditSetting;
+use App\Models\Admin;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -53,7 +54,8 @@ class AppServiceProvider extends ServiceProvider
             '1' => 'Success'
         ];
 
+        $super_admin = Admin::role('SuperAdmin')->first();
         config(['pagination.per_page' => $per_page, 'six_month_activate_price' => $six_month_activate_price, 'twelve_month_activate_price' => $twelve_month_activate_price, 'dongle_user_activate_price' => $dongle_user_activate_price, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
-        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
+        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'super_admin' => $super_admin]);
     }
 }

@@ -113,7 +113,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function() {
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
 });
 
 Route::get('storage/{filename}', function ($filename)
