@@ -40,10 +40,8 @@
                         </div>
                         <div class="col-lg-5 col-md-6">
                             <div class="row g-0">
-                                @if($slide->hasMedia('ads_images'))
-                                    @foreach($slide->getMedia('ads_images') as $media)
-                                        <div class="col-lg-{{ 12 / count($slide->getMedia('ads_images')) }} col-md-12 d-none d-md-block" style="background-image: url({{ $media->getUrl() }}); background-size: contain; background-repeat: no-repeat; background-position: center; height: 300px;"></div>
-                                    @endforeach
+                                @if($slide->hasMedia('ads_image'))
+                                    <div class="col-lg-12 d-none d-md-block" style="background-image: url({{ $slide->getMedia('ads_image')->first()->getUrl() }}); background-size: contain; background-repeat: no-repeat; background-position: center; height: 300px;"></div>
                                 @endif
                             </div>
                         </div>

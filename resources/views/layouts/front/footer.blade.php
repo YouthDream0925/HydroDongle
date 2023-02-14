@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget text_widget">
-                        <img class="footer_logo" src="img/logo.png" alt="logo">
+                        <img class="footer_logo" src="{{ asset('theme_front/img/logo.png') }}" alt="logo">
                         <p>
                             <a href="tel:+123-4567890" class="tel">+123 4567890</a>
                             <a href="mailto:support@Tizara.com" class="mail">Support@Tizara.com</a>

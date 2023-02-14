@@ -15,7 +15,7 @@ class SlideController extends Controller
 {
     public function index(Request $request)
     {
-        $slides = Slide::all();
+        $slides = Slide::orderBy('sort', 'asc')->get();
         return view('admin.other.slides.index', compact('slides'));
     }
 
@@ -34,14 +34,12 @@ class SlideController extends Controller
         $slide = Slide::create($input);
 
         try {
-            if($request->hasfile('ads_images')) {
-                foreach($request->file('ads_images') as $key => $file) {
-                    $media[$key] = MediaUploader::fromSource($file)
-                        ->toDisk('slides')
+            if($request->hasfile('ads_image')) {
+                $media = MediaUploader::fromSource($request->file('ads_image'))
+                    ->toDisk('slides')
                         ->upload();
-    
-                    $slide->attachMedia([$media[$key]->getKey()], 'ads_images');
-                }
+
+                $slide->attachMedia($media, 'ads_image');
             }
         } catch (MediaUploadException $e) {
             throw $this->transformMediaUploadException($e);
@@ -54,8 +52,7 @@ class SlideController extends Controller
     public function edit($id)
     {
         $slide = Slide::find($id);
-        $remaining_number = 3 - count($slide->getMedia('ads_images'));
-        return view('admin.other.slides.edit', compact('slide', 'remaining_number'));
+        return view('admin.other.slides.edit', compact('slide'));
     }
 
     public function update(SlideRequest $request, $id)
@@ -63,6 +60,7 @@ class SlideController extends Controller
         $slide = Slide::find($id);
         $slide->title = $request->input('title');
         $slide->description = $request->input('description');
+        $slide->sort = $request->input('sort');
         $slide->btn_text = $request->input('btn_text');
         $slide->btn_link = $request->input('btn_link');
         if($request->activate == "true")
@@ -70,25 +68,17 @@ class SlideController extends Controller
         else
             $slide->activate = '0';
 
-        if($request->hasfile('ads_images')) {
-            foreach($request->file('ads_images') as $key => $file) {
-                if($slide->hasMedia('ads_images')) {
-                    $mediaItems = $slide->getMedia('ads_images');
-                    if(count($mediaItems) > $key && $mediaItems[$key] != null) {
-                        $mediaItems[$key]->delete();
-                        $new_media[$key] = MediaUploader::fromSource($file)
-                            ->toDisk('slides')
-                            ->upload();
-                        $slide->attachMedia($new_media[$key]->getKey(), 'ads_images');
-                    } else {
-                        $new_media[count($mediaItems)] = MediaUploader::fromSource($file)
-                            ->toDisk('slides')
-                            ->upload();
-                        $slide->attachMedia($new_media[count($mediaItems)]->getKey(), 'ads_images');
-                    }
-                }
+        if($request->file('ads_image') != null) {
+            if($slide->hasMedia('ads_image')) {
+                $media = $slide->getMedia('ads_image')->first();
+                $media->delete();
             }
-            // die();
+
+            $media = MediaUploader::fromSource($request->file('ads_image'))
+                ->toDisk('slides')
+                    ->upload();
+            
+            $slide->attachMedia($media, 'ads_image');
         }
 
         $slide->update();
@@ -98,36 +88,13 @@ class SlideController extends Controller
     public function destroy($id)
     {
         $slide = Slide::find($id);
-        if($slide->hasMedia('ads_images')) {
-            foreach($slide->getMedia('ads_images') as $key => $media)
-                $media->delete();
+        if($slide->hasMedia('ads_image')) {
+            $media = $slide->getMedia('ads_image')->first();
+            $media->delete();
         }
         $slide->delete();
 
         return redirect()->route('slides.index')
                         ->with('success','Slide deleted successfully');
-    }
-
-    public function ads_delete(Request $request)
-    {
-        $flag = false; $result = [];
-        $slide = Slide::find($request->slide_key);
-        if($slide->hasMedia('ads_images') && count($slide->getMedia('ads_images')) > 1) {
-            foreach($slide->getMedia('ads_images') as $media) {
-                if($media->getKey() == $request->media_key) {
-                    $media->delete();
-                    $flag = true;
-                }
-            }
-            if($flag == true) {
-                session(['success' => 'ADS deleted successfully.']);
-            }
-            else {
-                session(['error' => 'Can not find this ADS.']);
-            }
-        } else {
-            session(['error' => 'Can not delete this ADS.']);
-        }
-        return;
     }
 }

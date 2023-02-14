@@ -92,7 +92,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
     Route::group(['prefix' => 'other'], function() {
         Route::resource('slides', SlideController::class);
-        Route::post('slides/ads/delete', [SlideController::class, 'ads_delete']);    
         Route::get('intro', [IntroController::class, 'index'])->name('intro.index');
         Route::post('intro/save', [IntroController::class, 'save'])->name('intro.save');    
         Route::get('guide', [GuideController::class, 'index'])->name('guide.index');

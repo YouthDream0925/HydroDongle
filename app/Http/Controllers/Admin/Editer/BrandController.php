@@ -14,7 +14,7 @@ class BrandController extends Controller
 {
     public function index(Request $request) {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $brands = Brand::Popular($request->per_page);
+        $brands = Brand::orderBy('updated_at', 'desc')->Popular($request->per_page);
 
         return view('admin.editer.brands.index', compact('brands'));
     }

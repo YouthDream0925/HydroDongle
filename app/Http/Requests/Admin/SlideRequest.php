@@ -27,15 +27,14 @@ class SlideRequest extends FormRequest
     {
         $id = $this->route('slide');
         $slide = Slide::find($id);
-        if($slide != null && $slide->hasMedia('ads_images')) {
-            if($request->file('ads_images') != null) {
+        if($slide != null && $slide->hasMedia('ads_image')) {
+            if($request->file('ads_image') != null) {
                 return [
                     'title' => ['required', 'string', 'max:255'],
                     'btn_text' => ['required', 'string', 'max:40'],
                     'btn_link' => ['required', 'string', 'max:255'],
                     'sort' => ['required', 'numeric'],
-                    'ads_images' => ['required'],
-                    'ads_images.*' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:5128']
+                    'ads_image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:5128']
                 ];
             } else {
                 return [
@@ -51,8 +50,7 @@ class SlideRequest extends FormRequest
                 'btn_text' => ['required', 'string', 'max:40'],
                 'btn_link' => ['required', 'string', 'max:255'],
                 'sort' => ['required', 'numeric'],
-                'ads_images' => ['required'],
-                'ads_images.*' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:5128']
+                'ads_image' => ['required', 'mimes:jpeg,png,jpg,gif', 'max:5128']
             ];
         }
     }
@@ -60,7 +58,7 @@ class SlideRequest extends FormRequest
     public function messages()
     {
         return [
-            'ads_images.required' => 'Slide Image is required' 
+            'ads_image.required' => 'Slide Image is required' 
         ];
     }
 }

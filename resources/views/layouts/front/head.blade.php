@@ -25,5 +25,6 @@
     <link rel="stylesheet" href="{{ asset('theme_front/style.css') }}">
     <!-- endinject -->
     <link href="{{ asset('theme/assets/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="{{ asset('theme/css/custom.css') }}">
     @stack('css')
 </head>

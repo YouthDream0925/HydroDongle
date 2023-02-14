@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="col-xxl-3 col-md-6 mb-5">
-            <a href="{{ route('admin.dashboard') }}" class="txt-deco-none">
+            <a href="{{ route('models.index') }}" class="txt-deco-none">
                 <div class="card card-raised bg-info text-white">
                     <div class="card-body px-4">
                         <div class="d-flex justify-content-between align-items-center mb-2">

@@ -19,12 +19,12 @@
                 <div class="card-body p-5">
                     {!! Form::model($slide, ['method' => 'PATCH','route' => ['slides.update', $slide->id], 'enctype' => 'multipart/form-data']) !!}
                         <div class="row mb-4 item-center">
-                            <div class="col-xl-6">
+                            <div class="col-xl-8">
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Title" outlined id="title" name="title" value="{{ $slide->title }}"></mwc-textfield>                                    
                                 </div>
                                 <div class="mb-4">
-                                    <mwc-textfield class="w-100" label="Description" outlined id="description" name="description" value="{{ $slide->description }}"></mwc-textfield>
+                                    <mwc-textarea class="w-100" label="Description" outlined id="description" name="description" value="{{ $slide->description }}" maxlength="200" charcounter></mwc-textarea>
                                 </div>
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Button Text" outlined id="btn_text" name="btn_text" value="{{ $slide->btn_text }}" maxlength="40"></mwc-textfield>
@@ -37,45 +37,22 @@
                                     <input id="sort_number" name="sort" value="{{ $slide->sort }}" type="text" maxlength="4" class="form-control" style="width: 100px;" data-inputmask="'alias': 'decimal', 'groupSeparator': ','" />
                                 </div>
                             </div>
-                            <div class="col-xl-6">
+                            <div class="col-xl-4">
                                 <div class="row">
-                                    @if(count($slide->getMedia('ads_images')) != 0)
-                                        @foreach($slide->getMedia('ads_images') as $key => $media)
-                                            <div class="col-xl-4">
-                                                <div class="text-center">
-                                                    <div class="custom-slide-container">
-                                                        <img id="ads_container{{$key}}" class="img-fluid img-responsive mb-1" src="{{ $media->getUrl() }}" alt="..."/>
-                                                    </div>
-                                                    <div class="caption fst-italic text-muted mb-2"></div>
-                                                    <input type="file" name="ads_images[]" id="ads_image{{$key}}" hidden/>
-                                                    <div class="custom-btn-group">
-                                                        <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{$key}}">
-                                                            {{ __('global.ads') }}
-                                                            <i class="material-icons trailing-icon">upload</i>
-                                                        </label>
-                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{$key}}" data-mediaKey="{{ $media->getKey() }}" data-slideKey="{{ $slide->id }}">delete</i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                        @for($i = 0; $i < $remaining_number; $i++)
-                                            <div class="col-xl-4">
-                                                <div class="text-center">
-                                                    <div class="custom-slide-container">
-                                                        <img id="ads_container{{ count($slide->getMedia('ads_images')) + $i }}" class="img-fluid img-responsive mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
-                                                    </div>
-                                                    <div class="caption fst-italic text-muted mb-2"></div>
-                                                    <input type="file" name="ads_images[]" id="ads_image{{ count($slide->getMedia('ads_images')) + $i }}" hidden/>                                                    
-                                                    <div class="custom-btn-group">
-                                                        <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image{{ count($slide->getMedia('ads_images')) + $i }}">
-                                                            {{ __('global.ads') }}
-                                                            <i class="material-icons trailing-icon">upload</i>
-                                                        </label>
-                                                        <i class="btn-ads material-icons trailing-icon custom-icon" data-index="{{ count($slide->getMedia('ads_images')) + $i }}">delete</i>                                                
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        @endfor
+                                    @if($slide->hasMedia('ads_image'))
+                                    <div class="text-center">
+                                        <div class="custom-slide-container">
+                                            <img id="img_container" class="img-fluid img-responsive mb-1" src="{{ $slide->getMedia('ads_image')->first()->getUrl() }}" alt="..."/>
+                                        </div>
+                                        <div class="caption fst-italic text-muted mb-2"></div>
+                                        <input type="file" name="ads_image" id="ads_image" hidden/>
+                                        <div class="custom-btn-group">
+                                            <label class="btn btn-outline-primary mdc-ripple-upgraded" for="ads_image">
+                                                {{ __('global.ads') }}
+                                                <i class="material-icons trailing-icon">upload</i>
+                                            </label>
+                                        </div>
+                                    </div>
                                     @endif
                                 </div>
                             </div>
@@ -103,16 +80,14 @@
 <script>
     $(document).ready(function() {
         $('#sort_number').numeric({ negative: false });
-        FileLoader.init('ads_image0', 'ads_container0');
-        FileLoader.init('ads_image1', 'ads_container1');
-        FileLoader.init('ads_image2', 'ads_container2');
+        FileLoader.init('ads_image', 'img_container');
     });
 
     $('.btn-delete').click(function(event) {
         var form =  $('form[name="slide_delete"]');
         event.preventDefault();
         swal({
-            title: 'Are you sure you want to delete this slide?',
+            title: 'Are you sure you want to delete this Slide?',
             text: lang.deleteConfirmText,
             icon: lang.deleteConfirmIcon,
             type: lang.deleteConfirmType,
@@ -125,62 +100,6 @@
                 form.submit();
             }
         });
-    });
-
-    $('.btn-ads').click(function(event) {
-        const id = $(this).attr('data-index');
-        const media_key = $(this).attr('data-mediaKey');
-        const slide_key = $(this).attr('data-slideKey');
-
-        if(media_key !== undefined && slide_key !== undefined) {
-            $.ajax({
-                type: 'post',
-                url: '/admin/other/slides/ads/delete',
-                data: {
-                    '_token': $('input[name="_token"]').val(),
-                    'media_key': media_key,
-                    'slide_key': slide_key,
-                },
-                success: function(result) {
-                    location.reload();
-                }, error: function(res) {
-                    new bs5.Toast({
-                        body: lang.unexpectedErrorOccured,
-                        className: 'border-0 bg-danger text-white',
-                        btnCloseWhite: true,
-                    }).show();
-                }
-            });
-        } else {
-            if($('#ads_image' + id).val() != '') {
-                swal({
-                    title: 'Are you sure you want to delete this ADS?',
-                    text: lang.deleteConfirmText,
-                    icon: lang.deleteConfirmIcon,
-                    type: lang.deleteConfirmType,
-                    buttons: lang.deleteConfirmButton,
-                    confirmButtonColor: lang.deleteConfirmButtonColor,
-                    cancelButtonColor: lang.cancelButtonColor,
-                    confirmButtonText: lang.confirmButtonText
-                }).then((willDelete) => {
-                    if (willDelete) {
-                        $('#ads_image' + id).val('');
-                        $('#ads_container' + id).attr('src', "{{ url('storage/sample/brand') }}")
-                        new bs5.Toast({
-                            body: 'ADS deleted successfully.',
-                            className: 'border-0 bg-success text-white',
-                            btnCloseWhite: true,
-                        }).show();
-                    }
-                });
-            } else {
-                new bs5.Toast({
-                    body: 'No file selected.',
-                    className: 'border-0 bg-danger text-white',
-                    btnCloseWhite: true,
-                }).show();
-            }
-        }
     });
 </script>
 @endpush

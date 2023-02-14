@@ -9,6 +9,13 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="logo-carousel-four owl-carousel">
+                    @if(count($brands) != 0)
+                        @foreach($brands as $brand)
+                        <div class="carousel-single" style="width: 145px; height: 60px;">
+                            <img class="img-fluid img-responsive" src="{{ $brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
+                        </div>
+                        @endforeach
+                    @else
                     <div class="carousel-single">
                         <img src="{{ asset('theme_front/img/cl14.png') }}" alt="">
                     </div><!-- ends: .carousel-single -->
@@ -24,6 +31,7 @@
                     <div class="carousel-single">
                         <img src="{{ asset('theme_front/img/cl18.png') }}" alt="">
                     </div><!-- ends: .carousel-single -->
+                    @endif
                 </div>
             </div>
         </div>
