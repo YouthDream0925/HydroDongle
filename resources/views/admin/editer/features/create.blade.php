@@ -24,6 +24,9 @@
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Feature Name" outlined id="feature_name" name="name" value=""></mwc-textfield>
                                 </div>
+                                <div class="mb-4">
+                                    <mwc-textarea class="w-100" label="Explanation" outlined name="explanation" rows="10"></mwc-textarea>
+                                </div>                                
                                 <div class="d-flex align-items-center breadcrumb-custom">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
                                     <input class="form-control" name="sorting" value="" placeholder="Order Number" style="width: 300px;"/>

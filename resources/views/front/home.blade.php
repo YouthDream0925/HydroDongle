@@ -42,30 +42,28 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 section-title">
-                    <h3>Helpful Business, The Way It Should Be</h3>
-                    <p>Deserunt dolore voluptatem assumenda quae possimus sunt dignissimos tempora officia. Lorem ipsum dolor sit amet consectetur adipisicing dolore.</p>
+                    <h3>{{ __('global.featureTitle') }}</h3>
+                    <p>Discover the Power of Hydra Tool Services - Let's Take a Look!</p>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <span class="bg-secondary icon-rounded"><i class="la la-money"></i></span>
-                        <h6 class="color-dark">Principal Investing</h6>
-                        <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archi. Totam rem aperiam, eaque ipsa quae abillo.</p>
-                    </div><!-- ends: .icon-box -->
-                </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <span class="bg-secondary icon-rounded"><i class="la la-bar-chart"></i></span>
-                        <h6 class="color-dark">Project Development</h6>
-                        <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archi. Totam rem aperiam, eaque ipsa quae abillo.</p>
-                    </div><!-- ends: .icon-box -->
-                </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <span class="bg-secondary icon-rounded"><i class="la la-area-chart"></i></span>
-                        <h6 class="color-dark">Financial Advisory</h6>
-                        <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archi. Totam rem aperiam, eaque ipsa quae abillo.</p>
-                    </div><!-- ends: .icon-box -->
-                </div><!-- ends: .col-lg-3 -->
+                @if(count($features) != 0)
+                    @foreach($features as $feature)
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="icon-box icon-box-fourteen text-center">
+                            @if($feature->hasMedia('icon'))
+                            <span style="width: 70px; height: 70px;">
+                                <img class="img-fluid img-responsive" src="{{ $feature->getMedia('icon')->first()->getUrl() }}" alt="">
+                            </span>
+                            @else
+                            <span class="bg-secondary icon-rounded">
+                                <i class="la la-money"></i>
+                            </span>                            
+                            @endif                            
+                            <h6 class="color-dark">{{ $feature->name }}</h6>
+                            <p>{{ $feature->explanation }}</p>
+                        </div>
+                    </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div><!-- ends: .icon-boxes -->

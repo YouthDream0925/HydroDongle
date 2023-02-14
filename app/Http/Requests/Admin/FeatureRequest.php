@@ -31,19 +31,19 @@ class FeatureRequest extends FormRequest
             if($request->file('icon') != null) {
                 return [
                     'name' => ['required', 'string', 'max:64'],
-                    'sorting' => ['required', 'numeric', 'min:1'],
+                    'sorting' => ['required', 'numeric', 'min:1', 'max:99999'],
                     'icon' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
                 ];
             } else {
                 return [
                     'name' => ['required', 'string', 'max:255'],
-                    'sorting' => ['required', 'numeric', 'min:1'],
+                    'sorting' => ['required', 'numeric', 'min:1', 'max:99999'],
                 ];
             }
         } else {
             return [
                 'name' => ['required', 'string', 'max:64'],
-                'sorting' => ['required', 'numeric', 'min:1'],
+                'sorting' => ['required', 'numeric', 'min:1', 'max:99999'],
                 'icon' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
             ];
         }

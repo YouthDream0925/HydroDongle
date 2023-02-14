@@ -15,7 +15,7 @@ class FeatureController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $features = Feature::Popular($per_page);
+        $features = Feature::orderBy('sorting', 'asc')->Popular($per_page);
         return view('admin.editer.features.index', compact('features'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
@@ -59,6 +59,7 @@ class FeatureController extends Controller
     {
         $feature = Feature::find($id);
         $feature->name = $request->input('name');
+        $feature->explanation = $request->input('explanation');
         $feature->sorting = $request->input('sorting');
         if($request->activate == "true")
             $feature->activate = '1';

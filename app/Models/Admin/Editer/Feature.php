@@ -21,6 +21,7 @@ class Feature extends Model
 
     protected $fillable = [
         'name',
+        'explanation',
         'sorting',
         'activate'
     ];
