@@ -1,3 +1,42 @@
+<div class="counter counter--3 biz_overlay overlay--primary">
+    <div class="bg_image_holder"><img src="img/cbg2.jpg" alt=""></div>
+    <div class="container content_above">
+        <div class="row">
+            <div class="col">
+                <div class="d-flex justify-content-around flex-wrap">
+                    <div class="counter_single">
+                        <div class="icon">
+                            <span class="la la-folder-open-o"></span>
+                        </div>
+                        <p class="value count_up">385</p>
+                        <p class="title">Project completed</p>
+                    </div><!-- end: .counter_single -->
+                    <div class="counter_single">
+                        <div class="icon">
+                            <span class="la la-headphones"></span>
+                        </div>
+                        <p class="value count_up">260</p>
+                        <p class="title">Consultant</p>
+                    </div><!-- end: .counter_single -->
+                    <div class="counter_single">
+                        <div class="icon">
+                            <span class="la la-trophy"></span>
+                        </div>
+                        <p class="value count_up">150</p>
+                        <p class="title">Award Winning</p>
+                    </div><!-- end: .counter_single -->
+                    <div class="counter_single">
+                        <div class="icon">
+                            <span class="la la-user-plus"></span>
+                        </div>
+                        <p class="value count_up">100</p>
+                        <p class="title">Satisfied Customers</p>
+                    </div><!-- end: .counter_single -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <footer class="footer6 footer--light-gradient">
     <div class="footer__big">
         <div class="container">

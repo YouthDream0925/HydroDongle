@@ -40,4 +40,9 @@ class PhoneModel extends Model
         else
            return $query->paginate(config('pagination.per_page'))->appends(['per_page' => config('pagination.per_page')]);
     }
+
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class, 'brand_id', 'brand_id');
+    }
 }

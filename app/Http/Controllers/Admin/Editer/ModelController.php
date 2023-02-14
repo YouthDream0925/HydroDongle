@@ -19,7 +19,7 @@ class ModelController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $models = PhoneModel::Popular($request->per_page);
+        $models = PhoneModel::orderBy('updated_at', 'desc')->Popular($request->per_page);
         return view('admin.editer.models.index', compact('models'));
     }
 

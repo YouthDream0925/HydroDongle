@@ -87,6 +87,13 @@
     margin-left: auto;
 }
 
+.custom-home-model-container {
+    width: 200px;
+    height: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 .img-responsive {
     width: 100%;
     height: 100%;

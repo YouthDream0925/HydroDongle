@@ -8,6 +8,7 @@ use App\Models\Admin;
 use App\Models\Admin\Other\Slide;
 use App\Models\Admin\Editer\Brand;
 use App\Models\Admin\Editer\Feature;
+use App\Models\Admin\Editer\PhoneModel;
 use App\Models\Role;
 
 class HomeController extends Controller
@@ -32,6 +33,7 @@ class HomeController extends Controller
         $main_banner = Slide::where('activate', '1')->orderBy('sort', 'asc')->first();
         $brands = Brand::orderBy('updated_at', 'desc')->where('brand_activate', '1')->take(10)->get();
         $features = Feature::orderBy('sorting', 'asc')->where('activate', '1')->take(6)->get();
-        return view('front.home', compact('main_banner', 'brands', 'features'));
+        $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(10)->get();
+        return view('front.home', compact('main_banner', 'brands', 'features', 'models'));
     }
 }
