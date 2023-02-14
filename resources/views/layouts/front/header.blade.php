@@ -408,57 +408,21 @@
                 <div class="nav_right_content m-left-30 d-flex align-items-center order-2 order-sm-2">
                     <div class="nav_right_module cart_module">
                         <div class="cart__icon">
-                            <span class="la la-shopping-cart"></span>
-                            <span class="cart_count">2</span>
-                        </div>
-                        <div class="cart__items shadow-lg-2">
-                            <div class="items">
-                                <div class="item_thumb">
-                                    <img src="{{ asset('theme_front/img/ci1.jpg') }}" alt="hukka miyan">
-                                </div>
-                                <div class="item_info">
-                                    <a href="single-product.html">Business Marketing Presentation</a>
-                                    <span class="color-primary">$250.00</span>
-                                </div>
-                                <a href="#" class="item_remove">
-                                    <span class="la la-close"></span></a>
-                            </div>
-                            <!-- end .items-->
-                            <div class="items">
-                                <div class="item_thumb">
-                                    <img src="{{ asset('theme_front/img/ci2.jpg') }}" alt="hukka miyan">
-                                </div>
-                                <div class="item_info">
-                                    <a href="single-product.html">Business Marketing Presentation</a>
-                                    <span class="color-primary">$75.00</span>
-                                </div>
-                                <a href="#" class="item_remove">
-                                    <span class="la la-close"></span></a>
-                            </div>
-                            <!-- end .items-->
-                            <div class="cart_info text-md-right">
-                                <p>Subtotal:
-                                    <span class="color-primary">$325.00</span></p>
-                                <a class="btn btn-outline-secondary btn-sm" href="shopping-cart.html">View Cart</a>
-                                <a class="btn btn-primary btn-sm" href="checkout.html">Checkout</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- end .cart_module -->
-                    <div class="nav_right_module search_module">
-                        <span class="la la-search search_trigger"></span>
-                        <div class="search_area">
-                            <form action="/">
-                                <div class="input-group input-group-light">
-                                    <span class="icon-left" id="basic-addon78">
-                                        <i class="la la-search"></i>
-                                    </span>
-                                    <input type="text" class="form-control search_field" placeholder="Type words and hit enter...">
-                                </div>
+                            @guest
+                            <a class="btn btn-outline-primary btn-sm" href="{{ route('login') }}">{{ __('global.login') }}</a>
+                            @else
+                            <a class="btn btn-outline-primary btn-sm" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
                             </form>
+                            @endguest
                         </div>
                     </div>
-                    <!-- end ./search_module -->
                 </div>
             </nav>
         </div>
