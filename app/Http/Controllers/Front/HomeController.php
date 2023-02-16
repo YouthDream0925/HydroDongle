@@ -31,9 +31,33 @@ class HomeController extends Controller
     public function index()
     {
         $main_banner = Slide::where('activate', '1')->orderBy('sort', 'asc')->first();
-        $brands = Brand::orderBy('updated_at', 'desc')->where('brand_activate', '1')->take(10)->get();
-        $features = Feature::orderBy('sorting', 'asc')->where('activate', '1')->take(6)->get();
+        $brands = Brand::orderBy('updated_at', 'desc')->where('brand_activate', '1')->select('brand_id', 'brand_name')->get();
         $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(10)->get();
-        return view('front.home', compact('main_banner', 'brands', 'features', 'models'));
+        return view('front.home', compact('main_banner', 'brands', 'models'));
+    }
+
+    public function models(Request $request)
+    {
+        $result = [];
+        $brand = Brand::find($request->id);
+        if($brand != null) {
+            foreach($brand->models_filter as $model) {
+                if($model->hasMedia('model_image')) {
+                    $model->image = $model->getMedia('model_image')->first()->getUrl();
+                } else {
+                    $model->image = '/storage/sample/brand';
+                }
+            }
+            $result = [
+                'success' => true,
+                'models' => $brand->models_filter
+            ];
+        } else {
+            $result = [
+                'success' => false,
+                'models' => null
+            ];
+        }
+        return $result;
     }
 }

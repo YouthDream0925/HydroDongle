@@ -1,5 +1,5 @@
 <div class="counter counter--3 biz_overlay overlay--primary">
-    <div class="bg_image_holder"><img src="img/cbg2.jpg" alt=""></div>
+    <div class="bg_image_holder"><img src="{{ asset('theme_front/img/cbg2.jpg') }}" alt=""></div>
     <div class="container content_above">
         <div class="row">
             <div class="col">
@@ -43,7 +43,9 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget text_widget">
-                        <img class="footer_logo" src="{{ asset('theme_front/img/logo.png') }}" alt="logo">
+                        <a class="navbar-brand order-sm-1 order-1" style="width: 150px; height: 38px;" href="#">
+                            <img class="img-fluid img-reponsive" src="{{ asset('theme_front/img/logo.png') }}" alt="" />
+                        </a>
                         <p>
                             <a href="tel:+123-4567890" class="tel">+123 4567890</a>
                             <a href="mailto:support@Tizara.com" class="mail">Support@Tizara.com</a>
@@ -117,7 +119,6 @@
 <div class="go_top">
     <span class="la la-angle-up"></span>
 </div>
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
 <!-- inject:js-->
 <script src="{{ asset('theme_front/vendor_assets/js/jquery/jquery-1.12.3.js') }}"></script>
 <script src="{{ asset('theme_front/vendor_assets/js/jquery/uikit.min.js') }}"></script>
@@ -156,4 +157,6 @@
 <script src="{{ asset('theme_front/theme_assets/js/main.js') }}"></script>
 <script src="{{ asset('theme_front/theme_assets/js/map.js') }}"></script>
 <script src="{{ asset('theme_front/theme_assets/js/revolution.slider.init.js') }}"></script>
+<script src="{{ asset('theme/vendor/bs5-toast/bs5-toast.js') }}"></script>
+@stack('script')
 <!-- endinject-->

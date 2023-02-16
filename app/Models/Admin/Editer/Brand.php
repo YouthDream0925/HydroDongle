@@ -42,4 +42,9 @@ class Brand extends Model
     {
         return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id');
     }
+
+    public function models_filter()
+    {
+        return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->select('id', 'name');
+    }
 }

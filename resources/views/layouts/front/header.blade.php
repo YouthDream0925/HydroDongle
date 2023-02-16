@@ -4,7 +4,9 @@
     <div class="menu_area menu8">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light px-0 ">
-                <a class="navbar-brand order-sm-1 order-1" href="#"><img src="{{ asset('theme_front/img/logo.png') }}" alt="" /></a>
+                <a class="navbar-brand order-sm-1 order-1" style="width: 150px; height: 38px;" href="#">
+                    <img class="img-fluid img-reponsive" src="{{ asset('theme_front/img/logo.png') }}" alt="" />
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="la la-bars"></span>
                 </button>
