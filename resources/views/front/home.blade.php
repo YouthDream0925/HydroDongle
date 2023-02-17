@@ -7,40 +7,38 @@
 <section class="p-top-70 p-bottom-70 border-bottom clients-logo-area">
     <div class="container" style="max-width:100% !important;">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="d-flex" style="justify-content: space-evenly;">
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Allwinner.svg') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/images.jfif') }}" alt="">
-                    </div>                    
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/huawei-logo-4-1.png') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Vivo_logo_2019.svg') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Apple_logo_black.svg') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Xiaomi_logo.svg') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Qualcomm-Logo.svg') }}" alt="">
-                    </div>                    
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/unisoc-logo.png') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/MediaTek-Logo.svg') }}" alt="">
-                    </div>
-                    <div class="carousel-single" style="width: 145px; height: 60px;">
-                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/OPPO_LOGO_2019.svg') }}" alt="">
-                    </div>
-                </div>
+            <div class="col-lg-1 col-sm-2"></div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Allwinner.svg') }}" alt="">
             </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/images.jfif') }}" alt="">
+            </div>                    
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/huawei-logo-4-1.png') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Vivo_logo_2019.svg') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Apple_logo_black.svg') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Xiaomi_logo.svg') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Qualcomm-Logo.svg') }}" alt="">
+            </div>                    
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/unisoc-logo.png') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/MediaTek-Logo.svg') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
+                <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/OPPO_LOGO_2019.svg') }}" alt="">
+            </div>
+            <div class="col-lg-1 col-sm-2"></div>
         </div>
     </div>
 </section><!-- ends: clients logo area -->
