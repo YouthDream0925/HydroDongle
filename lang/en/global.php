@@ -324,5 +324,19 @@ return [
     | Flash messages
     |--------------------------------------------------------------------------
     */
-    'seetingsSaveSucceed' => 'Settings saved successfully.'
+    'seetingsSaveSucceed' => 'Settings saved successfully.',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Front Home page
+    |--------------------------------------------------------------------------
+    */
+    'home' => 'Home',
+    'agent' => 'Agent',
+    'shop' => 'Shop',
+    'ourAgents' => 'Our Agents',
+    'info' => 'Information',
+    'download' => 'Download',
+    'resellers' => 'Agents',
+    'search' => 'Search',
 ];

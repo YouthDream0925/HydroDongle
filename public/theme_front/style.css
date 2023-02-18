@@ -6278,7 +6278,7 @@ ul {
 
 .menu_area .navbar .navbar-nav .nav-item.dropdown .nav-link:before {
   position: absolute;
-  content: '\f107';
+  /* content: '\f107'; */
   font-size: 0.66667rem;
   font-family: "Line Awesome Free";
   color: rgba(0, 0, 0, 0.5);

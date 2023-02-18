@@ -112,6 +112,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('home/brand/models', [HomeController::class, 'models'])->name('models');
+Route::get('agents', [ResellerController::class, 'agents'])->name('agents');
+
 Route::middleware(['auth'])->group(function() {
 });
 

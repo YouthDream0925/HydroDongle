@@ -64,4 +64,23 @@ class ResellerController extends Controller
         $reseller->delete();
         return redirect()->route('resellers.index')->with('success', 'Reseller deleted successfully.');
     }
+
+    public function agents()
+    {
+        $countries = Country::all();
+        $resellers_country = [];
+        foreach($countries as $country) {
+            if(count($country->resellers) != 0) {
+                array_push($resellers_country, $country);
+                foreach($country->resellers as $reseller)
+                {
+                    $trim_name = preg_replace('/\s+/', '', $reseller->name);
+                    $trim_name = strtolower($trim_name);
+                    $country->reseller_names = $country->reseller_names.$trim_name.',';
+                }
+            }
+        }
+        array_unique($resellers_country);
+        return view('front.agent', compact('resellers_country'));
+    }
 }

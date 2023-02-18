@@ -38,4 +38,9 @@ class Country extends Model
         else
            return $query->paginate(config('pagination.per_page'))->appends(['per_page' => config('pagination.per_page')]);
     }
+
+    public function resellers()
+    {
+        return $this->hasMany(Reseller::class, 'country_id', 'id')->where('activate', '1');
+    }
 }

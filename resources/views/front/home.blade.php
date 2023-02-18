@@ -1,4 +1,4 @@
-@extends('layouts.front.index')
+@extends('layouts.front.landing')
 
 @push('css')
 @endpush
