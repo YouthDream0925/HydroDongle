@@ -13,16 +13,16 @@
                 <div class="collapse navbar-collapse order-md-1 justify-content-end" id="navbarSupportedContent22">
                     <div class="m-right-15">
                         <ul class="navbar-nav ">
-                            <li class="nav-item active dropdown">
-                                <a class="nav-link" href="{{ url('/') }}">{{ __('global.home')}}
+                            <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }} dropdown">
+                                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ url('/') }}">{{ __('global.home')}}
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item has_mega-lg dropdown">
-                                <a class="nav-link" href="{{ route('agents') }}">{{ __('global.download')}}</a>
+                            <li class="nav-item {{ (request()->is('download*')) ? 'active' : '' }} has_mega-lg dropdown">
+                                <a class="nav-link {{ (request()->is('download*')) ? 'active' : '' }}" href="{{ route('download') }}">{{ __('global.download')}}</a>
                             </li>
-                            <li class="nav-item has_mega-lg dropdown">
-                                <a class="nav-link" href="{{ route('agents') }}">{{ __('global.agent')}}</a>
+                            <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} has_mega-lg dropdown">
+                                <a class="nav-link {{ (request()->is('agents*')) ? 'active' : '' }}" href="{{ route('agents') }}">{{ __('global.agent')}}</a>
                             </li>
                             <li class="nav-item has_mega-lg dropdown">
                                 <a class="nav-link" href="#">{{ __('global.shop')}}</a>

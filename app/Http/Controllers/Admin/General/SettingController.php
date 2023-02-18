@@ -11,6 +11,7 @@ use Plank\Mediable\HandlesMediaUploadExceptions;
 use Plank\Mediable\Facades\MediaUploader;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Admin\History\Update;
 
 class SettingController extends Controller
 {
@@ -89,5 +90,41 @@ class SettingController extends Controller
         }
 
         return redirect()->back()->with('success', trans('global.seetingsSaveSucceed'));
+    }
+
+    public function download()
+    {
+        $settings = Setting::all();
+        $update_histories = Update::orderBy('date', 'desc')->where('activate', '1')->get();
+
+        $logo = null; $release_date = null; $size = null; $architecture = null; $md5 = null; $platform = null;
+        $download_exe = null; $external_link = null; $zip_link = null; $app_name = null; $app_version = null;
+
+        foreach($settings as $setting) {
+            if($setting->property == 'logo')
+                $logo = $setting->value;
+            if($setting->property == 'app_version')
+                $app_version = $setting->value;
+            if($setting->property == 'app_name')
+                $app_name = $setting->value;
+            else if($setting->property == 'release_date')
+                $release_date = $setting->value;
+            else if($setting->property == 'size')
+                $size = $setting->value;
+            else if($setting->property == 'architecture')
+                $architecture = $setting->value;
+            else if($setting->property == 'md5')
+                $md5 = $setting->value;
+            else if($setting->property == 'platform')
+                $platform = $setting->value;
+            else if($setting->property == 'download_exe')
+                $download_exe = $setting->value;
+            else if($setting->property == 'download_link')
+                $download_link = $setting->value;
+            else if($setting->property == 'download_zip')
+                $download_zip = $setting->value;
+        }
+
+        return view('front.download', compact('app_name', 'app_version', 'release_date', 'size', 'architecture', 'md5', 'platform', 'update_histories', 'download_exe', 'download_link', 'download_zip'));
     }
 }
