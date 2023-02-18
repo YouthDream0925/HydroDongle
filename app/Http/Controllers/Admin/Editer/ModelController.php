@@ -95,8 +95,8 @@ class ModelController extends Controller
         else
             $model->activate = '0';
         if($request->file('model_image') != null) {
-            if($brand->hasMedia('model_image')) {
-                $media = $brand->getMedia('model_image')->first();
+            if($model->hasMedia('model_image')) {
+                $media = $model->getMedia('model_image')->first();
                 $media->delete();
             }
 

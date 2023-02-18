@@ -60,7 +60,13 @@
                         <div class="accordion-heading" id="heading{{$history->id}}">
                             <h6 class="mb-0">
                                 <a href="#" data-toggle="collapse" data-target="#collapse{{$history->id}}" aria-expanded="false" aria-controls="collapse{{$history->id}}">
-                                    {{ $history->title }} - {{ $history->version }} - {{ $history->getDateAtAttribute() }}
+                                    <div>
+                                        <p>{{ $history->title }}</p>
+                                        <p>
+                                            <strong>Version : </strong>{{ $history->version }}
+                                            <span class="f-right">{{ $history->getDateAtAttribute() }}</span>
+                                        </p>
+                                    </div>
                                 </a>
                             </h6>
                         </div>

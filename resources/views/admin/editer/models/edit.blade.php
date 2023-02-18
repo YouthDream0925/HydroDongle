@@ -106,9 +106,9 @@
                                 <div class="text-center">
                                     <div class="custom-brand-container">
                                         @if($model->hasMedia('model_image'))
-                                        <img class="img-fluid img-responsive mb-1" src="{{ $model->firstMedia('model_image')->getUrl() }}" alt="..."/>
+                                        <img id="model_container" class="img-fluid img-responsive mb-1" src="{{ $model->firstMedia('model_image')->getUrl() }}" alt="..."/>
                                         @else
-                                        <img class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
+                                        <img id="model_container" class="img-fluid img-responsive img-filter-gray mb-1" src="{{ url('storage/sample/brand') }}" alt="..."/>
                                         @endif
                                     </div>
                                     <div class="caption fst-italic text-muted mb-4"></div>
