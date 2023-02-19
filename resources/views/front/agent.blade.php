@@ -55,7 +55,7 @@
                 <div class="col-lg-3 col-md-6 resellers-container" data-resllers="{{ $country->reseller_names }}" data-country="{{ $country->name }}">
                     <div class="adress p-0">
                         <div style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
-                            <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-') }}{{$country->code}}.svg"/>
+                            <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->code)}}.svg"/>
                         </div>
                         <p class="nam">
                             <a href="#" class="collapsed" data-toggle="collapse" data-target="#accordion_four_collapse_{{$country->id}}" aria-expanded="false" aria-controls="accordion_four_collapse_{{$country->id}}">
@@ -63,8 +63,6 @@
                             </a>
                         </p>
                         <p><i class="la la-user"></i> {{ __('global.resellers') }} : {{ count($country->resellers) }}</p>
-                        <p>{{ $country->resellers[0]->email }}</p>
-                        <p>{{ $country->resellers[0]->tel }}</p>
                         <div class="accordion-single">
                             <div id="accordion_four_collapse_{{$country->id}}" class="collapse" aria-labelledby="accordion_four_heading4" data-parent="#accordion_four">
                                 @foreach($country->resellers as $reseller)
