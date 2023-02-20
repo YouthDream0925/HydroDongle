@@ -7,7 +7,10 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0 display-5">{{ __('global.countryTitle') }}</h1>
+            <h1 class="display-4 mb-0 display-5 item-center">{{ __('global.countryTitle') }}</h1>
+            {!! Form::open(['method' => 'GET','route' => ['countries.index']]) !!}
+                <mwc-textfield id="search_bar" name="country" value="{{ request()->get('country') }}" class="w-100" label="Search" outlined icontrailing="search" placeholder="What can we help you find?"></mwc-textfield>
+            {!! Form::close() !!}
             <!-- <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('countries.create') }}">
                 <span class="material-icons">add</span>{{ __('global.add') }}
             </a> -->
@@ -76,4 +79,14 @@
 @endsection
 
 @push('script')
+<script>
+    $('#search_bar').keypress(function (e) {
+        var key = e.which;
+        if(key == 13)  // the enter key code
+        {
+            var form =  $(this).closest("form");
+            form.submit();
+        }
+    });
+</script>
 @endpush
