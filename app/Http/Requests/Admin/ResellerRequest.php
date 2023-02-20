@@ -34,7 +34,8 @@ class ResellerRequest extends FormRequest
             'whatsapp' => ['max:1023'],
             'skype' => ['max:255'],
             'telegram' => ['max:255'],
-            'sonork' => ['max:13']
+            'sonork' => ['max:13'],
+            'type' => ['required']
         ];
     }
 }

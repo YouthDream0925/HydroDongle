@@ -29,7 +29,8 @@ class Reseller extends Model
         'skype',
         'telegram',
         'sonork',
-        'activate'
+        'activate',
+        'type'
     ];
 
     public function modelFilter()

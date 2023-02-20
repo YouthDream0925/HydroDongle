@@ -54,13 +54,20 @@
                                         <mwc-textfield class="w-100" label="Sonork" outlined id="sonork" name="sonork" value=""></mwc-textfield>
                                     </div>
                                     <div class="col-xl-6 mb-4">
-                                        <mwc-select class="w-100" id="country_id" name="country_id" outlined label="Country" style="z-index: 100000">
+                                        <select id="country_id" name="country_id" class="form-select form-select-lg" style="padding-top: 0.8rem !important; padding-bottom: 0.8rem !important;" outlined>
+                                            <option value="">Country</option>
                                             @foreach($countries as $country)
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</mwc-list-item>
+                                                <option value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</option>
                                             @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 mb-4">
+                                        <mwc-select class="w-100" id="type" name="type" outlined label="Reseller Type" style="z-index: 100000">
+                                            <mwc-list-item value="0">Dongle Reseller</mwc-list-item>
+                                            <mwc-list-item value="1">License Reseller</mwc-list-item>
                                         </mwc-select>
                                     </div>
-                                    <div class="col-xl-6 mb-4 d-flex align-items-center">
+                                    <div class="col-xl-6 mb-4 d-flex align-items-center item-space-evenly">
                                         <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
                                     </div>
                                 </div>

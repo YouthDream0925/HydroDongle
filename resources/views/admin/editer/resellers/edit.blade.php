@@ -54,17 +54,24 @@
                                         <mwc-textfield class="w-100" label="Sonork" outlined id="sonork" name="sonork" value="{{ $reseller->sonork }}"></mwc-textfield>
                                     </div>
                                     <div class="col-xl-6 mb-4">
-                                        <mwc-select class="w-100" id="country_id" name="country_id" outlined label="Country">
+                                        <select id="country_id" name="country_id" class="form-select form-select-lg" style="padding-top: 0.8rem !important; padding-bottom: 0.8rem !important;" outlined>
+                                            <option value="">Country</option>
                                             @foreach($countries as $country)
                                                 @if($country->id == $reseller->country_id)
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}" selected activated>{{ $country->country }}</mwc-list-item>
+                                                <option value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}" selected>{{ $country->country }}</option>
                                                 @else
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</mwc-list-item>
+                                                <option value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</option>
                                                 @endif
                                             @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-6 mb-4">
+                                        <mwc-select class="w-100" id="type" name="type" outlined label="Reseller Type" style="z-index: 100000">
+                                            <mwc-list-item value="0" @if($reseller->type == "0") selected @endif>Dongle Reseller</mwc-list-item>
+                                            <mwc-list-item value="1" @if($reseller->type == "1") selected @endif>License Reseller</mwc-list-item>
                                         </mwc-select>
                                     </div>
-                                    <div class="col-xl-6 mb-4 d-flex align-items-center">
+                                    <div class="col-xl-6 mb-4 d-flex align-items-center item-space-evenly">
                                         <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" @if($reseller->activate == '1') checked @endif></mwc-checkbox></mwc-formfield>
                                     </div>
                                 </div>

@@ -20,6 +20,10 @@
     justify-content: space-between !important;
 }
 
+.item-space-evenly {
+    justify-content: space-evenly !important;
+}
+
 .item-space {
     justify-content: space-around !important;
 }
