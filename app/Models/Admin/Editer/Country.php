@@ -12,18 +12,25 @@ class Country extends Model
 {
     use HasFactory, Mediable, Filterable;
 
-    protected $table = 'countries';
+    protected $table = 'countries_temp';
 
     protected $primaryKey = 'id';
 
     public $incrementing = true;
 
+    // protected $fillable = [
+    //     'code',
+    //     'code3',
+    //     'name',
+    //     'num_code',
+    //     'phone_code'
+    // ];
+
     protected $fillable = [
-        'code',
-        'code3',
-        'name',
-        'num_code',
-        'phone_code'
+        'country',
+        'alpha_2',
+        'alpha_3',
+        'numeric'
     ];
 
     public function modelFilter()

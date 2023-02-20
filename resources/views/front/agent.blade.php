@@ -52,14 +52,14 @@
         <div class="container">
             <div class="row">
                 @foreach($resellers_country as $country)
-                <div class="col-lg-3 col-md-6 resellers-container" data-resllers="{{ $country->reseller_names }}" data-country="{{ $country->name }}">
+                <div class="col-lg-3 col-md-6 resellers-container" data-resllers="{{ $country->reseller_names }}" data-country="{{ $country->country }}">
                     <div class="adress p-0">
                         <div style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
-                            <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->code)}}.svg"/>
+                            <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->alpha_2)}}.svg"/>
                         </div>
                         <p class="nam">
                             <a href="#" class="collapsed" data-toggle="collapse" data-target="#accordion_four_collapse_{{$country->id}}" aria-expanded="false" aria-controls="accordion_four_collapse_{{$country->id}}">
-                                {{ $country->name }}
+                                {{ $country->country }}
                             </a>
                         </p>
                         <p><i class="la la-user"></i> {{ __('global.resellers') }} : {{ count($country->resellers) }}</p>

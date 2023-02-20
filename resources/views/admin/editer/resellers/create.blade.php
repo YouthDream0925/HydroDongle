@@ -54,9 +54,9 @@
                                         <mwc-textfield class="w-100" label="Sonork" outlined id="sonork" name="sonork" value=""></mwc-textfield>
                                     </div>
                                     <div class="col-xl-6 mb-4">
-                                        <mwc-select class="w-100" id="country_id" name="country_id" outlined label="Country">
+                                        <mwc-select class="w-100" id="country_id" name="country_id" outlined label="Country" style="z-index: 100000">
                                             @foreach($countries as $country)
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->code }}">{{ $country->name }}</mwc-list-item>
+                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</mwc-list-item>
                                             @endforeach
                                         </mwc-select>
                                     </div>

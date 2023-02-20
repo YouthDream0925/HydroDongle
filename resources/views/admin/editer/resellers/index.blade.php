@@ -37,7 +37,7 @@
                                 <td>{{ $reseller->email }}</td>
                                 <td>{{ $reseller->tel }}</td>
                                 @if($reseller->country != null)
-                                <td>{{ $reseller->country->name }}</td>
+                                <td>{{ $reseller->country->country }}</td>
                                 @else
                                 <td>NONE</td>
                                 @endif

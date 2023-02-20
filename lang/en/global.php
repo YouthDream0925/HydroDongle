@@ -236,6 +236,9 @@ return [
     'phoneCode' => 'Phone Code',
     'email' => 'Email',
     'tel' => 'Telephone',
+    'alpha_2' => 'Aipha 2 Code',
+    'alpha_3' => 'Aipha 3 Code',
+    'numeric_code' => 'Numeric Code',
 
     /*
     |--------------------------------------------------------------------------

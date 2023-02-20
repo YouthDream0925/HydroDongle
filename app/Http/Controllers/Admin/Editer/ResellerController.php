@@ -20,7 +20,7 @@ class ResellerController extends Controller
 
     public function create()
     {
-        $countries = Country::select('id', 'name', 'code')->get();
+        $countries = Country::select('id', 'country', 'alpha_2')->get();
         return view('admin.editer.resellers.create', compact('countries'));
     }
 
@@ -39,7 +39,7 @@ class ResellerController extends Controller
     public function edit($id)
     {
         $reseller = Reseller::find($id);
-        $countries = Country::select('id', 'name', 'code')->get();
+        $countries = Country::select('id', 'country', 'alpha_2')->get();
         return view('admin.editer.resellers.edit', compact('reseller', 'countries'));
     }
 

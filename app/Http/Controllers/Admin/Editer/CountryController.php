@@ -15,7 +15,7 @@ class CountryController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $countries = Country::Popular($request->per_page);
+        $countries = Country::Popular($per_page);
         return view('admin.editer.countries.index', compact('countries'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }

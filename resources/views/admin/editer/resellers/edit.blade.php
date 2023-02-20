@@ -57,9 +57,9 @@
                                         <mwc-select class="w-100" id="country_id" name="country_id" outlined label="Country">
                                             @foreach($countries as $country)
                                                 @if($country->id == $reseller->country_id)
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->code }}" selected activated>{{ $country->name }}</mwc-list-item>
+                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}" selected activated>{{ $country->country }}</mwc-list-item>
                                                 @else
-                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->code }}">{{ $country->name }}</mwc-list-item>
+                                                <mwc-list-item value="{{ $country->id }}" data-countryCode="{{ $country->alpha_2 }}">{{ $country->country }}</mwc-list-item>
                                                 @endif
                                             @endforeach
                                         </mwc-select>
@@ -73,7 +73,7 @@
                                 <div class="text-center">
                                     <div class="custom-brand-container">
                                         @if($reseller->country != null)
-                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{$reseller->country->code}}.svg" width="160" height="160"/>
+                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{$reseller->country->alpha_2}}.svg" width="160" height="160"/>
                                         @else
                                         <img id="flag_image" src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}" width="160" height="160"/>
                                         @endif                                        

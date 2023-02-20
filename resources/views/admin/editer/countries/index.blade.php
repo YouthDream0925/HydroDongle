@@ -8,9 +8,9 @@
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
             <h1 class="display-4 mb-0 display-5">{{ __('global.countryTitle') }}</h1>
-            <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('countries.create') }}">
+            <!-- <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('countries.create') }}">
                 <span class="material-icons">add</span>{{ __('global.add') }}
-            </a>
+            </a> -->
         </div>
     </div>
     <div class="row gx-5">
@@ -23,23 +23,25 @@
                             <tr>
                                 <th scope="col">{{ __('global.no') }}</th>
                                 <th scope="col">{{ __('global.countryName') }}</th>
-                                <th scope="col">{{ __('global.code') }}</th>
-                                <th scope="col">{{ __('global.code3') }}</th>
-                                <th scope="col">{{ __('global.numCode') }}</th>
-                                <th scope="col">{{ __('global.phoneCode') }}</th>
-                                <th scope="col" class="txt-right">{{ __('global.action') }}</th>
+                                <th scope="col">{{ __('global.alpha_2') }}</th>
+                                <th scope="col">{{ __('global.alpha_3') }}</th>
+                                <th scope="col">{{ __('global.numeric_code') }}</th>
+                                <th scope="col">{{ __('global.flag') }}</th>
+                                <!-- <th scope="col" class="txt-right">{{ __('global.action') }}</th> -->
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($countries as $key => $country)
                             <tr>
                                 <th scope="row">{{ ++$i }}</th>
-                                <td>{{ $country->name }}</td>
-                                <td>{{ $country->code }}</td>
-                                <td>{{ $country->code3 }}</td>
-                                <td>{{ $country->num_code }}</td>
-                                <td>{{ $country->phone_code }}</td>
-                                <td class="txt-right">
+                                <td>{{ $country->country }}</td>
+                                <td>{{ $country->alpha_2 }}</td>
+                                <td>{{ $country->alpha_3 }}</td>
+                                <td>{{ $country->numeric }}</td>
+                                <td>
+                                    <img src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->alpha_2)}}.svg" width="30" height="30"/>
+                                </td>
+                                <!-- <td class="txt-right">
                                     <div class="dropdown">
                                         <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
                                         <ul class="dropdown-menu">
@@ -53,7 +55,7 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </td>
+                                </td> -->
                             </tr>
                             @endforeach                            
                         </tbody>
