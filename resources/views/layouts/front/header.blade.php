@@ -4,7 +4,7 @@
     <div class="menu_area menu8">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light px-0 ">
-                <a class="navbar-brand order-sm-1 order-1" style="width: 150px; height: 38px;" href="#">
+                <a class="navbar-brand order-sm-1 order-1" style="width: 150px; height: 38px;" href="{{ url('/') }}">
                     <img class="img-fluid img-reponsive" src="{{ asset('theme_front/img/logo.png') }}" alt="" />
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22" aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,8 +24,8 @@
                             <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} has_mega-lg dropdown">
                                 <a class="nav-link {{ (request()->is('agents*')) ? 'active' : '' }}" href="{{ route('agents') }}">{{ __('global.agent')}}</a>
                             </li>
-                            <li class="nav-item has_mega-lg dropdown">
-                                <a class="nav-link" href="#">{{ __('global.shop')}}</a>
+                            <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }} has_mega-lg dropdown">
+                                <a class="nav-link {{ (request()->is('shop*')) ? 'active' : '' }}" href="{{ route('shop') }}">{{ __('global.shop')}}</a>
                             </li>
                         </ul>
                         <!-- end: .navbar-nav -->

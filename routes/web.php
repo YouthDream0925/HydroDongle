@@ -30,6 +30,7 @@ use App\Http\Controllers\Admin\History\UpdateController;
 use App\Http\Controllers\Admin\History\CreditController;
 
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -114,6 +115,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('home/brand/models', [HomeController::class, 'models'])->name('models');
 Route::get('download', [SettingController::class, 'download'])->name('download');
 Route::get('agents', [ResellerController::class, 'agents'])->name('agents');
+Route::get('shop', [ShopController::class, 'index'])->name('shop');
 
 Route::middleware(['auth'])->group(function() {
 });
