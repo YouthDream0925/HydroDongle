@@ -100,6 +100,14 @@ return [
             'throw' => false,
         ],
         
+        'products' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/products'),
+            'url' => env('APP_URL').'/storage/products',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+
         'slides' => [
             'driver' => 'local',
             'root' => storage_path('app/public/slides'),

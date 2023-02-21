@@ -64,6 +64,7 @@ return [
         'function' => 'Function',
         'model' => 'Model',
         'reseller' => 'Reseller',
+        'product' => 'Product',
         'help' => 'Help',
         'faq' => 'FAQ',
         'test' => 'Test Points',
@@ -71,7 +72,6 @@ return [
         'module' => 'Module',
         'moduleFunction' => 'Module Function',
         'feature' => 'Feature',
-        'reseller' => 'Reseller',
         'driver' => 'Driver',
         'contact' => 'Contact',
         'news' => 'News',
@@ -220,6 +220,19 @@ return [
     'resellerDetails' => 'Reseller Details',
     'country' => 'Country',
     'flag' => 'Flag',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Editer Product page
+    |--------------------------------------------------------------------------
+    */
+    'productTitle' => 'PRODUCTS',
+    'product' => 'Product',
+    'productDetails' => 'Product Details',
+    'show' => 'Show/Hide',
+    'tax' => 'Tax',
+    'price' => 'Price',
+    'discount' => 'Discount',
 
     /*
     |--------------------------------------------------------------------------

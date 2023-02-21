@@ -31,6 +31,7 @@ return [
         'features',
         'models',
         'points',
+        'products',
         'slides'
     ],
 
