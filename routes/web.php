@@ -118,6 +118,7 @@ Route::post('home/brand/models', [HomeController::class, 'models'])->name('model
 Route::get('download', [SettingController::class, 'download'])->name('download');
 Route::get('agents', [ResellerController::class, 'agents'])->name('agents');
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
+Route::get('shop/detail/{id}', [ShopController::class, 'detail'])->name('shop.detail');
 
 Route::middleware(['auth'])->group(function() {
 });

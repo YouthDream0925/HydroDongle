@@ -355,4 +355,5 @@ return [
     'download' => 'Download',
     'resellers' => 'Agents',
     'search' => 'Search',
+    'ourProducts' => 'Our Products',
 ];

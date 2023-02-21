@@ -212,6 +212,7 @@ return [
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
         'MediaUploader' => Plank\Mediable\MediaUploaderFacade::class,
+        'AppHelper' => App\Helpers\AppHelper::class,
     ])->toArray(),
 
 ];
