@@ -12,7 +12,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    <h4 class="page_title">{{ __('global.ourAgents') }}</h4>
+                    @if(request()->is('agents/0'))
+                    <h4 class="page_title">{{ __('global.dongleAgents') }}</h4>
+                    @elseif(request()->is('agents/1'))
+                    <h4 class="page_title">{{ __('global.licenceAgents') }}</h4>
+                    @endif
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb m-bottom-30">
                             <li class="breadcrumb-item active" aria-current="page">{{ __('global.info') }}</li>

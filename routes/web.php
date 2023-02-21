@@ -116,7 +116,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('home/brand/models', [HomeController::class, 'models'])->name('models');
 Route::get('download', [SettingController::class, 'download'])->name('download');
-Route::get('agents', [ResellerController::class, 'agents'])->name('agents');
+Route::get('agents/{type}', [ResellerController::class, 'agents'])->name('agents');
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
 Route::get('shop/detail/{id}', [ShopController::class, 'detail'])->name('shop.detail');
 
@@ -210,7 +210,24 @@ Route::get('storage/models/{filename}', function ($filename)
 
 Route::get('storage/points/{filename}', function ($filename)
 {
-    $path = storage_path('app/points/models/' . $filename);
+    $path = storage_path('app/public/points/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/products/{filename}', function ($filename)
+{
+    $path = storage_path('app/public/products/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);

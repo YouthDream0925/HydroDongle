@@ -356,4 +356,6 @@ return [
     'resellers' => 'Agents',
     'search' => 'Search',
     'ourProducts' => 'Our Products',
+    'dongleAgents' => 'Dongle Agents',
+    'licenceAgents' => 'Licence / Credits Agents',
 ];

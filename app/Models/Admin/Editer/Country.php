@@ -50,4 +50,11 @@ class Country extends Model
     {
         return $this->hasMany(Reseller::class, 'country_id', 'id')->where('activate', '1');
     }
+
+    public function resellers_by_type($type)
+    {
+        $id = $this->id;
+        $resellers = Reseller::where('country_id', $id)->where('activate', '1')->where('type', $type)->get();
+        return $resellers;
+    }
 }

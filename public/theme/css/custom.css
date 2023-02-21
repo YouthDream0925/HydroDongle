@@ -219,3 +219,7 @@
 .flag-clicker {
     cursor: pointer;
 }
+
+.la-arrow-down-custom {
+    content: '\f107' !important;
+}

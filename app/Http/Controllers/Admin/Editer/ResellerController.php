@@ -65,12 +65,12 @@ class ResellerController extends Controller
         return redirect()->route('resellers.index')->with('success', 'Reseller deleted successfully.');
     }
 
-    public function agents()
+    public function agents($type)
     {
         $countries = Country::all();
         $resellers_country = [];
         foreach($countries as $country) {
-            if(count($country->resellers) != 0) {
+            if(count($country->resellers_by_type($type)) != 0) {
                 array_push($resellers_country, $country);
                 foreach($country->resellers as $reseller)
                 {

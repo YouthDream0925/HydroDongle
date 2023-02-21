@@ -21,8 +21,12 @@
                             <li class="nav-item {{ (request()->is('download*')) ? 'active' : '' }} has_mega-lg dropdown">
                                 <a class="nav-link {{ (request()->is('download*')) ? 'active' : '' }}" href="{{ route('download') }}">{{ __('global.download')}}</a>
                             </li>
-                            <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} has_mega-lg dropdown">
-                                <a class="nav-link {{ (request()->is('agents*')) ? 'active' : '' }}" href="{{ route('agents') }}">{{ __('global.agent')}}</a>
+                            <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} dropdown">
+                                <a class="nav-link {{ (request()->is('agents*')) ? 'active' : '' }} dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.agent')}}<i class="ml-2 la la-angle-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('agents', '0') }}">{{ __('global.dongleAgents') }}</a>
+                                    <a class="dropdown-item" href="{{ route('agents', '1') }}">{{ __('global.licenceAgents') }}</a>
+                                </div>
                             </li>
                             <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }} has_mega-lg dropdown">
                                 <a class="nav-link {{ (request()->is('shop*')) ? 'active' : '' }}" href="{{ route('shop') }}">{{ __('global.shop')}}</a>
