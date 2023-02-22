@@ -5,7 +5,7 @@ namespace App\Models\Admin\Editer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\ModelFilters\BrandFilter;
+use App\ModelFilters\FaqFilter;
 
 class Faq extends Model
 {
@@ -24,7 +24,7 @@ class Faq extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(BrandFilter::class);
+        return $this->provideFilter(FaqFilter::class);
     }
 
     public function scopePopular($query, $per_page)

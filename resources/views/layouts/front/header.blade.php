@@ -28,8 +28,12 @@
                                     <a class="dropdown-item" href="{{ route('agents', '1') }}">{{ __('global.licenceAgents') }}</a>
                                 </div>
                             </li>
-                            <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }} has_mega-lg dropdown">
-                                <a class="nav-link {{ (request()->is('shop*')) ? 'active' : '' }}" href="{{ route('shop') }}">{{ __('global.shop')}}</a>
+                            <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }} dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.shop')}}<i class="ml-2 la la-angle-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('shop') }}">Products</a>
+                                    <a class="dropdown-item" href="{{ route('help') }}">Help / FAQs</a>
+                                </div>
                             </li>
                         </ul>
                         <!-- end: .navbar-nav -->

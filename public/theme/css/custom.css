@@ -223,3 +223,7 @@
 .la-arrow-down-custom {
     content: '\f107' !important;
 }
+
+.dropdown-hover:hover {
+    background: #413aa4 !important;
+}

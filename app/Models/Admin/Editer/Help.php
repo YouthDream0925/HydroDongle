@@ -5,7 +5,7 @@ namespace App\Models\Admin\Editer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\ModelFilters\BrandFilter;
+use App\ModelFilters\HelpFilter;
 
 class Help extends Model
 {
@@ -29,7 +29,7 @@ class Help extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(BrandFilter::class);
+        return $this->provideFilter(HelpFilter::class);
     }
 
     public function scopePopular($query, $per_page)

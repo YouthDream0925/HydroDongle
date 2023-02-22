@@ -29,10 +29,21 @@
                             <div class="author-spec d-flex item-space-between"><strong>PLATFORM : </strong> <span class="color-secondary">{{ $platform }}</span></div>
                         </div>
                     </div><!-- End: .card-body -->
-                    <div class="d-flex item-space-between">
-                        <a href="{{ $download_exe }}" target="_blank" class="btn btn-success btn-icon icon-left"><i class="la la-download"></i> EXE Setup</a>
+                    <div class="d-flex item-space-evenly">
+                        <!-- <a href="{{ $download_exe }}" target="_blank" class="btn btn-success btn-icon icon-left"><i class="la la-download"></i> EXE Setup</a>
                         <a href="{{ $download_link }}" target="_blank" class="btn btn-success btn-icon icon-left"><i class="la la-download"></i> External Setup</a>
-                        <a href="{{ $download_zip }}" target="_blank" class="btn btn-success btn-icon icon-left"><i class="la la-download"></i> Full ZIP package</a>
+                        <a href="{{ $download_zip }}" target="_blank" class="btn btn-success btn-icon icon-left"><i class="la la-download"></i> Full ZIP package</a> -->
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownbtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Download
+                                <span class="dropdown-caret la la-angle-down"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown--btn" aria-labelledby="dropdownbtn">
+                                <a class="dropdown-item dropdown-hover" href="{{ $download_exe }}" target="_blank">EXE Setup</a>
+                                <a class="dropdown-item dropdown-hover" href="{{ $download_link }}" target="_blank">External Setup</a>
+                                <a class="dropdown-item dropdown-hover" href="{{ $download_zip }}" target="_blank">Full ZIP package</a>
+                            </div>
+                        </div><!-- end: .dropdown -->
                     </div>
                 </div><!-- ends: .col-lg-4 -->
             </div><!-- ends: .row -->

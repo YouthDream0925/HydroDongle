@@ -358,4 +358,9 @@ return [
     'ourProducts' => 'Our Products',
     'dongleAgents' => 'Dongle Agents',
     'licenceAgents' => 'Licence / Credits Agents',
+    'helpFAQ' => 'HELP | FAQs',
+    'aboutUS' => 'About HYTRA TOOLS',
+    'seeMore' => 'See Details',
+    'faqs' => 'Frequently Asked Questions',
+    'details' => 'Details',
 ];
