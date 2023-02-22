@@ -5740,7 +5740,7 @@ ul {
 
 .content-block--15 {
   padding: 6.8rem 0 7.33333rem;
-  background: linear-gradient(to bottom, #fff, #f8f7fd);
+  /* background: linear-gradient(to bottom, #fff, #f8f7fd); */
 }
 
 .content-block--15 .section-title {

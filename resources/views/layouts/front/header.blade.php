@@ -18,8 +18,12 @@
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
-                            <li class="nav-item {{ (request()->is('download*')) ? 'active' : '' }} has_mega-lg dropdown">
-                                <a class="nav-link {{ (request()->is('download*')) ? 'active' : '' }}" href="{{ route('download') }}">{{ __('global.download')}}</a>
+                            <li class="nav-item {{ (request()->is('download*')) ? 'active' : '' }} dropdown">
+                                <a class="nav-link {{ (request()->is('download*')) ? 'active' : '' }} dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.download')}}<i class="ml-2 la la-angle-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{{ route('download') }}">Download Software</a>
+                                    <a class="dropdown-item" href="javascript::void(0)">Download Drivers</a>
+                                </div>
                             </li>
                             <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} dropdown">
                                 <a class="nav-link {{ (request()->is('agents*')) ? 'active' : '' }} dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.agent')}}<i class="ml-2 la la-angle-down"></i></a>
@@ -28,12 +32,11 @@
                                     <a class="dropdown-item" href="{{ route('agents', '1') }}">{{ __('global.licenceAgents') }}</a>
                                 </div>
                             </li>
-                            <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }} dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.shop')}}<i class="ml-2 la la-angle-down"></i></a>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('shop') }}">Products</a>
-                                    <a class="dropdown-item" href="{{ route('help') }}">Help / FAQs</a>
-                                </div>
+                            <li class="nav-item {{ (request()->is('shop*')) ? 'active' : '' }}">
+                                <a class="nav-link {{ (request()->is('shop*')) ? 'active' : '' }}" href="{{ route('shop') }}">{{ __('global.shop')}}</a>
+                            </li>
+                            <li class="nav-item {{ (request()->is('help*')) ? 'active' : '' }}">
+                                <a class="nav-link {{ (request()->is('help*')) ? 'active' : '' }}" href="{{ route('help') }}">{{ __('global.help')}}</a>
                             </li>
                         </ul>
                         <!-- end: .navbar-nav -->
