@@ -52,7 +52,7 @@
                         @endif
                     </div>
                     <div class="pricing__price rounded mb-4">
-                        <p><sup>$</sup>29<small>/month</small></p>
+                        <p><sup>$</sup>{{ $product->price }}<small>/month</small></p>
                     </div>
                     <!-- <div class="pricing__features">
                         <ul>
