@@ -16,10 +16,10 @@ class ShopController extends Controller
         return view('front.shop.index', compact('produts'));
     }
 
-    public function detail($id)
+    public function checkout($id)
     {
         $product = Product::find($id);
-        return view('front.shop.detail', compact('product'));
+        return view('front.shop.checkout', compact('product'));
     }
 
     public function help(Request $request)

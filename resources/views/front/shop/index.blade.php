@@ -23,56 +23,53 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<section class="shop-products p-top-100 p-bottom-110">
+<section class="p-top-100 p-bottom-80">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="m-bottom-50">
+                <div class="m-bottom-65">
                     <div class="divider text-center">
                         <h1>HYDRA TOOLS</h1>
-                        <p class="mx-auto"></p>
+                        <p class="mx-auto">The Best Physical and Software Tools</p>
                     </div>
                 </div>
-            </div><!-- ends: .col-lg-12 -->
-            <div class="col-lg-12">
-                <div class="product-grid">
-                    <div class="row">
-                        @foreach($produts as $product)
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="card card-product">
-                                <figure>
-                                    <div style="width: 360px; height: 320px; margin-left: auto; margin-right: auto;">
-                                        @if($product->hasMedia('product_image'))
-                                        <img class="img-fluid img-responsive" src="{{ $product->getMedia('product_image')->first()->getUrl() }}" alt="">
-                                        @else
-                                        <img class="img-fluid img-responsive" src="{{ asset('theme_front/img/c9.jpg') }}" alt="">
-                                        @endif
-                                    </div>
-                                    <figcaption>
-                                        <ul class="d-flex justify-content-center">
-                                            <li><a href="" class="btn btn--rounded btn-outline-light btn-sm">Add To Cart</a></li>
-                                            <!-- <li><a href="" class="btn like-btn"><i class="la la-heart-o"></i></a></li> -->
-                                        </ul>
-                                    </figcaption>
-                                </figure>
-                                @if($product->price != $product->discount)
-                                <span class="badge badge-pill badge-primary">{{ \AppHelper::instance()->percentage($product->price, $product->discount) }}</span>
-                                @endif
-                                <div class="card-body">
-                                    <h6><a href="{{ route('shop.detail', $product->id) }}">{{ $product->name }}</a></h6>
-                                    <div class="prices">
-                                        <span class="product-price color-secondary">${{ $product->discount }}</span>
-                                    </div>
-                                </div>
-                            </div><!-- End: .card -->
-                        </div><!-- ends: .col-lg-4 -->
-                        @endforeach
-                    </div>
-                </div>
-            </div><!-- ends: .col-lg-12 -->
+            </div>
         </div>
     </div>
-</section><!-- ends:  -->
+    <div class="container">
+        <div class="row">
+            @foreach($produts as $product)
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing pricing--1 shadow-lg-2">
+                    <div class="pricing__title">
+                        <h4>{{ $product->name }}</h4>
+                        <span>Basic Solution</span>
+                    </div>
+                    <div class="mb-4" style="width: 200px; height: 200px; margin-left: auto; margin-right: auto;">
+                        @if($product->hasMedia('product_image'))
+                        <img class="img-fluid img-responsive" src="{{ $product->getMedia('product_image')->first()->getUrl() }}" alt="">
+                        @else
+                        @endif
+                    </div>
+                    <div class="pricing__price rounded mb-4">
+                        <p><sup>$</sup>29<small>/month</small></p>
+                    </div>
+                    <!-- <div class="pricing__features">
+                        <ul>
+                            <li>Limitless Concepts</li>
+                            <li>Annual Reports</li>
+                            <li>Free Support</li>
+                            <li>Expert Reviews</li>
+                            <li>Community Access</li>
+                        </ul>
+                    </div> -->
+                    <a href="{{ route('shop.checkout', $product->id) }}" class="btn btn-outline-secondary">purchase</a>
+                </div><!-- end: .pricing -->
+            </div><!-- ends .col-lg-4 -->
+            @endforeach
+        </div>
+    </div>
+</section>
 @endsection
 
 @push('script')

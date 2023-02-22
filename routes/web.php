@@ -118,7 +118,7 @@ Route::post('home/brand/models', [HomeController::class, 'models'])->name('model
 Route::get('download', [SettingController::class, 'download'])->name('download');
 Route::get('agents/{type}', [ResellerController::class, 'agents'])->name('agents');
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
-Route::get('shop/detail/{id}', [ShopController::class, 'detail'])->name('shop.detail');
+Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');
 Route::get('shop/help', [ShopController::class, 'help'])->name('help');
 Route::get('shop/help/detail/{id}', [ShopController::class, 'help_detail'])->name('help.detail');
 
