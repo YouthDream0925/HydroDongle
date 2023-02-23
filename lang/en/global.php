@@ -363,5 +363,11 @@ return [
     'seeMore' => 'See Details',
     'faqs' => 'Frequently Asked Questions',
     'details' => 'Details',
-    'devices' => 'Supported Devices'
+    'devices' => 'Supported Devices',
+    'contactUs' => 'Contact Us',
+    'profile' => 'My Profile',
+    'myPhoto' => 'My Photo',
+    'photo' => 'photo',
+    'myInfo' => 'My Information',
+    'submit' => 'Submit'
 ];

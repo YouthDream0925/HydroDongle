@@ -33,6 +33,9 @@ use App\Http\Controllers\Admin\History\CreditController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
 use App\Http\Controllers\Front\DeviceController;
+use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\ProfileController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -125,6 +128,9 @@ Route::get('help/detail/{id}', [ShopController::class, 'help_detail'])->name('he
 Route::get('devices', [DeviceController::class, 'index'])->name('devices');
 Route::get('devices/brand/{id}', [DeviceController::class, 'brand'])->name('devices.brand');
 Route::get('devices/brand/model/{id}', [DeviceController::class, 'model'])->name('devices.brand.model');
+Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
+Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
 Route::middleware(['auth'])->group(function() {
 });
@@ -234,6 +240,23 @@ Route::get('storage/points/{filename}', function ($filename)
 Route::get('storage/products/{filename}', function ($filename)
 {
     $path = storage_path('app/public/products/' . $filename);
+
+    if (!File::exists($path)) {
+        abort(404);
+    }
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('storage/avatars/{filename}', function ($filename)
+{
+    $path = storage_path('app/public/avatars/' . $filename);
 
     if (!File::exists($path)) {
         abort(404);

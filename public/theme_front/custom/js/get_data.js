@@ -25,7 +25,7 @@ const GetData = (destination, name) => {
         })
         .done(function (response) {
             if (response.length == 0) {
-                toast('There is no brands any more.');
+                toast('error', 'There is no brands any more.');
                 $('#preloader').hide();
                 return;
             }

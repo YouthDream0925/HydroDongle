@@ -41,6 +41,9 @@
                             <li class="nav-item {{ (request()->is('help*')) ? 'active' : '' }}">
                                 <a class="nav-link {{ (request()->is('help*')) ? 'active' : '' }}" href="{{ route('help') }}">{{ __('global.help')}}</a>
                             </li>
+                            <li class="nav-item {{ (request()->is('contact*')) ? 'active' : '' }}">
+                                <a class="nav-link {{ (request()->is('contact*')) ? 'active' : '' }}" href="{{ route('contact') }}">{{ __('global.contactUs')}}</a>
+                            </li>
                         </ul>
                         <!-- end: .navbar-nav -->
                     </div>
@@ -51,15 +54,33 @@
                             @guest
                             <a class="btn btn-outline-primary btn-sm" href="{{ route('login') }}">{{ __('global.login') }}</a>
                             @else
-                            <a class="btn btn-outline-primary btn-sm" href="{{ route('logout') }}"
-                                onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
-                                {{ __('global.logout') }}
-                            </a>
-
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                @csrf
-                            </form>
+                            <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
+                                <div class="nav_right_module cart_module">
+                                    <div class="cart__icon">
+                                        <span class="la la-user"></span>
+                                    </div>
+                                    <div class="cart__items shadow-lg-2" style="min-width: 140px;">
+                                        <div class="items">
+                                            <div class="item_info">
+                                                <a class="mb-0" href="{{ route('profile', Auth::user()->id) }}">{{ __('global.profile') }}</a>
+                                            </div>
+                                        </div>
+                                        <!-- end .items-->
+                                        <div class="items">
+                                            <div class="item_info">
+                                                <a class="mb-0" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                                    {{ __('global.logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             @endguest
                         </div>
                     </div>

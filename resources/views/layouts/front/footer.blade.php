@@ -155,7 +155,6 @@
 <script src="{{ asset('theme_front/vendor_assets/js/trumbowyg.min.js') }}"></script>
 <script src="{{ asset('theme_front/vendor_assets/js/waypoints.min.js') }}"></script>
 <script src="{{ asset('theme_front/theme_assets/js/main.js') }}"></script>
-<script src="{{ asset('theme_front/theme_assets/js/map.js') }}"></script>
 <script src="{{ asset('theme_front/theme_assets/js/revolution.slider.init.js') }}"></script>
 <script src="{{ asset('theme/vendor/bs5-toast/bs5-toast.js') }}"></script>
 @stack('script')

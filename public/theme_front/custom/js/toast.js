@@ -1,13 +1,16 @@
-const toast = (message) => {
+var css = null;
+
+const toast = (status, message) => {
+    css = status;
     let x = $('#snackbar');
-    x.addClass('show');
+    x.addClass(status + ' show');
     x.html(message);
     setTimeout(remove_toast, 3000);
 };
 
-const remove_toast = () => {
+const remove_toast = (status) => {
     let x = $('#snackbar');
-    x.removeClass('show');
+    x.removeClass(css + ' show');
 };
 
 export default toast;

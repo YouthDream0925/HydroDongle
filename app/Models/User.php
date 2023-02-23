@@ -13,10 +13,11 @@ use Carbon\Carbon;
 use EloquentFilter\Filterable;
 use Illuminate\Database\Eloquent\Model;
 use App\ModelFilters\UserFilter;
+use Plank\Mediable\Mediable;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable, Mediable;
 
     /**
      * The attributes that are mass assignable.

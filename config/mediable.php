@@ -32,7 +32,8 @@ return [
         'models',
         'points',
         'products',
-        'slides'
+        'slides',
+        'avatars'
     ],
 
     /*
