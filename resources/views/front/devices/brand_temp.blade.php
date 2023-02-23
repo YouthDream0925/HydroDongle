@@ -6,7 +6,7 @@
                 <img class="img-fluid img-responsive" src="{{ $brand->getMedia('brand_image')->first()->getUrl() }}"/>
             </div>
             <figcaption>
-                <a href="" class="link"><i class="la la-link"></i></a>
+                <a href="{{ route('devices.brand', $brand->brand_id) }}" class="link"><i class="la la-link"></i></a>
             </figcaption>
         </figure>
         @else

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Editer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Editer\Feature;
+use App\Models\Admin\Editer\PhoneModel;
 use App\Http\Requests\Admin\FeatureRequest;
 use Plank\Mediable\Facades\ImageManipulator;
 use Plank\Mediable\HandlesMediaUploadExceptions;
@@ -90,6 +91,30 @@ class FeatureController extends Controller
             $media->delete();
         }
         $feature->delete();
+
+        $models = PhoneModel::get();
+        foreach($models as $model) {
+            $feature_ids = json_decode($model->feature_id, TRUE);
+            foreach ($feature_ids as $key => $feature_id) {
+                if($id == $feature_id) {
+                    unset($feature_ids[$key]);
+                }
+            }
+
+            $i = 0;
+            $input = '[';
+            foreach($feature_ids as $item) {
+                if($i < count($feature_ids) - 1)
+                    $input .= $item.',';
+                else
+                    $input .= $item;
+                $i++;
+            }
+            $input .= ']';
+
+            $model->feature_id = $input;
+            $model->save();
+        }
 
         return redirect()->route('features.index')
                         ->with('success','Feature deleted successfully');

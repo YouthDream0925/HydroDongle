@@ -121,7 +121,7 @@
                             </div>
                             <input type="hidden" name="brand_id" value="{{ $brand->brand_id }}"/>
                             <input type="hidden" name="cpu_id" value="{{ $cpu->id }}"/>
-                            <input type="hidden" name="feature_id" value="{{ $model->feature_id }}"/>
+                            <input type="hidden" name="feature_id" value="{{ $features }}"/>
                         </div>
                         <div class="text-center">
                             <button class="btn btn-outline-danger btn-delete mdc-ripple-upgraded" type="button">{{ __('global.delete') }}</button>

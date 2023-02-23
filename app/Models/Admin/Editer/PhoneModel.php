@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Plank\Mediable\Mediable;
 use EloquentFilter\Filterable;
-use App\ModelFilters\BrandFilter;
+use App\ModelFilters\PhoneModelFilter;
 
 class PhoneModel extends Model
 {
@@ -30,7 +30,7 @@ class PhoneModel extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(BrandFilter::class);
+        return $this->provideFilter(PhoneModelFilter::class);
     }
 
     public function scopePopular($query, $per_page)
@@ -44,5 +44,15 @@ class PhoneModel extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class, 'brand_id', 'brand_id');
+    }
+
+    public function cpu()
+    {
+        return $this->belongsTo(Cpu::class, 'cpu_id', 'id');
+    }
+
+    public function features()
+    {
+        return;
     }
 }

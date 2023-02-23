@@ -69,7 +69,14 @@ class ModelController extends Controller
         $cpu = Cpu::find($model->cpu_id);
         $memories = Memory::get();
         $feature_ids = json_decode($model->feature_id, TRUE);
-        return view('admin.editer.models.edit', compact('model', 'memories', 'brand', 'cpu', 'feature_ids'));
+        $features = '';
+        foreach($feature_ids as $key => $id) {
+            if($key < count($feature_ids) - 1)
+                $features = $features.$id.",";
+            else
+                $features = $features.$id;
+        }
+        return view('admin.editer.models.edit', compact('model', 'memories', 'brand', 'cpu', 'feature_ids', 'features'));
     }
 
     public function update(PhoneModelRequest $request, $id)
@@ -80,15 +87,19 @@ class ModelController extends Controller
         $model->note = $request->input('note');
         $model->brand_id = $request->input('brand_id');
         $model->cpu_id = $request->input('cpu_id');
-        $new_feature_ids = '[';
-        foreach(explode(',', $request->feature_id) as $key => $item) {
-            if(count(explode(',', $request->feature_id)) != $key + 1)
-                $new_feature_ids = $new_feature_ids.$item.',';
-            else
-                $new_feature_ids = $new_feature_ids.$item;
+        if($request->feature_id != null) {
+            $new_feature_ids = '[';
+            foreach(explode(',', $request->feature_id) as $key => $item) {
+                if(count(explode(',', $request->feature_id)) != $key + 1)
+                    $new_feature_ids = $new_feature_ids.$item.',';
+                else
+                    $new_feature_ids = $new_feature_ids.$item;
+            }
+            $new_feature_ids = $new_feature_ids.']';
+            $model->feature_id = $new_feature_ids;
+        } else {
+            $model->feature_id = [];
         }
-        $new_feature_ids = $new_feature_ids.']';
-        $model->feature_id = $new_feature_ids;
 
         if($request->activate == "true")
             $model->activate = '1';

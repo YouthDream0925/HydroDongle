@@ -123,6 +123,8 @@ Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('sho
 Route::get('help', [ShopController::class, 'help'])->name('help');
 Route::get('help/detail/{id}', [ShopController::class, 'help_detail'])->name('help.detail');
 Route::get('devices', [DeviceController::class, 'index'])->name('devices');
+Route::get('devices/brand/{id}', [DeviceController::class, 'brand'])->name('devices.brand');
+Route::get('devices/brand/model/{id}', [DeviceController::class, 'model'])->name('devices.brand.model');
 
 Route::middleware(['auth'])->group(function() {
 });
