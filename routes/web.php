@@ -32,6 +32,7 @@ use App\Http\Controllers\Admin\History\CreditController;
 
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\ShopController;
+use App\Http\Controllers\Front\DeviceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -121,6 +122,7 @@ Route::get('shop', [ShopController::class, 'index'])->name('shop');
 Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');
 Route::get('help', [ShopController::class, 'help'])->name('help');
 Route::get('help/detail/{id}', [ShopController::class, 'help_detail'])->name('help.detail');
+Route::get('devices', [DeviceController::class, 'index'])->name('devices');
 
 Route::middleware(['auth'])->group(function() {
 });

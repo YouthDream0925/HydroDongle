@@ -344,7 +344,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Front Home page
+    | Front pages
     |--------------------------------------------------------------------------
     */
     'home' => 'Home',
@@ -363,4 +363,5 @@ return [
     'seeMore' => 'See Details',
     'faqs' => 'Frequently Asked Questions',
     'details' => 'Details',
+    'devices' => 'Supported Devices'
 ];

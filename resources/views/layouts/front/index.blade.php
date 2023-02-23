@@ -4,6 +4,7 @@
 @include('layouts.front.head')
 
 <body>
+    <div id="snackbar"></div>
     <section class="intro-area">
         <div class="">
             <div class="intro-area-11" style="padding-bottom: 0 !important;">

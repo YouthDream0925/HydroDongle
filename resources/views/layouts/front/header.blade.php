@@ -14,7 +14,10 @@
                     <div class="m-right-15">
                         <ul class="navbar-nav ">
                             <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }} dropdown">
-                                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ url('/') }}">{{ __('global.home')}}
+                                <a class="nav-link {{ (request()->is('/')) ? 'active' : '' }}" href="{{ url('/') }}">{{ __('global.home')}}</a>
+                            </li>
+                            <li class="nav-item {{ (request()->is('devices*')) ? 'active' : '' }} dropdown">
+                                <a class="nav-link {{ (request()->is('devices*')) ? 'active' : '' }}" href="{{ route('devices') }}">{{ __('global.devices')}}
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
