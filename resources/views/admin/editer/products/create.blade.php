@@ -1,6 +1,7 @@
 @extends('layouts.admin.index')
 
 @push('css')
+<link href="{{ asset('css/tags.css') }}" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -43,6 +44,10 @@
                                     <div class="col-xl-6 mb-4 d-flex align-items-center">
                                         <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
                                     </div>
+                                    <div class="col-xl-12">
+                                        <label class="form-label">Features Tag</label>
+                                        <input type="text" class="form-control" data-role="tagsinput" name="features" value="">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-xl-4">
@@ -70,6 +75,7 @@
 
 @push('script')
 <script src="{{ asset('theme/js/custom/file-loader.js') }}"></script>
+<script src="{{ asset('theme/js/custom/bootstraptagsinput.bundle.js') }}"></script>
 <script>
     jQuery(document).ready(function($) {
         FileLoader.init('product_image', 'product_container');

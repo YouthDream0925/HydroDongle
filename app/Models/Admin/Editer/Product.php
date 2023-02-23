@@ -24,7 +24,8 @@ class Product extends Model
         'price',
         'tax',
         'discount',
-        'activate'
+        'activate',
+        'features'
     ];
 
     public function modelFilter()

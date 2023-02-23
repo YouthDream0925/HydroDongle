@@ -54,15 +54,13 @@
                     <div class="pricing__price rounded mb-4">
                         <p><sup>$</sup>{{ $product->price }}<small>/month</small></p>
                     </div>
-                    <!-- <div class="pricing__features">
+                    <div class="pricing__features">
                         <ul>
-                            <li>Limitless Concepts</li>
-                            <li>Annual Reports</li>
-                            <li>Free Support</li>
-                            <li>Expert Reviews</li>
-                            <li>Community Access</li>
+                            @foreach(explode(',', $product->features) as $feature)
+                            <li>{{ $feature }}</li>
+                            @endforeach
                         </ul>
-                    </div> -->
+                    </div>
                     <a href="{{ route('shop.checkout', $product->id) }}" class="btn btn-outline-secondary">purchase</a>
                 </div><!-- end: .pricing -->
             </div><!-- ends .col-lg-4 -->

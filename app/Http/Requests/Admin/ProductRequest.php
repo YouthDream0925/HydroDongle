@@ -35,6 +35,7 @@ class ProductRequest extends FormRequest
                     'price' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
                     'tax' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
                     'discount' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
+                    'features' => 'required',
                     'product_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:5128']
                 ];
             } else {
@@ -43,7 +44,8 @@ class ProductRequest extends FormRequest
                     'name' => 'required|string',
                     'price' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
                     'tax' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
-                    'discount' => 'required|numeric|regex:/^\d*(\.\d{2})?$/'
+                    'discount' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
+                    'features' => 'required',
                 ];
             }
         } else {
@@ -53,6 +55,7 @@ class ProductRequest extends FormRequest
                 'price' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
                 'tax' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
                 'discount' => 'required|numeric|regex:/^\d*(\.\d{2})?$/',
+                'features' => 'required',
                 'product_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:5128']
             ];
         }
