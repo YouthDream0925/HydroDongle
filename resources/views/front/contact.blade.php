@@ -90,6 +90,6 @@
 @endsection
 
 @push('script')
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
 <script src="{{ asset('theme_front/theme_assets/js/map.js') }}"></script>
 @endpush

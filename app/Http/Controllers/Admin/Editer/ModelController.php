@@ -113,7 +113,7 @@ class ModelController extends Controller
 
             $media = MediaUploader::fromSource($request->file('model_image'))
                 ->toDisk('models')
-                    ->upload();
+                    ->onDuplicateReplace();
             
             $model->attachMedia($media, 'model_image');
         }
