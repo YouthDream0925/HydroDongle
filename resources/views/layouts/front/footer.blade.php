@@ -6,28 +6,28 @@
                 <div class="d-flex justify-content-around flex-wrap">
                     <div class="counter_single">
                         <div class="icon">
-                            <span class="la la-folder-open-o"></span>
+                            <span class="la la-user-plus"></span>
                         </div>
                         <p class="value count_up">{{ $our_users }}</p>
                         <p class="title">{{ __('global.ourUsers') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
-                            <span class="la la-headphones"></span>
+                            <span class="la la-apple"></span>
                         </div>
                         <p class="value count_up">{{ $total_brands }}</p>
                         <p class="title">{{ __('global.brands') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
-                            <span class="la la-trophy"></span>
+                            <span class="la la-mobile"></span>
                         </div>
                         <p class="value count_up">{{ $total_models }}</p>
                         <p class="title">{{ __('global.models') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
-                            <span class="la la-user-plus"></span>
+                            <span class="la la-magic"></span>
                         </div>
                         <p class="value count_up">{{ $total_features }}</p>
                         <p class="title">{{ __('global.supportedFeatures') }}</p>
