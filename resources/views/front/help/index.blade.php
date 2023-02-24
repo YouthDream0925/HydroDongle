@@ -4,7 +4,7 @@
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay">
+<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
     <div class="bg_image_holder">
         <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
     </div>
@@ -12,21 +12,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    <h4 class="page_title" style="margin-bottom: 1.6rem;">{{ __('global.helpFAQ')}}</h4>
-                    <!-- search widget -->
-                    <div class="widget-wrapper">
-                        <div class="search-widget">
-                            <form action="{{ route('help') }}">
-                                <div class="input-group">
-                                    <input type="text" name="key" value="{{ request()->get('key') }}" class="fc--rounded" placeholder="Search">
-                                    <button type="submit"><i class="la la-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- ends: .widget-wrapper -->
-                    <nav aria-label="breadcrumb">
+                    <!-- <h4 class="page_title">{{ __('global.devices') }}</h4> -->
+                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
                         <ol class="breadcrumb m-bottom-30">
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('global.helpFAQ')}}</li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple;">{{ __('global.help') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -34,16 +23,19 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<section class="flip-boxes p-top-120 p-bottom-90">
+<section class="flip-boxes p-top-50 p-bottom-90">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="mb-5">
-                    <div class="divider divider-simple text-center">
-                        <h3>{{ __('global.aboutUS') }}</h3>
-                    </div>
+        <div class="row item-space mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-8 widget-wrapper">
+                <div class="search-widget">
+                    <form action="{{ route('help') }}">
+                        <div class="input-group">
+                            <input type="text" name="key" value="{{ request()->get('key') }}" class="fc--rounded" style="background-color: white;" placeholder="Search">
+                            <button type="submit"><i class="la la-search"></i></button>
+                        </div>
+                    </form>
                 </div>
-            </div><!-- ends: .col-lg-12 -->
+            </div><!-- ends: .widget-wrapper -->
         </div>
     </div>
     <div class="container">

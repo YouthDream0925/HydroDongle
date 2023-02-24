@@ -4,7 +4,7 @@
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay">
+<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
     <div class="bg_image_holder">
         <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
     </div>
@@ -12,14 +12,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    @if(request()->is('agents/0'))
-                    <h4 class="page_title">{{ __('global.dongleAgents') }}</h4>
-                    @elseif(request()->is('agents/1'))
-                    <h4 class="page_title">{{ __('global.licenceAgents') }}</h4>
-                    @endif
-                    <nav aria-label="breadcrumb">
+                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
                         <ol class="breadcrumb m-bottom-30">
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('global.info') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple;">
+                                @if(request()->is('agents/0'))
+                                    {{ __('global.dongleAgents') }}
+                                @elseif(request()->is('agents/1'))
+                                    {{ __('global.licenceAgents') }}
+                                @endif
+                            </li>
                         </ol>
                     </nav>
                 </div>

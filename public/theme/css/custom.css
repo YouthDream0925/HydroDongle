@@ -255,4 +255,11 @@
     z-index: 9999;
     opacity: 1;
     transform: opacity 1s linear;
-  }
+}
+
+.custom-a-breadcrumb {
+    color: rebeccapurple !important;
+}
+.custom-a-breadcrumb:hover {
+    color: red !important;
+}

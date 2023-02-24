@@ -3,7 +3,7 @@ import toast from './toast.js';
 const GetData = (destination, name) => {
     var page = 1;
     
-    infinteLoadMore(page);
+    // infinteLoadMore(page);
     $('#get-more').on('click', function() {
         page++;
         infinteLoadMore(page);

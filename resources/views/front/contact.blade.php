@@ -4,7 +4,7 @@
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay">
+<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
     <div class="bg_image_holder">
         <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
     </div>
@@ -12,11 +12,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    <h4 class="page_title">{{ __('global.contactUs') }}</h4>
-                    <nav aria-label="breadcrumb">
+                    <!-- <h4 class="page_title">{{ __('global.devices') }}</h4> -->
+                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
                         <ol class="breadcrumb m-bottom-30">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">{{ __('global.home') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('global.contactUs') }}</li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple;">{{ __('global.contactUs') }}</li>
                         </ol>
                     </nav>
                 </div>

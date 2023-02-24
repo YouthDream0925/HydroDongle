@@ -1585,9 +1585,10 @@ NB: this file contains the list of components/scss partial along with the style.
   top: 0;
   left: 0;
   width: 100%;
+  min-height: 300px;
   content: '';
   z-index: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .biz_overlay.overlay--primary:before {

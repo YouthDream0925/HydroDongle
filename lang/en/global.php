@@ -375,5 +375,6 @@ return [
     'ourUsers' => 'CUSTOMERS',
     'supportedFeatures' => 'SUPPORTED FEATURES',
     'companyName' => 'Company',
-    'more' => 'More'
+    'more' => 'More',
+    'agents' => 'Agents',
 ];

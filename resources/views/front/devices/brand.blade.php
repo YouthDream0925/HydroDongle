@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay">
+<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
     <div class="bg_image_holder">
         <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
     </div>
@@ -13,22 +13,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    <h4 class="page_title" style="margin-bottom: 1.6rem;">{{ __('global.brand') }}</h4>
-                    <!-- search widget -->
-                    <div class="widget-wrapper">
-                        <div class="search-widget">
-                            <form action="{{ route('devices.brand', $brand->brand_id) }}">
-                                <div class="input-group">
-                                    <input type="text" name="name" value="{{ request()->get('name') }}" class="fc--rounded" placeholder="Search">
-                                    <button type="submit"><i class="la la-search"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                    </div><!-- ends: .widget-wrapper -->
-                    <nav aria-label="breadcrumb">
+                    <!-- <h4 class="page_title">{{ __('global.devices') }}</h4> -->
+                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
                         <ol class="breadcrumb m-bottom-30">
-                            <li class="breadcrumb-item"><a href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ __('global.brand') }}</li>
+                            <li class="breadcrumb-item"><a class="custom-a-breadcrumb" href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple !important;">{{ __('global.brand') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -36,9 +25,22 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<section class="service-tab-wrapper section-padding">
+<section class="service-tab-wrapper section-padding" style="padding-top: 50px !important;">
     <div class="tab service--tabs">
         <div class="container">
+            <div class="row item-space mb-5">
+                <!-- search widget -->
+                <div class="col-lg-4 col-md-6 col-sm-8 widget-wrapper">
+                    <div class="search-widget">
+                        <form action="{{ route('devices.brand', $brand->brand_id) }}">
+                            <div class="input-group">
+                                <input type="text" name="name" value="{{ request()->get('name') }}" class="fc--rounded" placeholder="Search">
+                                <button type="submit"><i class="la la-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- ends: .widget-wrapper -->
+            </div>
             <div class="row">
                 <div class="col-lg-3 sidebar item-space">
                     <div class="download-widget m-bottom-30">
