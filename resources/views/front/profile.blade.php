@@ -82,7 +82,7 @@
                             @if($user->hasMedia('user_avatar'))
                             <img id="avatar_container" src="{{ $user->getMedia('user_avatar')->first()->getUrl() }}" width="160" height="160" title="avatar" class="rounded-4">
                             @else
-                            <img id="avatar_container" src="{{ url('storage/sample/brand') }}" width="160" height="160" title="avatar" class="rounded-4">
+                            <img id="avatar_container" src="{{ asset('theme_front/img/person/male.png') }}" width="160" height="160" title="avatar" class="rounded-4">
                             @endif
                         </div>
                         <div class="media-body ms-md-5 m-0 mt-4 mt-md-0 text-md-start text-center">
