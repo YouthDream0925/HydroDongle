@@ -2,7 +2,6 @@ import toast from './toast.js';
 
 const GetData = (destination, name) => {
     var page = 1;
-    $('.auto-load').show();
     
     infinteLoadMore(page);
     $('#get-more').on('click', function() {

@@ -4,6 +4,17 @@
 @endpush
 
 @section('content')
+<div id="preloader" class="loading" style="display: none;">
+    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+        <path fill="#000"
+            d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s"
+                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+        </path>
+    </svg>
+</div>
+
 <section class="p-top-70 p-bottom-70 border-bottom clients-logo-area">
     <div class="container" style="max-width:100% !important;">
         <div class="row">
@@ -357,58 +368,11 @@
 @endsection
 
 @push('script')
-<script>
-    $('#brand_selecter').on('change', function() {
-        $brand_id = $(this).val();
-        $('#phone_model_container').html('');
-        $('#model_selecter').html('<option value="">Phone Model</option>');
-        if($brand_id != "") {
-            $.ajax({
-                type: "POST",
-                url: 'home/brand/models',
-                data: {
-                    '_token': $('input[name="_token"]').val(),
-                    'id': $brand_id,
-                },
-                beforeSend() {
-                },
-                success: function(res) {
-                    if(res['success'] == true) {
-                        res['models'].map(element => {
-                            let tmp = '<option value="' + element.id + '" data-url="' + element.image + '" data-model="' + element.name + '">' + element.name + '</option>';
-                            $('#model_selecter').append(tmp);
-                        });
-                    } else {
-                        alert('Error');
-                    }
-                },
-                error: function() {
-                    alert('Error');
-                }
-            })
-        }
-    });
-
-    $('#model_selecter').on('change', function() {
-        let url = $('option:selected', this).attr('data-url');
-        let model = $('option:selected', this).attr('data-model');
-        let brand = $('option:selected', '#brand_selecter').attr('data-brand');
-        let tmp = "";
-        if($(this).val != "" && url !== undefined) {
-            tmp = '<div class="portfolio-carousel-single">' +
-                            '<figure>' + 
-                                '<div style="width: 340px; height: 340px; margin-left: auto; margin-right: auto;">' + 
-                                    '<img id="phone_model_img" class="img-fluid img-responsive" src="' + url + '" alt="">' + 
-                                '</div>' +
-                                '<figcaption>' +
-                                    '<h5>' + model + '</h5>' +
-                                    '<span class="color-secondary">' + brand + '</span>' +
-                                    '<a href="" class="link"><i class="la la-link"></i></a>' +
-                                '</figcaption>' +
-                            '</figure>' +
-                        '</div>';
-        }
-        $('#phone_model_container').html(tmp);
-    });
+<script type="module">
+    import { BrandSelector, ModelSelector } from '{{ asset("theme_front/custom/js/home.js") }}';
+    jQuery(document).ready(function () {
+        BrandSelector();
+        ModelSelector();
+    });    
 </script>
 @endpush
