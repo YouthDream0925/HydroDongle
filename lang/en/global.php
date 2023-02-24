@@ -374,5 +374,6 @@ return [
     'submit' => 'Submit',
     'ourUsers' => 'CUSTOMERS',
     'supportedFeatures' => 'SUPPORTED FEATURES',
-    'companyName' => 'Company'
+    'companyName' => 'Company',
+    'more' => 'More'
 ];

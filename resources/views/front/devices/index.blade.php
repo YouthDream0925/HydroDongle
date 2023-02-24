@@ -5,7 +5,7 @@
 @endpush
 
 @section('content')
-<div id="preloader" class="loading">
+<div id="preloader" class="loading" style="display: none;">
     <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
         <path fill="#000"
@@ -52,7 +52,7 @@
             <div id="data-wrapper" class="row ">
             </div>
             <div class="text-center">
-                <button id="get-more" class="btn btn-outline-primary">More</button>
+                <button id="get-more" class="btn btn-outline-primary">{{ __('global.more') }}</button>
             </div>
         </div><!-- ends: .container -->
     </div><!-- ends: .address-blocks -->
