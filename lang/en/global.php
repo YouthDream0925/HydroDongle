@@ -353,6 +353,8 @@ return [
     'ourAgents' => 'Our Agents',
     'info' => 'Information',
     'download' => 'Download',
+    'downloadSoftware' => 'Download Software',
+    'downloadDrivers' => 'Download Drivers',
     'resellers' => 'Agents',
     'search' => 'Search',
     'ourProducts' => 'Our Products',
@@ -369,5 +371,8 @@ return [
     'myPhoto' => 'My Photo',
     'photo' => 'photo',
     'myInfo' => 'My Information',
-    'submit' => 'Submit'
+    'submit' => 'Submit',
+    'ourUsers' => 'CUSTOMERS',
+    'supportedFeatures' => 'SUPPORTED FEATURES',
+    'companyName' => 'Company'
 ];

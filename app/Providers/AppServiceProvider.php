@@ -8,6 +8,11 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Support\Facades\URL;
 use App\Models\Admin\General\CreditSetting;
 use App\Models\Admin;
+use App\Models\User;
+use App\Models\Admin\General\DongleUser;
+use App\Models\Admin\Editer\Brand;
+use App\Models\Admin\Editer\Feature;
+use App\Models\Admin\Editer\PhoneModel;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -54,8 +59,13 @@ class AppServiceProvider extends ServiceProvider
             '1' => 'Success'
         ];
 
+        $our_users = User::count() + DongleUser::count();
+        $total_brands = Brand::count();
+        $total_models = PhoneModel::count();
+        $total_features = Feature::count();
+
         $super_admin = Admin::role('SuperAdmin')->first();
         config(['pagination.per_page' => $per_page, 'six_month_activate_price' => $six_month_activate_price, 'twelve_month_activate_price' => $twelve_month_activate_price, 'dongle_user_activate_price' => $dongle_user_activate_price, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
-        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'super_admin' => $super_admin]);
+        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'super_admin' => $super_admin, 'our_users' => $our_users, 'total_brands' => $total_brands, 'total_models' => $total_models, 'total_features' => $total_features]);
     }
 }

@@ -24,8 +24,8 @@
                             <li class="nav-item {{ (request()->is('download*')) ? 'active' : '' }} dropdown">
                                 <a class="nav-link {{ (request()->is('download*')) ? 'active' : '' }} dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.download')}}<i class="ml-2 la la-angle-down"></i></a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('download') }}">Download Software</a>
-                                    <a class="dropdown-item" href="javascript::void(0)">Download Drivers</a>
+                                    <a class="dropdown-item" href="{{ route('download') }}">{{ __('global.downloadSoftware') }}</a>
+                                    <a class="dropdown-item" href="javascript::void(0)">{{ __('global.downloadDrivers') }}</a>
                                 </div>
                             </li>
                             <li class="nav-item {{ (request()->is('agents*')) ? 'active' : '' }} dropdown">

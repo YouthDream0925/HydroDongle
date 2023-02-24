@@ -8,29 +8,29 @@
                         <div class="icon">
                             <span class="la la-folder-open-o"></span>
                         </div>
-                        <p class="value count_up">385</p>
-                        <p class="title">Project completed</p>
+                        <p class="value count_up">{{ $our_users }}</p>
+                        <p class="title">{{ __('global.ourUsers') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
                             <span class="la la-headphones"></span>
                         </div>
-                        <p class="value count_up">260</p>
-                        <p class="title">Consultant</p>
+                        <p class="value count_up">{{ $total_brands }}</p>
+                        <p class="title">{{ __('global.brands') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
                             <span class="la la-trophy"></span>
                         </div>
-                        <p class="value count_up">150</p>
-                        <p class="title">Award Winning</p>
+                        <p class="value count_up">{{ $total_models }}</p>
+                        <p class="title">{{ __('global.models') }}</p>
                     </div><!-- end: .counter_single -->
                     <div class="counter_single">
                         <div class="icon">
                             <span class="la la-user-plus"></span>
                         </div>
-                        <p class="value count_up">100</p>
-                        <p class="title">Satisfied Customers</p>
+                        <p class="value count_up">{{ $total_features }}</p>
+                        <p class="title">{{ __('global.supportedFeatures') }}</p>
                     </div><!-- end: .counter_single -->
                 </div>
             </div>
@@ -41,7 +41,7 @@
     <div class="footer__big">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="widget text_widget">
                         <a class="navbar-brand order-sm-1 order-1" style="width: 150px; height: 38px;" href="#">
                             <img class="img-fluid img-reponsive" src="{{ asset('theme_front/img/logo.png') }}" alt="" />
@@ -53,42 +53,25 @@
                         </p>
                     </div>
                 </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-lg-center">
                     <div class="widget widget--links">
-                        <h4 class="widget__title2">Company</h4>
+                        <h4 class="widget__title2">{{ __('global.companyName') }}</h4>
                         <ul class="links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contacts Us</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="{{ route('help') }}">{{ __('global.help') }}</a></li>
+                            <li><a href="{{ route('contact') }}">{{ __('global.contactUs') }}</a></li>
+                            <li><a href="{{ route('agents', 0) }}">{{ __('global.dongleAgents') }}</a></li>
+                            <li><a href="{{ route('agents', 1) }}">{{ __('global.licenceAgents') }}</a></li>
                         </ul>
                     </div><!-- ends: .widget -->
                 </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
+                <div class="col-lg-4 col-md-6 col-sm-6 d-flex justify-content-lg-center">
                     <div class="widget widget--links">
                         <h4 class="widget__title2">Services</h4>
                         <ul class="links">
-                            <li><a href="#">Business</a></li>
-                            <li><a href="#">Marketing</a></li>
-                            <li><a href="#">Management</a></li>
-                            <li><a href="#">Accounting</a></li>
-                            <li><a href="#">Training</a></li>
-                            <li><a href="#">Consultation</a></li>
-                        </ul>
-                    </div><!-- ends: .widget -->
-                </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget widget--links">
-                        <h4 class="widget__title2">Useful Links</h4>
-                        <ul class="links">
-                            <li><a href="#">Blog</a></li>
-                            <li><a href="#">Client Area</a></li>
-                            <li><a href="#">Support</a></li>
-                            <li><a href="#">FAQ's</a></li>
-                            <li><a href="#">Newsletter</a></li>
-                            <li><a href="#">Events</a></li>
+                            <li><a href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
+                            <li><a href="{{ route('download') }}">{{ __('global.downloadSoftware') }}</a></li>
+                            <li><a href="{{ route('download') }}">{{ __('global.downloadDrivers') }}</a></li>
+                            <li><a href="{{ route('shop') }}">{{ __('global.shop') }}</a></li>
                         </ul>
                     </div><!-- ends: .widget -->
                 </div><!-- ends: .col-lg-3 -->
@@ -100,7 +83,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="footer__bottom-content">
-                        <p>&copy; 2019 Tizara. All rights reserved. Created by <a href="#">AazzTech</a></p>
+                        <p>&copy; 2023 <a href="{{ url('/') }}">{{ __('global.appTitle') }}</a></p>
                         <div class="social-basic ">
                             <ul class="d-flex justify-content-end ">
                                 <li><a href="#"><span class="fab fa-facebook-f"></span></a></li>
