@@ -52,7 +52,7 @@
             <div class="nav_right_content d-flex align-items-center order-2 order-sm-2">
                 <div class="nav_right_module search_module">
                     <div class="cart__icon">
-                        <a class="btn btn-primary btn-sm" href="{{ url('/') }}">Home</a>
+                        <a class="btn btn-outline-primary btn-sm" href="{{ url('/') }}">{{ __('global.home') }}</a>
                     </div>
                 </div>
             </div>
