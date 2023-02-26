@@ -125,6 +125,6 @@ class SettingController extends Controller
                 $download_zip = $setting->value;
         }
 
-        return view('front.download', compact('app_name', 'app_version', 'release_date', 'size', 'architecture', 'md5', 'platform', 'update_histories', 'download_exe', 'download_link', 'download_zip'));
+        return view('front.download.software', compact('app_name', 'app_version', 'release_date', 'size', 'architecture', 'md5', 'platform', 'update_histories', 'download_exe', 'download_link', 'download_zip'));
     }
 }

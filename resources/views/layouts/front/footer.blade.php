@@ -69,8 +69,8 @@
                         <h4 class="widget__title2">Services</h4>
                         <ul class="links">
                             <li><a href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
-                            <li><a href="{{ route('download') }}">{{ __('global.downloadSoftware') }}</a></li>
-                            <li><a href="{{ route('download') }}">{{ __('global.downloadDrivers') }}</a></li>
+                            <li><a href="{{ route('download.software') }}">{{ __('global.downloadSoftware') }}</a></li>
+                            <li><a href="{{ route('download.drivers') }}">{{ __('global.downloadDrivers') }}</a></li>
                             <li><a href="{{ route('shop') }}">{{ __('global.shop') }}</a></li>
                         </ul>
                     </div><!-- ends: .widget -->

@@ -121,7 +121,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::post('home/brand/models', [HomeController::class, 'models'])->name('models');
-Route::get('download', [SettingController::class, 'download'])->name('download');
+Route::get('download/software', [SettingController::class, 'download'])->name('download.software');
+Route::get('download/drivers', [DriverController::class, 'download'])->name('download.drivers');
 Route::get('agents/{type}', [ResellerController::class, 'agents'])->name('agents');
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
 Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');

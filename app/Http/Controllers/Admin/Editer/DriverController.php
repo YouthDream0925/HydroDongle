@@ -53,4 +53,10 @@ class DriverController extends Controller
         $driver->delete();
         return redirect()->route('drivers.index')->with('success', 'Driver deleted successfully.');
     }
+
+    public function download()
+    {
+        $drivers = Driver::orderBy('updated_at', 'desc')->get();
+        return view('front.download.drivers', compact('drivers'));
+    }
 }
