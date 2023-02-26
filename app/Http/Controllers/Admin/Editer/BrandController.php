@@ -101,6 +101,10 @@ class BrandController extends Controller
         foreach($brand->drivers as $driver) {
             $driver->delete();
         }
+
+        foreach($brand->helps as $help) {
+            $help->delete();
+        }
         
         $brand->delete();
 

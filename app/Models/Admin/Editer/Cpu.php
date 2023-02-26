@@ -50,4 +50,9 @@ class Cpu extends Model
     {
         return $this->hasMany(Driver::class, 'cpu_id', 'id');
     }
+
+    public function helps()
+    {
+        return $this->hasMany(Help::class, 'cpu_id', 'id');
+    }
 }

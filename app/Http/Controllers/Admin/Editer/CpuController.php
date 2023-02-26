@@ -92,6 +92,10 @@ class CpuController extends Controller
             $driver->delete();
         }
 
+        foreach($cpu->helps as $help) {
+            $help->delete();
+        }
+
         $cpu->delete();
         return redirect()->route('cpus.index')
                         ->with('success','CPU deleted successfully.');

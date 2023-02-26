@@ -52,4 +52,9 @@ class Brand extends Model
     {
         return $this->hasMany(Driver::class, 'brand_id', 'brand_id');
     }
+
+    public function helps()
+    {
+        return $this->hasMany(Help::class, 'brand_id', 'brand_id');
+    }
 }
