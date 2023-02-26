@@ -2,6 +2,7 @@
 
 @push('css')
 <link rel="stylesheet" href="{{ asset('theme_front/custom/toast.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/litepicker/dist/css/style.css" rel="stylesheet" />
 @endpush
 
 @section('content')
@@ -93,6 +94,27 @@
                             </div>
                         </div>
                     </div>
+                    @if($user->isactivated == '1')
+                    <div class="quotes-wrapper blockquote--one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!-- start blockquote -->
+                                    <blockquote class="blockquote blockquote3">
+                                        <div class="quote-author" style="margin-top: 0 !important;">
+                                            <p><span>{{ $user->getDateTimeActivatedAtAttribute() }}</span> ~ <span>{{ $user->getDateTimeExpiredAtAttribute() }}</span></p>
+                                            @if($user->isExpired())
+                                            <span class="badge bg-danger">EXPIRED</span>
+                                            @else
+                                            <span class="badge bg-success">ACTIVATED</span>
+                                            @endif
+                                        </div>
+                                    </blockquote><!-- end: blockquote -->
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- ends: .quotes-wrapper -->
+                    @endif
                 </div><!-- ends: .col-lg-6 -->
                 </div>
                 <div class="col-lg-12 text-center mt-5">
@@ -100,10 +122,13 @@
                 </div>
             </div>            
         </form>
-    </section><!-- ends: .contact--four -->
+    </div>        
+</section><!-- ends: .contact--four -->
 @endsection
 
 @push('script')
+<script src="https://cdn.jsdelivr.net/npm/litepicker/dist/js/main.nocss.js" crossorigin="anonymous"></script>
+<script src="{{ asset('theme/js/litepicker.js') }}"></script>
 <script src="{{ asset('theme/js/custom/file-loader.js') }}"></script>
 <script type="module">
     import toast from '{{ asset("theme_front/custom/js/toast.js") }}';

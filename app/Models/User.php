@@ -92,6 +92,14 @@ class User extends Authenticatable
             return false;
     }
 
+    public function getDateTimeActivatedAtAttribute()
+    {
+        if($this->datetimeactivated)
+            return Carbon::parse($this->datetimeactivated)->format('M d, Y');
+        else
+            return "NONE";
+    }
+
     public function getDateTimeExpiredAtAttribute()
     {
         if($this->datetimeexpired)
