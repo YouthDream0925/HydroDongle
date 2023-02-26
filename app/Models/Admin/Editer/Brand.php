@@ -47,4 +47,9 @@ class Brand extends Model
     {
         return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->select('id', 'name');
     }
+
+    public function drivers()
+    {
+        return $this->hasMany(Driver::class, 'brand_id', 'brand_id');
+    }
 }

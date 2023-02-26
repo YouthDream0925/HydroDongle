@@ -97,6 +97,11 @@ class BrandController extends Controller
         foreach($brand->models as $model) {
             $model->delete();
         }
+
+        foreach($brand->drivers as $driver) {
+            $driver->delete();
+        }
+        
         $brand->delete();
 
         return redirect()->route('brands.index')

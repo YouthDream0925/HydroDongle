@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\Editer\FeatureController;
 use App\Http\Controllers\Admin\Editer\ModelController;
 use App\Http\Controllers\Admin\Editer\ResellerController;
 use App\Http\Controllers\Admin\Editer\ProductController;
+use App\Http\Controllers\Admin\Editer\DriverController;
 use App\Http\Controllers\Admin\Editer\HelpController;
 use App\Http\Controllers\Admin\Editer\FaqController;
 use App\Http\Controllers\Admin\Editer\TestController;
@@ -92,6 +93,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('countries', CountryController::class);
         Route::resource('resellers', ResellerController::class);
         Route::resource('products', ProductController::class);
+        Route::resource('drivers', DriverController::class);
         Route::resource('helps', HelpController::class);
         Route::resource('faqs', FaqController::class);
         Route::resource('tests', TestController::class);

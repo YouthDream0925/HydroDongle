@@ -43,6 +43,7 @@
                         <a class="nav-link {{ (request()->is('admin/editer/countries*')) ? 'active' : '' }}" href="{{ route('countries.index') }}">{{ __('global.country') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/resellers*')) ? 'active' : '' }}" href="{{ route('resellers.index') }}">{{ __('global.subCategory.reseller') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/products*')) ? 'active' : '' }}" href="{{ route('products.index') }}">{{ __('global.subCategory.product') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/editer/drivers*')) ? 'active' : '' }}" href="{{ route('drivers.index') }}">{{ __('global.subCategory.driver') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/helps*')) ? 'active' : '' }}" href="{{ route('helps.index') }}">{{ __('global.subCategory.help') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/faqs*')) ? 'active' : '' }}" href="{{ route('faqs.index') }}">{{ __('global.subCategory.faq') }}</a>
                         <a class="nav-link {{ (request()->is('admin/editer/tests*')) ? 'active' : '' }}" href="{{ route('tests.index') }}">{{ __('global.subCategory.test') }}</a>

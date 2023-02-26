@@ -87,6 +87,11 @@ class CpuController extends Controller
         foreach($cpu->models as $model) {
             $model->delete();
         }
+
+        foreach($cpu->drivers as $driver) {
+            $driver->delete();
+        }
+
         $cpu->delete();
         return redirect()->route('cpus.index')
                         ->with('success','CPU deleted successfully.');

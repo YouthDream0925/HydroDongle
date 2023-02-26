@@ -45,4 +45,9 @@ class Cpu extends Model
     {
         return $this->hasMany(PhoneModel::class, 'cpu_id', 'id');
     }
+
+    public function drivers()
+    {
+        return $this->hasMany(Driver::class, 'cpu_id', 'id');
+    }
 }
