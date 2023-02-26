@@ -35,7 +35,7 @@
                                 <th scope="row">{{ ++$i }}</th>
                                 <td>{{ $driver->driver_name }}</td>
                                 <td>{{ $driver->driver_version }}</td>
-                                <td>{{ $driver->driver_link }}</td>
+                                <td>{{ \AppHelper::instance()->short_string($driver->driver_link, 20) }}</td>
                                 <td>{{ $driver->description }}</td>
                                 <td class="txt-right">
                                     <div class="dropdown">
