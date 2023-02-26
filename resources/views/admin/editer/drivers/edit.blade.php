@@ -49,7 +49,7 @@
                                 </div>
                                 <div class="ms-3">
                                     <div class="fs-6 mb-1 fw-500">{{ $cpu->name }}</div>
-                                    <a class="small stretched-link text-reset text-decoration-none">{{ $cpu->explanation }}</a>
+                                    <a class="small stretched-link text-reset text-decoration-none">{{ \AppHelper::instance()->short_string($cpu->explanation, 30) }}</a>
                                 </div>
                             </div>
                         </div>

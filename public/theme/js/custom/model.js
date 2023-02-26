@@ -90,7 +90,7 @@ var Model = function() {
                                 '</div>' +
                                 '<div class="ms-3">' +
                                     '<div class="fs-6 mb-1 fw-500">' + selected_cpu.name + '</div>' +
-                                    '<a class="small stretched-link text-reset text-decoration-none" >' + selected_cpu.explanation + '</a>' +
+                                    '<a class="small stretched-link text-reset text-decoration-none" >' + selected_cpu.explanation.slice(0, 30) + '...' + '</a>' +
                                 '</div>' +
                             '</div>' +
                         '</div>';
