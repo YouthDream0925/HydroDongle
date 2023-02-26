@@ -27,8 +27,8 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ __('global.download')}}<i class="ml-2 la la-angle-down"></i></a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ route('download') }}">{{ __('global.downloadSoftware') }}</a>
-                            <a class="dropdown-item" href="javascript::void(0)">{{ __('global.downloadDrivers') }}</a>
+                            <a class="dropdown-item" href="{{ route('download.software') }}">{{ __('global.downloadSoftware') }}</a>
+                            <a class="dropdown-item" href="{{ route('download.drivers') }}">{{ __('global.downloadDrivers') }}</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
