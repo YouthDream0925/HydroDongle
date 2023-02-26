@@ -64,9 +64,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/FRP-Remove.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/FRP-REMOVE.svg') }}" alt="">
                         </div>
-                        <h6 class="color-dark">FRP-REMOVE</h6>
+                        <h6 class="color-dark">FRP REMOVE</h6>
                         <p>Factory Reset Protection (FRP) is a security feature on Android devices with Lollipop
                             5.1 and higher. It is automatically activated when you set up a Google Account on your
                             device. FRP protects your device by preventing unauthorized access to it after a factory
@@ -77,9 +77,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/Repair-IMEI.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/REPAIR-IMEI.svg') }}" alt="">
                         </div>                            
-                        <h6 class="color-dark">REPAIR-IMEI</h6>
+                        <h6 class="color-dark">REPAIR IMEI</h6>
                         <p>IMEI is an International Mobile Equipment Identity is aunique number identifying a
                             device. The Repair IMEI function is for restoring the original phone's IMEI. It can be used to
                             repair any invalid IMEI issues, such as lost, invalid, or damaged IMEI numbers. Once
@@ -90,7 +90,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/reset.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/RESET.svg') }}" alt="">
                         </div>                       
                         <h6 class="color-dark">RESET</h6>
                         <p>Factory Reset (Format) - it will wipe all of your personal data from your phone. Doing a
@@ -100,7 +100,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/read_frm.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/READ-FRM.svg') }}" alt="">
                         </div>                          
                         <h6 class="color-dark">READ FRM</h6>
                         <p>Hydra tool allows you to easily backup and restore the firmware (ROM) on your Android
@@ -111,9 +111,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/Bootloader-Unlock.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/BOOTLOADER-UNLOCK.svg') }}" alt="">
                         </div>                         
-                        <h6 class="color-dark">BOOTLOADER-UNLOCK</h6>
+                        <h6 class="color-dark">BOOTLOADER UNLOCK</h6>
                         <p>The bootloader is a critical component of your Android device that protects its state and
                             establishes a root of trust. Unlocking the bootloader allows you to modify the operating
                             system and install custom ROMs, giving you access to lower-level operations on the
@@ -123,7 +123,7 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/write_frm.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/WRITE-FRM.svg') }}" alt="">
                         </div>                        
                         <h6 class="color-dark">WRITE FRM</h6>
                         <p>Write Firmware - Hydra tool can write firmware (ROM) on your Android devices and
@@ -134,9 +134,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/Mi-Account-Remove.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/MI-ACCOUNT-REMOVE.svg') }}" alt="">
                         </div>                     
-                        <h6 class="color-dark">MI-ACCOUNT-REMOVE</h6>
+                        <h6 class="color-dark">MI ACCOUNT REMOVE</h6>
                         <p>Mi Account Lock is a security feature on Xiaomi-based devices, such as Redmi, POCO,
                             and Mi. The Hydra Tool is capable of bypassing forgotten Mi Account Locks, providing a
                             convenient solution for users who have lost access to their Mi accounts.</p>
@@ -145,9 +145,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/Demo-Remove.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/DEMO-REMOVE.svg') }}" alt="">
                         </div>                         
-                        <h6 class="color-dark">DEMO-REMOVE</h6>
+                        <h6 class="color-dark">DEMO REMOVE</h6>
                         <p>Hydra Tool is able to unlock various vendor demo devices and return them to their
                             original state. This can be useful for restoring demo devices to their factory settings or
                             for making them available for use by users. With the Hydra Tool, you can easily and
@@ -157,9 +157,9 @@
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="icon-box icon-box-fourteen text-center">
                         <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/FRP-Remove.png') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/SIM-UNLOCK.svg') }}" alt="">
                         </div>                        
-                        <h6 class="color-dark">DEMO-REMOVE</h6>
+                        <h6 class="color-dark">SIM UNLOCK</h6>
                         <p>Hydra Tool is able to unlock various vendor demo devices and return them to their
                             original state. This can be useful for restoring demo devices to their factory settings or
                             for making them available for use by users. With the Hydra Tool, you can easily and
