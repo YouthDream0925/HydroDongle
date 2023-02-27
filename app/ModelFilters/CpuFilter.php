@@ -12,11 +12,13 @@ class CpuFilter extends ModelFilter
     {
         return $this->where(function($q) use ($name)
         {
-            return $q->where('name', 'LIKE', "%$name%");
+            return $q->where('name', 'LIKE', "%$name%")
+                ->orWhere('explanation', 'LIKE', "%$name%");
         });
     }
 
     public function setup()
     {
+        return $this->orderBy('updated_at', 'desc');
     }
 }

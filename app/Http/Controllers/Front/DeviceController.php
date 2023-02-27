@@ -12,7 +12,7 @@ class DeviceController extends Controller
 {
     public function index(Request $request)
     {
-        $brands = Brand::filter($request->all())->paginateFilter(16);
+        $brands = Brand::filter($request->all())->where('brand_activate', '1')->paginateFilter(16);
         $artilces = '';
         if ($request->ajax()) {
             foreach ($brands as $brand) {

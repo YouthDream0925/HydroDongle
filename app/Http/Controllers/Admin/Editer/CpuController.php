@@ -16,8 +16,9 @@ class CpuController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $cpus = Cpu::Popular($per_page);
-        return view('admin.editer.cpus.index', compact('cpus'))
+        $name = $request->name ? $request->name : null;
+        $cpus = Cpu::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.editer.cpus.index', compact('cpus', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
