@@ -24,8 +24,8 @@ class ShopController extends Controller
 
     public function help(Request $request)
     {
-        $helps_dropdown = Help::filter($request->all())->where('view_type', '0')->get();
-        $helps_page = Help::filter($request->all())->where('view_type', '1')->get();
+        $helps_dropdown = Help::filter($request->all())->where('activate', '1')->where('view_type', '0')->get();
+        $helps_page = Help::filter($request->all())->where('activate', '1')->where('view_type', '1')->get();
         $faqs = Faq::filter($request->all())->get();
         return view('front.help.index', compact('helps_dropdown', 'helps_page', 'faqs'));
     }
@@ -33,7 +33,7 @@ class ShopController extends Controller
     public function help_detail($id)
     {
         $selected_help = $id;
-        $helps_page = Help::where('view_type', '1')->get();
+        $helps_page = Help::where('activate', '1')->where('view_type', '1')->get();
         return view('front.help.detail', compact('helps_page', 'selected_help'));
     }
 }

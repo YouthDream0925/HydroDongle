@@ -19,6 +19,6 @@ class HelpFilter extends ModelFilter
 
     public function setup()
     {
-        return $this->orderBy('updated_at', 'desc')->where('activate', '1');
+        return $this->orderBy('updated_at', 'desc');
     }
 }
