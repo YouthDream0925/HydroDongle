@@ -69,6 +69,9 @@ class AdminController extends Controller
         $input['password'] = Hash::make($input['password']);
     
         $admin = Admin::create($input);
+        // echo json_encode($request->input('roles'));
+        // die();
+
         $admin->assignRole($request->input('roles'));
     
         return redirect()->route('admins.index')

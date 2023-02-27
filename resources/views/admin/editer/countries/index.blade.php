@@ -79,14 +79,9 @@
 @endsection
 
 @push('script')
-<script>
-    $('#search_bar').keypress(function (e) {
-        var key = e.which;
-        if(key == 13)  // the enter key code
-        {
-            var form =  $(this).closest("form");
-            form.submit();
-        }
-    });
+<script type="module">
+    import { Search, ChangePerPage } from '{{ asset("theme/js/search.js") }}';
+    Search();
+    ChangePerPage();
 </script>
 @endpush

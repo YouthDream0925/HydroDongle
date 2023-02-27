@@ -14,9 +14,10 @@ class BrandController extends Controller
 {
     public function index(Request $request) {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $brands = Brand::orderBy('updated_at', 'desc')->Popular($request->per_page);
-
-        return view('admin.editer.brands.index', compact('brands'));
+        $name = $request->name ? $request->name : null;
+        $brands = Brand::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.editer.brands.index', compact('brands', 'per_page'))
+            ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
     public function create()

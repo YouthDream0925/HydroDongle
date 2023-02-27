@@ -28,6 +28,10 @@
     justify-content: space-around !important;
 }
 
+.item-end {
+    justify-content: end !important;
+}
+
 /***** padding *****/
 .pt-15 {
     padding-top: 1.5rem !important;
@@ -44,6 +48,10 @@
 
 .mr-1 {
     margin-right: 0.25rem !important;
+}
+
+.mr-3 {
+    margin-right: 0.75rem !important;
 }
 
 .mb-1 {
