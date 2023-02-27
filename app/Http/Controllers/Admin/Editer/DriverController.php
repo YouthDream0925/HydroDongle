@@ -57,7 +57,22 @@ class DriverController extends Controller
 
     public function download()
     {
-        $drivers = Driver::orderBy('updated_at', 'desc')->get();
-        return view('front.download.drivers', compact('drivers'));
+        $cpus = Cpu::orderBy('updated_at', 'desc')->get();
+        $cpu = $cpus->first();
+        $drivers = $cpu->drivers;
+        return view('front.download.drivers', compact('drivers', 'cpus'));
+    }
+
+    public function drivers(Request $request)
+    {
+        $key = $request->key;
+        $cpu = Cpu::find($key);
+        $drivers = $cpu->drivers;
+        $result = [
+            'success' => true,
+            'drivers' => $drivers
+        ];
+        
+        return $result;
     }
 }
