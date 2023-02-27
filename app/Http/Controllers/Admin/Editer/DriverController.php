@@ -14,8 +14,9 @@ class DriverController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $drivers = Driver::Popular($per_page);
-        return view('admin.editer.drivers.index', compact('drivers'))
+        $name = $request->name ? $request->name : null;
+        $drivers = Driver::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.editer.drivers.index', compact('drivers', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
