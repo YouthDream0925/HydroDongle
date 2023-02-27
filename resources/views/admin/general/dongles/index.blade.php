@@ -7,18 +7,26 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0 display-5">{{ __('global.dongleUserTitle') }}</h1>
+            <div class="d-flex item-center">
+                <h1 class="display-4 mb-0 display-5 mr-3">{{ __('global.dongleUserTitle') }}</h1>
+                {!! Form::open(['method' => 'GET','route' => ['dongles.index']]) !!}
+                <div class="d-flex item-center">
+                    <div class="datatable-search mr-1">
+                        <input id="search_bar" name="name" value="{{ request()->get('name') }}" class="datatable-input" style="line-height: initial;" placeholder="Search..." type="search" title="Search within table" aria-controls="datatablesSimple">
+                    </div>
+                    @if(request()->input('per_page') != null)
+                        @include('layouts.admin.pagination.select', ['pages' => $pages, 'per_page' => request()->input('per_page')])
+                    @else
+                        @include('layouts.admin.pagination.select', ['pages' => $pages, 'per_page' => $per_page])
+                    @endif
+                </div>
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
     <div class="row gx-5">
         <div class="col-lg-12">
             <div class="card card-raised mb-2">
-                <div class="card-body p-4">
-                    {!! Form::open(['method' => 'GET','route' => ['dongles.index']]) !!}
-                    <mwc-textfield id="search_bar" name="name" value="{{ request()->get('name') }}" class="w-100" label="Search" outlined icontrailing="search" placeholder="What can we help you find?"></mwc-textfield>
-                    {!! Form::close() !!}
-                </div>
-                <hr>
                 <div class="card-body p-4">
                     <table class="table">
                         <thead>
@@ -180,14 +188,10 @@
             }
         }
     });
-
-    $('#search_bar').keypress(function (e) {
-        var key = e.which;
-        if(key == 13)  // the enter key code
-        {
-            var form =  $(this).closest("form");
-            form.submit();
-        }
-    });
+</script>
+<script type="module">
+    import { Search, ChangePerPage } from '{{ asset("theme/js/search.js") }}';
+    Search();
+    ChangePerPage();
 </script>
 @endpush

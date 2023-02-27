@@ -25,8 +25,9 @@ class DongleUserController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $dongle_users = DongleUser::filter($request->all())->paginateFilter($per_page);
-        return view('admin.general.dongles.index', compact('dongle_users'))
+        $name = $request->name ? $request->name : null;
+        $dongle_users = DongleUser::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.general.dongles.index', compact('dongle_users', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
