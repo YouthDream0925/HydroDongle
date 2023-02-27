@@ -15,8 +15,9 @@ class ProductController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $products = Product::Popular($request->per_page);
-        return view('admin.editer.products.index', compact('products'))
+        $name = $request->name ? $request->name : null;
+        $products = Product::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.editer.products.index', compact('products', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
