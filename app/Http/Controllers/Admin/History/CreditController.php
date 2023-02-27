@@ -18,7 +18,7 @@ class CreditController extends Controller
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
         $name = $request->name ? $request->name : null;
         $histories = CreditHistory::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
-        return view('admin.history.credits.index', compact('histories', 'per_page'))
+        return view('admin.editer.credits.index', compact('histories', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
@@ -40,7 +40,7 @@ class CreditController extends Controller
         } else if($sender->can('transfer-credit-to-distributor') && $sender->can('transfer-credit-to-reseller') && !$sender->can('transfer-credit-to-user')) {
             $sender->credits = config('infinite_amount');
         }
-        return view('admin.history.credits.before', compact('admins', 'users', 'dongle_users', 'sender', 'recipient_group'));
+        return view('admin.editer.credits.before', compact('admins', 'users', 'dongle_users', 'sender', 'recipient_group'));
     }
 
     public function transfer(CreditRequest $request)

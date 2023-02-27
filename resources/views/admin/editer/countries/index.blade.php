@@ -50,23 +50,12 @@
                                 <td>{{ $country->alpha_3 }}</td>
                                 <td>{{ $country->numeric }}</td>
                                 <td>
+                                    @if($country->alpha_2 == "WW")
+                                    <img src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}" width="30" height="30"/>
+                                    @else
                                     <img src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->alpha_2)}}.svg" width="30" height="30"/>
+                                    @endif
                                 </td>
-                                <!-- <td class="txt-right">
-                                    <div class="dropdown">
-                                        <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>
-                                        <ul class="dropdown-menu">
-                                            <li>
-                                                <a class="dropdown-item" href="{{ route('countries.edit',$country->id) }}"><span class="material-icons">edit</span>{{ __('global.edit') }}</a>
-                                            </li>
-                                            <li>
-                                                {!! Form::open(['method' => 'DELETE','route' => ['countries.destroy', $country->id],'style'=>'display:inline']) !!}
-                                                    {!! Form::button('<span class="material-icons">delete</span>'.__('global.delete'), ['type' =>'submit', 'class' => 'dropdown-item']) !!}
-                                                {!! Form::close() !!}
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td> -->
                             </tr>
                             @endforeach                            
                         </tbody>
