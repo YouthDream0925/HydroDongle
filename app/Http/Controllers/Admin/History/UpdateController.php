@@ -9,10 +9,13 @@ use App\Models\Admin\History\Update;
 
 class UpdateController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $updates = Update::all();
-        return view('admin.history.updates.index', compact('updates'));
+        $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
+        $name = $request->name ? $request->name : null;
+        $updates = Update::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.history.updates.index', compact('updates', 'per_page'))
+            ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
     public function create()
