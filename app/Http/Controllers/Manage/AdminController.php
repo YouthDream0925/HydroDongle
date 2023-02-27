@@ -28,14 +28,10 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $admins = Admin::filter($request->all())->paginateFilter($per_page);
-        return view('admin.general.admins.index', compact('admins'))
+        $name = $request->name ? $request->name : null;
+        $admins = Admin::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.general.admins.index', compact('admins', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
-
-        // $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        // $admins = Admin::filter($request->all())->Paginate($per_page);
-        // return view('admin.general.admins.index', compact('admins'))
-        //     ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
     
     /**

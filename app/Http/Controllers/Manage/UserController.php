@@ -29,8 +29,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $users = User::filter($request->all())->paginateFilter($per_page);
-        return view('admin.general.users.index', compact('users'))
+        $name = $request->name ? $request->name : null;
+        $users = User::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.general.users.index', compact('users', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
     
