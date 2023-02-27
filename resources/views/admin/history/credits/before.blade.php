@@ -21,81 +21,24 @@
                 <div class="card-body p-5">
                     {!! Form::open(array('route' => 'credits.transfer','method'=>'POST')) !!}
                     <div class="row">
-                        <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="col-lg-4 col-md-4 mb-4">
                             <mwc-textfield class="w-100" label="Transfer Amount" outlined id="amount" name="amount" type="number" maxlength="3" value=""></mwc-textfield>
                         </div>
-                        <div class="col-lg-6 col-md-12 mb-4">
-                            <mwc-select class="w-100" id="recipient" name="recipient" outlined label="Recipient">
+                        <div class="col-lg-4 col-md-4 mb-4">
+                            <mwc-select class="w-100" id="recipient_type" name="recipient_type" outlined label="Recipient Type">
                                 <mwc-list-item value=""></mwc-list-item>
-                                @foreach($admins as $key => $admin)
-                                    @if($admin->email == $sender->email)
-                                    <mwc-list-item value="{{ $admin->id }}" disabled>
-                                        <div>{{ $admin->email }} (Disabled)</div>
-                                    </mwc-list-item>
-                                    @else
-                                    <mwc-list-item value="{{ $admin->id }}">{{ $admin->email }} ({{ $admin->roles->pluck('name')->first() }})</mwc-list-item>
-                                    @endif
+                                @foreach($recipient_group as $key => $item)
+                                    <mwc-list-item value="{{ $key }}">{{ $item }}</mwc-list-item>
                                 @endforeach
                             </mwc-select>
                         </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToAdmin') }}</button>
-                        </div>
-                    </div>
-                    {!! Form::close() !!}
-                </div>
-            </div>
-            <div class="card card-raised mb-5">
-                <div class="card-body p-5">
-                    {!! Form::open(array('route' => 'credits.to_user','method'=>'POST')) !!}
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 mb-4">
-                            <mwc-textfield class="w-100" label="Transfer Amount" outlined id="amount" name="amount" type="number" maxlength="3" value=""></mwc-textfield>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-4">
+                        <div class="col-lg-4 col-md-4 mb-4">
                             <mwc-select class="w-100" id="recipient" name="recipient" outlined label="Recipient">
                                 <mwc-list-item value=""></mwc-list-item>
-                                @foreach($users as $key => $user)
-                                    @if($user->email == $sender->email)
-                                    <mwc-list-item value="{{ $user->id }}" disabled>
-                                        <div>{{ $user->email }} (Disabled)</div>
-                                    </mwc-list-item>
-                                    @else
-                                    <mwc-list-item value="{{ $user->id }}">{{ $user->email }} (Online User)</mwc-list-item>
-                                    @endif
-                                @endforeach
                             </mwc-select>
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToOnlineUser') }}</button>
-                        </div>
-                    </div>
-                    {!! Form::close() !!}
-                </div>
-            </div>
-            <div class="card card-raised mb-5">
-                <div class="card-body p-5">
-                    {!! Form::open(array('route' => 'credits.to_dongle_user','method'=>'POST')) !!}
-                    <div class="row">
-                        <div class="col-lg-6 col-md-12 mb-4">
-                            <mwc-textfield class="w-100" label="Transfer Amount" outlined id="amount" name="amount" type="number" maxlength="3" value=""></mwc-textfield>
-                        </div>
-                        <div class="col-lg-6 col-md-12 mb-4">
-                            <mwc-select class="w-100" id="recipient" name="recipient" outlined label="Recipient">
-                                <mwc-list-item value=""></mwc-list-item>
-                                @foreach($dongle_users as $key => $dongle_user)
-                                    @if($dongle_user->email == $sender->email)
-                                    <mwc-list-item value="{{ $dongle_user->id }}" disabled>
-                                        <div>{{ $dongle_user->email }} (Disabled)</div>
-                                    </mwc-list-item>
-                                    @else
-                                    <mwc-list-item value="{{ $dongle_user->id }}">{{ $dongle_user->email }} (Dongle User)</mwc-list-item>
-                                    @endif
-                                @endforeach
-                            </mwc-select>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                            <button type="submit" class="btn btn-outline-success">{{ __('global.transferToDongleUser') }}</button>
+                            <button type="submit" class="btn btn-outline-success">{{ __('global.transfer') }}</button>
                         </div>
                     </div>
                     {!! Form::close() !!}
@@ -107,4 +50,47 @@
 @endsection
 
 @push('script')
+<script>
+    $('#recipient_type').on('change', function() {
+        let type = $(this).val();
+        $.ajax({
+            type: 'POST',
+            url: '/admin/general/credits/users',
+            data: {
+                '_token': $('input[name="_token"]').val(),
+                'type': type
+            },
+            beforeSend() {
+                if($('#page_loader').hasClass('d-none'))
+                    $('#page_loader').removeClass('d-none');
+            },
+            success: function(res) {
+                $('#page_loader').addClass('d-none');
+                $('#recipient').html('<mwc-list-item value=""></mwc-list-item>');
+
+                if(res['success'] == true) {
+                    res['users'].map(element => {
+                        var tmp = '<mwc-list-item value="' + element.id + '">' + element.email + '</mwc-list-item>';
+                        $('#recipient').append(tmp);
+                    });
+                } else {
+                    new bs5.Toast({
+                        body: 'Error',
+                        className: 'border-0 bg-danger text-white',
+                        btnCloseWhite: true,
+                    }).show();
+                }
+            },
+            error: function() {
+                $('#page_loader').addClass('d-none');
+
+                new bs5.Toast({
+                    body: 'Error',
+                    className: 'border-0 bg-danger text-white',
+                    btnCloseWhite: true,
+                }).show();
+            }
+        })
+    });
+</script>
 @endpush

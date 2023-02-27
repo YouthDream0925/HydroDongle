@@ -79,6 +79,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::post('users/active', [UserController::class, 'active'])->name('users.active');
         Route::resource('dongles', DongleUserController::class);
         Route::post('dongles/active', [DongleUserController::class, 'active'])->name('dongles.active');
+        Route::group(['prefix' => 'credits'], function() {
+            Route::get('index', [CreditController::class, 'index'])->name('credits.index');
+            Route::get('before', [CreditController::class, 'before'])->name('credits.before');
+            Route::post('users', [CreditController::class, 'users'])->name('credits.users');
+            Route::post('transfer', [CreditController::class, 'transfer'])->name('credits.transfer');
+            Route::post('transfer/user', [CreditController::class, 'to_user'])->name('credits.to_user');
+            Route::post('transfer/dongle', [CreditController::class, 'to_dongle_user'])->name('credits.to_dongle_user');
+        });
     });
 
     Route::group(['prefix' => 'editer'], function() {
@@ -111,11 +119,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
     Route::group(['prefix' => 'history'], function() {
         Route::resource('updates', UpdateController::class);
-        Route::get('credits/index', [CreditController::class, 'index'])->name('credits.index');
-        Route::get('credits/before', [CreditController::class, 'before'])->name('credits.before');
-        Route::post('credits/transfer', [CreditController::class, 'transfer'])->name('credits.transfer');
-        Route::post('credits/transfer/user', [CreditController::class, 'to_user'])->name('credits.to_user');
-        Route::post('credits/transfer/dongle', [CreditController::class, 'to_dongle_user'])->name('credits.to_dongle_user');
     });    
 });
 

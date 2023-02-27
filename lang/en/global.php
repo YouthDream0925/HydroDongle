@@ -77,7 +77,7 @@ return [
         'news' => 'News',
         'servers' => 'Servers',
         'updateHistory' => 'Update History',
-        'creditHistory' => 'Credit Transfer History',
+        'creditHistory' => 'Credit Transfer',
         'paymentHistory' => 'Payment History',
         'samsungModels' => 'Samsung Models',
         'mainSlide' => 'Main Slide',
@@ -342,7 +342,7 @@ return [
     | History Credit page
     |--------------------------------------------------------------------------
     */
-    'creditTitle' => 'CREDIT TRANSFER HISTORIES',
+    'creditTitle' => 'CREDIT TRANSFER',
     'transferToAdmin' => 'Transfer to Admins',
     'transferToOnlineUser' => 'Transfer to Online Users',
     'transferToDongleUser' => 'Transfer to Dongle Users',
