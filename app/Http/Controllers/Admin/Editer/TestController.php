@@ -16,8 +16,9 @@ class TestController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $tests = Test::Popular($request->per_page);
-        return view('admin.editer.tests.index', compact('tests'))
+        $name = $request->name ? $request->name : null;
+        $tests = Test::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.editer.tests.index', compact('tests', 'per_page'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 

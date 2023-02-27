@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Plank\Mediable\Mediable;
 use EloquentFilter\Filterable;
-use App\ModelFilters\BrandFilter;
+use App\ModelFilters\TestFilter;
 
 class Test extends Model
 {
@@ -25,7 +25,7 @@ class Test extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(BrandFilter::class);
+        return $this->provideFilter(TestFilter::class);
     }
 
     public function scopePopular($query, $per_page)
