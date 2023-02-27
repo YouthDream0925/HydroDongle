@@ -16,8 +16,10 @@ class CreditController extends Controller
     public function index(Request $request)
     {
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
-        $histories = CreditHistory::orderBy('created_at','DESC')->paginate($per_page);
-        return view('admin.history.credits.index', compact('histories'));
+        $name = $request->name ? $request->name : null;
+        $histories = CreditHistory::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
+        return view('admin.history.credits.index', compact('histories', 'per_page'))
+            ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 
     public function before()

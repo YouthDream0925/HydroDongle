@@ -4,10 +4,12 @@ namespace App\Models\Admin\History;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use EloquentFilter\Filterable;
+use App\ModelFilters\CreditFilter;
 
 class CreditHistory extends Model
 {
-    use HasFactory;
+    use HasFactory, Filterable;
 
     protected $table = 'transfer_credit_history';
     
@@ -21,4 +23,9 @@ class CreditHistory extends Model
         'amount',
         'status'
     ];
+
+    public function modelFilter()
+    {
+        return $this->provideFilter(CreditFilter::class);
+    }
 }
