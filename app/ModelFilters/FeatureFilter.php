@@ -18,6 +18,6 @@ class FeatureFilter extends ModelFilter
 
     public function setup()
     {
-        return $this->orderBy('sorting', 'asc')->where('activate', '1');
+        return $this->orderBy('sorting', 'asc');
     }
 }
