@@ -26,7 +26,7 @@ class DeviceController extends Controller
     public function brand(Request $request, $id)
     {
         $brand = Brand::find($id);
-        $models = PhoneModel::filter($request->all())->where('brand_id', $id)->get();
+        $models = PhoneModel::filter($request->all())->where('brand_id', $id)->where('activate', '1')->get();
         return view('front.devices.brand', compact('brand', 'models'));
     }
 
