@@ -132,6 +132,7 @@ Route::get('devices', [DeviceController::class, 'index'])->name('devices');
 Route::get('devices/brand/{id}', [DeviceController::class, 'brand'])->name('devices.brand');
 Route::get('devices/brand/model/{id}', [DeviceController::class, 'model'])->name('devices.brand.model');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
+Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
 Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
 Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
