@@ -7,13 +7,21 @@
 <div class="container-xl p-5">
     <div class="row justify-content-between align-items-center mb-2">
         <div class="col flex-shrink-0 mb-5 mb-md-0 breadcrumb-custom">
-            <h1 class="display-4 mb-0 display-5 item-center">{{ __('global.countryTitle') }}</h1>
-            {!! Form::open(['method' => 'GET','route' => ['countries.index']]) !!}
-                <mwc-textfield id="search_bar" name="country" value="{{ request()->get('country') }}" class="w-100" label="Search" outlined icontrailing="search" placeholder="What can we help you find?"></mwc-textfield>
-            {!! Form::close() !!}
-            <!-- <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('countries.create') }}">
-                <span class="material-icons">add</span>{{ __('global.add') }}
-            </a> -->
+            <div class="d-flex item-center">
+                <h1 class="display-4 mb-0 display-5 mr-3">{{ __('global.countryTitle') }}</h1>
+                {!! Form::open(['method' => 'GET','route' => ['countries.index']]) !!}
+                <div class="d-flex item-center">
+                    <div class="datatable-search mr-1">
+                        <input id="search_bar" name="country" value="{{ request()->get('country') }}" class="datatable-input" style="line-height: initial;" placeholder="Search..." type="search" title="Search within table" aria-controls="datatablesSimple">
+                    </div>
+                    @if(request()->input('per_page') != null)
+                        @include('layouts.admin.pagination.select', ['pages' => $pages, 'per_page' => request()->input('per_page')])
+                    @else
+                        @include('layouts.admin.pagination.select', ['pages' => $pages, 'per_page' => $per_page])
+                    @endif
+                </div>
+                {!! Form::close() !!}
+            </div>
         </div>
     </div>
     <div class="row gx-5">
