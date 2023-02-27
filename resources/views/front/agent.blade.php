@@ -60,7 +60,11 @@
                 <div class="col-lg-3 col-md-6 resellers-container" data-resllers="{{ $country->reseller_names }}" data-country="{{ $country->country }}">
                     <div class="adress p-0">
                         <div style="width: 100px; height: 100px; margin-left: auto; margin-right: auto;">
+                            @if($country->alpha_2 == "WW")
+                            <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}"/>
+                            @else
                             <img class="img-fluid img-responsive-cover rounded-circle" src="{{ asset('vendor/blade-flags/country-') }}{{strtolower($country->alpha_2)}}.svg"/>
+                            @endif
                         </div>
                         <p class="nam">
                             <a href="#" class="collapsed" data-toggle="collapse" data-target="#accordion_four_collapse_{{$country->id}}" aria-expanded="false" aria-controls="accordion_four_collapse_{{$country->id}}">

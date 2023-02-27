@@ -75,7 +75,7 @@
                             <div class="col-xl-4">
                                 <div class="text-center">
                                     <div class="custom-brand-container">
-                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}" width="160" height="160"/>
+                                        <img id="flag_image" src="{{ asset('storage/sample/brand') }}" width="160" height="160"/>
                                     </div>
                                 </div>
                             </div>
@@ -90,33 +90,8 @@
 @endsection
 
 @push('script')
-<script>
-    $('#country_id').on('change', function() {
-        let code = $(this).find(":selected").attr('data-countryCode') + "";
-        code = code.toLowerCase();
-        if(code.length == 2) {
-            code = 'country-' + code + '.svg';
-            var url = "{{ asset('vendor/blade-flags/') }}" + "/" + code;
-            UrlExists(url);
-        } else {
-            var url = "{{ asset('vendor/blade-flags/country-united_nations.svg') }}";
-            $('#flag_image').attr('src', url);
-        }
-    });
-
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404) {
-            $('#flag_image').attr('src', url);
-        } else {
-            new bs5.Toast({
-                body: "Can't find this country.",
-                className: 'border-0 bg-danger text-white',
-                btnCloseWhite: true,
-            }).show();
-        }
-    }
+<script tyle="module">
+    import CountrySelector from '{{ asset("theme/js/custom/country.js") }}';
+    CountrySelector();
 </script>
 @endpush

@@ -80,9 +80,13 @@
                                 <div class="text-center">
                                     <div class="custom-brand-container">
                                         @if($reseller->country != null)
-                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{$reseller->country->alpha_2}}.svg" width="160" height="160"/>
+                                            @if($reseller->country->alpha_2 == "WW")
+                                            <img id="flag_image" src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}" width="160" height="160"/>
+                                            @else
+                                            <img id="flag_image" src="{{ asset('vendor/blade-flags/country-') }}{{$reseller->country->alpha_2}}.svg" width="160" height="160"/>
+                                            @endif
                                         @else
-                                        <img id="flag_image" src="{{ asset('vendor/blade-flags/country-united_nations.svg') }}" width="160" height="160"/>
+                                        <img id="flag_image" src="{{ asset('storage/sample/brand') }}" width="160" height="160"/>
                                         @endif                                        
                                     </div>
                                 </div>
@@ -106,35 +110,10 @@
 
 @push('script')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-<script>
-    $('#country_id').on('change', function() {
-        let code = $(this).find(":selected").attr('data-countryCode') + "";
-        code = code.toLowerCase();
-        if(code.length == 2) {
-            code = 'country-' + code + '.svg';
-            var url = "{{ asset('vendor/blade-flags/') }}" + "/" + code;
-            UrlExists(url);
-        } else {
-            var url = "{{ asset('vendor/blade-flags/country-united_nations.svg') }}";
-            $('#flag_image').attr('src', url);
-        }
-    });
-
-    function UrlExists(url) {
-        var http = new XMLHttpRequest();
-        http.open('HEAD', url, false);
-        http.send();
-        if (http.status != 404) {
-            $('#flag_image').attr('src', url);
-        } else {
-            new bs5.Toast({
-                body: "Can't find this country.",
-                className: 'border-0 bg-danger text-white',
-                btnCloseWhite: true,
-            }).show();
-        }
-    }
-
+<script type="module">
+    import CountrySelector from '{{ asset("theme/js/custom/country.js") }}';
+    CountrySelector();
+    
     $('.btn-delete').click(function(event){
         var form =  $('form[name="reseller_delete"]');
         event.preventDefault();
