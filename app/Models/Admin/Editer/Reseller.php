@@ -5,7 +5,7 @@ namespace App\Models\Admin\Editer;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use EloquentFilter\Filterable;
-use App\ModelFilters\BrandFilter;
+use App\ModelFilters\ResellerFilter;
 
 class Reseller extends Model
 {
@@ -35,7 +35,7 @@ class Reseller extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(BrandFilter::class);
+        return $this->provideFilter(ResellerFilter::class);
     }
 
     public function scopePopular($query, $per_page)
