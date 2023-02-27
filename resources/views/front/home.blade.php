@@ -285,7 +285,7 @@
                                     @else
                                     <img src="{{ url('storage/sample/brand') }}" alt="" class="rounded-circle">
                                     @endif
-                                    <h6><a href="team-single.html">{{ $model->name }}</a></h6>
+                                    <h6><a href="{{ url('/devices/brand/model/'.$model->id) }}">{{ $model->name }}</a></h6>
                                     <span class="team-designation">{{ $model->brand->brand_name }}</span>
                                     <ul class="team-social d-flex justify-content-center">
                                         <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
