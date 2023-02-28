@@ -67,9 +67,9 @@
                     <p class="m-bottom-30">Investiga tiones demonstr averunt lectres legere me lius quod ii qua legunt saepius larias est etiam pro cessus.</p>
                     <form action="{{ route('contact.send') }}" method="post">
                         @csrf
-                        <input type="text" class="form-control form-outline mb-4" placeholder="Name" required>
-                        <input type="email" class="form-control form-outline mb-4" placeholder="Email" required>
-                        <textarea class="form-control form-outline mb-4" placeholder="Messages" required></textarea>
+                        <input name="name" type="text" class="form-control form-outline mb-4" placeholder="Name" required>
+                        <input name="email" type="email" class="form-control form-outline mb-4" placeholder="Email" required>
+                        <textarea name="content" class="form-control form-outline mb-4" placeholder="Messages" required></textarea>
                         <button class="btn btn-primary">Submit Now</button>
                     </form>
                     </div><!-- end: .form-wrapper -->

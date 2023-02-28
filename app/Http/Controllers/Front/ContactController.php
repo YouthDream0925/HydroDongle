@@ -23,15 +23,22 @@ class ContactController extends Controller
         return view('front.contact.index', compact('super_admin'));
     }
 
-    public function send()
+    public function send(Request $request)
     {
-        $testMailData = [
-            'title' => 'Test Email From AllPHPTricks.com',
-            'body' => 'This is the body of test email.'
+        $name = $request->name;
+        $email = $request->email;
+        $content = $request->content;
+        
+        $mailData = [
+            'title' => 'Mail from HydraDongle.com',
+            'url' => 'https://hydradongle.com',
+            'name' => $name,
+            'email' => $email,
+            'content' => $content
         ];
-
-        Mail::to('youthdream0925@gmail.com')->send(new SendMail($testMailData));
-
+         
+        Mail::to('youthdream0925@gmail.com')->send(new SendMail($mailData));
+         
         return redirect()->route('contact')->with('success', "Success");
     }
 }

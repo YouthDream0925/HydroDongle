@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ __('global.appTitle') }}</title>
-</head>
-<body>
-    <h1>{{ $title }}</h1>
-    <p>{{ $body }}</p>
-   
-    <p>Thank you</p>
-</body>
-</html>
+@component('mail::message')
+# Contact Us
+
+## {{ $mailData['name'] }} - {{ $mailData['email'] }}
+
+<p>{{ $mailData['content'] }}</p>
+
+@component('mail::button', ['url' => $mailData['url']])
+Go to HYDRA DONGLE
+@endcomponent
+
+Thanks,<br>
+{{ config('app.name') }}
+@endcomponent
