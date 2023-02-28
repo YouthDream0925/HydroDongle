@@ -1,6 +1,7 @@
 @extends('layouts.front.index')
 
 @push('css')
+<link rel="stylesheet" href="{{ asset('theme_front/custom/toast.css') }}">
 @endpush
 
 @section('content')
@@ -65,12 +66,17 @@
                         </div>
                     </div>
                     <p class="m-bottom-30">Investiga tiones demonstr averunt lectres legere me lius quod ii qua legunt saepius larias est etiam pro cessus.</p>
-                    <form action="{{ route('contact.send') }}" method="post">
+                    <form name="send_problem" action="{{ route('contact.send') }}" method="post">
                         @csrf
-                        <input name="name" type="text" class="form-control form-outline mb-4" placeholder="Name" required>
-                        <input name="email" type="email" class="form-control form-outline mb-4" placeholder="Email" required>
+                        @if(Auth::check())
+                        <input name="name" value="{{ Auth::user()->first_name }}" readonly type="text" class="form-control form-outline mb-4" placeholder="Name" required>
+                        <input name="email" value="{{ Auth::user()->email }}" readonly type="email" class="form-control form-outline mb-4" placeholder="Email" required>
+                        @else
+                        <input name="name" value="" type="text" class="form-control form-outline mb-4" placeholder="Name" required>
+                        <input name="email" value="" type="email" class="form-control form-outline mb-4" placeholder="Email" required>
+                        @endif
                         <textarea name="content" class="form-control form-outline mb-4" placeholder="Messages" required></textarea>
-                        <button class="btn btn-primary">Submit Now</button>
+                        <button id="btn-submit" class="btn btn-primary">Submit Now</button>
                     </form>
                     </div><!-- end: .form-wrapper -->
                 </div><!-- ends: .col-lg-6 -->
@@ -92,4 +98,27 @@
 @push('script')
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDduF2tLXicDEPDMAtC6-NLOekX0A5vlnY"></script>
 <script src="{{ asset('theme_front/theme_assets/js/map.js') }}"></script>
+<script type="module">
+    import toast from '{{ asset("theme_front/custom/js/toast.js") }}';
+    @if ($message = Session::get('success'))
+        toast('success', '{{$message}}');
+    @endif
+
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+            var message = "<?php echo $error; ?>";
+            toast('error', message);
+        @endforeach
+    @endif
+
+    $('#btn-submit').on('click', function() {
+        var form =  $('form[name="send_problem"]');
+        event.preventDefault();
+        @if(Auth::check())
+            form.submit();
+        @else
+            toast('error', 'Please log in first.');
+        @endif
+    });
+</script>
 @endpush

@@ -16,7 +16,6 @@ class Problem extends Model
     public $incrementing = true;
 
     protected $fillable = [
-        'category_id',
         'poster',
         'description',
         'activate',        
