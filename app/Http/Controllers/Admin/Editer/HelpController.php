@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\HelpRequest;
 use App\Models\Admin\Editer\Help;
 use App\Models\Admin\Editer\Brand;
 use App\Models\Admin\Editer\Cpu;
+use App\Models\Admin\Editer\Faq;
 
 class HelpController extends Controller
 {
@@ -63,5 +64,20 @@ class HelpController extends Controller
         $help = Help::find($id);
         $help->delete();
         return redirect()->route('helps.index')->with('success', 'Help deleted successfully.');
+    }
+
+    public function help(Request $request)
+    {
+        $helps_dropdown = Help::filter($request->all())->where('activate', '1')->where('view_type', '0')->get();
+        $helps_page = Help::filter($request->all())->where('activate', '1')->where('view_type', '1')->get();
+        $faqs = Faq::filter($request->all())->get();
+        return view('front.help.index', compact('helps_dropdown', 'helps_page', 'faqs'));
+    }
+
+    public function help_detail($id)
+    {
+        $selected_help = $id;
+        $helps_page = Help::where('activate', '1')->where('view_type', '1')->get();
+        return view('front.help.detail', compact('helps_page', 'selected_help'));
     }
 }

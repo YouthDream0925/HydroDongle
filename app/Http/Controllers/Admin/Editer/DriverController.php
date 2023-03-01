@@ -59,7 +59,10 @@ class DriverController extends Controller
     {
         $cpus = Cpu::orderBy('updated_at', 'desc')->get();
         $cpu = $cpus->first();
-        $drivers = $cpu->drivers;
+        if($cpu != null)
+            $drivers = $cpu->drivers;
+        else
+            $drivers = [];
         return view('front.download.drivers', compact('drivers', 'cpus'));
     }
 
