@@ -62,7 +62,8 @@
                                     <div class="cart__items shadow-lg-2" style="min-width: 140px;">
                                         <div class="items">
                                             <div class="item_info">
-                                                <a class="mb-0" href="{{ route('profile', Auth::user()->id) }}">{{ __('global.profile') }}</a>
+                                                <a href="{{ route('profile', Auth::user()->id) }}">{{ __('global.profile') }}</a>
+                                                <a class="mb-0" href="{{ route('shop.history', Auth::user()->id) }}">{{ __('global.history') }}</a>
                                             </div>
                                         </div>
                                         <!-- end .items-->

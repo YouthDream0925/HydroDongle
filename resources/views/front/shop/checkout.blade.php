@@ -1,19 +1,34 @@
 @extends('layouts.front.index')
 
 @push('css')
+<link rel="stylesheet" href="{{ asset('theme_front/custom/toast.css') }}">
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb1">
-    <div class="container">
+<div id="preloader" class="loading" style="display: none;">
+    <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" height="60" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+        <path fill="#000"
+            d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50">
+            <animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s"
+                from="0 50 50" to="360 50 50" repeatCount="indefinite" />
+        </path>
+    </svg>
+</div>
+
+<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
+    <div class="bg_image_holder">
+        <img src="{{ asset('theme_front/img/shop.png') }}" alt="">
+    </div>
+    <div class="container content_above">
         <div class="row">
             <div class="col-md-12">
-                <div class="breadcrumb_wrapper d-flex align-items-center justify-content-between flex-wrap">
-                    <h4 class="page_title">Checkout</h4>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('shop') }}">Shop</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+                <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
+                    <!-- <h4 class="page_title">{{ __('global.devices') }}</h4> -->
+                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
+                        <ol class="breadcrumb m-bottom-30">
+                            <li class="breadcrumb-item"><a class="custom-a-breadcrumb" href="{{ route('shop') }}">{{ __('global.shop') }}</a></li>
+                            <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple;">{{ __('global.checkout') }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -21,7 +36,7 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<section class="checkout-wrapper p-top-90 p-bottom-110">
+<section id="main_container" class="checkout-wrapper p-top-90 p-bottom-110">
     <div class="tab tab--6">
         <div class="container">
             <div class="row">
@@ -32,13 +47,10 @@
                                 <a class="nav-link active" id="tab6_nav1" data-toggle="tab" href="#tab6_content1" role="tab" aria-controls="tab6_content1" aria-selected="true">1. Billing Details</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tab6_nav2" data-toggle="tab" href="#tab6_content2" role="tab" aria-controls="tab6_content2" aria-selected="false">2. Shipping</a>
+                                <a class="nav-link" id="tab6_nav3" data-toggle="tab" href="#tab6_content3" role="tab" aria-controls="tab6_content3" aria-selected="false">2. Payment</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="tab6_nav3" data-toggle="tab" href="#tab6_content3" role="tab" aria-controls="tab6_content3" aria-selected="false">3. Payment</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="tab6_nav4" data-toggle="tab" href="#tab6_content4" role="tab" aria-controls="tab6_content4" aria-selected="false">4. Order Review</a>
+                                <a class="nav-link" id="tab6_nav4" data-toggle="tab" href="#tab6_content4" role="tab" aria-controls="tab6_content4" aria-selected="false">3. Order Review</a>
                             </li>
                         </ul>
                     </div>
@@ -77,21 +89,14 @@
                                     </div><!-- ends: .col-md-6 -->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="tuihagol">Company</label>
-                                            <input type="text" class="form-control" id="tuihagol">
-                                        </div>
-                                    </div><!-- ends: .col-md-6 -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="countr">Country</label>
+                                            <label for="countr">{{ __('global.country') }}</label>
                                             <div class="form-group">
                                                 <div class="select-basic">
-                                                    <select class="form-control" id="countr">
-                                                        <option>Select Country</option>
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
+                                                    <select value="" class="form-control" id="country_selector">
+                                                        <option value="">Select Country</option>
+                                                        @foreach($countries as $country)
+                                                        <option value="{{ $country->id }}" data-countryName="{{ $country->country }}">{{ $country->country }}</option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
@@ -99,18 +104,16 @@
                                     </div><!-- ends: .col-md-6 -->
                                     <div class="col-md-6">
                                         <div class="form-group">
+                                            <label id="identify_number" for="tuihagol">Passport Number <span id="validator" class="text-uppercase text-danger"></span></label>
+                                            <input id="tc" type="tel" class="input-lg form-control" autocomplete="off" placeholder="">
+                                        </div>
+                                    </div><!-- ends: .col-md-6 -->
+                                    <div class="col-md-6">
+                                        <div class="form-group">
                                             <div class="form-group">
                                                 <label for="city">City</label>
                                                 <div class="form-group">
-                                                    <div class="select-basic">
-                                                        <select class="form-control" id="city">
-                                                            <option>Select City</option>
-                                                            <option>Option 1</option>
-                                                            <option>Option 2</option>
-                                                            <option>Option 3</option>
-                                                            <option>Option 4</option>
-                                                        </select>
-                                                    </div>
+                                                    <input id="city" type="text" class="input-lg form-control" autocomplete="off" placeholder="">
                                                 </div>
                                             </div>
                                         </div>
@@ -123,162 +126,53 @@
                                     </div><!-- ends: .col-md-6 -->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="add1">Address 1</label>
+                                            <label for="add1">Address</label>
                                             <input type="text" class="form-control" id="add1">
                                         </div>
                                     </div><!-- ends: .col-md-6 -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="add2">Address 2</label>
-                                            <input type="text" class="form-control" id="add2">
-                                        </div>
-                                    </div><!-- ends: .col-md-6 -->
-                                </div>
-                                <div class="shipping-method m-top-55">
-                                    <h4>Shipping Address</h4>
-                                    <div class="custom-control custom-checkbox checkbox-secondary">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck111" checked="">
-                                        <label class="custom-control-label" for="customCheck111">Same as billing address</label>
-                                    </div>
                                 </div>
                                 <div class="action-btns d-flex m-top-60">
-                                    <a href="" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back to cart</a>
-                                    <a href="" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
+                                    <a href="{{ route('shop') }}" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back to shop</a>
+                                    <a href="javascript::void(0)" id="billing_continue" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
                                 </div>
                             </form>
-                        </div><!-- end ./tab-pane -->
-                        <div class="tab-pane fade" id="tab6_content2" role="tabpanel" aria-labelledby="tab6_nav2">
-                            <h4>Choose Shipping Method</h4>
-                            <div class="table-responsive">
-                                <table class="table table-two">
-                                    <thead class="table-gray">
-                                        <tr>
-                                            <th scope="col">Shipping Method</th>
-                                            <th scope="col">Delivery Time</th>
-                                            <th scope="col">Handling Fee</th>
-                                        </tr>
-                                    </thead><!-- ends: thead -->
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="select-one" name="customRadioInline1" class="custom-control-input">
-                                                    <label class="custom-control-label" for="select-one"><span>Fedex Courier</span></label>
-                                                </div><!-- End: .custom-control -->
-                                            </th>
-                                            <td>2 - 4 days</td>
-                                            <td>$20</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="select-two" name="customRadioInline1" class="custom-control-input">
-                                                    <label class="custom-control-label" for="select-two"><span>International Shipping</span></label>
-                                                </div><!-- End: .custom-control -->
-                                            </th>
-                                            <td>1 - 3 days</td>
-                                            <td>$25</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="select-three" name="customRadioInline1" class="custom-control-input">
-                                                    <label class="custom-control-label" for="select-three"><span>Local Pickup from Store</span></label>
-                                                </div><!-- End: .custom-control -->
-                                            </th>
-                                            <td>1 -2 days</td>
-                                            <td>Free</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">
-                                                <div class="custom-control custom-radio custom-control-inline">
-                                                    <input type="radio" id="select-four" name="customRadioInline1" class="custom-control-input">
-                                                    <label class="custom-control-label" for="select-four"><span>Local Shipping</span></label>
-                                                </div><!-- End: .custom-control -->
-                                            </th>
-                                            <td>Up to One Week</td>
-                                            <td>$10</td>
-                                        </tr>
-                                    </tbody><!-- ends: tbody -->
-                                </table>
-                            </div><!-- ends: .table-responsive -->
-                            <div class="action-btns d-flex m-top-60">
-                                <a href="" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
-                                <a href="" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
-                            </div>
                         </div><!-- end ./tab-pane -->
                         <div class="tab-pane fade" id="tab6_content3" role="tabpanel" aria-labelledby="tab6_nav3">
                             <h4>Choose Payment Method</h4>
                             <div class="method-1">
                                 <div class="header">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input">
+                                        <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" checked>
                                         <label class="custom-control-label" for="customRadio3">Pay With Credit Card</label>
                                     </div>
                                 </div>
                                 <div class="body">
-                                    <p class="d-flex align-items-center flex-wrap">We accept following credit cards: <img src="img/cards.png" alt=""></p>
+                                    <div class="d-flex item-center item-space">
+                                        <h5 class="mb-0">We accept following credit cards: </h5>
+                                        <div style="width: 300px; height: 150px;"><img class="img-fluid img-responsive" src="{{ asset('theme_front/cards/visa.svg') }}" alt=""></div>
+                                        <div style="width: 300px; height: 150px;"><img class="img-fluid img-responsive" src="{{ asset('theme_front/cards/mastercard.svg') }}" alt=""></div>
+                                    </div>
                                     <form action="#">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <input type="text" placeholder="Card Number" class="form-control">
+                                                <input id="card_number" type="text" placeholder="Card Number" class="form-control">
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" placeholder="Full Name" class="form-control">
+                                                <input id="full_name" type="text" placeholder="Full Name" class="form-control">
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" placeholder="MM/YY" class="form-control">
+                                                <input id="expire_date" type="month" class="form-control">
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" placeholder="CVC" class="form-control">
-                                            </div>
-                                            <div class="col-md-12">
-                                                <a href="" class="btn btn-outline-secondary">Submit Now</a>
+                                                <input id="cvc" type="text" placeholder="CVC" class="form-control">
                                             </div>
                                         </div>
                                     </form>
                                 </div>
                             </div><!-- ends: .method-1 -->
-                            <div class="method-1">
-                                <div class="header">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio4" name="customRadio1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio4">Pay With Paypal</label>
-                                    </div>
-                                </div>
-                                <div class="body">
-                                    <p class="d-flex align-items-center">All transactions are secure & encrypted <img src="img/paypal.png" alt=""></p>
-                                    <form action="#">
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                <input type="email" placeholder="Email" class="form-control">
-                                            </div>
-                                            <div class="col-lg-12">
-                                                <a href="" class="btn btn-outline-secondary">Submit Now</a>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div><!-- ends: .method-1 -->
-                            <div class="method-2">
-                                <div class="header">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio5" name="customRadio1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio5">Direct Bank Transfer</label>
-                                    </div>
-                                </div>
-                            </div><!-- ends: .method-2 -->
-                            <div class="method-2">
-                                <div class="header">
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio6" name="customRadio1" class="custom-control-input">
-                                        <label class="custom-control-label" for="customRadio6">Cash On Delivery</label>
-                                    </div>
-                                </div>
-                            </div><!-- ends: .method-2 -->
                             <div class="action-btns d-flex m-top-60">
-                                <a href="" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
-                                <a href="" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
+                                <a href="javascript::void(0)" id="payment_back" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
+                                <a href="javascript::void(0)" id="payment_continue" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
                             </div>
                         </div><!-- end ./tab-pane -->
                         <div class="tab-pane fade" id="tab6_content4" role="tabpanel" aria-labelledby="tab6_nav4">
@@ -289,66 +183,40 @@
                                         <tr>
                                             <th scope="col"><span>Product Name</span></th>
                                             <th scope="col"><span>Quantity</span></th>
-                                            <th scope="col" colspan="3"><span>Subtotal</span></th>
+                                            <th scope="col" colspan="3"><span>Price</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr class="cart-single">
                                             <th scope="row">
                                                 <div class="name">
-                                                    <img src="img/thumb1.jpg" alt="">
-                                                    <a href="">Business Marketing Presentation</a>
+                                                    @if($product->hasMedia('product_image'))
+                                                    <div style="width: 165px; height: 120px;">
+                                                        <img class="img-fluid img-responsive" src="{{ $product->getMedia('product_image')->first()->getUrl() }}" alt="">
+                                                    </div>
+                                                    @else
+                                                    <img src="{{ asset('theme_front/img/thumb1.jpg') }}" alt="">
+                                                    @endif
+                                                    <a href="{{ route('shop') }}">{{ $product->name }}</a>
                                                 </div>
                                             </th>
                                             <td>
-                                                <div class="quantity text-right">
+                                                <div class="quantity">
                                                     <div class="total-item">
-                                                        <span class="minus">-</span>
-                                                        <input type="number" value="1" class="numberInput">
-                                                        <span class="plus">+</span>
+                                                        <input id="snplain" type="text" value="" style="width: 15rem; text-align: left; padding-right: 0.5rem; padding-left: 0.5rem;" placeholder="SN">
                                                     </div>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="subtotal">
-                                                    <span>$250.00</span>
+                                                    <span>${{ $product->price }}</span>
                                                 </div>
                                             </td>
                                             <td colspan="2">
-                                                <div><a href="" class="btn btn-sm btn--rounded btn-outline-secondary">Edit</a></div>
+                                                <div><a href="" class="btn btn-sm btn--rounded btn-outline-secondary">{{ __('global.edit') }}</a></div>
                                             </td>
                                         </tr><!-- ends: .cart-single -->
-                                        <tr class="cart-single">
-                                            <th scope="row">
-                                                <div class="name">
-                                                    <img src="img/thumb2.jpg" alt="">
-                                                    <a href="">Social Media Strategies Marketing</a>
-                                                </div>
-                                            </th>
-                                            <td>
-                                                <div class="quantity text-right">
-                                                    <div class="total-item">
-                                                        <span class="minus">-</span>
-                                                        <input type="number" value="1" class="numberInput">
-                                                        <span class="plus">+</span>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div class="subtotal">
-                                                    <span>$250.00</span>
-                                                </div>
-                                            </td>
-                                            <td colspan="2">
-                                                <div><a href="" class="btn btn-sm btn--rounded btn-outline-secondary">Edit</a></div>
-                                            </td>
-                                        </tr><!-- ends: cart-single -->
-                                        <tr class="cart-bottom">
-                                            <td colspan="1">
-                                                <div class="total-amount">
-                                                    Shipping: <span>$50.00</span>
-                                                </div>
-                                            </td>
+                                        <!-- <tr class="cart-bottom">
                                             <td colspan="3">
                                                 <div class="total-amount">
                                                     Tax: <span>$7.00</span>
@@ -359,28 +227,28 @@
                                                     Total: <span>$557.00</span>
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table><!-- ends: .table -->
                             </div><!-- ends: .table-responsive -->
                             <div class="m-top-40">
                                 <div class="row">
+                                    <div class="col-lg-3"></div>
                                     <div class="col-lg-6">
                                         <div class="cardify order-info">
                                             <h6>Quick Info</h6>
                                             <ul>
-                                                <li><span>Client:</span> <span>Steve Rogers</span></li>
-                                                <li><span>Shipping Address:</span> <span>202 Kutubkhali, Donia, Jatrabari Dhaka 1236, Bangladesh</span></li>
-                                                <li><span>Shipping Method:</span> <span>International Shipping · $20.00</span></li>
-                                                <li><span>Payment Method</span> <span>Credit card: **** **** **** 5678</span></li>
+                                                <li><span>Client:</span> <span id="buyer_name"></span></li>
+                                                <li><span>Billing Address:</span> <span id="buyer_address"></span></li>
+                                                <li><span>Payment Method</span> <span id="buyer_cardNumber"></span></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div><!-- ends: .cart-table -->
                             <div class="action-btns d-flex m-top-60">
-                                <a href="" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
-                                <a href="" class="btn btn-primary ml-auto">Confirm Order</a>
+                                <a href="" onclick="return false;" id="confirm_back" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
+                                <a href="" onclick="return false;" id="confirm_order" class="btn btn-primary ml-auto">Confirm Order</a>
                             </div>
                         </div><!-- end ./tab-pane -->
                     </div>
@@ -391,7 +259,25 @@
     </div>
     <!--end ./tab -->
 </section><!-- ends: .checkout-wrapper -->
+@if(Auth::check())
+<input id="buyerId" type="hidden" value="{{ Auth::user()->id }}"/>
+@else
+<input id="buyerId" type="hidden" value=""/>
+@endif
+
+<input id="price" type="hidden" value="{{ $product->price }}"/>
+<input id="product_id" type="hidden" value="{{ $product->id }}"/>
+<input id="product_name" type="hidden" value="{{ $product->name }}"/>
+@csrf
 @endsection
 
 @push('script')
+<script type="module">
+    import { CountrySelector, InputTcNum, CreatePayment } from '{{ asset("theme_front/custom/js/checkout.js") }}';
+    jQuery(document).ready(function() {
+        CountrySelector();
+        InputTcNum();
+        CreatePayment();
+    });
+</script>
 @endpush

@@ -1,6 +1,7 @@
 @extends('layouts.front.index')
 
 @push('css')
+<link rel="stylesheet" href="{{ asset('theme_front/custom/toast.css') }}">
 @endpush
 
 @section('content')
@@ -52,7 +53,7 @@
                         @endif
                     </div>
                     <div class="pricing__price rounded mb-4">
-                        <p><sup>$</sup>{{ $product->price }}<small>/month</small></p>
+                        <p><sup>$</sup>{{ $product->price }}</p>
                     </div>
                     <div class="pricing__features">
                         <ul>
@@ -61,7 +62,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <a href="{{ route('shop.checkout', $product->id) }}" class="btn btn-outline-secondary">purchase</a>
+                    <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary">purchase</a>
                 </div><!-- end: .pricing -->
             </div><!-- ends .col-lg-4 -->
             @endforeach
@@ -71,4 +72,27 @@
 @endsection
 
 @push('script')
+<script>
+    function CheckLogin() {
+        @if(Auth::check())
+            return true;
+        @else
+            toast('error', 'please log in first.');
+            return false;
+        @endif
+    }
+
+    function toast(status, message) {
+        css = status;
+        let x = $('#snackbar');
+        x.addClass(status + ' show');
+        x.html(message);
+        setTimeout(remove_toast, 3000);
+    }
+
+    function remove_toast() {
+        let x = $('#snackbar');
+        x.removeClass(css + ' show'); 
+    }
+</script>
 @endpush

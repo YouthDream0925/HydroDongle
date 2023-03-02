@@ -362,6 +362,7 @@ return [
     'home' => 'Home',
     'agent' => 'Agent',
     'shop' => 'Shop',
+    'checkout' => 'Checkout',
     'ourAgents' => 'Our Agents',
     'info' => 'Information',
     'download' => 'Download',
@@ -389,4 +390,7 @@ return [
     'companyName' => 'Company',
     'more' => 'More',
     'agents' => 'Agents',
+    'purchase' => 'Purchase',
+    'history' => 'History',
+    'payHistory' => 'Payment History',
 ];

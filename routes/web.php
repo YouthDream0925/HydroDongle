@@ -129,7 +129,6 @@ Route::get('download/drivers', [DriverController::class, 'download'])->name('dow
 Route::post('download/drivers', [DriverController::class, 'drivers']);
 Route::get('agents/{type}', [ResellerController::class, 'agents'])->name('agents');
 Route::get('shop', [ShopController::class, 'index'])->name('shop');
-Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');
 Route::get('help', [HelpController::class, 'help'])->name('help');
 Route::get('help/detail/{id}', [HelpController::class, 'help_detail'])->name('help.detail');
 Route::get('devices', [DeviceController::class, 'index'])->name('devices');
@@ -141,6 +140,10 @@ Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile')
 Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
 Route::middleware(['auth'])->group(function() {
+    Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');
+    Route::post('payment', [ShopController::class, 'create_payment'])->name('payment');
+    Route::post('callback', [ShopController::class, 'callback'])->name('callback');
+    Route::get('shop/history/{id}', [ShopController::class, 'history'])->name('shop.history');
 });
 
 Route::get('storage/{filename}', function ($filename)
