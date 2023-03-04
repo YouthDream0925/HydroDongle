@@ -25,6 +25,7 @@ class Product extends Model
         'tax',
         'discount',
         'activate',
+        'type',
         'features'
     ];
 

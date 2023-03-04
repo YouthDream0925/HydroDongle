@@ -41,8 +41,9 @@
                                         <mwc-textfield class="w-100 mb-1" label="Discount" outlined id="discount" name="discount" value=""></mwc-textfield>
                                         <span>* Please input to 2 decimal places.</span>
                                     </div>
-                                    <div class="col-xl-6 mb-4 d-flex align-items-center">
+                                    <div class="col-xl-6 mb-4 d-flex align-items-center item-space">
                                         <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
+                                        <mwc-formfield label="ProPack"><mwc-checkbox name="type" value="true"></mwc-checkbox></mwc-formfield>
                                     </div>
                                     <div class="col-xl-12">
                                         <label class="form-label">Features Tag</label>

@@ -393,4 +393,6 @@ return [
     'purchase' => 'Purchase',
     'history' => 'History',
     'payHistory' => 'Payment History',
+    'proPack' => 'ProPack',
+    'license' => 'License'
 ];

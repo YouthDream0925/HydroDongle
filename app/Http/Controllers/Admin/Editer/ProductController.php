@@ -33,6 +33,11 @@ class ProductController extends Controller
             $input['activate'] = '1';
         else
             $input['activate'] = '0';
+
+        if($request->type == "true")
+            $input['type'] = '1';
+        else
+            $input['type'] = '0';
         $product = Product::create($input);
 
         try {
@@ -64,6 +69,12 @@ class ProductController extends Controller
             $input['activate'] = '1';
         else
             $input['activate'] = '0';
+
+        if($request->type == "true")
+            $input['type'] = '1';
+        else
+            $input['type'] = '0';
+            
         if($request->file('product_image') != null) {
             if($product->hasMedia('product_image')) {
                 $media = $product->getMedia('product_image')->first();

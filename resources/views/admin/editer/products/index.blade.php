@@ -42,6 +42,7 @@
                                 <th scope="col">{{ __('global.tax') }}</th>
                                 <th scope="col">{{ __('global.discount') }}</th>
                                 <th scope="col">{{ __('global.show') }}</th>
+                                <th scope="col">{{ __('global.type') }}</th>
                                 <th scope="col" class="txt-right">{{ __('global.action') }}</th>
                             </tr>
                         </thead>
@@ -59,6 +60,13 @@
                                         <span class="badge bg-success">{{ __('global.yes') }}</span>
                                     @else
                                         <span class="badge bg-danger">{{ __('global.no') }}</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($product->type == '1')
+                                        {{ __('global.proPack') }}
+                                    @else
+                                        {{ __('global.license') }}
                                     @endif
                                 </td>
                                 <td class="txt-right">
