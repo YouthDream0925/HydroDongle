@@ -104,12 +104,6 @@
                                     </div><!-- ends: .col-md-6 -->
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label id="identify_number" for="tuihagol">Passport Number <span id="validator" class="text-uppercase text-danger"></span></label>
-                                            <input id="tc" type="tel" class="input-lg form-control" autocomplete="off" placeholder="">
-                                        </div>
-                                    </div><!-- ends: .col-md-6 -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
                                             <div class="form-group">
                                                 <label for="city">City</label>
                                                 <div class="form-group">
@@ -273,10 +267,9 @@
 
 @push('script')
 <script type="module">
-    import { CountrySelector, InputTcNum, CreatePayment } from '{{ asset("theme_front/custom/js/checkout.js") }}';
+    import { CountrySelector, CreatePayment } from '{{ asset("theme_front/custom/js/checkout.js") }}';
     jQuery(document).ready(function() {
         CountrySelector();
-        InputTcNum();
         CreatePayment();
     });
 </script>

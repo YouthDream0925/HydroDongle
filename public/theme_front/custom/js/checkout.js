@@ -161,7 +161,7 @@ const CreatePayment = () => {
                     'surname': surname,
                     'phoneNumber': phoneNumber,
                     'email': email,
-                    'identityNumber': identityNumber,
+                    'identityNumber': '11111111111',
                     'address': address,
                     'city': city,
                     'country': country,
