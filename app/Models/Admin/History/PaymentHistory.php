@@ -50,7 +50,7 @@ class PaymentHistory extends Model
     public function getMonthAttribute()
     {
         if($this->updated_at)
-            return Carbon::parse($this->updated_at)->format('M d');
+            return Carbon::parse($this->updated_at)->format('M d H:m:s');
         else
             return "NONE";
     }
