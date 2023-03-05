@@ -179,7 +179,7 @@
                                             @if($product->type == '1')
                                             <th scope="col"><span>{{ __('global.sn') }}</span></th>
                                             @else
-                                            <th scope="col"><span>{{ __('global.type') }}</span></th>
+                                            <th scope="col"><span>{{ __('global.license') }}</span></th>
                                             @endif
                                             <th scope="col" colspan="3"><span>{{ __('global.price') }}</span></th>
                                         </tr>
@@ -210,7 +210,7 @@
                                             <td>
                                                 <div class="quantity">
                                                     <div class="total-item">
-                                                        {{ __('global.license') }}
+                                                        {{ $product->period }} {{ __('global.months') }}
                                                     </div>
                                                 </div>
                                             </td>

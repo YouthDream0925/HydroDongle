@@ -62,7 +62,23 @@
                             @endforeach
                         </ul>
                     </div>
-                    <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary">purchase</a>
+                    @if(Auth::check())
+                        @if($product->type == '0')
+                            @if(Auth::user()->isExpired())
+                            <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary">{{ __('global.purchase') }}</a>
+                            @else
+                            <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary @if(Auth::user()->isactivated == '1') disabled-link @endif">{{ __('global.purchase') }}</a>
+                            @endif
+                        @elseif($product->type == '1')
+                        <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary @if(Auth::user()->ProPack == '1') disabled-link @endif">{{ __('global.purchase') }}</a>
+                        @else
+                        <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary">{{ __('global.purchase') }}</a>
+                        @endif
+                    @else
+                        <a href="{{ route('shop.checkout', $product->id) }}" onclick="return CheckLogin();" class="btn btn-outline-secondary">{{ __('global.purchase') }}</a>
+                    @endif
+
+                    
                 </div><!-- end: .pricing -->
             </div><!-- ends .col-lg-4 -->
             @endforeach

@@ -100,14 +100,31 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <!-- start blockquote -->
-                                    <blockquote class="blockquote blockquote3">
+                                    <blockquote class="blockquote blockquote3" style="padding: 1rem 2rem;">
                                         <div class="quote-author" style="margin-top: 0 !important;">
                                             <p><span>{{ $user->getDateTimeActivatedAtAttribute() }}</span> ~ <span>{{ $user->getDateTimeExpiredAtAttribute() }}</span></p>
                                             @if($user->isExpired())
-                                            <span class="badge bg-danger">EXPIRED</span>
+                                            <span class="badge bg-danger">{{ __('global.license') }} - {{ __('global.expired') }}</span>
                                             @else
-                                            <span class="badge bg-success">ACTIVATED</span>
+                                            <span class="badge bg-success">{{ __('global.license') }} - {{ __('global.activated') }}</span>
                                             @endif
+                                        </div>
+                                    </blockquote><!-- end: blockquote -->
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- ends: .quotes-wrapper -->
+                    @endif
+                    @if($user->ProPack == '1')
+                    <div class="quotes-wrapper blockquote--one">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!-- start blockquote -->
+                                    <blockquote class="blockquote blockquote3" style="padding: 1rem 2rem;">
+                                        <div class="quote-author" style="margin-top: 0 !important;">
+                                            <p><span>SN: {{ $user->snplain }}</span></p>
+                                            <span class="badge bg-success">{{ __('global.proPack') }} - {{ __('global.activated') }}</span>
                                         </div>
                                     </blockquote><!-- end: blockquote -->
                                 </div>

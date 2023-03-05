@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Admin\Editer\Product;
 use App\Models\Admin\Editer\Country;
 use App\Models\Admin\History\PaymentHistory;
+use App\Models\Admin\History\LicenseHistory;
+use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
@@ -83,6 +85,8 @@ class ShopController extends Controller
 
             if($data->snplain != null) {
                 $description = 'You bought a Hydra Pro Package Activation.';
+                $check_buyer->snplain = $data->snplain;
+                $check_buyer->update();
             } else {
                 $description = 'You bought a Hydra License.';
             }
@@ -127,15 +131,32 @@ class ShopController extends Controller
 
     public function callback(Request $request)
     {
-        $user = Auth::user();
         $status = $request->status;
         $errors = Config::errors();
         $conversationId = $request->conversationId;
         $payment_history = PaymentHistory::where('code', $conversationId)->first();
+        $user = User::find($payment_history->customer_id);
         if($status == 'success') {            
             $payment_history->status = '1';
             $payment_history->msg = 'success';
             $payment_history->save();
+
+            $product = Product::find($payment_history->product_id);
+            if($product->type == '0') {
+                $user->isactivated = '1';
+                $user->datetimeactivated = Carbon::now();
+                $user->datetimeexpired = Carbon::now()->addMonth($product->period);
+                $user->update();
+            } else if($product->type == '1') {
+                $user->ProPack = '1';
+                $user->update();
+            }
+
+            LicenseHistory::create([
+                'user_id' => $user->id,
+                'licence_id' => $payment_history->id,
+                'history_date' => Carbon::now()
+            ]);
         } else if($status == 'failure') {
             $payment_history->status = '0';
             $payment_history->msg = $errors[$request->mdStatus];
@@ -152,7 +173,7 @@ class ShopController extends Controller
     public function history($id)
     {
         $user = User::find($id);
-        $histories = PaymentHistory::where('customer_id', $id)->get();
+        $histories = PaymentHistory::where('customer_id', $id)->orderBy('updated_at', 'desc')->get();
         return view('front.shop.history', compact('histories'));
     }
 

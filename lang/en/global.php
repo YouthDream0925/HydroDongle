@@ -398,5 +398,7 @@ return [
     'productName' => 'Product Name',
     'sn' => 'Serial Number',
     'price' => 'Price',
-    'type' => 'Type'
+    'type' => 'Type',
+    'activated' => 'Activated',
+    'months' => 'Months',
 ];

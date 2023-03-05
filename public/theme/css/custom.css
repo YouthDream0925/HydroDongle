@@ -272,6 +272,12 @@
 .custom-a-breadcrumb {
     color: rebeccapurple !important;
 }
+
 .custom-a-breadcrumb:hover {
     color: red !important;
+}
+
+.disabled-link {
+    pointer-events: none;
+    background-color: #c9c9c9;
 }
