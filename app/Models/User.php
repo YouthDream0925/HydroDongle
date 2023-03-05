@@ -19,6 +19,12 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable, Mediable;
 
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
+
+    public $incrementing = true;
+    
     /**
      * The attributes that are mass assignable.
      *

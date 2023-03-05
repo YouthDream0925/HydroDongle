@@ -79,6 +79,7 @@ return [
         'updateHistory' => 'Update History',
         'creditHistory' => 'Credit Transfer',
         'paymentHistory' => 'Payment History',
+        'licenseHistory' => 'License History',
         'samsungModels' => 'Samsung Models',
         'mainSlide' => 'Main Slide',
         'description' => 'What is HYDRA TOOL?',
@@ -349,6 +350,14 @@ return [
     'showMore' => 'Show',
     'success' => 'Success',
     'failure' => 'Failure',
+
+    /*
+    |--------------------------------------------------------------------------
+    | History License page
+    |--------------------------------------------------------------------------
+    */
+    'licenseTitle' => 'LICENSE HISTORIES',
+    'fullName' => 'Full Name',
 
     /*
     |--------------------------------------------------------------------------

@@ -61,6 +61,7 @@
                     <nav class="drawer-menu-nested nav accordion" id="drawerAccordionPages">
                         <a class="nav-link {{ (request()->is('admin/history/updates*')) ? 'active' : '' }}" href="{{ route('updates.index') }}">{{ __('global.subCategory.updateHistory') }}</a>
                         <a class="nav-link {{ (request()->is('admin/history/payments*')) ? 'active' : '' }}" href="{{ route('payments.index') }}">{{ __('global.subCategory.paymentHistory') }}</a>
+                        <a class="nav-link {{ (request()->is('admin/history/licenses*')) ? 'active' : '' }}" href="{{ route('licenses.index') }}">{{ __('global.subCategory.licenseHistory') }}</a>
                         <!-- <a class="nav-link" href="javascript:void(0);">{{ __('global.subCategory.paymentHistory') }}</a> -->
                     </nav>
                 </div>
