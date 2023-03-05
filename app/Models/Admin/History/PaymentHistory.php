@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 use EloquentFilter\Filterable;
-use App\ModelFilters\CreditFilter;
+use App\ModelFilters\PaymentFilter;
 
 class PaymentHistory extends Model
 {
@@ -44,7 +44,7 @@ class PaymentHistory extends Model
 
     public function modelFilter()
     {
-        return $this->provideFilter(CreditFilter::class);
+        return $this->provideFilter(PaymentFilter::class);
     }
 
     public function getMonthAttribute()

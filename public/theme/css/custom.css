@@ -281,3 +281,15 @@
     pointer-events: none;
     background-color: #c9c9c9;
 }
+
+.icon-mr {
+    margin-right: 0.5rem;
+}
+
+.success-status-background {
+    background: chartreuse; 
+}
+
+.failure-status-background {
+    background: darkgrey; 
+}

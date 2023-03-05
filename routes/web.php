@@ -29,6 +29,7 @@ use App\Http\Controllers\Admin\Other\IntroController;
 use App\Http\Controllers\Admin\Other\GuideController;
 use App\Http\Controllers\Admin\Other\ProblemController;
 use App\Http\Controllers\Admin\History\UpdateController;
+use App\Http\Controllers\Admin\History\PaymentController;
 use App\Http\Controllers\Admin\History\CreditController;
 
 use App\Http\Controllers\Front\HomeController;
@@ -119,6 +120,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
 
     Route::group(['prefix' => 'history'], function() {
         Route::resource('updates', UpdateController::class);
+        Route::resource('payments', PaymentController::class);
     });    
 });
 
