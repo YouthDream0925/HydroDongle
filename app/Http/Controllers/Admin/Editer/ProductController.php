@@ -34,10 +34,20 @@ class ProductController extends Controller
         else
             $input['activate'] = '0';
 
-        if($request->type == "true")
+        if($request->type == "true") {
+            // if type = 1, this product is ProPack
             $input['type'] = '1';
-        else
+            $input['period'] = 0;
+        }
+        else {
+            // if type = 0, this product in License
             $input['type'] = '0';
+            if($request->period != null) {
+                $input['period'] = $request->period;
+            } else {
+                return redirect()->back()->with('error', 'Please select period of License.');
+            }
+        }
         $product = Product::create($input);
 
         try {
@@ -70,10 +80,20 @@ class ProductController extends Controller
         else
             $input['activate'] = '0';
 
-        if($request->type == "true")
+        if($request->type == "true") {
+            // if type = 1, this product is ProPack
             $input['type'] = '1';
-        else
+            $input['period'] = 0;
+        }
+        else {
+            // if type = 0, this product in License
             $input['type'] = '0';
+            if($request->period != null) {
+                $input['period'] = $request->period;
+            } else {
+                return redirect()->back()->with('error', 'Please select period of License.');
+            }            
+        }
             
         if($request->file('product_image') != null) {
             if($product->hasMedia('product_image')) {

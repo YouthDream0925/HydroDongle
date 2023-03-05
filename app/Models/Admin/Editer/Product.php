@@ -26,6 +26,7 @@ class Product extends Model
         'discount',
         'activate',
         'type',
+        'period',
         'features'
     ];
 

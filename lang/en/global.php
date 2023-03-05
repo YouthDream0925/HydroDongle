@@ -394,5 +394,9 @@ return [
     'history' => 'History',
     'payHistory' => 'Payment History',
     'proPack' => 'ProPack',
-    'license' => 'License'
+    'license' => 'License',
+    'productName' => 'Product Name',
+    'sn' => 'Serial Number',
+    'price' => 'Price',
+    'type' => 'Type'
 ];

@@ -81,6 +81,12 @@ class ShopController extends Controller
 
             $threedsInitialize = \Iyzipay\Model\ThreedsInitialize::create($request, Config::options());
 
+            if($data->snplain != null) {
+                $description = 'You bought a Hydra Pro Package Activation.';
+            } else {
+                $description = 'You bought a Hydra License.';
+            }
+
             PaymentHistory::create([
                 'code' => $code,
                 'customer_id' => $check_buyer->id,
@@ -98,7 +104,7 @@ class ShopController extends Controller
                 'total_price' => $data->price,
                 'currency' => 'TRY',
                 'locale' => 'EN',
-                'description' => 'User bought a Hydra product.',
+                'description' => $description,
                 'msg' => 'pending',
                 'payment_group' => 'PRODUCT',
                 'payment_channel' => 'WEB',

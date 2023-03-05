@@ -175,9 +175,13 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col"><span>Product Name</span></th>
-                                            <th scope="col"><span>Quantity</span></th>
-                                            <th scope="col" colspan="3"><span>Price</span></th>
+                                            <th scope="col"><span>{{ __('global.productName') }}</span></th>
+                                            @if($product->type == '1')
+                                            <th scope="col"><span>{{ __('global.sn') }}</span></th>
+                                            @else
+                                            <th scope="col"><span>{{ __('global.type') }}</span></th>
+                                            @endif
+                                            <th scope="col" colspan="3"><span>{{ __('global.price') }}</span></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -194,6 +198,7 @@
                                                     <a href="{{ route('shop') }}">{{ $product->name }}</a>
                                                 </div>
                                             </th>
+                                            @if($product->type == '1')
                                             <td>
                                                 <div class="quantity">
                                                     <div class="total-item">
@@ -201,13 +206,19 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            @else
+                                            <td>
+                                                <div class="quantity">
+                                                    <div class="total-item">
+                                                        {{ __('global.license') }}
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            @endif
                                             <td>
                                                 <div class="subtotal">
                                                     <span>${{ $product->price }}</span>
                                                 </div>
-                                            </td>
-                                            <td colspan="2">
-                                                <div><a href="" class="btn btn-sm btn--rounded btn-outline-secondary">{{ __('global.edit') }}</a></div>
                                             </td>
                                         </tr><!-- ends: .cart-single -->
                                         <!-- <tr class="cart-bottom">
@@ -270,7 +281,8 @@
     import { CountrySelector, CreatePayment } from '{{ asset("theme_front/custom/js/checkout.js") }}';
     jQuery(document).ready(function() {
         CountrySelector();
-        CreatePayment();
+        var type = '{{ $product->type }}';
+        CreatePayment(type);
     });
 </script>
 @endpush

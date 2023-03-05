@@ -100,7 +100,7 @@ const GetCardData = () => {
     cvc = $('#cvc').val();
 };
 
-const CreatePayment = () => {
+const CreatePayment = (type) => {
     $('#billing_continue').on('click', function() {
         GetBillingData();
         if(name != "" && surname != "" && email != "" && phoneNumber != "" && country != "undefined" && identityNumber != "" && city != "" && zipCode != "" && address != "") {
@@ -141,7 +141,15 @@ const CreatePayment = () => {
 
     $('#confirm_order').on('click', function() {
         if(error_in_billing == false && error_in_card == false) {
-            snplain = $('#snplain').val();
+            var snplain = null;
+            if(type == 1) {
+                snplain = $('#snplain').val();
+            } else if(type == 0) {
+                snplain = null;
+            } else {
+                snplain = null;
+            }
+
             $.ajax({
                 type: 'post',
                 url: '/payment',
@@ -161,11 +169,12 @@ const CreatePayment = () => {
                     'surname': surname,
                     'phoneNumber': phoneNumber,
                     'email': email,
-                    'identityNumber': '11111111111',
+                    'identityNumber': '1111111111',
                     'address': address,
                     'city': city,
                     'country': country,
                     'zipCode': zipCode,
+                    'snplain': snplain
                 },
                 beforeSend() {
                     $('#preloader').show();
