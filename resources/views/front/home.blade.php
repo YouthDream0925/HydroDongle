@@ -17,7 +17,7 @@
 
 <section class="p-top-70 p-bottom-70 border-bottom clients-logo-area">
     <div class="container" style="max-width:100% !important;">
-        <div class="row">
+        <div class="row item-space">
             <div class="col-lg-1 col-sm-2"></div>
             <div class="col-lg-1 col-sm-2" style="width: 145px; height: 60px;">
                 <img class="img-fluid img-responsive" src="{{ asset('theme_front/logos/Allwinner.svg') }}" alt="">
@@ -53,123 +53,181 @@
         </div>
     </div>
 </section><!-- ends: clients logo area -->
-<section class="features-area border-bottom p-top-105 p-bottom-75">
-    <div class="icon-boxes">
+<section class="card-style p-top-100 p-bottom-100 border-bottom">
+    <div class="testimonial--card2">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 offset-lg-2 section-title">
+                <div class="col-lg-12 section-title text-center">
                     <h3>{{ __('global.featureTitle') }}</h3>
                     <p>Discover the Power of Hydra Tool Services - Let's Take a Look!</p>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/FRP-REMOVE.svg') }}" alt="">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/FRP-REMOVE.svg') }}" alt="">
+                            </div>
+                            <h6>FRP REMOVE</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>FRP is a security feature that prevents unauthorized access after a factory reset. 
+                                Hydra Tool offers one-click FRP removal for almost all brand models of Android devices.</p>
                         </div>
-                        <h6 class="color-dark">FRP REMOVE</h6>
-                        <p>Factory Reset Protection (FRP) is a security feature on Android devices with Lollipop
-                            5.1 and higher. It is automatically activated when you set up a Google Account on your
-                            device. FRP protects your device by preventing unauthorized access to it after a factory
-                            reset. Hydra Tool is a tool that can remove FRP with just one click for almost all chip and
-                            brand models of Android devices.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/REPAIR-IMEI.svg') }}" alt="">
-                        </div>                            
-                        <h6 class="color-dark">REPAIR IMEI</h6>
-                        <p>IMEI is an International Mobile Equipment Identity is aunique number identifying a
-                            device. The Repair IMEI function is for restoring the original phone's IMEI. It can be used to
-                            repair any invalid IMEI issues, such as lost, invalid, or damaged IMEI numbers. Once
-                            you use this function to change your IMEI, your Android device will have the same
-                            benefits and features as before.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/RESET.svg') }}" alt="">
-                        </div>                       
-                        <h6 class="color-dark">RESET</h6>
-                        <p>Factory Reset (Format) - it will wipe all of your personal data from your phone. Doing a
-                            factory reset of your Android phone will remove your Screen Locks, Pin, Passwords.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/READ-FRM.svg') }}" alt="">
-                        </div>                          
-                        <h6 class="color-dark">READ FRM</h6>
-                        <p>Hydra tool allows you to easily backup and restore the firmware (ROM) on your Android
-                            device. This can be useful for preserving the stock firmware or for transferring the
-                            firmware to a different device of the same model.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/BOOTLOADER-UNLOCK.svg') }}" alt="">
-                        </div>                         
-                        <h6 class="color-dark">BOOTLOADER UNLOCK</h6>
-                        <p>The bootloader is a critical component of your Android device that protects its state and
-                            establishes a root of trust. Unlocking the bootloader allows you to modify the operating
-                            system and install custom ROMs, giving you access to lower-level operations on the
-                            device.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/WRITE-FRM.svg') }}" alt="">
-                        </div>                        
-                        <h6 class="color-dark">WRITE FRM</h6>
-                        <p>Write Firmware - Hydra tool can write firmware (ROM) on your Android devices and
-                            supports all vendor image files and formats, providing a reliable and efficient way to
-                            update or customize your device's firmware.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/MI-ACCOUNT-REMOVE.svg') }}" alt="">
-                        </div>                     
-                        <h6 class="color-dark">MI ACCOUNT REMOVE</h6>
-                        <p>Mi Account Lock is a security feature on Xiaomi-based devices, such as Redmi, POCO,
-                            and Mi. The Hydra Tool is capable of bypassing forgotten Mi Account Locks, providing a
-                            convenient solution for users who have lost access to their Mi accounts.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/DEMO-REMOVE.svg') }}" alt="">
-                        </div>                         
-                        <h6 class="color-dark">DEMO REMOVE</h6>
-                        <p>Hydra Tool is able to unlock various vendor demo devices and return them to their
-                            original state. This can be useful for restoring demo devices to their factory settings or
-                            for making them available for use by users. With the Hydra Tool, you can easily and
-                            quickly unlock and reset demo devices from various vendors.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="icon-box icon-box-fourteen text-center">
-                        <div class="carousel-single" style="width: 70px; height: 70px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
-                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/SIM-UNLOCK.svg') }}" alt="">
-                        </div>                        
-                        <h6 class="color-dark">SIM UNLOCK</h6>
-                        <p>Hydra Tool is able to unlock various vendor demo devices and return them to their
-                            original state. This can be useful for restoring demo devices to their factory settings or
-                            for making them available for use by users. With the Hydra Tool, you can easily and
-                            quickly unlock and reset demo devices from various vendors.</p>
-                    </div>
-                </div>
-            </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/REPAIR-IMEI.svg') }}" alt="">
+                            </div> 
+                            <h6>REPAIR IMEI</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool's Repaire IMEI function efficiently restores lost, damaged, or invalid IMEI numbers for Android devices, ensuring optimal functionality and security.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/RESET.svg') }}" alt="">
+                            </div>  
+                            <h6>RESET</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Factory Reset (Format) function enables a swift and dependable reset process for Android phones, erasing all personal data, including screen locks, pins, and passwords.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/READ-FRM.svg') }}" alt="">
+                            </div> 
+                            <h6>READ FRM</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool's ability to backup and restore Android device firmware (ROM) is critical for preserving stock firmware and facilitating the seamless transfer of firmware to other devices of the same model.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/BOOTLOADER-UNLOCK.svg') }}" alt="">
+                            </div>                         
+                            <h6>BOOTLOADER UNLOCK</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool unlocks the Android bootloader, critical for establishing a root of trust, and facilitates custom ROM installation and OS modifications that grant access to lower-level device operations.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/WRITE-FRM.svg') }}" alt="">
+                            </div>                        
+                            <h6 class="color-dark">WRITE FRM</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool's capability to write fireware (ROM) to Android devices is crucial for updating or customizing device firmware. It supports all vendor image files and formats, providing a reliable and efficient solution.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/MI-ACCOUNT-REMOVE.svg') }}" alt="">
+                            </div>                     
+                            <h6>MI ACCOUNT REMOVE</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool efficiently bypasses forgotten Mi Account Locks on Xiaomi-based devices (Redmi, POCO, and Mi), providing a convenient and reliable solution for users who have lost account access.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/DEMO-REMOVE.svg') }}" alt="">
+                            </div>                         
+                            <h6>DEMO REMOVE</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool unlocks vendor demo devices, restoring them to their original state. This capability resets demo devices and is effortless with Hydra Tool.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card card-shadow card--testimonial2">
+                        <div class="card-body text-center">
+                            <div class="carousel-single" style="width: 80px; height: 80px; margin-left: auto; margin-right: auto; margin-bottom: 1rem;">
+                                <img class="img-fluid img-responsive" src="{{ asset('theme_front/features/SIM-UNLOCK.svg') }}" alt="">
+                            </div>                        
+                            <h6>SIM UNLOCK</h6>
+                            <div class="ratings color-warning">
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                                <span><i class="la la-star"></i></span>
+                            </div>
+                            <p>Hydra Tool's tested one-click unlock solutions transform the device state to "Factory Unlocked" by removing SIM and operator locks, unlocking its full potential through reliable and powerful technology.</p>
+                        </div>
+                    </div><!-- End: .card-body -->
+                </div><!-- ends: .col-lg-4 -->
+            </div><!-- ends: .row -->
         </div>
-    </div><!-- ends: .icon-boxes -->
-</section><!-- ends: .features-area -->
+    </div><!-- ends: .testimonial--card2-->
+</section>
 <section class="content-block content-block--15 border-bottom">
     <div class="container">
         <div class="row">

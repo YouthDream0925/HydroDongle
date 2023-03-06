@@ -37,7 +37,7 @@
                                             <!-- LAYER NR. 6 -->
                                             <div class="tp-caption" id="slide-72-layer-6" data-x="" data-y="" data-width="['auto']" data-height="['auto']" data-type="text" data-responsive_offset="on" data-frames='[{"delay":"+3520","speed":560,"frame":"0","from":"x:200px;skX:-85px;opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]' data-margintop="[0,0,0,0]" data-marginright="[0,0,0,0]" data-marginbottom="[0,0,0,0]" data-marginleft="[0,0,0,0]" data-textAlign="['inherit','inherit','inherit','inherit']" data-paddingtop="[0,0,0,0]" data-paddingright="[0,0,0,0]" data-paddingbottom="[0,0,0,0]" data-paddingleft="[0,0,0,0]" style="z-index: 9; display: inline-block;">
                                                 @if($main_banner != null)
-                                                <a href="{{ $main_banner->btn_link }}" class="btn btn-primary">{{ $main_banner->btn_text }}</a>
+                                                <a href="" onclick="return false;" class="btn btn-primary">{{ $main_banner->btn_text }}</a>
                                                 @endif
                                             </div>
                                         </div>
