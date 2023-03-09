@@ -22,19 +22,6 @@
                 </div>
                 {!! Form::close() !!}
             </div>
-            @can('transfer-credit-to-user')
-            <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('credits.before') }}">
-                <span class="material-icons">add</span>{{ __('global.transfer') }}
-            </a>
-            @elsecan('transfer-credit-to-reseller')
-            <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('credits.before') }}">
-                <span class="material-icons">add</span>{{ __('global.transfer') }}
-            </a>
-            @elsecan('transfer-credit-to-distributor')
-            <a class="btn btn-outline-success mdc-ripple-upgraded" href="{{ route('credits.before') }}">
-                <span class="material-icons">add</span>{{ __('global.transfer') }}
-            </a>
-            @endcan
         </div>
     </div>
     <div class="row gx-5">
