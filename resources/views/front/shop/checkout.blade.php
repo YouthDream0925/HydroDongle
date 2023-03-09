@@ -136,8 +136,8 @@
                             <div class="method-1">
                                 <div class="header">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" id="customRadio3" name="customRadio1" class="custom-control-input" checked>
-                                        <label class="custom-control-label" for="customRadio3">Pay With Credit Card</label>
+                                        <input type="radio" id="payment_via_iyzico" name="customRadio1" class="custom-control-input" checked>
+                                        <label class="custom-control-label" for="payment_via_iyzico">Pay With Credit Card</label>
                                     </div>
                                 </div>
                                 <div class="body">
@@ -164,6 +164,14 @@
                                     </form>
                                 </div>
                             </div><!-- ends: .method-1 -->
+                            <div class="method-2">
+                                    <div class="header">
+                                        <div class="custom-control custom-radio">
+                                            <input type="radio" id="payment_via_credits" name="customRadio1" class="custom-control-input">
+                                            <label class="custom-control-label" for="payment_via_credits">Pay with your own credits</label>
+                                        </div>
+                                    </div>
+                                </div><!-- ends: .method-2 -->
                             <div class="action-btns d-flex m-top-60">
                                 <a href="javascript::void(0)" id="payment_back" class="btn btn-outline-secondary btn-icon icon-left"><i class="la la-angle-double-left"></i> Back</a>
                                 <a href="javascript::void(0)" id="payment_continue" class="btn btn-primary ml-auto btn-icon icon-right">Continue <i class="la la-angle-double-right"></i></a>
@@ -240,7 +248,7 @@
                                 <div class="row">
                                     <div class="col-lg-3"></div>
                                     <div class="col-lg-6">
-                                        <div class="cardify order-info">
+                                        <div class="cardify order-info" id="quick_info">
                                             <h6>Quick Info</h6>
                                             <ul>
                                                 <li><span>Client:</span> <span id="buyer_name"></span></li>
@@ -278,9 +286,10 @@
 
 @push('script')
 <script type="module">
-    import { CountrySelector, CreatePayment } from '{{ asset("theme_front/custom/js/checkout.js") }}';
+    import { CountrySelector, CreatePayment, SelectPaymentMethod } from '{{ asset("theme_front/custom/js/checkout.js") }}';
     jQuery(document).ready(function() {
         CountrySelector();
+        SelectPaymentMethod();
         var type = '{{ $product->type }}';
         CreatePayment(type);
     });

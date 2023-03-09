@@ -1,5 +1,7 @@
 import toast from './toast.js';
 
+let payment_method = 0;
+
 let error_in_billing = true;
 let error_in_card = true;
 
@@ -21,6 +23,22 @@ let expireMonth = "";
 let cvc = "";
 
 let snplain = "";
+
+const SelectPaymentMethod = () => {
+    $('#payment_via_iyzico').on('click', function() {
+        payment_method = 0;
+    });
+
+    $('#payment_via_credits').on('click', function() {
+        payment_method = 1;
+        cardNumber = "";
+        fullName = "";
+        expireDate = "";
+        expireYear = "";
+        expireMonth = "";
+        cvc = "";
+    });
+};
 
 const CountrySelector = () => {
     $('#country_selector').on('change', function() {
@@ -112,22 +130,32 @@ const CreatePayment = (type) => {
     });
 
     $('#payment_continue').on('click', function() {
-        GetCardData();
-        if(cardNumber != "" && fullName != "" && expireDate != "" && expireYear != "" && expireMonth != "" && cvc != "") {
+        if(payment_method == 0) {
+            GetCardData();
+            if(cardNumber != "" && fullName != "" && expireDate != "" && expireYear != "" && expireMonth != "" && cvc != "") {
+                error_in_card = false;
+                $('#tab6_nav4').trigger('click');
+            } else {
+                toast('error', 'Please input all fields.');
+            }
+        } else {
             error_in_card = false;
             $('#tab6_nav4').trigger('click');
-        } else {
-            toast('error', 'Please input all fields.');
         }
     });
 
     $('#tab6_nav4').on('click', function() {
-        if(name != "" && surname != "" && address != "" && cardNumber != "") {
-            $('#buyer_name').html(name + " " + surname);
-            $('#buyer_address').html(address);
-            $('#buyer_cardNumber').html("Credit card: " + cardNumber);
+        if(payment_method == 0) {
+            $('#quick_info').removeClass('d-none');
+            if(name != "" && surname != "" && address != "" && cardNumber != "") {
+                $('#buyer_name').html(name + " " + surname);
+                $('#buyer_address').html(address);
+                $('#buyer_cardNumber').html("Credit card: " + cardNumber);
+            } else {
+                toast('error', 'Please confirm all Info.');
+            }
         } else {
-            toast('error', 'Please confirm all Info.');
+            $('#quick_info').addClass('d-none');
         }
     });
 
@@ -155,6 +183,7 @@ const CreatePayment = (type) => {
                 url: '/payment',
                 data: {
                     '_token': $('input[name="_token"]').val(),
+                    'paymentMethod': payment_method,
                     'buyerId': $('#buyerId').val(),
                     'price': $('#price').val(),
                     'paidPrice': $('#price').val(),
@@ -183,7 +212,10 @@ const CreatePayment = (type) => {
                     $('#preloader').hide();
 
                     if(res['status'] == 'success') {
-                        $('#main_container').html(res['data']);
+                        if(res['data'] != null)
+                            $('#main_container').html(res['data']);
+                        else
+                            window.location.href = "/shop/history/" + $('#buyerId').val();
                     } else if(res['status'] == 'failure') {
                         toast('error', res['msg']);
                     } else if(res['status'] == null) {
@@ -203,4 +235,4 @@ const CreatePayment = (type) => {
     });
 };
 
-export { CountrySelector, InputTcNum, CreatePayment };
+export { CountrySelector, InputTcNum, CreatePayment, SelectPaymentMethod };

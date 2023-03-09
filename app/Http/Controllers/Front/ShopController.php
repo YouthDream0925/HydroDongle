@@ -31,58 +31,14 @@ class ShopController extends Controller
     {
         $code = $this->UniqueRandomNumbersWithinRange(0, 100, 10);
         $check_buyer = User::find($data->buyerId);
+        $payment_method = $data->paymentMethod;
+        
+        $result = [];
+        $payment_status = '0';
+        $payment_msg = null;
+        $license_id = null;
+
         if($check_buyer != null) {
-            $request = new \Iyzipay\Request\CreatePaymentRequest();
-            $request->setLocale(\Iyzipay\Model\Locale::EN);
-            $request->setConversationId($code);
-            $request->setPrice($data->price);
-            $request->setPaidPrice($data->price);
-            $request->setCurrency(\Iyzipay\Model\Currency::TL);
-            $request->setInstallment(1);
-            $request->setBasketId($data->productId);
-            $request->setPaymentChannel(\Iyzipay\Model\PaymentChannel::WEB);
-            $request->setPaymentGroup(\Iyzipay\Model\PaymentGroup::PRODUCT);
-            $request->setCallbackUrl("http://hydradongle-local.com/callback");
-            $paymentCard = new \Iyzipay\Model\PaymentCard();
-            $paymentCard->setCardHolderName($data->cardHolderName);
-            $paymentCard->setCardNumber($data->cardNumber);
-            $paymentCard->setExpireMonth($data->expireMonth);
-            $paymentCard->setExpireYear($data->expireYear);
-            $paymentCard->setCvc($data->cvc);
-            $paymentCard->setRegisterCard(0);
-            $request->setPaymentCard($paymentCard);
-            $buyer = new \Iyzipay\Model\Buyer();
-            $buyer->setId($check_buyer->id);
-            $buyer->setName($data->name);
-            $buyer->setSurname($data->surname);
-            $buyer->setGsmNumber($data->phoneNumber);
-            $buyer->setEmail($data->email);
-            $buyer->setIdentityNumber($data->identityNumber);
-            $buyer->setRegistrationAddress($data->address);
-            $buyer->setIp("157.90.163.48");
-            $buyer->setCity($data->city);
-            $buyer->setCountry($data->country);
-            $buyer->setZipCode($data->zipCode);
-            $request->setBuyer($buyer);
-            $billingAddress = new \Iyzipay\Model\Address();
-            $billingAddress->setContactName($data->cardHolderName);
-            $billingAddress->setCity($data->city);
-            $billingAddress->setCountry($data->country);
-            $billingAddress->setAddress($data->address);
-            $billingAddress->setZipCode($data->zipCode);
-            $request->setBillingAddress($billingAddress);
-            $basketItems = array();
-            $firstBasketItem = new \Iyzipay\Model\BasketItem();
-            $firstBasketItem->setId($data->productId);
-            $firstBasketItem->setName($data->productName);
-            $firstBasketItem->setCategory1("License");
-            $firstBasketItem->setItemType(\Iyzipay\Model\BasketItemType::VIRTUAL);
-            $firstBasketItem->setPrice($data->price);
-            $basketItems[0] = $firstBasketItem;
-            $request->setBasketItems($basketItems);
-
-            $threedsInitialize = \Iyzipay\Model\ThreedsInitialize::create($request, Config::options());
-
             if($data->snplain != null) {
                 $description = 'You bought a Hydra Pro Package Activation.';
                 $check_buyer->snplain = $data->snplain;
@@ -91,7 +47,97 @@ class ShopController extends Controller
                 $description = 'You bought a Hydra License.';
             }
 
-            PaymentHistory::create([
+            if($payment_method == 0) {
+                $request = new \Iyzipay\Request\CreatePaymentRequest();
+                $request->setLocale(\Iyzipay\Model\Locale::EN);
+                $request->setConversationId($code);
+                $request->setPrice($data->price);
+                $request->setPaidPrice($data->price);
+                $request->setCurrency(\Iyzipay\Model\Currency::TL);
+                $request->setInstallment(1);
+                $request->setBasketId($data->productId);
+                $request->setPaymentChannel(\Iyzipay\Model\PaymentChannel::WEB);
+                $request->setPaymentGroup(\Iyzipay\Model\PaymentGroup::PRODUCT);
+                $request->setCallbackUrl("http://hydradongle-local.com/callback");
+                $paymentCard = new \Iyzipay\Model\PaymentCard();
+                $paymentCard->setCardHolderName($data->cardHolderName);
+                $paymentCard->setCardNumber($data->cardNumber);
+                $paymentCard->setExpireMonth($data->expireMonth);
+                $paymentCard->setExpireYear($data->expireYear);
+                $paymentCard->setCvc($data->cvc);
+                $paymentCard->setRegisterCard(0);
+                $request->setPaymentCard($paymentCard);
+                $buyer = new \Iyzipay\Model\Buyer();
+                $buyer->setId($check_buyer->id);
+                $buyer->setName($data->name);
+                $buyer->setSurname($data->surname);
+                $buyer->setGsmNumber($data->phoneNumber);
+                $buyer->setEmail($data->email);
+                $buyer->setIdentityNumber($data->identityNumber);
+                $buyer->setRegistrationAddress($data->address);
+                $buyer->setIp("157.90.163.48");
+                $buyer->setCity($data->city);
+                $buyer->setCountry($data->country);
+                $buyer->setZipCode($data->zipCode);
+                $request->setBuyer($buyer);
+                $billingAddress = new \Iyzipay\Model\Address();
+                $billingAddress->setContactName($data->cardHolderName);
+                $billingAddress->setCity($data->city);
+                $billingAddress->setCountry($data->country);
+                $billingAddress->setAddress($data->address);
+                $billingAddress->setZipCode($data->zipCode);
+                $request->setBillingAddress($billingAddress);
+                $basketItems = array();
+                $firstBasketItem = new \Iyzipay\Model\BasketItem();
+                $firstBasketItem->setId($data->productId);
+                $firstBasketItem->setName($data->productName);
+                $firstBasketItem->setCategory1("License");
+                $firstBasketItem->setItemType(\Iyzipay\Model\BasketItemType::VIRTUAL);
+                $firstBasketItem->setPrice($data->price);
+                $basketItems[0] = $firstBasketItem;
+                $request->setBasketItems($basketItems);
+                $threedsInitialize = \Iyzipay\Model\ThreedsInitialize::create($request, Config::options());
+
+                $payment_status = '0';
+                $payment_msg = 'pending';
+                $result = [
+                    'status' => $threedsInitialize->getStatus(),
+                    'data' => $threedsInitialize->gethtmlContent(),
+                    'msg' => $threedsInitialize->getErrorMessage()
+                ];
+            } else if($payment_method == 1) {
+                if($check_buyer->credits >= $data->price) {
+                    $product = Product::find($data->productId);
+                    $check_buyer->credits = $check_buyer->credits - $product->price;
+                    if($product->type == '0') {
+                        $check_buyer->isactivated = '1';
+                        $check_buyer->datetimeactivated = Carbon::now();
+                        $check_buyer->datetimeexpired = Carbon::now()->addMonth($product->period);
+                    } else if($product->type == '1') {
+                        $check_buyer->ProPack = '1';
+                    }
+                    $check_buyer->update();
+                    
+                    $payment_status = '1';
+                    $payment_msg = 'success';
+                    $result = [
+                        'status' => 'success',
+                        'data' => null,
+                        'msg' => 'success'
+                    ];
+                } else {
+                    $payment_status = '0';
+                    $payment_msg = 'Low balance';
+
+                    $result = [
+                        'status' => 'failure',
+                        'data' => null,
+                        'msg' => 'You banlance is low to buy.'
+                    ];
+                }
+            }
+
+            $payment_history = PaymentHistory::create([
                 'code' => $code,
                 'customer_id' => $check_buyer->id,
                 'customer_surname' => $data->surname,
@@ -109,17 +155,21 @@ class ShopController extends Controller
                 'currency' => 'TRY',
                 'locale' => 'EN',
                 'description' => $description,
-                'msg' => 'pending',
+                'msg' => $payment_msg,
                 'payment_group' => 'PRODUCT',
                 'payment_channel' => 'WEB',
-                'status' => '0',
+                'status' => $payment_status,
             ]);
 
-            return [
-                'status' => $threedsInitialize->getStatus(),
-                'data' => $threedsInitialize->gethtmlContent(),
-                'msg' => $threedsInitialize->getErrorMessage()
-            ];
+            if($payment_method == 1 && $payment_status == '1') {
+                LicenseHistory::create([
+                    'user_id' => $check_buyer->id,
+                    'licence_id' => $payment_history->id,
+                    'history_date' => Carbon::now()
+                ]);
+            }
+
+            return $result;
         } else {
             return [
                 'status' => 'failure',
