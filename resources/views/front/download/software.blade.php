@@ -72,7 +72,7 @@
                             <h6 class="mb-0">
                                 <a href="#" data-toggle="collapse" data-target="#collapse{{$history->id}}" aria-expanded="false" aria-controls="collapse{{$history->id}}">
                                     <div>
-                                        <p>{{ $history->title }}</p>
+                                        <p>{{ $history->title }} @if($history->type != 0) <span class="badge {{ $history_types[$history->type] }}" style="padding: 0.5rem;">{{ $history_types[$history->type] }}</span> @endif</p>
                                         <p>
                                             <strong>Version : </strong>{{ $history->version }}
                                             <span class="f-right">{{ $history->getDateAtAttribute() }}</span>
