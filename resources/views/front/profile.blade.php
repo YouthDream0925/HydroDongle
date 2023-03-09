@@ -70,6 +70,9 @@
                                 </span>
                             @enderror
                         </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Credit" class="form-control" value="{{ $user->credits }} Credits" required disabled>
+                        </div>
                     </div><!-- end: .form-wrapper -->
                 </div><!-- ends: .col-lg-6 -->
                 <div class="col-lg-6">
