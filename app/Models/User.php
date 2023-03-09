@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\ModelFilters\UserFilter;
 use Plank\Mediable\Mediable;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, HasFactory, Notifiable, HasRoles, Filterable, Mediable;
 

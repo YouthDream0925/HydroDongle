@@ -55,7 +55,7 @@ Route::get('/', function () {
     return redirect('home');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('',[LoginController::class,'showAdminLoginForm'])->name('admin.login-view');
@@ -138,10 +138,10 @@ Route::get('devices/brand/{id}', [DeviceController::class, 'brand'])->name('devi
 Route::get('devices/brand/model/{id}', [DeviceController::class, 'model'])->name('devices.brand.model');
 Route::get('contact', [ContactController::class, 'index'])->name('contact');
 Route::post('contact/send', [ContactController::class, 'send'])->name('contact.send');
-Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
-Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth', 'verified'])->group(function() {
+    Route::get('profile/{id}', [ProfileController::class, 'index'])->name('profile');
+    Route::post('profile/update', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('shop/checkout/{id}', [ShopController::class, 'checkout'])->name('shop.checkout');
     Route::post('payment', [ShopController::class, 'create_payment'])->name('payment');
     Route::post('callback', [ShopController::class, 'callback'])->name('callback');
