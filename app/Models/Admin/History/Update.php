@@ -22,6 +22,7 @@ class Update extends Model
         'title',
         'version',
         'date',
+        'type',
         'activate',
         'content'
     ];

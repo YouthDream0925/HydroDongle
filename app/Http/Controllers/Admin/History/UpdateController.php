@@ -46,6 +46,7 @@ class UpdateController extends Controller
         $update->title = $request->title;
         $update->version = $request->version;
         $update->date = $request->date;
+        $update->type = $request->type;
         $update->content = $request->content;
         if($request->activate == "true")
             $update->activate = '1';

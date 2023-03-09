@@ -37,13 +37,18 @@
                             <div class="card-header bg-transparent">
                                 <div class="d-flex align-items-center">
                                     <i class="material-icons text-primary">history</i>
-                                    <div class="ms-3">
+                                    <div class="ms-3 width-100">
                                         <div class="fs-6 mb-1 fw-500">{{$update->title}}</div>
                                         <div class="small">
                                             <span>{{$update->version}}</span> - <span>{{$update->getDateAtAttribute()}}</span>
                                         </div>
                                     </div>
-                                </div>
+                                    <div>
+                                        @if($update->type != 0)
+                                        <span class="badge {{ $history_types[$update->type] }}">{{ $history_types[$update->type] }}</span>
+                                        @endif
+                                    </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>

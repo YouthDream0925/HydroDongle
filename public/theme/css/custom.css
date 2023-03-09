@@ -293,3 +293,42 @@
 .failure-status-background {
     background: darkgrey; 
 }
+
+.width-100 {
+    width: 100% !important;
+}
+
+.Added {
+    --bs-bg-opacity: 1;
+    background-color: #3778FF !important;
+}
+
+.Changed {
+    --bs-bg-opacity: 1;
+    background-color: #3AAA55 !important;
+}
+
+.Depricated {
+    --bs-bg-opacity: 1;
+    background-color: #343434 !important;
+}
+
+.Removed {
+    --bs-bg-opacity: 1;
+    background-color: #3bbfe4 !important;
+}
+
+.Fixed {
+    --bs-bg-opacity: 1;
+    background-color: #F54773 !important;
+}
+
+.Security {
+    --bs-bg-opacity: 1;
+    background-color: #F53535 !important;
+}
+
+.Unreleased {
+    --bs-bg-opacity: 1;
+    background-color: #A037FF !important;
+}

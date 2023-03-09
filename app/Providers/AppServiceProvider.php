@@ -59,6 +59,16 @@ class AppServiceProvider extends ServiceProvider
             '0' => 'Failed',
             '1' => 'Success'
         ];
+        $history_types = [
+            '0' => 'Select a type of history',
+            '1' => 'Added',
+            '2' => 'Changed',
+            '3' => 'Depricated',
+            '4' => 'Removed',
+            '5' => 'Fixed',
+            '6' => 'Security',
+            '7' => 'Unreleased',
+        ];
 
         $our_users = User::count() + DongleUser::count();
         $total_brands = Brand::count();
@@ -66,7 +76,7 @@ class AppServiceProvider extends ServiceProvider
         $total_features = Feature::count();
 
         $super_admin = Admin::role('SuperAdmin')->first();
-        config(['pagination.per_page' => $per_page, 'six_month_activate_price' => $six_month_activate_price, 'twelve_month_activate_price' => $twelve_month_activate_price, 'dongle_user_activate_price' => $dongle_user_activate_price, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount]);
-        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'super_admin' => $super_admin, 'our_users' => $our_users, 'total_brands' => $total_brands, 'total_models' => $total_models, 'total_features' => $total_features, 'pages' => $pages]);
+        config(['pagination.per_page' => $per_page, 'six_month_activate_price' => $six_month_activate_price, 'twelve_month_activate_price' => $twelve_month_activate_price, 'dongle_user_activate_price' => $dongle_user_activate_price, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'history_types' => $history_types]);
+        View::share(['status' => $status, 'max_credit_amount' => $max_credit_amount, 'infinite_amount' => $infinite_amount, 'super_admin' => $super_admin, 'our_users' => $our_users, 'total_brands' => $total_brands, 'total_models' => $total_models, 'total_features' => $total_features, 'pages' => $pages, 'history_types' => $history_types]);
     }
 }

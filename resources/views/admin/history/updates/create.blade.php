@@ -29,7 +29,14 @@
                                 </div>
                                 <div class="d-flex align-items-center breadcrumb-custom">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" checked></mwc-checkbox></mwc-formfield>
-                                    <input class="form-control" id="litepickerSingleDate" name="date" value="" placeholder="Select a date..." style="width: 300px;"/>
+                                    <div class="d-flex">
+                                        <select name="type" class="form-select mr-1" aria-label="Default select example" style="width: 300px;">
+                                            @foreach($history_types as $key => $type)
+                                            <option value="{{ $key }}">{{ $type }}</option>
+                                            @endforeach
+                                        </select>
+                                        <input class="form-control" id="litepickerSingleDate" name="date" value="" placeholder="Select a date..." style="width: 300px;"/>
+                                    </div>
                                 </div>
                             </div>
                         </div>
