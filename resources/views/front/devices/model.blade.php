@@ -25,88 +25,66 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<div class="p-top-100 p-bottom-80">
-    <div class="m-bottom-50">
-        <div class="divider divider-simple text-center">
-            <h3>{{ $model->name }}</h3>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="showcase showcase--title1">
+                <h3>{{ $model->name }}</h3>
+            </div>
         </div>
     </div>
-    <div class="card-style-eleven">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card--eleven">
-                        <figure>
-                            @if($model->brand->hasMedia('brand_image'))
-                            <div style="width: 360px; height: 350px; margin-left: auto; margin-right: auto;">
-                                <img class="img-fluid img-responsive" src="{{ $model->brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
-                            </div>
-                            @else
-                            <img src="{{ asset('theme_front/img/g1.jpg') }}" alt="">
-                            @endif
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="card-contents">
-                                <div class="content-top">
-                                    <h6>{{ __('global.brand') }}</h6>
-                                </div>
-                                <div class="content-bottom">
-                                    <p>{{$model->brand->brand_name}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End: .card -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card--eleven">
-                        <figure>
-                            @if($model->hasMedia('model_image'))
-                            <div style="width: 360px; height: 350px; margin-left: auto; margin-right: auto;">
-                                <img class="img-fluid img-responsive" src="{{ $model->getMedia('model_image')->first()->getUrl() }}" alt="">
-                            </div>
-                            @else
-                            <img src="{{ asset('theme_front/img/g1.jpg') }}" alt="">
-                            @endif
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="card-contents">
-                                <div class="content-top">
-                                    <h6>{{ __('global.model') }}</h6>
-                                </div>
-                                <div class="content-bottom">
-                                    <p>{{$model->name}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End: .card -->
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="card card--eleven">
-                        <figure>
-                            @if($model->cpu->hasMedia('cpu_image'))
-                            <div style="width: 360px; height: 350px; margin-left: auto; margin-right: auto;">
-                                <img class="img-fluid img-responsive" src="{{ $model->cpu->getMedia('cpu_image')->first()->getUrl() }}" alt="">
-                            </div>                            
-                            @else
-                            <img src="{{ asset('theme_front/img/g1.jpg') }}" alt="">
-                            @endif
-                        </figure>
-                        <div class="card-body text-center">
-                            <div class="card-contents">
-                                <div class="content-top">
-                                    <h6>{{ __('global.cpu') }}</h6>
-                                </div>
-                                <div class="content-bottom">
-                                    <p>{{$model->cpu->name}}</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End: .card -->
-                </div>
-            </div><!-- ends: .row -->
-        </div>
-    </div><!-- ends: .card-style-eleven -->
-</div><!-- ends: .section-padding -->
+</div>
+<div class="icon-boxes icon-box--ten">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box-img text-center">
+                    @if($model->brand->hasMedia('brand_image'))
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ $model->brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
+                    </div>
+                    @else
+                    <div class="icon">
+                        <img src="{{ asset('theme_front/img/svg/businessman.svg') }}" alt="" class="svg">
+                    </div>
+                    @endif                    
+                    <h6 class="mt-5 mb-0">{{ $model->brand->brand_name }}</h6>
+                    <p class="mb-0">Brand</p>
+                </div><!-- ends: .icon-box -->
+            </div><!-- ends: .col-lg-4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box-img text-center">
+                    @if($model->hasMedia('model_image'))
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ $model->getMedia('model_image')->first()->getUrl() }}" alt="">
+                    </div>
+                    @else
+                    <div class="icon">
+                        <img src="{{ asset('theme_front/img/svg/businessman.svg') }}" alt="" class="svg">
+                    </div>
+                    @endif 
+                    <h6 class="mt-5 mb-0">{{ $model->name }}</h6>
+                    <p class="mb-0">Model</p>
+                </div><!-- ends: .icon-box -->
+            </div><!-- ends: .col-lg-4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="icon-box-img text-center">
+                    @if($model->cpu->hasMedia('cpu_image'))
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ $model->cpu->getMedia('cpu_image')->first()->getUrl() }}" alt="">
+                    </div>
+                    @else
+                    <div class="icon">
+                        <img src="{{ asset('theme_front/img/svg/crowdfunding.svg') }}" alt="" class="svg">
+                    </div>
+                    @endif 
+                    <h6 class="mt-5 mb-0">{{ $model->cpu->name }}</h6>
+                    <p class="mb-0">CPU</p>
+                </div><!-- ends: .icon-box -->
+            </div><!-- ends: .col-lg-4 -->
+        </div><!-- ends: .row -->
+    </div>
+</div><!-- ends: .icon-boxes -->
 <div class="p-top-100 p-bottom-55 sectionbg">
     <div class="m-bottom-50">
         <div class="divider divider-simple text-center">
