@@ -18,6 +18,6 @@ class BrandFilter extends ModelFilter
 
     public function setup()
     {
-        return $this->orderBy('updated_at', 'desc');
+        return $this->orderBy('brand_order', 'asc');
     }
 }

@@ -66,6 +66,7 @@ class BrandController extends Controller
         $brand = Brand::find($id);
         $brand->brand_name = $request->input('brand_name');
         $brand->brand_link = $request->input('brand_link');
+        $brand->brand_order = $request->input('brand_order');
         if($request->brand_activate == "true")
             $brand->brand_activate = '1';
         else
