@@ -27,8 +27,9 @@
                                 <div class="mb-4">
                                     <mwc-textfield class="w-100" label="Brand Link" outlined id="brand_link" name="brand_link" value="{{ $brand->brand_link }}"></mwc-textfield>
                                 </div>
-                                <div class="d-flex align-items-center">
-                                    <mwc-formfield label="Show / Hide"><mwc-checkbox name="brand_activate" value="true" @if($brand->brand_activate == "1") checked @endif></mwc-checkbox></mwc-formfield>
+                                <div class="d-flex align-items-center breadcrumb-custom">
+                                    <mwc-formfield label="Show / Hide"><mwc-checkbox name="brand_activate" value="true" checked></mwc-checkbox></mwc-formfield>
+                                    <input class="form-control" name="brand_order" value="{{$brand->brand_order}}" placeholder="Order Number" style="width: 300px;"/>
                                 </div>
                             </div>
                             <div class="col-xl-4">

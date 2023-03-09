@@ -22,7 +22,8 @@ class Brand extends Model
         'brand_id',
         'brand_name',
         'brand_link',
-        'brand_activate'
+        'brand_activate',
+        'brand_order'
     ];
 
     public function modelFilter()

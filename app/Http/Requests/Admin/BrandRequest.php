@@ -32,18 +32,21 @@ class BrandRequest extends FormRequest
                 return [
                     'brand_name' => ['required', 'string', 'max:32'],
                     'brand_link' => ['required', 'string', 'max:255'],
+                    'brand_order' => ['required', 'numeric', 'min:1'],
                     'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
                 ];
             } else {
                 return [
                     'brand_name' => ['required', 'string', 'max:32'],
-                    'brand_link' => ['required', 'string', 'max:255']
+                    'brand_link' => ['required', 'string', 'max:255'],
+                    'brand_order' => ['required', 'numeric', 'min:1']
                 ];
             }
         } else {
             return [
                 'brand_name' => ['required', 'string', 'max:32'],
                 'brand_link' => ['required', 'string', 'max:255'],
+                'brand_order' => ['required', 'numeric', 'min:1', 'max:9999'],
                 'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
             ];
         }
@@ -52,9 +55,10 @@ class BrandRequest extends FormRequest
     public function messages()
     {
         return [
-            'brand_name.required' => 'Brand Name is required',
-            'brand_link.required' => 'Brand Link is required',
-            'brand_image.required' => 'Brand Image is required' 
+            'brand_name.required' => 'Brand Name is required.',
+            'brand_link.required' => 'Brand Link is required.',
+            'brand_image.required' => 'Brand Image is required.',
+            'brand_order.required' => 'Brand Order is required.',
         ];
     }
 }
