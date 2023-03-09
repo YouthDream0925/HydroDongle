@@ -232,16 +232,16 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 section-title">
-                <h2>Amazing Business Solution <br> Whatever Your Needs</h2>
-                <p>Deserunt dolore voluptatem assumenda quae possimus sunt dignissimos tempora officia. Lorem ipsum dolor sit amet consectetur adipisicing dolore.</p>
+                <h2>Stay ahead with Hydra Tool <br> Stay in control</h2>
+                <p>Powerful, advanced, and complete - these are the values that we stand for at Hydra Tool. Our motivation is to empower our users with the tools they need to achieve success result.</p>
             </div><!-- ends: .section-title -->
             <div class="col-lg-12 m-bottom-20">
                 <div class="row align-items-center">
                     <div class="col-lg-5 order-lg-0 order-1">
                         <div class="content-desc">
-                            <h4>Insurance And Finance</h4>
-                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veri tatis et quasi archi. Totam rem aperiam, eaque ipsa quae abillo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archi.
-                                <br><br> On the other hand we denounce with righteous indignation and dislike men who are so beguiled.</p>
+                            <h4>First-Class Solutions for Unlockers</h4>
+                            <p>We're proud to be part of the world of unlockers, providing our users with first-class software and the latest technology. Our team is motivated by a drive to deliver powerful functions and advanced features that make for complete solutions.
+                                <br><br>We focus on developing tools that deliver the results our users need.</p>
                         </div>
                     </div>
                     <div class="col-lg-6 offset-lg-1 order-lg-1 order-0">
@@ -260,9 +260,9 @@
                     </div>
                     <div class="col-lg-5 offset-lg-1">
                         <div class="content-desc">
-                            <h4>Business And Consulting</h4>
-                            <p>Totam rem aperiam, eaque ipsa quae ab illo inventore veri tatis et quasi archi. Totam rem aperiam, eaque ipsa quae abillo. Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi archi.
-                                <br><br> On the other hand we denounce with righteous indignation and dislike men who are so beguiled.</p>
+                            <h4>Comprehensive Support</h4>
+                            <p>At Hydra Tool, we provide top-notch support. Our experienced team is dedicated to helping you get the most out of your tools, whether you need assistance with installation, troubleshooting, or usage.We believe that great support is essential to delivering a top-quality product, so we invest heavily in our support services.
+                                <br><br> From comprehensive online resources to one-on-one support sessions, we're here to ensure your success.</p>
                         </div>
                     </div>
                 </div>
