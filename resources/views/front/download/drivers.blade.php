@@ -36,40 +36,39 @@
         </div><!-- ends: .row -->
     </div>
 </section><!-- ends: .breadcrumb_area -->
-<section class="p-top-50">
-    <div class="icon-boxes icon-box--four">
+<section class="section-padding section-bg">
+    <div class="content-block section-bg section-feature-boxes">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3"></div>
+                @foreach($cpus as $cpu)
                 <div class="col-lg-6">
-                    <div class="form-group">
-                        <div class="select-basic">
-                            <select id="cpu_selector" class="form-control">
-                                @foreach($cpus as $cpu)
-                                <option value="{{ $cpu->id }}">{{ $cpu->name }}</option>
-                                @endforeach
-                            </select>
+                    <div class="feature-boxes row">
+                        <div class="col-md-12">
+                            @if($cpu->hasMedia('cpu_image'))
+                            <div style="width: 200px; height: 70px; margin-left: auto; margin-right: auto;">
+                                <img class="img-fluid img-responsive" src="{{$cpu->getMedia('cpu_image')->first()->getUrl()}}"/>
+                            </div>
+                            @else
+                            <div class="icon-box-nine text-center">
+                                <span class="icon-rounded-sm"><i class="la la-sun-o"></i></span>
+                            </div><!-- ends: .icon-box -->
+                            @endif
                         </div>
-                    </div><!-- End: .form-group -->
-                </div><!-- ends: .col-lg-6 -->
-            </div>
-            <div id="drivers_container" class="row p-top-50">
-                @foreach($drivers as $driver)
-                <div class="col-lg-12 col-md-12">
-                    <div class="icon-box-four d-flex">
-                        <div class="box-icon">
-                            <a href="{{ $driver->driver_link }}" target="_blank"><span class="icon-rounded-sm"><i class="la la-download"></i></span></a>
-                        </div>
-                        <div class="box-content">
-                            <h6>{{ $driver->driver_name}} <span class="badge bg-success">{{ $driver->driver_version }}</span></h6>
-                            <p>{{ $driver->description }}</p>
-                        </div>
+                        @foreach($cpu->drivers as $driver)
+                        <div class="col-md-12">                            
+                            <div class="icon-box-nine text-center">
+                                <a href="{{ $driver->driver_link }}" target="_blank"><span class="icon-rounded-sm"><i class="la la-sun-o"></i></span></a>
+                                <h6>{{ $driver->driver_name }}</h6>
+                                <p class="">{{ $driver->description }}</p>
+                            </div><!-- ends: .icon-box -->
+                        </div><!-- ends: .col-md-3 -->
+                        @endforeach
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
-    </div><!-- ends: .icon-boxes -->
+    </div><!-- ends: .content-block -->
 </section>
 @csrf
 @endsection
