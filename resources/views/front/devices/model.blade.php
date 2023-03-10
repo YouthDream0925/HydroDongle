@@ -92,7 +92,7 @@
         <div class="container">
             <div class="row">
                 @foreach($features as $feature)
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-2 col-md-4">
                     <div class="icon-box-eight text-center text-md-left">
                         <span class="icon-square-sm">
                             @if($feature->hasMedia('icon'))
@@ -104,7 +104,6 @@
                             @endif
                         </span>
                         <h6>{{ $feature->name }}</h6>
-                        <p>{{ $feature->explanation }}</p>
                     </div><!-- ends: .icon-box -->
                 </div><!-- ends: .col-lg-4 -->
                 @endforeach
