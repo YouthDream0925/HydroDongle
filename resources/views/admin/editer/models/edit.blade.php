@@ -87,7 +87,18 @@
                                     <mwc-textfield class="w-100" label="Model Link" outlined id="model_link" name="link" value="{{ $model->link }}"></mwc-textfield>
                                 </div>
                                 <div class="mb-4">
-                                    <mwc-textarea class="w-100" label="Note" outlined name="note" value="{{ $model->note }}" maxlength="200" charcounter></mwc-textarea>
+                                    <mwc-select class="w-100" id="soc_selector" name="soc_id" outlined label="Soc">
+                                        @foreach($model->cpu->socs as $soc)
+                                            @if($model->soc_id == $soc->id)
+                                            <mwc-list-item value="{{ $soc->id }}" selected activated>{{ $soc->name }}</mwc-list-item>
+                                            @else
+                                            <mwc-list-item value="{{ $soc->id }}">{{ $soc->name }}</mwc-list-item>
+                                            @endif
+                                        @endforeach
+                                    </mwc-select>
+                                </div>
+                                <div class="mb-4">
+                                    <mwc-textarea class="w-100" label="Note" outlined name="note" value="{{ $model->note }}" maxlength="200" charcounter rows="10"></mwc-textarea>
                                 </div>
                                 <div class="d-flex align-items-center item-space-between">
                                     <mwc-formfield label="Show / Hide"><mwc-checkbox name="activate" value="true" @if($model->activate == true) checked @endif></mwc-checkbox></mwc-formfield>

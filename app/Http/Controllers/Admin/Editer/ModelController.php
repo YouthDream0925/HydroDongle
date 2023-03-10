@@ -89,6 +89,7 @@ class ModelController extends Controller
         $model->note = $request->input('note');
         $model->brand_id = $request->input('brand_id');
         $model->cpu_id = $request->input('cpu_id');
+        $model->soc_id = $request->input('soc_id');
         if($request->feature_id != null) {
             $new_feature_ids = '[';
             foreach(explode(',', $request->feature_id) as $key => $item) {
