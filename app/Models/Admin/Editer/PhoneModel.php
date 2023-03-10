@@ -21,6 +21,7 @@ class PhoneModel extends Model
     protected $fillable = [
         'brand_id',
         'cpu_id',
+        'soc_id',
         'feature_id',
         'memory_id',
         'name',

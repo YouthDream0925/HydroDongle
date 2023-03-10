@@ -27,6 +27,7 @@ class PhoneModelRequest extends FormRequest
         return [
             'brand_id' => ['required', 'numeric'],
             'cpu_id' => ['required', 'numeric'],
+            'soc_id' => ['required', 'numeric'],
             'memory_id' => ['required', 'numeric'],
             'name' => ['required', 'string'],
             'link' => ['required', 'string'],

@@ -96,6 +96,21 @@ var Model = function() {
                         '</div>';
             $('#cpu_selecter').html(temp);
             $("input[name=cpu_id]").val(selected_cpu.id);
+
+            GetSocs(selected_cpu.id);
+        });
+    }
+
+    var SocSelector = function() {
+        $('#soc_selector').on('click', function() {
+            let count = $(this).children('mwc-list-item').length;
+            if(count == 0) {
+                new bs5.Toast({
+                    body: 'Please select a cpu.',
+                    className: 'border-0 bg-danger text-white',
+                    btnCloseWhite: true,
+                }).show();
+            }
         });
     }
 
@@ -127,7 +142,7 @@ var Model = function() {
         $('#model_name').on('input',function(e) {
             if(selected_brand == null) {
                 new bs5.Toast({
-                    body: 'Please select brand.',
+                    body: 'Please select a brand.',
                     className: 'border-0 bg-danger text-white',
                     btnCloseWhite: true,
                 }).show();
@@ -243,6 +258,48 @@ var Model = function() {
         })
     }
 
+    var GetSocs = function(cpu) {
+        $.ajax({
+            type: 'POST',
+            url: '/admin/editer/models/socs',
+            data: {
+                '_token': $('input[name="_token"]').val(),
+                'cpu_id': cpu
+            },
+            beforeSend() {
+                if($('#page_loader').hasClass('d-none'))
+                    $('#page_loader').removeClass('d-none');
+            },
+            success: function(res) {
+                if(res['success'] == true) {
+                    console.log(res['socs'])
+                    $('#soc_selector').html('');
+                    res['socs'].map((element) => {
+                        var temp = '<mwc-list-item value="' + element.id + '">' + element.name + '</mwc-list-item>';
+                        $('#soc_selector').append(temp);
+                    });
+                } else {
+                    new bs5.Toast({
+                        body: "Can't find this CPU.",
+                        className: 'border-0 bg-danger text-white',
+                        btnCloseWhite: true,
+                    }).show();
+                }
+
+                $('#page_loader').addClass('d-none');
+            },
+            error: function() {
+                new bs5.Toast({
+                    body: 'Unexpected error occurred.',
+                    className: 'border-0 bg-danger text-white',
+                    btnCloseWhite: true,
+                }).show();
+
+                $('#page_loader').addClass('d-none');
+            }
+        })
+    }
+
     return {
         init: function(brand, features) {
             selected_brand = brand;
@@ -253,6 +310,7 @@ var Model = function() {
             Search();
             BrandSelecter();
             CpuSelecter();
+            SocSelector();
             FeaturesSelecter();
             ModelName();
         }

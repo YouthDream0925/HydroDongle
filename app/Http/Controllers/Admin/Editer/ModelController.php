@@ -152,14 +152,19 @@ class ModelController extends Controller
                 }
             }
         } else if($type == 'cpu') {
-            $data = Cpu::filter($request->all())->select('id', 'name', 'explanation')->get();
-            foreach($data as $item) {
-                if($item->hasMedia('cpu_image')) {
-                    $item->image_url = $item->getMedia('cpu_image')->first()->getUrl();
-                } else {
-                    $item->image_url = url('storage/sample/brand');
-                }
+            $cpus = Cpu::filter($request->all())->select('id', 'name', 'explanation')->get();
+            $real_cpus = [];
+            foreach($cpus as $item) {
+                if(count($item->socs) != 0) {
+                    if($item->hasMedia('cpu_image')) {
+                        $item->image_url = $item->getMedia('cpu_image')->first()->getUrl();
+                    } else {
+                        $item->image_url = url('storage/sample/brand');
+                    }
+                    array_push($real_cpus, $item);
+                }                    
             }
+            $data = $real_cpus;
         } else if($type == 'feature') {
             $data = Feature::filter($request->all())->get();
         }
@@ -168,6 +173,25 @@ class ModelController extends Controller
             'type' => $type,
             'data' => $data
         ];
+
+        return $result;
+    }
+
+    public function socs(Request $request)
+    {
+        $result = [];
+        $cpu = Cpu::find($request->cpu_id);
+        if($cpu) {
+            $result = [
+                'success' => true,
+                'socs' => $cpu->socs
+            ];
+        } else {
+            $result = [
+                'success' => false,
+                'socs' => null
+            ];
+        }
 
         return $result;
     }

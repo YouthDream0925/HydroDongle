@@ -97,6 +97,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('models', ModelController::class);
         Route::resource('phones', PhoneController::class);
         Route::post('/models/data', [ModelController::class, 'data']);
+        Route::post('/models/socs', [ModelController::class, 'socs']);
         Route::resource('countries', CountryController::class);
         Route::resource('resellers', ResellerController::class);
         Route::resource('products', ProductController::class);
