@@ -52,6 +52,11 @@ class PhoneModel extends Model
         return $this->belongsTo(Cpu::class, 'cpu_id', 'id');
     }
 
+    public function soc()
+    {
+        return $this->belongsTo(Soc::class, 'soc_id', 'id');
+    }
+
     public function features()
     {
         return;

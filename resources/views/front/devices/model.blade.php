@@ -79,7 +79,7 @@
                     </div>
                     @endif 
                     <h6 class="mt-5 mb-0">{{ $model->cpu->name }}</h6>
-                    <p class="mb-0">CPU</p>
+                    <p class="mb-0">CPU ({{ $model->soc->name }})</p>
                 </div><!-- ends: .icon-box -->
             </div><!-- ends: .col-lg-4 -->
         </div><!-- ends: .row -->
