@@ -5,18 +5,15 @@
 @endpush
 
 @section('content')
-<section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
-    <div class="bg_image_holder">
-        <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
-    </div>
-    <div class="container content_above">
+<section class="breadcrumb_area breadcrumb1">
+    <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="breadcrumb_wrapper d-flex flex-column align-items-center">
-                    <!-- <h4 class="page_title">{{ __('global.devices') }}</h4> -->
-                    <nav aria-label="breadcrumb" style="margin-top: 9.6rem;">
-                        <ol class="breadcrumb m-bottom-30">
-                            <li class="breadcrumb-item"><a class="custom-a-breadcrumb" href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
+                <div class="breadcrumb_wrapper d-flex align-items-center justify-content-between flex-wrap">
+                    <h4 class="page_title">{{ __('global.brand') }}</h4>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a class="custom-a-breadcrumb" href="{{ route('devices') }}">{{ __('global.devices') }}</a></li>
                             <li class="breadcrumb-item active" aria-current="page" style="color: rebeccapurple !important;">{{ __('global.brand') }}</li>
                         </ol>
                     </nav>
