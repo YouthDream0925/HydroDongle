@@ -33,7 +33,7 @@ class BrandRequest extends FormRequest
                     'brand_name' => ['required', 'string', 'max:32'],
                     'brand_link' => ['required', 'string', 'max:255'],
                     'brand_order' => ['required', 'numeric', 'min:1', 'max:9999'],
-                    'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
+                    'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:2048']
                 ];
             } else {
                 return [
@@ -47,7 +47,7 @@ class BrandRequest extends FormRequest
                 'brand_name' => ['required', 'string', 'max:32'],
                 'brand_link' => ['required', 'string', 'max:255'],
                 'brand_order' => ['required', 'numeric', 'min:1', 'max:9999'],
-                'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg', 'max:2048']
+                'brand_image' => ['required', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:2048']
             ];
         }
     }
