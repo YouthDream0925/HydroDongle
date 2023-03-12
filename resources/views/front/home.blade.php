@@ -345,12 +345,6 @@
                                     @endif
                                     <h6><a href="{{ url('/devices/brand/model/'.$model->id) }}">{{ $model->name }}</a></h6>
                                     <span class="team-designation">{{ $model->brand->brand_name }}</span>
-                                    <ul class="team-social d-flex justify-content-center">
-                                        <li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
-                                        <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
                                 </div>
                             </div><!-- End: .card -->
                         </div><!-- ends: .carousel-single -->
