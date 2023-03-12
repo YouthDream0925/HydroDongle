@@ -13,6 +13,7 @@ use App\Http\Requests\Admin\PhoneModelRequest;
 use Plank\Mediable\Facades\ImageManipulator;
 use Plank\Mediable\HandlesMediaUploadExceptions;
 use Plank\Mediable\Facades\MediaUploader;
+use Illuminate\Support\Facades\File;
 
 class ModelController extends Controller
 {
@@ -195,5 +196,45 @@ class ModelController extends Controller
         }
 
         return $result;
+    }
+
+    // This function is necessay to make data entry of Models.
+    public function json(Request $request)
+    {
+        if($request->file('json_file') != null) {
+            $lines = file($request->file('json_file'));
+            $count = 0;
+
+            $test = [];
+            $count = 0;
+            foreach($lines as $line) {
+                $count += 1;
+                $line = trim($line, "\r\n");
+                $prefix = "C:/Users/admin/Downloads/telefonlar/telefonlar/telefonlar/";
+                $suffix = $line;
+                $url = $prefix.$suffix;
+                if(is_file($url) || is_file($url = "C:/Users/admin/Downloads/telefonlar/telefonlar/telefonlar/".$line)) {
+                    $model = PhoneModel::find($count);
+                    if($model != null) {
+                        if($model->hasMedia('model_image')) {
+                            echo $count.": "."Already has model Image";
+                        } else {
+                            $absolute_path = realpath($url);
+                            // $file = File::get($url);
+                            $media = MediaUploader::fromSource($absolute_path)
+                                ->toDisk('models')
+                                    ->upload();
+                            
+                            $model->attachMedia($media, 'model_image');
+
+                            $model->update();
+                        }
+                    } else {
+                        echo "Can't find model.";
+                    }
+                }
+            }
+            die();
+        }
     }
 }

@@ -283,19 +283,19 @@
                 <div class="form-wrapper">
                     <form action="#">
                         <div class="row">
-                            <div class="col-lg-6 m-bottom-20">
+                            <div class="col-lg-6 m-bottom-50">
                                 <div class="form-group">
                                     <div class="select-basic">
                                         <select id="brand_selecter" class="form-control border-0">
                                             <option value="">Phone Brand</option>
-                                            @foreach($brands as $brand)
+                                            @foreach($real_brands as $brand)
                                             <option value="{{ $brand->brand_id }}" data-brand="{{ $brand->brand_name }}">{{ $brand->brand_name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 m-bottom-20">
+                            <div class="col-lg-6 m-bottom-50">
                                 <div class="form-group">
                                     <div class="select-basic">
                                         <select id="model_selecter" class="form-control border-0">

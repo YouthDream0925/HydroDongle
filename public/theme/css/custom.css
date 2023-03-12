@@ -332,3 +332,15 @@
     --bs-bg-opacity: 1;
     background-color: #A037FF !important;
 }
+
+.front-brand-container {
+    width: 240px;
+    height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.margin-center {
+    margin-left: auto;
+    margin-right: auto;
+}

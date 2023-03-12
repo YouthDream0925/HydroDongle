@@ -98,6 +98,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::resource('phones', PhoneController::class);
         Route::post('/models/data', [ModelController::class, 'data']);
         Route::post('/models/socs', [ModelController::class, 'socs']);
+        //This route is necessay to make data entry of models.
+        Route::post('/models/json', [ModelController::class, 'json'])->name('models.json');
         Route::resource('countries', CountryController::class);
         Route::resource('resellers', ResellerController::class);
         Route::resource('products', ProductController::class);

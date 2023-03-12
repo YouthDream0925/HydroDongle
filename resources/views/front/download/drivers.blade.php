@@ -41,7 +41,7 @@
         <div class="container">
             <div class="row">
                 @foreach($cpus as $cpu)
-                <div class="col-lg-6">
+                <div class="col-lg-6 mb-5">
                     <div class="feature-boxes row">
                         <div class="col-md-12">
                             @if($cpu->hasMedia('cpu_image'))

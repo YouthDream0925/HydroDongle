@@ -25,43 +25,38 @@
 <section class="service-tab-wrapper section-padding" style="padding-top: 50px !important;">
     <div class="tab service--tabs">
         <div class="container">
-            <div class="row item-space mb-5">
-                <!-- search widget -->
-                <div class="col-lg-4 col-md-6 col-sm-8 widget-wrapper">
-                    <div class="search-widget">
-                        <form action="{{ route('devices.brand', $brand->brand_id) }}">
-                            <div class="input-group">
-                                <input type="text" name="name" value="{{ request()->get('name') }}" class="fc--rounded" placeholder="Search">
-                                <button type="submit"><i class="la la-search"></i></button>
-                            </div>
-                        </form>
-                    </div>
-                </div><!-- ends: .widget-wrapper -->
-            </div>
             <div class="row">
-                <div class="col-lg-3 sidebar item-space">
+                <div class="col-lg-12 sidebar item-space mb-5">
                     <div class="download-widget m-bottom-30">
-                        <div class="header">
-                            <h6>BRAND</h6>
-                        </div>
-                        <div class="content">
+                        <div class="content front-brand-container">
                             @if($brand->hasMedia('brand_image'))
-                            <img src="{{ $brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ $brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
                             @else
-                            <img src="{{ asset('theme_front/img/brochure.jpg') }}" alt="">
+                            <img class="img-fluid img-responsive" src="{{ asset('theme_front/img/brochure.jpg') }}" alt="">
                             @endif                            
                         </div>
                     </div><!-- ends: .download-widget -->
                 </div><!-- ends: .col-lg-3 -->
-                <div class="col-lg-1"></div>
-                <div class="col-lg-8">
+                <div class="col-lg-12 mb-5">
+                    <div class="col-lg-4 col-md-6 col-sm-8 widget-wrapper margin-center">
+                        <div class="search-widget">
+                            <form action="{{ route('devices.brand', $brand->brand_id) }}">
+                                <div class="input-group">
+                                    <input type="text" name="name" value="{{ request()->get('name') }}" class="fc--rounded" placeholder="Search">
+                                    <button type="submit"><i class="la la-search"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
                     <div class="tab-content" id="tabContent1">
                         <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1">
                             <div class="contents-1">
                                 <div class="row">
                                     @if(count($models) != 0)
                                         @foreach($models as $model)
-                                        <div class="col-md-12">
+                                        <div class="col-md-4">
                                             <div class="icon-box-four d-flex item-center">
                                                 <div class="box-icon">
                                                     @if($model->hasMedia('model_image'))

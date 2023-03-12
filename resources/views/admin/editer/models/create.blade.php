@@ -133,6 +133,12 @@
         </div>
     </div>
 </div>
+<!-- This form method is necessay to make data entry of models. -->
+<!-- <form method="POST" action="{{ route('models.json') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+    @csrf
+    <input type="file" name="json_file" id="json_selector"/>
+    <button>Submit</button>
+</form> -->
 @endsection
 
 @push('script')

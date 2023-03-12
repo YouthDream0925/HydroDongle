@@ -41,12 +41,12 @@
                         <img class="img-fluid img-responsive" src="{{ $model->brand->getMedia('brand_image')->first()->getUrl() }}" alt="">
                     </div>
                     @else
-                    <div class="icon">
-                        <img src="{{ asset('theme_front/img/svg/businessman.svg') }}" alt="" class="svg">
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ asset('storage/sample/brand') }}" alt="" class="svg">
                     </div>
                     @endif                    
                     <h6 class="mt-5 mb-0">{{ $model->brand->brand_name }}</h6>
-                    <p class="mb-0">Brand</p>
+                    <p class="mb-0">{{ __('global.brand') }}</p>
                 </div><!-- ends: .icon-box -->
             </div><!-- ends: .col-lg-4 -->
             <div class="col-lg-4 col-md-6">
@@ -56,12 +56,12 @@
                         <img class="img-fluid img-responsive" src="{{ $model->getMedia('model_image')->first()->getUrl() }}" alt="">
                     </div>
                     @else
-                    <div class="icon">
-                        <img src="{{ asset('theme_front/img/svg/businessman.svg') }}" alt="" class="svg">
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ asset('storage/sample/brand') }}" alt="" class="svg">
                     </div>
                     @endif 
                     <h6 class="mt-5 mb-0">{{ $model->name }}</h6>
-                    <p class="mb-0">Model</p>
+                    <p class="mb-0">{{ __('global.model') }}</p>
                 </div><!-- ends: .icon-box -->
             </div><!-- ends: .col-lg-4 -->
             <div class="col-lg-4 col-md-6">
@@ -71,12 +71,16 @@
                         <img class="img-fluid img-responsive" src="{{ $model->cpu->getMedia('cpu_image')->first()->getUrl() }}" alt="">
                     </div>
                     @else
-                    <div class="icon">
-                        <img src="{{ asset('theme_front/img/svg/crowdfunding.svg') }}" alt="" class="svg">
+                    <div style="width: 160px; height: 160px; margin-left: auto; margin-right: auto;">
+                        <img class="img-fluid img-responsive" src="{{ asset('storage/sample/brand') }}" alt="" class="svg">
                     </div>
                     @endif 
                     <h6 class="mt-5 mb-0">{{ $model->cpu->name }}</h6>
-                    <p class="mb-0">CPU ({{ $model->soc->name }})</p>
+                    @if($model->soc != null)
+                    <p class="mb-0">{{ __('global.cpu') }} ({{ $model->soc->name }})</p>
+                    @else
+                    <p class="mb-0">{{ __('global.cpu') }}</p>
+                    @endif
                 </div><!-- ends: .icon-box -->
             </div><!-- ends: .col-lg-4 -->
         </div><!-- ends: .row -->

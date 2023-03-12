@@ -106,4 +106,12 @@ class DongleUserController extends Controller
         }
         return $result;
     }
+
+    public function destroy($id)
+    {
+        $dongle_user = DongleUser::find($id);
+        $dongle_user->delete();
+
+        return redirect()->route('dongles.index')->with('success', 'Dongle User deleted successfully.');
+    }
 }

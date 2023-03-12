@@ -32,8 +32,13 @@ class HomeController extends Controller
     {
         $main_banner = Slide::where('activate', '1')->orderBy('sort', 'asc')->first();
         $brands = Brand::orderBy('updated_at', 'desc')->where('brand_activate', '1')->select('brand_id', 'brand_name')->get();
+        $real_brands = [];
+        foreach($brands as $brand) {
+            if(count($brand->models) != 0)
+                array_push($real_brands, $brand);
+        }
         $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(10)->get();
-        return view('front.home', compact('main_banner', 'brands', 'models'));
+        return view('front.home', compact('main_banner', 'real_brands', 'models'));
     }
 
     public function models(Request $request)
