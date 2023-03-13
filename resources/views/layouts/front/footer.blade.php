@@ -1,5 +1,5 @@
 <div class="counter counter--3 biz_overlay overlay--primary">
-    <div class="bg_image_holder"><img src="{{ asset('theme_front/img/cbg2.jpg') }}" alt=""></div>
+    <div class="bg_image_holder"><img src="{{ asset('theme_front/banners/footer.jpg') }}" alt=""></div>
     <div class="container content_above">
         <div class="row">
             <div class="col">
