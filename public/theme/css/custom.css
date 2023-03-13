@@ -352,3 +352,9 @@
     border: 1px solid #cdcdcd;
     border-radius: 0.2rem;
 }
+
+.history-style {
+    padding: 0.5rem;
+    color: white;
+    border-radius: 0.25rem;
+}

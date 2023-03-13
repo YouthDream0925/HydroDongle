@@ -74,9 +74,6 @@
                                     <div>
                                         <p>
                                             {{ $history->title }}
-                                            @if($history->type != 0)
-                                            <span class="badge {{ $history_types[$history->type] }} f-right" style="padding: 0.5rem; color: white;">{{ $history_types[$history->type] }}</span> 
-                                            @endif
                                         </p>
                                         <p>
                                             <strong>Version : </strong>{{ $history->version }}
@@ -87,6 +84,9 @@
                             </h6>
                         </div>
                         <div id="collapse{{$history->id}}" class="collapse" aria-labelledby="heading{{$history->id}}" data-parent="#accordion_one">
+                            @if($history->type != 0)
+                            <h6 class="{{ $history_types[$history->type] }} history-style">{{ $history_types[$history->type] }}</h6>
+                            @endif
                             <div class="accordion-contents">
                                 {!! $history->content !!}
                             </div>
