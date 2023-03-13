@@ -11,6 +11,20 @@
                 <h1 class="display-4 mb-0 display-5 mr-3">{{ __('global.modelTitle') }}</h1>
                 {!! Form::open(['method' => 'GET','route' => ['models.index']]) !!}
                 <div class="d-flex item-center">
+                    <div class="datatable-dropdown mr-1">
+                        <label>
+                            <select id="brand_id_selector" name="brand" class="datatable-selector">
+                                <option value="" selected>Show by Brand</option>
+                                @foreach($brands as $brand)
+                                    @if(request()->input('brand') != null && $brand->brand_id == request()->input('brand'))
+                                    <option value="{{ $brand->brand_id }}" selected>{{ $brand->brand_name }}</option>
+                                    @else
+                                    <option value="{{ $brand->brand_id }}">{{ $brand->brand_name }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </label>
+                    </div>
                     <div class="datatable-search mr-1">
                         <input id="search_bar" name="name" value="{{ request()->get('name') }}" class="datatable-input" style="line-height: initial;" placeholder="Search..." type="search" title="Search within table" aria-controls="datatablesSimple">
                     </div>
@@ -66,8 +80,9 @@
 
 @push('script')
 <script type="module">
-    import { Search, ChangePerPage } from '{{ asset("theme/js/search.js") }}';
+    import { Search, ChangePerPage, ChangeBrand } from '{{ asset("theme/js/search.js") }}';
     Search();
     ChangePerPage();
+    ChangeBrand();
 </script>
 @endpush

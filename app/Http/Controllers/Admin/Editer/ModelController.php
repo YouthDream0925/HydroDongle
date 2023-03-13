@@ -19,10 +19,12 @@ class ModelController extends Controller
 {
     public function index(Request $request)
     {
+        $brands = Brand::select('brand_id', 'brand_name')->get();
+        $selected_brand = $request->brand_id_selector ? $request->brand_id_selector : null;
         $per_page = $request->per_page ? $request->per_page : config('pagination.per_page');
         $name = $request->name ? $request->name : null;
-        $models = PhoneModel::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name]);
-        return view('admin.editer.models.index', compact('models', 'per_page'))
+        $models = PhoneModel::filter($request->all())->paginateFilter($per_page)->appends(['per_page' => $per_page, 'name' => $name, 'selected_brand' => $selected_brand]);
+        return view('admin.editer.models.index', compact('models', 'per_page', 'brands'))
             ->with('i', ($request->input('page', 1) - 1) * $per_page);
     }
 

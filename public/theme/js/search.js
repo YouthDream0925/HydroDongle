@@ -16,4 +16,11 @@ const ChangePerPage = () => {
     });
 };
 
-export { Search, ChangePerPage };
+const ChangeBrand = () => {
+    $('#brand_id_selector').on('change', function() {
+        var form = $(this).closest("form");
+        form.submit();
+    });
+}
+
+export { Search, ChangePerPage, ChangeBrand };

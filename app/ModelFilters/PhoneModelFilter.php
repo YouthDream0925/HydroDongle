@@ -16,6 +16,14 @@ class PhoneModelFilter extends ModelFilter
         });
     }
 
+    public function brand($key)
+    {
+        return $this->where(function($q) use ($key)
+        {
+            return $q->where('brand_id', "$key");
+        });
+    }
+
     public function setup()
     {
         return $this->orderBy('updated_at', 'desc');
