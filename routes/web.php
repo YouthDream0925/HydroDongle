@@ -100,6 +100,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function() {
         Route::post('/models/socs', [ModelController::class, 'socs']);
         //This route is necessay to make data entry of models.
         Route::post('/models/json', [ModelController::class, 'json'])->name('models.json');
+        Route::post('/models/features', [ModelController::class, 'change_features'])->name('models.features');
         Route::resource('countries', CountryController::class);
         Route::resource('resellers', ResellerController::class);
         Route::resource('products', ProductController::class);

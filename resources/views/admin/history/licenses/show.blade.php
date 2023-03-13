@@ -20,12 +20,20 @@
                     <div class="row mb-4 item-center">
                         <div class="col-xl-6">
                             <div class="mb-4">
+                                @if($license_history->user != null)
                                 <mwc-textfield class="w-100" label="User Name" outlined id="title" value="{{ $license_history->user->first_name }} {{ $license_history->user->last_name }}" readonly></mwc-textfield>
+                                @else
+                                <mwc-textfield class="w-100" label="User Name" outlined id="title" value="{{ __('global.deletedUser') }}" readonly></mwc-textfield>
+                                @endif
                             </div>
                         </div>
                         <div class="col-xl-6">
                             <div class="mb-4">
+                                @if($license_history->product != null)
                                 <mwc-textfield class="w-100" label="License" outlined id="title" value="{{ $license_history->product->products }}" readonly></mwc-textfield>
+                                @else
+                                <mwc-textfield class="w-100" label="User Name" outlined id="title" value="{{ __('global.deletedProduct') }}" readonly></mwc-textfield>
+                                @endif
                             </div>
                         </div>
                         <div class="col-xl-6">

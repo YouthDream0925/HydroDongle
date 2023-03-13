@@ -139,6 +139,12 @@
     <input type="file" name="json_file" id="json_selector"/>
     <button>Submit</button>
 </form> -->
+
+<!-- <form method="POST" action="{{ route('models.features') }}" accept-charset="UTF-8" enctype="multipart/form-data">
+    @csrf
+    <input type="file" name="json_file" id="json_selector"/>
+    <button>Submit</button>
+</form> -->
 @endsection
 
 @push('script')

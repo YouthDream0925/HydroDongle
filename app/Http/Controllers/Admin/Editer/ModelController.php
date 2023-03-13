@@ -201,40 +201,97 @@ class ModelController extends Controller
     // This function is necessay to make data entry of Models.
     public function json(Request $request)
     {
+        $data_array = [];
+        $entry = PhoneModel::get();
+        // $entry = Brand::get();
+        foreach($entry as $item) {
+            array_push($data_array, $item->id);
+        }
+        // echo json_encode($data_array);
+        // die();
+
         if($request->file('json_file') != null) {
+            // echo "aaas";
             $lines = file($request->file('json_file'));
             $count = 0;
-
-            $test = [];
-            $count = 0;
             foreach($lines as $line) {
-                $count += 1;
+                // echo json_encode($line);
+                // echo "<br>";
                 $line = trim($line, "\r\n");
-                $prefix = "C:/Users/admin/Downloads/telefonlar/telefonlar/telefonlar/";
+                $prefix = "D:/Work/Active/PHP_Redesign_Turkey/images/models/";
+                // $prefix = "D:/Work/Active/PHP_Redesign_Turkey/images/brands/";
                 $suffix = $line;
                 $url = $prefix.$suffix;
-                if(is_file($url) || is_file($url = "C:/Users/admin/Downloads/telefonlar/telefonlar/telefonlar/".$line)) {
-                    $model = PhoneModel::find($count);
-                    if($model != null) {
-                        if($model->hasMedia('model_image')) {
-                            echo $count.": "."Already has model Image";
+                if(is_file($url) || is_file($url = "D:/Work/Active/PHP_Redesign_Turkey/images/models/".$line)) {
+                // if(is_file($url) || is_file($url = "D:/Work/Active/PHP_Redesign_Turkey/images/brands/".$line)) {
+                    $entry_item = PhoneModel::find($data_array[$count]);
+                    // $entry_item = Brand::find($data_array[$count]);
+                    if($entry_item != null) {
+                        if($entry_item->hasMedia('model_image')) {
+                        // if($entry_item->hasMedia('brand_image')) {
+                            echo $count.": "."Already has a image";
                         } else {
                             $absolute_path = realpath($url);
                             // $file = File::get($url);
-                            $media = MediaUploader::fromSource($absolute_path)
-                                ->toDisk('models')
-                                    ->upload();
+                            $media = MediaUploader::fromSource($absolute_path)->toDisk('models')->upload();
+                            // $media = MediaUploader::fromSource($absolute_path)->toDisk('brands')->upload();
                             
-                            $model->attachMedia($media, 'model_image');
+                            $entry_item->attachMedia($media, 'model_image');
+                            // $entry_item->attachMedia($media, 'brand_image');
 
-                            $model->update();
+                            $entry_item->update();
+
+                            echo $entry_item->brand_id . "Added image to this item";
                         }
                     } else {
                         echo "Can't find model.";
                     }
+                } else {
+                    echo "This is not file.";
                 }
+                echo "<br>";
+                $count += 1;
             }
             die();
+        } else {
+            echo "asdfasdf";
         }
+        die();
+    }
+
+    public function change_features()
+    {
+        $count = 0;
+        $models = PhoneModel::get();
+        foreach($models as $model) {
+            $count += 1;
+            // if($count == $model->id)
+            //     echo json_encode($count.": ".$model->id);
+            // else
+            //     echo "HERE";
+            // echo "<br>";
+
+            if($model->hasMedia('model_image')) {
+                echo "Has Model";
+            } else {
+                echo "No Model";
+            }
+            // if($model->cpu_id == null) {
+            //     $model->feature_id = "[]";
+            //     echo json_encode($model->feature_id);
+            // }
+            // else {
+            //     $temp = "[";
+            //     $temp = $temp.$model->feature_id;
+            //     $temp = $temp."]";
+            //     $model->feature_id = $temp;
+            //     echo json_encode($model->feature_id);
+            // }
+            echo "<br>";
+            // $model->update();
+        }
+
+        // echo $count;
+        die();
     }
 }

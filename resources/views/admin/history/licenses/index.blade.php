@@ -42,8 +42,16 @@
                             @foreach ($licenses as $key => $license)
                             <tr>
                                 <th scope="row">{{ ++$i }}</th>
+                                @if($license->user != null)
                                 <td>{{ $license->user->first_name }} {{ $license->user->last_name }}</td>
+                                @else
+                                <td><span class="badge bg-danger">{{ __('global.deletedUser') }}</span></td>
+                                @endif
+                                @if($license->product != null)
                                 <td>{{ $license->product->products }}</td>
+                                @else
+                                <td><span class="badge bg-danger">{{ __('global.deletedProduct') }}</span></td>
+                                @endif
                                 <td class="txt-right">
                                     <div class="dropdown">
                                         <button class="btn btn-outline-secondary pt-025" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_horiz</i></button>

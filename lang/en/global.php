@@ -359,6 +359,8 @@ return [
     */
     'licenseTitle' => 'LICENSE HISTORIES',
     'fullName' => 'Full Name',
+    'deletedUser' => 'Deleted User',
+    'deletedProduct' => 'Deleted Product',
 
     /*
     |--------------------------------------------------------------------------

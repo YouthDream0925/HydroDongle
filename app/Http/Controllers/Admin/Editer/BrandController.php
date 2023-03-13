@@ -97,6 +97,10 @@ class BrandController extends Controller
         }
 
         foreach($brand->models as $model) {
+            if($model->hasMedia('model_image')) {
+                $media = $model->getMedia('model_image')->first();
+                $media->delete();
+            }
             $model->delete();
         }
 
