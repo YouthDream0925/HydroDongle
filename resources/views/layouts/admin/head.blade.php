@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Dashboard - Material Admin Pro</title>
+    <title>HYTRA TOOL - ADMIN</title>
     <!-- Load Favicon-->
     <link href="{{ asset('theme/assets/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon" />
     <!-- Load Material Icons from Google Fonts-->
