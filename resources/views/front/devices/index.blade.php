@@ -18,7 +18,7 @@
 
 <section class="breadcrumb_area breadcrumb2 bgimage biz_overlay" style="min-height: 300px;">
     <div class="bg_image_holder">
-        <img src="{{ asset('theme_front/img/breadbg.jpg') }}" alt="">
+        <img src="{{ asset('theme_front/banners/supported.png') }}" alt="">
     </div>
     <div class="container content_above">
         <div class="row">
