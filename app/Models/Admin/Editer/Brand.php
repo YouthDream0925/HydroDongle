@@ -51,7 +51,7 @@ class Brand extends Model
 
     public function models_filter()
     {
-        return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->where('activate', '1')->select('id', 'name');
+        return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->where('activate', '1')->select('id', 'name', 'cpu_id');
     }
 
     public function drivers()

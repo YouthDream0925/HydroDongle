@@ -289,7 +289,11 @@
                                         <select id="brand_selecter" class="form-control border-0">
                                             <option value="">Phone Brand</option>
                                             @foreach($real_brands as $brand)
-                                            <option value="{{ $brand->brand_id }}" data-brand="{{ $brand->brand_name }}">{{ $brand->brand_name }}</option>
+                                                @if($brand->hasMedia('brand_image'))
+                                                <option value="{{ $brand->brand_id }}" data-brand="{{ $brand->brand_name }}" data-brandUrl="{{ $brand->getMedia('brand_image')->first()->getUrl() }}">{{ $brand->brand_name }}</option>
+                                                @else
+                                                <option value="{{ $brand->brand_id }}" data-brand="{{ $brand->brand_name }}">{{ $brand->brand_name }}</option>
+                                                @endif
                                             @endforeach
                                         </select>
                                     </div>
@@ -304,11 +308,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4">
+                            <div id="brand_container" class="col-lg-4">
                             </div>
                             <div id="phone_model_container" class="col-lg-4">
                             </div>
-                            <div class="col-lg-4">
+                            <div id="cpu_container" class="col-lg-4">
                             </div>
                             <!-- <div class="col-lg-12 text-center">
                                 <button class="btn btn-primary">Search For Unlock</button>

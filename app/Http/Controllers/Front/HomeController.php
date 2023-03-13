@@ -9,6 +9,7 @@ use App\Models\Admin\Other\Slide;
 use App\Models\Admin\Editer\Brand;
 use App\Models\Admin\Editer\Feature;
 use App\Models\Admin\Editer\PhoneModel;
+use App\Models\Admin\Editer\Cpu;
 use App\Models\Role;
 
 class HomeController extends Controller
@@ -37,7 +38,7 @@ class HomeController extends Controller
             if($brand->isModel() > 0)
                 array_push($real_brands, $brand);
         }
-        $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(10)->get();
+        $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(5)->get();
         return view('front.home', compact('main_banner', 'real_brands', 'models'));
     }
 
@@ -45,17 +46,34 @@ class HomeController extends Controller
     {
         $result = [];
         $brand = Brand::find($request->id);
+        $data = [];
         if($brand != null) {
             foreach($brand->models_filter as $model) {
+                $temp['id'] = $model->id;
+                $temp['name'] = $model->name;
                 if($model->hasMedia('model_image')) {
-                    $model->image = $model->getMedia('model_image')->first()->getUrl();
+                    $temp['image'] = $model->getMedia('model_image')->first()->getUrl();
                 } else {
-                    $model->image = '/storage/sample/brand';
+                    $temp['image'] = '/storage/sample/brand';
                 }
+
+                $temp['cpu_id'] = $model->cpu_id;
+                $cpu = Cpu::find($model->cpu_id);
+                if($cpu != null) {
+                    $temp['cpu_name'] = $cpu->name;
+                } else {
+                    $temp['cpu_name'] = 'No CPU';
+                }
+                if($cpu->hasMedia('cpu_image')) {
+                    $temp['cpu_image'] = $cpu->getMedia('cpu_image')->first()->getUrl();
+                } else {
+                    $temp['cpu_image'] = '/storage/sample/brand';
+                }
+                array_push($data, $temp);
             }
             $result = [
                 'success' => true,
-                'models' => $brand->models_filter
+                'models' => $data
             ];
         } else {
             $result = [
