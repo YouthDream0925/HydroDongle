@@ -262,6 +262,8 @@ class ModelController extends Controller
     public function change_features()
     {
         $count = 0;
+        $has_model = 0;
+        $no_model = 0;
         $models = PhoneModel::get();
         foreach($models as $model) {
             $count += 1;
@@ -271,15 +273,18 @@ class ModelController extends Controller
             //     echo "HERE";
             // echo "<br>";
 
-            if($model->hasMedia('model_image')) {
-                echo "Has Model";
-            } else {
-                echo "No Model";
-            }
-            // if($model->cpu_id == null) {
-            //     $model->feature_id = "[]";
-            //     echo json_encode($model->feature_id);
+            // if($model->hasMedia('icon')) {
+            //     $has_model++;
+            //     echo "Has Model";
+            // } else {
+            //     $no_model++;
+            //     echo "No Model";
             // }
+            if($model->cpu_id == 0) {
+                $model->cpu_id = 2;
+                // $model->feature_id = "[]";
+                // echo json_encode($model->feature_id);
+            }
             // else {
             //     $temp = "[";
             //     $temp = $temp.$model->feature_id;
@@ -287,11 +292,9 @@ class ModelController extends Controller
             //     $model->feature_id = $temp;
             //     echo json_encode($model->feature_id);
             // }
-            echo "<br>";
-            // $model->update();
+            // echo "<br>";
+            $model->update();
         }
-
-        // echo $count;
         die();
     }
 }

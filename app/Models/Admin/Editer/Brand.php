@@ -44,6 +44,11 @@ class Brand extends Model
         return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id');
     }
 
+    public function isModel() {
+        $models = $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->where('activate', '1')->select('id', 'name')->get();
+        return count($models);
+    }
+
     public function models_filter()
     {
         return $this->hasMany(PhoneModel::class, 'brand_id', 'brand_id')->where('activate', '1')->select('id', 'name');

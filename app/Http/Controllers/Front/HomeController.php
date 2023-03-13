@@ -34,7 +34,7 @@ class HomeController extends Controller
         $brands = Brand::orderBy('updated_at', 'desc')->where('brand_activate', '1')->select('brand_id', 'brand_name')->get();
         $real_brands = [];
         foreach($brands as $brand) {
-            if(count($brand->models) != 0)
+            if($brand->isModel() > 0)
                 array_push($real_brands, $brand);
         }
         $models = PhoneModel::orderBy('updated_at', 'desc')->where('activate', '1')->take(10)->get();
