@@ -358,3 +358,15 @@
     color: white;
     border-radius: 0.25rem;
 }
+
+.brand-selector-front {
+    background: transparent;
+}
+
+.brand-selector-front:hover {
+    background: #e9e9e9;
+}
+
+.p-1 {
+    padding: 1rem !important;
+}
