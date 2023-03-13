@@ -370,3 +370,19 @@
 .p-1 {
     padding: 1rem !important;
 }
+
+#rev_slider_35_1_wrapper {
+    height: 700px !important;
+}
+
+.tp-fullwidth-forcer {
+    height: 700px !important;
+}
+
+#rev_slider_35_1 {
+    height: 700px !important;
+}
+
+.tp-parallax-wrap.tp-parallax-container {
+    top: 50px !important;
+}

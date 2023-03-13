@@ -15,7 +15,7 @@
     </svg>
 </div>
 
-<section class="p-top-70 p-bottom-70 border-bottom clients-logo-area">
+<section class="p-top-35 p-bottom-35 border-bottom clients-logo-area">
     <div class="container" style="max-width:100% !important;">
         <div class="row item-space">
             <div class="col-lg-1 col-sm-2"></div>
