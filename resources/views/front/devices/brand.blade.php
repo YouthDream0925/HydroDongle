@@ -60,9 +60,11 @@
                                             <div class="icon-box-four d-flex item-center">
                                                 <div class="box-icon">
                                                     @if($model->hasMedia('model_image'))
-                                                    <div style="width: 100px; height: 100px;">
-                                                        <img class="img-fluid img-responsive" src="{{ $model->getMedia('model_image')->first()->getUrl() }}" alt="">
-                                                    </div>                                                
+                                                    <a href="{{ route('devices.brand.model', $model->id) }}">
+                                                        <div style="width: 100px; height: 100px;">
+                                                            <img class="img-fluid img-responsive" src="{{ $model->getMedia('model_image')->first()->getUrl() }}" alt="">
+                                                        </div>
+                                                    </a>
                                                     @else
                                                     <span class="icon-rounded-sm"><i class="la la-thumbs-up"></i></span>
                                                     @endif
